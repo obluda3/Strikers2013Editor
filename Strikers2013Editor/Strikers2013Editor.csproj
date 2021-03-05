@@ -49,27 +49,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="forms\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Move.cs" />
-    <Compile Include="MoveEditor.cs">
+    <Compile Include="forms\MoveEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MoveEditor.Designer.cs">
+    <Compile Include="forms\MoveEditor.Designer.cs">
       <DependentUpon>MoveEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="forms\PlayerEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\PlayerEditor.Designer.cs">
+      <DependentUpon>PlayerEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoveEditor.resx">
+    <EmbeddedResource Include="forms\MoveEditor.resx">
       <DependentUpon>MoveEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\PlayerEditor.resx">
+      <DependentUpon>PlayerEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="database\playernames.txt" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -94,7 +105,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="wazaNames.txt" />
+    <EmbeddedResource Include="database\wazaNames.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

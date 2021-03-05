@@ -9,6 +9,6 @@ namespace Strikers2013Editor
     class Move
     {
         public string name;
-        public short[] wazaInfo = new short[70];
+        public ushort[] wazaInfo = new ushort[70];
     }
 }

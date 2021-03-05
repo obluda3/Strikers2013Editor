@@ -28,5 +28,11 @@ namespace Strikers2013Editor
 
             moveEditor.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PlayerEditor playerEditor = new PlayerEditor();
+            playerEditor.ShowDialog();
+        }
     }
 }
