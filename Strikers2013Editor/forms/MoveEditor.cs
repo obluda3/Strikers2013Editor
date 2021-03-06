@@ -122,22 +122,22 @@ namespace Strikers2013Editor
             cmbStatus.SelectedIndex = wazainfo[5];
             nudCoop.Value = wazainfo[10];
 
-            for(var i = 0; i < playerNames.Length; i++)
+            for (var i = 0; i < playerNames.Length; i++)
             {
                 chkUsers.SetItemChecked(i, false);
             }
 
             // waza_info[13] through waza_info[22] are for the users of the moves
-            for(var i = 13; i < 23; i++)
+            for (var i = 13; i < 23; i++)
             {
                 if (wazainfo[i] != 0)
-                chkUsers.SetItemChecked(wazainfo[i]-1, true);
+                    chkUsers.SetItemChecked(wazainfo[i] - 1, true);
             }
             // waza_info[23] through waza_info[32] are for the co-op users of the moves
             for (var i = 23; i < 33; i++)
             {
                 if (wazainfo[i] != 0)
-                chkCoop.SetItemChecked(wazainfo[i]-1, true);
+                    chkCoop.SetItemChecked(wazainfo[i] - 1, true);
             }
 
 
@@ -191,7 +191,7 @@ namespace Strikers2013Editor
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             using (var sfd = new SaveFileDialog())
             {
                 sfd.Filter = "Move file(0 / 20.bin) (*.bin) | *.bin | All files(*.*) | *.* ";
@@ -244,6 +244,40 @@ namespace Strikers2013Editor
             {
                 if (!list.GetItemChecked(list.SelectedIndex))
                     e.NewValue = e.CurrentValue;
+            }
+        }
+
+        private void importToDatbinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "dat.bin (*.bin)|*.bin|All files (*.*)|*.*";
+                ofd.RestoreDirectory = true;
+                ofd.FileName = "dat.bin";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    using (var ofd1 = new OpenFileDialog())
+                    {
+                        ofd1.Filter = "mcb1.bln (*.bln)|*.bln|All files (*.*)|*.*";
+                        ofd1.RestoreDirectory = true;
+                        ofd1.FileName = "mcb1.bln";
+                        if (ofd1.ShowDialog() == DialogResult.OK)
+                        {
+                            using (var br = new BinaryReader(File.OpenRead(ofd1.FileName)))
+                            {
+                                br.BaseStream.Position = 0xAC8F4;
+                                var offset = br.ReadInt32();
+                                var size = br.ReadInt32();
+                                var data = br.ReadBytes(size);
+                                using (var bw = new BinaryWriter(File.OpenWrite(ofd.FileName)))
+                                {
+                                    bw.BaseStream.Position = offset;
+                                    bw.Write(data);
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
