@@ -16,7 +16,7 @@ namespace Strikers2013Editor
     public partial class PlayerEditor : Form
     {
         byte[] playerFile;
-        Player[] Players;
+        PlayerInfo[] Players;
         public PlayerEditor()
         {
             InitializeComponent();
@@ -52,13 +52,13 @@ namespace Strikers2013Editor
             using (var br = new BeBinaryReader(player))
             {
                 br.BaseStream.Position = 0xFA4;
-                var playerList = new List<Player>();
+                var playerList = new List<PlayerInfo>();
                 Console.WriteLine("test");
                 for (var i = 0; i < 0x198; i++)
                 {
                     if (br.BaseStream.Position > br.BaseStream.Length - 0x148)
                         break;
-                    var player1 = new Player();
+                    var player1 = new PlayerInfo();
                     player1.ID = br.ReadInt32();
                     player1.padding = br.ReadInt32();
                     player1.shortName2 = br.ReadInt32(); // 14.bin line minus 4

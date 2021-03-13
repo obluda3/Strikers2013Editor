@@ -34,5 +34,11 @@ namespace Strikers2013Editor
             PlayerEditor playerEditor = new PlayerEditor();
             playerEditor.ShowDialog();
         }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+            SaveEditor saveEditor = new SaveEditor();
+            saveEditor.ShowDialog();
+        }
     }
 }

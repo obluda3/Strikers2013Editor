@@ -131,13 +131,13 @@ namespace Strikers2013Editor
             for (var i = 13; i < 23; i++)
             {
                 if (wazainfo[i] != 0)
-                    chkUsers.SetItemChecked(wazainfo[i] - 1, true);
+                    chkUsers.SetItemChecked(wazainfo[i], true);
             }
             // waza_info[23] through waza_info[32] are for the co-op users of the moves
             for (var i = 23; i < 33; i++)
             {
                 if (wazainfo[i] != 0)
-                    chkCoop.SetItemChecked(wazainfo[i] - 1, true);
+                    chkCoop.SetItemChecked(wazainfo[i], true);
             }
 
 
@@ -275,6 +275,7 @@ namespace Strikers2013Editor
                                     bw.Write(data);
                                 }
                             }
+                            MessageBox.Show("Succesfully imported.", "Done");
                         }
                     }
                 }

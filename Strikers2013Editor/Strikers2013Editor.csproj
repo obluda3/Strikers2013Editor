@@ -55,6 +55,18 @@
     <Compile Include="forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\SaveEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SaveEditor.Designer.cs">
+      <DependentUpon>SaveEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Slot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Slot.Designer.cs">
+      <DependentUpon>Slot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Move.cs" />
     <Compile Include="forms\MoveEditor.cs">
       <SubType>Form</SubType>
@@ -63,6 +75,7 @@
       <DependentUpon>MoveEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerInfo.cs" />
     <Compile Include="forms\PlayerEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +94,12 @@
       <DependentUpon>PlayerEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="database\playernames.txt" />
+    <EmbeddedResource Include="forms\SaveEditor.resx">
+      <DependentUpon>SaveEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Slot.resx">
+      <DependentUpon>Slot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -33,6 +33,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importToDatbinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -56,7 +57,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.nudCoop = new System.Windows.Forms.NumericUpDown();
             this.btnApply = new System.Windows.Forms.Button();
-            this.importToDatbinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -108,8 +108,15 @@
             this.exportToolStripMenuItem.Enabled = false;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
             this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Text = "Dump";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
+            // importToDatbinToolStripMenuItem
+            // 
+            this.importToDatbinToolStripMenuItem.Name = "importToDatbinToolStripMenuItem";
+            this.importToDatbinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToDatbinToolStripMenuItem.Text = "Import to dat.bin";
+            this.importToDatbinToolStripMenuItem.Click += new System.EventHandler(this.importToDatbinToolStripMenuItem_Click);
             // 
             // listBox1
             // 
@@ -355,13 +362,6 @@
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
-            // importToDatbinToolStripMenuItem
-            // 
-            this.importToDatbinToolStripMenuItem.Name = "importToDatbinToolStripMenuItem";
-            this.importToDatbinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.importToDatbinToolStripMenuItem.Text = "Import to dat.bin";
-            this.importToDatbinToolStripMenuItem.Click += new System.EventHandler(this.importToDatbinToolStripMenuItem_Click);
             // 
             // MoveEditor
             // 
