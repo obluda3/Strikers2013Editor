@@ -49,55 +49,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="forms\Main.cs">
+    <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Main.Designer.cs">
+    <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\SaveEditor.cs">
+    <Compile Include="Forms\SaveEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\SaveEditor.Designer.cs">
+    <Compile Include="Forms\SaveEditor.Designer.cs">
       <DependentUpon>SaveEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Slot.cs">
+    <Compile Include="Forms\Slot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Slot.Designer.cs">
+    <Compile Include="Forms\Slot.Designer.cs">
       <DependentUpon>Slot.cs</DependentUpon>
     </Compile>
-    <Compile Include="Move.cs" />
-    <Compile Include="forms\MoveEditor.cs">
+    <Compile Include="Base\Move.cs" />
+    <Compile Include="Forms\MoveEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\MoveEditor.Designer.cs">
+    <Compile Include="Forms\MoveEditor.Designer.cs">
       <DependentUpon>MoveEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Player.cs" />
-    <Compile Include="PlayerInfo.cs" />
-    <Compile Include="forms\PlayerEditor.cs">
+    <Compile Include="Base\Player.cs" />
+    <Compile Include="Base\PlayerInfo.cs" />
+    <Compile Include="Forms\PlayerEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\PlayerEditor.Designer.cs">
+    <Compile Include="Forms\PlayerEditor.Designer.cs">
       <DependentUpon>PlayerEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="forms\Main.resx">
+    <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\MoveEditor.resx">
+    <EmbeddedResource Include="Forms\MoveEditor.resx">
       <DependentUpon>MoveEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\PlayerEditor.resx">
+    <EmbeddedResource Include="Forms\PlayerEditor.resx">
       <DependentUpon>PlayerEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="database\playernames.txt" />
-    <EmbeddedResource Include="forms\SaveEditor.resx">
+    <EmbeddedResource Include="Database\playernames.txt" />
+    <EmbeddedResource Include="Forms\SaveEditor.resx">
       <DependentUpon>SaveEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Slot.resx">
+    <EmbeddedResource Include="Forms\Slot.resx">
       <DependentUpon>Slot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -124,7 +124,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="database\wazaNames.txt" />
+    <EmbeddedResource Include="Database\wazaNames.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

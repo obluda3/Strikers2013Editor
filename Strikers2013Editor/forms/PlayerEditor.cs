@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Reflection;
 using Be.IO;
+using Strikers2013Editor.Base;
 
-namespace Strikers2013Editor
+namespace Strikers2013Editor.Forms
 {
     public partial class PlayerEditor : Form
     {

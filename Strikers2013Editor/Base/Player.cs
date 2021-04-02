@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Strikers2013Editor
+namespace Strikers2013Editor.Base
 {
     class Player
     {

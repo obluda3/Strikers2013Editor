@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using Be.IO;
-namespace Strikers2013Editor
+using Strikers2013Editor.Base;
+
+namespace Strikers2013Editor.Forms
 {
     public partial class MoveEditor : Form
     {
@@ -57,7 +54,7 @@ namespace Strikers2013Editor
             string[] moveNames;
 
             // Gets the names of the moves
-            using (var movenamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.database.wazaNames.txt"))
+            using (var movenamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Database.wazaNames.txt"))
             {
                 using (StreamReader sr = new StreamReader(movenamesfile))
                 {
@@ -71,7 +68,7 @@ namespace Strikers2013Editor
                     moveNames = moveNamesList.ToArray();
                 }
             }
-            using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.database.playernames.txt"))
+            using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Database.playernames.txt"))
             {
                 using (StreamReader sr = new StreamReader(playernamesfile))
                 {
@@ -122,6 +119,9 @@ namespace Strikers2013Editor
             cmbStatus.SelectedIndex = wazainfo[5];
             nudCoop.Value = wazainfo[10];
 
+
+            chkUsers.SelectedIndex = -1;
+            chkCoop.SelectedIndex = -1;
             for (var i = 0; i < playerNames.Length; i++)
             {
                 chkUsers.SetItemChecked(i, false);
@@ -154,6 +154,31 @@ namespace Strikers2013Editor
             wazainfo[4] = (ushort)cmbElement.SelectedIndex;
             wazainfo[5] = (ushort)cmbStatus.SelectedIndex;
             wazainfo[10] = (ushort)nudCoop.Value;
+
+            // Sets the users of the hissatsu
+            var index = 13;
+            for(var i = 0; i < chkUsers.CheckedIndices.Count; i++)
+            {
+                wazainfo[index] = (ushort)chkUsers.CheckedIndices[i];
+                index++;
+            }
+            for(var i = index; i < 23; i++)
+            {
+                wazainfo[i] = 0;
+            }
+
+            // Sets the coop users of the hissatsu
+            index = 23;
+            for (var i = 0; i < chkCoop.CheckedIndices.Count; i++)
+            {
+                wazainfo[index] = (ushort)chkCoop.CheckedIndices[i];
+                index++;
+            }
+            for (var i = index; i < 33; i++)
+            {
+                wazainfo[i] = 0;
+            }
+
 
             moves[listBox1.SelectedIndex].wazaInfo = wazainfo;
         }
@@ -227,24 +252,27 @@ namespace Strikers2013Editor
         {
 
         }
-        private void chkUsers_ItemCheck(object sender, EventArgs e)
+        private void chkUsers_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            if (chkCoop.CheckedIndices.Count > 10)
+            {
+                e.NewValue = CheckState.Unchecked;
+            }
         }
         private void chkCoop_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
-        private void chkCoop_ItemCheck(object sender, EventArgs e)
+        private void chkCoop_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-
-        }
-        public void LimitCheckedListBoxMaxSelection(int maxCount, ItemCheckEventArgs e, CheckedListBox list)
-        {
-            if (list.CheckedItems.Count == maxCount)
+            if (chkCoop.CheckedIndices.Count > 10)
             {
-                if (!list.GetItemChecked(list.SelectedIndex))
-                    e.NewValue = e.CurrentValue;
+                e.NewValue = CheckState.Unchecked;
             }
+        }
+        public void LimitCheckedListBoxMaxSelection(int maxCount, EventArgs e, object list)
+        {
+            
         }
 
         private void importToDatbinToolStripMenuItem_Click(object sender, EventArgs e)

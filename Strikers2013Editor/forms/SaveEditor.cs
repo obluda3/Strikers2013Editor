@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using Be.IO;
+using Strikers2013Editor.Base;
 
-namespace Strikers2013Editor
+namespace Strikers2013Editor.Forms
 {
     public partial class SaveEditor : Form
     {
@@ -39,7 +35,7 @@ namespace Strikers2013Editor
         {
             // Get the names of the players
             var assembly = Assembly.GetExecutingAssembly();
-            using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.database.playernames.txt"))
+            using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Database.playernames.txt"))
             {
                 using (StreamReader sr = new StreamReader(playernamesfile))
                 {
@@ -53,7 +49,7 @@ namespace Strikers2013Editor
                     playerNames = playerNamesList.ToArray();
                 }
             }
-            using (var movenamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.database.wazaNames.txt"))
+            using (var movenamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Database.wazaNames.txt"))
             {
                 using (StreamReader sr = new StreamReader(movenamesfile))
                 {

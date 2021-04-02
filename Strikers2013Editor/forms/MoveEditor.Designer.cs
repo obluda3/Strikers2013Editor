@@ -1,4 +1,4 @@
-﻿namespace Strikers2013Editor
+﻿namespace Strikers2013Editor.Forms
 {
     partial class MoveEditor
     {
@@ -91,7 +91,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -99,7 +99,7 @@
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -107,14 +107,14 @@
             // 
             this.exportToolStripMenuItem.Enabled = false;
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.exportToolStripMenuItem.Text = "Dump";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
             // importToDatbinToolStripMenuItem
             // 
             this.importToDatbinToolStripMenuItem.Name = "importToDatbinToolStripMenuItem";
-            this.importToDatbinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importToDatbinToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.importToDatbinToolStripMenuItem.Text = "Import to dat.bin";
             this.importToDatbinToolStripMenuItem.Click += new System.EventHandler(this.importToDatbinToolStripMenuItem_Click);
             // 
@@ -294,7 +294,6 @@
             // 
             // chkCoop
             // 
-            this.chkCoop.Enabled = false;
             this.chkCoop.FormattingEnabled = true;
             this.chkCoop.Location = new System.Drawing.Point(98, 250);
             this.chkCoop.Name = "chkCoop";
@@ -305,7 +304,6 @@
             // 
             // chkUsers
             // 
-            this.chkUsers.Enabled = false;
             this.chkUsers.FormattingEnabled = true;
             this.chkUsers.Location = new System.Drawing.Point(98, 60);
             this.chkUsers.Name = "chkUsers";

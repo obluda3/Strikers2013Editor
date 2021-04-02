@@ -1,4 +1,4 @@
-﻿namespace Strikers2013Editor
+﻿namespace Strikers2013Editor.Forms
 {
     partial class PlayerEditor
     {
