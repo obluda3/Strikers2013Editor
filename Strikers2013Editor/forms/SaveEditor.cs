@@ -183,6 +183,7 @@ namespace Strikers2013Editor.Forms
 
         private void lstTeam_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lstTeam.SelectedIndex != -1)
             cmbTeam.SelectedIndex = team[lstTeam.SelectedIndex];
         }
 
