@@ -294,6 +294,7 @@
             // 
             // chkCoop
             // 
+            this.chkCoop.Enabled = false;
             this.chkCoop.FormattingEnabled = true;
             this.chkCoop.Location = new System.Drawing.Point(98, 250);
             this.chkCoop.Name = "chkCoop";
@@ -304,6 +305,7 @@
             // 
             // chkUsers
             // 
+            this.chkUsers.Enabled = false;
             this.chkUsers.FormattingEnabled = true;
             this.chkUsers.Location = new System.Drawing.Point(98, 60);
             this.chkUsers.Name = "chkUsers";

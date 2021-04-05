@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using Be.IO;
+using Strikers2013Editor.Utils;
 using Strikers2013Editor.Base;
 
 namespace Strikers2013Editor.Forms

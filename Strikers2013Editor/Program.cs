@@ -16,7 +16,7 @@ namespace Strikers2013Editor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Strikers2013Editor());
+            Application.Run(new Forms.Strikers2013Editor());
         }
     }
 }
