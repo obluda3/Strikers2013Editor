@@ -330,7 +330,7 @@ namespace Strikers2013Editor.Forms
                             sw.Write(",");
                             sw.Write(player.fullName); // 14.bin line minus 4
                             sw.Write(",");
-                            sw.Write(player.name);
+                            sw.Write(player.name.Replace("\0",""));
                             sw.Write(",");
                             sw.Write(player.gender);
                             sw.Write(",");
