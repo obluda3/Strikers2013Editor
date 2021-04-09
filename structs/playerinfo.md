@@ -22,8 +22,10 @@ Length: 0x148, start of file: 0xE5C
 | 0x80 | Left Match Portrait | int | 2D Portrait in Match, left side |
 | 0x84 | Right Match Portrait | int | 2D Portrait in Match, right side |
 | 0xF4 | Element | int | 0 = Wind 1 = Wood 2 = Fire 3 = Earth 4 = Void |
+| 0x104 | Voice | int |  |
 | 0x110 | Price | short | A value above 0 enables the player, a value of -1 makes the player unlocked by default |
 | 0x112 | list position | short | |
+| 0x114 | list position | short | |
 
 
 Other values are unknown
