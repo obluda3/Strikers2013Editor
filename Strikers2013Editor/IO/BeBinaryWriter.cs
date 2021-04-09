@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-namespace Strikers2013Editor.Utils
+namespace Strikers2013Editor.IO
 {
     class BeBinaryWriter : BinaryWriter
     {

@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
-using Strikers2013Editor.Utils;
+using Strikers2013Editor.IO;
 using Strikers2013Editor.Base;
 
 namespace Strikers2013Editor.Forms

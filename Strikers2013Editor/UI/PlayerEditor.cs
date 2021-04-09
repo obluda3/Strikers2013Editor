@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using Strikers2013Editor.Utils;
+using Strikers2013Editor.IO;
 using Strikers2013Editor.Base;
 
 namespace Strikers2013Editor.Forms
@@ -32,13 +32,14 @@ namespace Strikers2013Editor.Forms
                     tabControl1.Enabled = true;
                     btnApply.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
+                    dumpToolStripMenuItem.Enabled = true;
 
                     ParsePlayerFile(moveStream);
                     cmbElement.Items.AddRange(new string[] { "Wind", "Wood", "Fire", "Earth", "Void", "???", "???", "???" });
-                    cmbPosition.Items.AddRange(new string[] { "GK", "DF", "MF", "FW",});
-                    cmbTA.Items.AddRange(new string[] { "Feint", "Roll", "Short","Jump","White Sprint","Red Sprint","Girl" }) ;
-                    cmbSex.Items.AddRange(new string[] { "Male", "Female","Other" });
-                    cmbBody.Items.AddRange(new string[] {"Man","Large","Chibi","Muscle","Girl1","Girl2" });
+                    cmbPosition.Items.AddRange(new string[] { "GK", "DF", "MF", "FW", });
+                    cmbTA.Items.AddRange(new string[] { "Feint", "Roll", "Short", "Jump", "White Sprint", "Red Sprint", "Girl" });
+                    cmbSex.Items.AddRange(new string[] { "Male", "Female", "Other" });
+                    cmbBody.Items.AddRange(new string[] { "Man", "Large", "Chibi", "Muscle", "Girl1", "Girl2" });
                 }
             }
         }
@@ -136,7 +137,7 @@ namespace Strikers2013Editor.Forms
             player.facemodel2 = (int)nudFace2.Value;
             player.height = (int)nudHeight.Value;
             player.bodytype = cmbBody.SelectedIndex;
-            
+
 
             Players[listBox1.SelectedIndex] = player;
         }
@@ -215,5 +216,200 @@ namespace Strikers2013Editor.Forms
             }
 
         }
+
+        private void dumpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "Text file (*.txt) | *.txt | All files(*.*) | *.* ";
+                sfd.DefaultExt = ".txt";
+                sfd.FileName = "players.txt";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    using (var sw = new StreamWriter(File.Open(sfd.FileName, FileMode.Create)))
+                    {
+                        /// BEHOLD THE UGLIEST CODE EVER
+                        /// 
+                        var plinfo = new PlayerInfo();
+                        sw.Write(nameof(plinfo.ID));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.padding));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.shortName2)); // 14.bin line minus 4
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.shortName)); // 14.bin line minus 4
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.fullName)); // 14.bin line minus 4
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.name));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.gender));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk1));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk2));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.description)); // 14.bin line minus 2
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.bodytype));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.height));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk4));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.tacticalaction));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk3));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.team2));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.team));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.playerListPortrait));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.position));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk8));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.facemodel));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.facemodel2));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk9));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk10));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk11));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.playerMugshot));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk12));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.playerPortrait));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.playerOtherPortrait));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk13));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk14));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk15));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.element));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk16));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk17));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk18));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk19));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.armedAttribution));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk21));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.price));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk23));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk24));
+                        sw.Write(",");
+                        sw.Write(nameof(plinfo.unk25));
+                        sw.Write("\n");
+                        foreach (var player in Players)
+                        {
+                            sw.Write(player.ID);
+                            sw.Write(",");
+                            sw.Write(player.padding);
+                            sw.Write(",");
+                            sw.Write(player.shortName2); // 14.bin line minus 4
+                            sw.Write(",");
+                            sw.Write(player.shortName); // 14.bin line minus 4
+                            sw.Write(",");
+                            sw.Write(player.fullName); // 14.bin line minus 4
+                            sw.Write(",");
+                            sw.Write(player.name);
+                            sw.Write(",");
+                            sw.Write(player.gender);
+                            sw.Write(",");
+                            sw.Write(player.unk1);
+                            sw.Write(",");
+                            sw.Write(player.unk2);
+                            sw.Write(",");
+                            sw.Write(player.description); // 14.bin line minus 2
+                            sw.Write(",");
+                            sw.Write(player.bodytype);
+                            sw.Write(",");
+                            sw.Write(player.height);
+                            sw.Write(",");
+                            sw.Write(player.unk4);
+                            sw.Write(",");
+                            sw.Write(player.tacticalaction);
+                            sw.Write(",");
+                            sw.Write(player.unk3);
+                            sw.Write(",");
+                            sw.Write(player.team2);
+                            sw.Write(",");
+                            sw.Write(player.team);
+                            sw.Write(",");
+                            sw.Write(player.playerListPortrait);
+                            sw.Write(",");
+                            sw.Write(player.position);
+                            sw.Write(",");
+                            sw.Write(player.unk8);
+                            sw.Write(",");
+                            sw.Write(player.facemodel);
+                            sw.Write(",");
+                            sw.Write(player.facemodel2);
+                            sw.Write(",");
+                            sw.Write(player.unk9);
+                            sw.Write(",");
+                            sw.Write(player.unk10);
+                            sw.Write(",");
+                            sw.Write(player.unk11);
+                            sw.Write(",");
+                            sw.Write(player.playerMugshot);
+                            sw.Write(",");
+                            sw.Write(player.unk12);
+                            sw.Write(",");
+                            sw.Write(player.playerPortrait);
+                            sw.Write(",");
+                            sw.Write(player.playerOtherPortrait);
+                            sw.Write(",");
+                            sw.Write(player.unk13);
+                            sw.Write(",");
+                            sw.Write(player.unk14);
+                            sw.Write(",");
+                            sw.Write(player.unk15);
+                            sw.Write(",");
+                            sw.Write(player.element);
+                            sw.Write(",");
+                            sw.Write(player.unk16);
+                            sw.Write(",");
+                            sw.Write(player.unk17);
+                            sw.Write(",");
+                            sw.Write(player.unk18);
+                            sw.Write(",");
+                            sw.Write(player.unk19);
+                            sw.Write(",");
+                            sw.Write(player.armedAttribution);
+                            sw.Write(",");
+                            sw.Write(player.unk21);
+                            sw.Write(",");
+                            sw.Write(player.price);
+                            sw.Write(",");
+                            sw.Write(player.unk23);
+                            sw.Write(",");
+                            sw.Write(player.unk24);
+                            sw.Write(",");
+                            sw.Write(player.unk25);
+                            sw.Write("\n");
+                        }
+                    }
+                }
+            } 
+        } 
     }
 }
