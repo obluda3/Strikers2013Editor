@@ -17,9 +17,9 @@ namespace Strikers2013Editor.Base
         public int height;
         public int unk4;
         public int tacticalaction;
-        public int team;
+        public int unk3;
         public int team2;
-        public int unk6;
+        public int team;
         public int playerListPortrait;
         public int position;
         public int unk8;
@@ -43,7 +43,7 @@ namespace Strikers2013Editor.Base
         public int unk19;
         public int armedAttribution;
         public int unk21;
-        public short unk22;
+        public short price;
         public short unk23;
         public int unk24;
         public int unk25;

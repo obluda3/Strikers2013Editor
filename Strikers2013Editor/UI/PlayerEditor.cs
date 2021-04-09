@@ -68,9 +68,9 @@ namespace Strikers2013Editor.Forms
                     player1.height = br.ReadInt32();
                     player1.unk4 = br.ReadInt32();
                     player1.tacticalaction = br.ReadInt32();
-                    player1.team = br.ReadInt32();
+                    player1.unk3 = br.ReadInt32();
                     player1.team2 = br.ReadInt32();
-                    player1.unk6 = br.ReadInt32();
+                    player1.team = br.ReadInt32();
                     player1.playerListPortrait = br.ReadInt32();
                     player1.position = br.ReadInt32();
                     player1.unk8 = br.ReadInt32();
@@ -94,7 +94,7 @@ namespace Strikers2013Editor.Forms
                     player1.unk19 = br.ReadInt32();
                     player1.armedAttribution = br.ReadInt32();
                     player1.unk21 = br.ReadInt32();
-                    player1.unk22 = br.ReadInt16();
+                    player1.price = br.ReadInt16();
                     player1.unk23 = br.ReadInt16();
                     player1.unk24 = br.ReadInt32();
                     player1.unk25 = br.ReadInt32();
@@ -174,9 +174,9 @@ namespace Strikers2013Editor.Forms
                             bw.Write(player.height);
                             bw.Write(player.unk4);
                             bw.Write(player.tacticalaction);
-                            bw.Write(player.team);
+                            bw.Write(player.unk3);
                             bw.Write(player.team2);
-                            bw.Write(player.unk6);
+                            bw.Write(player.team);
                             bw.Write(player.playerListPortrait);
                             bw.Write(player.position);
                             bw.Write(player.unk8);
@@ -200,7 +200,7 @@ namespace Strikers2013Editor.Forms
                             bw.Write(player.unk19);
                             bw.Write(player.armedAttribution);
                             bw.Write(player.unk21);
-                            bw.Write(player.unk22);
+                            bw.Write(player.price);
                             bw.Write(player.unk23);
                             bw.Write(player.unk24);
                             bw.Write(player.unk25);
