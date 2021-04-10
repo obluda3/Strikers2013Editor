@@ -12,7 +12,6 @@ namespace Strikers2013Editor.Forms
     public partial class SaveEditor : Form
     {
         Encoding sjis = Encoding.GetEncoding("sjis");
-        DateTime creationTime;
 
         byte[] saveFile;
         short[] team = new short[16];
@@ -21,7 +20,7 @@ namespace Strikers2013Editor.Forms
 
         string profileName, onlineName;
         string[] playerNames, wazaNames;
-        uint profile, onlineProfile, baseOffset, minutesPlayed, hoursPlayed, inazumaPoints;
+        uint profile, onlineProfile, baseOffset, minutesPlayed, hoursPlayed, inazumaPoints,creationDate,creationTime;
         
 
 
@@ -41,7 +40,8 @@ namespace Strikers2013Editor.Forms
 
         private void SaveEditor_Load(object sender, EventArgs e)
         {
-
+            toolTip1.SetToolTip(nudCreationDate, "Format used is YYMMDD");
+            toolTip2.SetToolTip(nudCreationTime, "Format used is HHMM");
         }
         private void ParseSaveFile(Stream saveStream) 
         {
@@ -82,9 +82,18 @@ namespace Strikers2013Editor.Forms
                 onlineName = sjis.GetString(br.ReadBytes(16));
                 onlineProfile = br.ReadUInt32();
 
-                br.BaseStream.Position = baseOffset;
+                br.BaseStream.Position = baseOffset; // Hours stuff
                 
+                creationDate = br.ReadUInt32();
+                creationTime = br.ReadUInt32();
+                hoursPlayed = br.ReadUInt32();
+                minutesPlayed = br.ReadUInt32();
 
+
+
+                br.BaseStream.Position = baseOffset + 0x1d4;
+                inazumaPoints = br.ReadUInt32();
+               
                 br.BaseStream.Position = baseOffset + PROFILENAME_OFFSET;
                 profileName = sjis.GetString(br.ReadBytes(16));
                 
@@ -170,88 +179,32 @@ namespace Strikers2013Editor.Forms
                     cmbTeam.Items.AddRange(playerNames);
 
 
+
+
                     txtProfileName.Text = profileName;
                     txtOnlineName.Text = onlineName;
                     nudProfile.Value = profile;
                     nudProfileOnline.Value = onlineProfile;
+                    nudInazumaPoints.Value = inazumaPoints;
+                    nudHours.Value = hoursPlayed;
+                    nudMinutes.Value = minutesPlayed / 0x1c200;
+                    nudCreationTime.Value = creationTime;
+                    nudCreationDate.Value = creationDate;
+
+
                     tabControl1.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
                     dumpToolStripMenuItem.Enabled = true;
                     nudProfile.Enabled = true;
+                    
 
 
                 }
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+     
 
-        }
-
-        private void txtProfileName_TextChanged(object sender, EventArgs e)
-        {
-            profileName = txtProfileName.Text;
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
-        private void lstTeam_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lstTeam.SelectedIndex != -1)
-            cmbTeam.SelectedIndex = team[lstTeam.SelectedIndex];
-        }
-
-        private void cmbTeam_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            team[lstTeam.SelectedIndex] = (short)cmbTeam.SelectedIndex;
-            lstTeam.Items[lstTeam.SelectedIndex] = playerNames[cmbTeam.SelectedIndex];
-        }
-
-        private void btnApply_Click(object sender, EventArgs e)
-        {
-            var player = players[lstPlayers.SelectedIndex];
-
-           
-            player.lv1 = Convert.ToInt16(txtLV1.Text, 16);
-            player.lv2 = Convert.ToInt16(txtLV2.Text, 16);
-            player.lv3 = Convert.ToInt16(txtLV3.Text, 16);
-            player.lv1gk = Convert.ToInt16(txtCatch1.Text, 16);
-            player.lv2gk = Convert.ToInt16(txtCatch2.Text, 16);
-            player.lv3gk = Convert.ToInt16(txtCatch3.Text, 16);
-            player.dribble = Convert.ToInt16(txtDribble.Text, 16);
-            player.defense = Convert.ToInt16(txtDefense.Text, 16);
-            player.sp = Convert.ToInt16(txtSP.Text, 16);
-
-        }
-
-        private void lstPlayers_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var player = players[lstPlayers.SelectedIndex];
-
-            nudKick.Value = player.kick;
-            nudBody.Value = player.body;
-            nudControl.Value = player.control;
-            nudGuard.Value = player.guard;
-            nudCatch.Value = player._catch;
-            nudSpeed.Value = player.speed;
-            nudTP.Value = player.tp;
-
-            txtLV1.Text = Convert.ToString(player.lv1, 16);
-            txtLV2.Text = Convert.ToString(player.lv2, 16);
-            txtLV3.Text = Convert.ToString(player.lv3, 16);
-            txtSP.Text = Convert.ToString(player.sp, 16);
-            txtDefense.Text = Convert.ToString(player.defense, 16);
-            txtDribble.Text = Convert.ToString(player.dribble, 16);
-            txtCatch1.Text = Convert.ToString(player.lv1gk, 16);
-            txtCatch2.Text = Convert.ToString(player.lv2gk, 16);
-            txtCatch3.Text = Convert.ToString(player.lv3gk, 16);
-            
-
-        }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -272,6 +225,15 @@ namespace Strikers2013Editor.Forms
                         bw.BaseStream.Position = 0x1d8;
                         bw.Write(StringTo16LongArray(onlineName));
                         bw.Write(onlineProfile);
+
+                        bw.BaseStream.Position = baseOffset;
+                        bw.Write(creationDate);
+                        bw.Write(creationTime);
+                        bw.Write(hoursPlayed);
+                        bw.Write(minutesPlayed);
+
+                        bw.BaseStream.Position = baseOffset + 0x1d4;
+                        bw.Write(inazumaPoints);
 
                         bw.BaseStream.Position = baseOffset + PROFILENAME_OFFSET;
                         bw.Write(StringTo16LongArray(profileName));
@@ -413,6 +375,102 @@ namespace Strikers2013Editor.Forms
         private void nudProfileOnline_ValueChanged(object sender, EventArgs e)
         {
             onlineProfile = (uint)nudProfileOnline.Value;
+        }
+
+        private void toolTip1_Popup_1(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void nudCreationTime_ValueChanged(object sender, EventArgs e)
+        {
+            creationTime = (uint)nudCreationTime.Value;
+        }
+
+        private void nudCreationDate_ValueChanged(object sender, EventArgs e)
+        {
+            creationDate = (uint)nudCreationDate.Value;
+        }
+
+        private void dtpCreation_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudMinutes_ValueChanged(object sender, EventArgs e)
+        {
+            minutesPlayed = (uint)nudMinutes.Value * 0x1c200;
+        }
+
+        private void nudHours_ValueChanged(object sender, EventArgs e)
+        {
+            hoursPlayed = (uint)nudHours.Value;
+        }
+
+        private void txtProfileName_TextChanged(object sender, EventArgs e)
+        {
+            profileName = txtProfileName.Text;
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void lstTeam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstTeam.SelectedIndex != -1)
+                cmbTeam.SelectedIndex = team[lstTeam.SelectedIndex];
+        }
+
+        private void cmbTeam_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            team[lstTeam.SelectedIndex] = (short)cmbTeam.SelectedIndex;
+            lstTeam.Items[lstTeam.SelectedIndex] = playerNames[cmbTeam.SelectedIndex];
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            var player = players[lstPlayers.SelectedIndex];
+
+
+            player.lv1 = Convert.ToInt16(txtLV1.Text, 16);
+            player.lv2 = Convert.ToInt16(txtLV2.Text, 16);
+            player.lv3 = Convert.ToInt16(txtLV3.Text, 16);
+            player.lv1gk = Convert.ToInt16(txtCatch1.Text, 16);
+            player.lv2gk = Convert.ToInt16(txtCatch2.Text, 16);
+            player.lv3gk = Convert.ToInt16(txtCatch3.Text, 16);
+            player.dribble = Convert.ToInt16(txtDribble.Text, 16);
+            player.defense = Convert.ToInt16(txtDefense.Text, 16);
+            player.sp = Convert.ToInt16(txtSP.Text, 16);
+
+        }
+
+
+
+        private void lstPlayers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var player = players[lstPlayers.SelectedIndex];
+
+            nudKick.Value = player.kick;
+            nudBody.Value = player.body;
+            nudControl.Value = player.control;
+            nudGuard.Value = player.guard;
+            nudCatch.Value = player._catch;
+            nudSpeed.Value = player.speed;
+            nudTP.Value = player.tp;
+
+            txtLV1.Text = Convert.ToString(player.lv1, 16);
+            txtLV2.Text = Convert.ToString(player.lv2, 16);
+            txtLV3.Text = Convert.ToString(player.lv3, 16);
+            txtSP.Text = Convert.ToString(player.sp, 16);
+            txtDefense.Text = Convert.ToString(player.defense, 16);
+            txtDribble.Text = Convert.ToString(player.dribble, 16);
+            txtCatch1.Text = Convert.ToString(player.lv1gk, 16);
+            txtCatch2.Text = Convert.ToString(player.lv2gk, 16);
+            txtCatch3.Text = Convert.ToString(player.lv3gk, 16);
+
+
         }
     }
 }
