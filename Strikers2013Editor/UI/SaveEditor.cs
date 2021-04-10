@@ -11,17 +11,29 @@ namespace Strikers2013Editor.Forms
 {
     public partial class SaveEditor : Form
     {
+        Encoding sjis = Encoding.GetEncoding("sjis");
+        DateTime creationTime;
+
         byte[] saveFile;
-        string profileName;
-        string onlineName;
-        string[] playerNames;
-        string[] wazaNames;
-        int profile;
-        int onlineProfile;
         short[] team = new short[16];
         Player[] players = new Player[412];
-        Encoding sjis = Encoding.GetEncoding("sjis");
-        int baseOffset;
+        
+
+        string profileName, onlineName;
+        string[] playerNames, wazaNames;
+        uint profile, onlineProfile, baseOffset, minutesPlayed, hoursPlayed, inazumaPoints;
+        
+
+
+        const int STATS_OFFSET = 0xad74;
+        const int WAZA_OFFSET = 0x640a4;
+        const int TEAM_OFFSET = 0x63f66;
+        const int PROFILE_OFFSET = 0x6775a;
+        const int ONLINE_PROFILE = 0x1d8;
+        const int PROFILENAME_OFFSET = 0x1f8;
+
+
+
         public SaveEditor()
         {
             InitializeComponent();
@@ -66,19 +78,23 @@ namespace Strikers2013Editor.Forms
 
             using (var br = new BeBinaryReader(saveStream))
             {
-                br.BaseStream.Position = 0x1d8;
+                br.BaseStream.Position = ONLINE_PROFILE;
                 onlineName = sjis.GetString(br.ReadBytes(16));
-                onlineProfile = br.ReadInt32();
+                onlineProfile = br.ReadUInt32();
 
                 br.BaseStream.Position = baseOffset;
+                
+
+                br.BaseStream.Position = baseOffset + PROFILENAME_OFFSET;
                 profileName = sjis.GetString(br.ReadBytes(16));
                 
 
 
                 for(var i = 0; i < 412; i++)
                 {
+                    // STATS
                     var player = new Player();
-                    br.BaseStream.Position = baseOffset + 0xAB7C + i * 0x3c;
+                    br.BaseStream.Position = baseOffset + STATS_OFFSET + i * 0x3c;
                     player.tp = br.ReadByte();
                     br.ReadByte();
                     player.kick = br.ReadByte();
@@ -93,7 +109,8 @@ namespace Strikers2013Editor.Forms
                     br.ReadByte();
                     player.speed = br.ReadByte();
 
-                    br.BaseStream.Position = baseOffset + 0x63eac + i * 0x22;
+                    // WAZA
+                    br.BaseStream.Position = baseOffset + WAZA_OFFSET + i * 0x22;
                     player.lv1 = br.ReadInt16();
                     player.lv2 = br.ReadInt16();
                     player.lv3 = br.ReadInt16();
@@ -113,12 +130,12 @@ namespace Strikers2013Editor.Forms
                 }
                 for(var i = 0; i < 16; i++)
                 {
-                    br.BaseStream.Position = baseOffset + 0x63d6e + 0x14 * i;
+                    br.BaseStream.Position = baseOffset + TEAM_OFFSET + 0x14 * i;
                     team[i] = br.ReadInt16();
                     lstTeam.Items.Add(playerNames[team[i]]);
                 }
-                br.BaseStream.Position = baseOffset + 0x67562;
-                profile = br.ReadInt32();
+                br.BaseStream.Position = baseOffset + PROFILE_OFFSET;
+                profile = br.ReadUInt32();
             }
         }
 
@@ -140,7 +157,7 @@ namespace Strikers2013Editor.Forms
                         slot = slotDialog.SlotIndex; 
                     }
 
-                    baseOffset = 0x2790 + slot * 0x68548;
+                    baseOffset = (uint)(0x2598 + slot * 0x6acd8);
 
                     cmbTeam.Items.Clear();
                     lstPlayers.Items.Clear();
@@ -160,6 +177,7 @@ namespace Strikers2013Editor.Forms
                     tabControl1.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
                     dumpToolStripMenuItem.Enabled = true;
+                    nudProfile.Enabled = true;
 
 
                 }
@@ -255,13 +273,14 @@ namespace Strikers2013Editor.Forms
                         bw.Write(StringTo16LongArray(onlineName));
                         bw.Write(onlineProfile);
 
-                        bw.BaseStream.Position = baseOffset;
+                        bw.BaseStream.Position = baseOffset + PROFILENAME_OFFSET;
                         bw.Write(StringTo16LongArray(profileName));
 
                         for (var i = 0; i < 412; i++)
                         {
                             var player = players[i];
-                            bw.BaseStream.Position = baseOffset + 0xAB7C + i * 0x3c;
+                            // STATS
+                            bw.BaseStream.Position = baseOffset + STATS_OFFSET + i * 0x3c;
                             bw.Write(player.tp);
                             bw.BaseStream.Position += 1;
                             bw.Write(player.kick);
@@ -275,7 +294,9 @@ namespace Strikers2013Editor.Forms
                             bw.Write(player.control);
                             bw.BaseStream.Position += 1;
                             bw.Write(player.speed);
-                            bw.BaseStream.Position = baseOffset + 0x63eac + i * 0x22;
+
+                            // WAZA
+                            bw.BaseStream.Position = baseOffset + WAZA_OFFSET + i * 0x22;
                             bw.Write(player.lv1);
                             bw.Write(player.lv2);
                             bw.Write(player.lv3);
@@ -293,10 +314,10 @@ namespace Strikers2013Editor.Forms
                         }
                         for (var i = 0; i < 16; i++)
                         {
-                            bw.BaseStream.Position = baseOffset + 0x63d6e + 0x14 * i;
+                            bw.BaseStream.Position = baseOffset + TEAM_OFFSET + 0x14 * i;
                             bw.Write(team[i]);
                         }
-                        bw.BaseStream.Position = baseOffset + 0x67562;
+                        bw.BaseStream.Position = baseOffset + PROFILE_OFFSET;
                         bw.Write(profile);
 
                     }
@@ -386,12 +407,12 @@ namespace Strikers2013Editor.Forms
 
         private void nudProfile_ValueChanged(object sender, EventArgs e)
         {
-            profile = (int)nudProfile.Value;
+            profile = (uint)nudProfile.Value;
         }
 
         private void nudProfileOnline_ValueChanged(object sender, EventArgs e)
         {
-            onlineProfile = (int)nudProfileOnline.Value;
+            onlineProfile = (uint)nudProfileOnline.Value;
         }
     }
 }

@@ -37,6 +37,8 @@
             this.btnApply = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label20 = new System.Windows.Forms.Label();
+            this.nudTP = new System.Windows.Forms.NumericUpDown();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -70,6 +72,7 @@
             this.txtLV1 = new System.Windows.Forms.TextBox();
             this.lstPlayers = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.nudInazumaPoints = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbTeam = new System.Windows.Forms.ComboBox();
             this.lstTeam = new System.Windows.Forms.ListBox();
@@ -82,12 +85,11 @@
             this.txtProfileName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.nudTP = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCatch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGuard)).BeginInit();
@@ -96,11 +98,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudKick)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInazumaPoints)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudProfileOnline)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudProfile)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTP)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -201,6 +203,28 @@
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "Stats";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 164);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(21, 13);
+            this.label20.TabIndex = 13;
+            this.label20.Text = "TP";
+            // 
+            // nudTP
+            // 
+            this.nudTP.Enabled = false;
+            this.nudTP.Location = new System.Drawing.Point(94, 162);
+            this.nudTP.Maximum = new decimal(new int[] {
+            250,
+            0,
+            0,
+            0});
+            this.nudTP.Name = "nudTP";
+            this.nudTP.Size = new System.Drawing.Size(56, 20);
+            this.nudTP.TabIndex = 12;
             // 
             // label19
             // 
@@ -517,6 +541,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.nudInazumaPoints);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
@@ -533,6 +558,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // nudInazumaPoints
+            // 
+            this.nudInazumaPoints.Location = new System.Drawing.Point(85, 123);
+            this.nudInazumaPoints.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudInazumaPoints.Name = "nudInazumaPoints";
+            this.nudInazumaPoints.Size = new System.Drawing.Size(51, 20);
+            this.nudInazumaPoints.TabIndex = 9;
+            this.nudInazumaPoints.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // groupBox1
             // 
@@ -654,28 +696,6 @@
             this.tabControl1.Size = new System.Drawing.Size(477, 465);
             this.tabControl1.TabIndex = 2;
             // 
-            // nudTP
-            // 
-            this.nudTP.Enabled = false;
-            this.nudTP.Location = new System.Drawing.Point(94, 162);
-            this.nudTP.Maximum = new decimal(new int[] {
-            250,
-            0,
-            0,
-            0});
-            this.nudTP.Name = "nudTP";
-            this.nudTP.Size = new System.Drawing.Size(56, 20);
-            this.nudTP.TabIndex = 12;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 164);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(21, 13);
-            this.label20.TabIndex = 13;
-            this.label20.Text = "TP";
-            // 
             // SaveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,6 +712,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCatch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudGuard)).EndInit();
@@ -702,11 +723,11 @@
             this.tabPage4.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudInazumaPoints)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nudProfileOnline)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudProfile)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudTP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -770,5 +791,6 @@
         private System.Windows.Forms.ToolStripMenuItem dumpToolStripMenuItem;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.NumericUpDown nudTP;
+        private System.Windows.Forms.NumericUpDown nudInazumaPoints;
     }
 }
