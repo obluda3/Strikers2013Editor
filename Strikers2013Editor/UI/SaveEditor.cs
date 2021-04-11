@@ -124,15 +124,15 @@ namespace Strikers2013Editor.Forms
                     player.lv2 = br.ReadInt16();
                     player.lv3 = br.ReadInt16();
                     br.ReadInt16();
-                    player.dribble = br.ReadInt16();
-                    br.BaseStream.Position += 6;
                     player.defense = br.ReadInt16();
                     br.BaseStream.Position += 6;
                     player.lv1gk = br.ReadInt16();
+                    br.BaseStream.Position += 6;
                     player.lv2gk = br.ReadInt16();
                     player.lv3gk = br.ReadInt16();
-                    br.ReadInt16();
                     player.sp = br.ReadInt16();
+                    br.ReadInt16();
+                    player.dribble = br.ReadInt16();
 
                     players[i] = player;
                     lstPlayers.Items.Add(playerNames[i]);
@@ -263,15 +263,15 @@ namespace Strikers2013Editor.Forms
                             bw.Write(player.lv2);
                             bw.Write(player.lv3);
                             bw.BaseStream.Position += 2;
+                            bw.Write(player.sp);
+                            bw.BaseStream.Position += 6;
                             bw.Write(player.dribble);
                             bw.BaseStream.Position += 6;
                             bw.Write(player.defense);
-                            bw.BaseStream.Position += 6;
                             bw.Write(player.lv1gk);
                             bw.Write(player.lv2gk);
-                            bw.Write(player.lv3gk);
                             bw.BaseStream.Position += 2;
-                            bw.Write(player.sp);
+                            bw.Write(player.lv3gk);
 
                         }
                         for (var i = 0; i < 16; i++)
