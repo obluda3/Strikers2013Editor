@@ -166,7 +166,7 @@ namespace Strikers2013Editor.Forms
                         slot = slotDialog.SlotIndex; 
                     }
 
-                    baseOffset = (uint)(0x2598 + slot * 0x6acd8);
+                    baseOffset = (uint)(0x2598 + slot * 0x68548);
 
                     cmbTeam.Items.Clear();
                     lstPlayers.Items.Clear();

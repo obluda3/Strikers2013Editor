@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tabPage5;
+            this.cmbTeam = new System.Windows.Forms.ComboBox();
+            this.lstTeam = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,20 +88,19 @@
             this.txtProfileName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.nudCreationTime = new System.Windows.Forms.NumericUpDown();
+            this.nudCreationDate = new System.Windows.Forms.NumericUpDown();
+            this.label24 = new System.Windows.Forms.Label();
+            this.nudMinutes = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.nudHours = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.cmbTeam = new System.Windows.Forms.ComboBox();
-            this.lstTeam = new System.Windows.Forms.ListBox();
-            this.nudMinutes = new System.Windows.Forms.NumericUpDown();
-            this.label24 = new System.Windows.Forms.Label();
-            this.nudCreationDate = new System.Windows.Forms.NumericUpDown();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.nudCreationTime = new System.Windows.Forms.NumericUpDown();
-            this.label25 = new System.Windows.Forms.Label();
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             tabPage5 = new System.Windows.Forms.TabPage();
+            tabPage5.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -118,13 +119,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudProfileOnline)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudProfile)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCreationTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCreationDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
             this.tabControl1.SuspendLayout();
-            tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCreationDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCreationTime)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(this.cmbTeam);
+            tabPage5.Controls.Add(this.lstTeam);
+            tabPage5.Location = new System.Drawing.Point(4, 22);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            tabPage5.Size = new System.Drawing.Size(469, 439);
+            tabPage5.TabIndex = 3;
+            tabPage5.Text = "Team";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // cmbTeam
+            // 
+            this.cmbTeam.FormattingEnabled = true;
+            this.cmbTeam.Location = new System.Drawing.Point(6, 276);
+            this.cmbTeam.Name = "cmbTeam";
+            this.cmbTeam.Size = new System.Drawing.Size(132, 21);
+            this.cmbTeam.TabIndex = 4;
+            this.cmbTeam.SelectedIndexChanged += new System.EventHandler(this.cmbTeam_SelectedIndexChanged);
+            // 
+            // lstTeam
+            // 
+            this.lstTeam.FormattingEnabled = true;
+            this.lstTeam.Location = new System.Drawing.Point(6, 6);
+            this.lstTeam.Name = "lstTeam";
+            this.lstTeam.Size = new System.Drawing.Size(260, 264);
+            this.lstTeam.TabIndex = 3;
+            this.lstTeam.SelectedIndexChanged += new System.EventHandler(this.lstTeam_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -236,6 +266,7 @@
             // 
             // nudTP
             // 
+            this.nudTP.Enabled = false;
             this.nudTP.Location = new System.Drawing.Point(94, 162);
             this.nudTP.Maximum = new decimal(new int[] {
             250,
@@ -302,6 +333,7 @@
             // 
             // nudSpeed
             // 
+            this.nudSpeed.Enabled = false;
             this.nudSpeed.Location = new System.Drawing.Point(94, 110);
             this.nudSpeed.Maximum = new decimal(new int[] {
             120,
@@ -314,6 +346,7 @@
             // 
             // nudCatch
             // 
+            this.nudCatch.Enabled = false;
             this.nudCatch.Location = new System.Drawing.Point(94, 136);
             this.nudCatch.Maximum = new decimal(new int[] {
             120,
@@ -326,6 +359,7 @@
             // 
             // nudGuard
             // 
+            this.nudGuard.Enabled = false;
             this.nudGuard.Location = new System.Drawing.Point(94, 84);
             this.nudGuard.Maximum = new decimal(new int[] {
             120,
@@ -338,6 +372,7 @@
             // 
             // nudControl
             // 
+            this.nudControl.Enabled = false;
             this.nudControl.Location = new System.Drawing.Point(94, 58);
             this.nudControl.Maximum = new decimal(new int[] {
             120,
@@ -350,6 +385,7 @@
             // 
             // nudBody
             // 
+            this.nudBody.Enabled = false;
             this.nudBody.Location = new System.Drawing.Point(94, 32);
             this.nudBody.Maximum = new decimal(new int[] {
             120,
@@ -362,6 +398,7 @@
             // 
             // nudKick
             // 
+            this.nudKick.Enabled = false;
             this.nudKick.Location = new System.Drawing.Point(94, 6);
             this.nudKick.Maximum = new decimal(new int[] {
             120,
@@ -707,6 +744,63 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Creation Date and Playcount";
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 51);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(72, 13);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "Creation Time";
+            // 
+            // nudCreationTime
+            // 
+            this.nudCreationTime.Location = new System.Drawing.Point(85, 49);
+            this.nudCreationTime.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudCreationTime.Name = "nudCreationTime";
+            this.nudCreationTime.Size = new System.Drawing.Size(120, 20);
+            this.nudCreationTime.TabIndex = 31;
+            this.nudCreationTime.ValueChanged += new System.EventHandler(this.nudCreationTime_ValueChanged);
+            // 
+            // nudCreationDate
+            // 
+            this.nudCreationDate.Location = new System.Drawing.Point(85, 23);
+            this.nudCreationDate.Maximum = new decimal(new int[] {
+            -1,
+            0,
+            0,
+            0});
+            this.nudCreationDate.Name = "nudCreationDate";
+            this.nudCreationDate.Size = new System.Drawing.Size(120, 20);
+            this.nudCreationDate.TabIndex = 30;
+            this.nudCreationDate.ValueChanged += new System.EventHandler(this.nudCreationDate_ValueChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 103);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(44, 13);
+            this.label24.TabIndex = 29;
+            this.label24.Text = "Minutes";
+            // 
+            // nudMinutes
+            // 
+            this.nudMinutes.Location = new System.Drawing.Point(85, 101);
+            this.nudMinutes.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.nudMinutes.Name = "nudMinutes";
+            this.nudMinutes.Size = new System.Drawing.Size(51, 20);
+            this.nudMinutes.TabIndex = 28;
+            this.nudMinutes.ValueChanged += new System.EventHandler(this.nudMinutes_ValueChanged);
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -750,98 +844,11 @@
             this.tabControl1.Size = new System.Drawing.Size(477, 465);
             this.tabControl1.TabIndex = 2;
             // 
-            // tabPage5
-            // 
-            tabPage5.Controls.Add(this.cmbTeam);
-            tabPage5.Controls.Add(this.lstTeam);
-            tabPage5.Location = new System.Drawing.Point(4, 22);
-            tabPage5.Name = "tabPage5";
-            tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            tabPage5.Size = new System.Drawing.Size(469, 439);
-            tabPage5.TabIndex = 3;
-            tabPage5.Text = "Team";
-            tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // cmbTeam
-            // 
-            this.cmbTeam.FormattingEnabled = true;
-            this.cmbTeam.Location = new System.Drawing.Point(6, 276);
-            this.cmbTeam.Name = "cmbTeam";
-            this.cmbTeam.Size = new System.Drawing.Size(132, 21);
-            this.cmbTeam.TabIndex = 4;
-            this.cmbTeam.SelectedIndexChanged += new System.EventHandler(this.cmbTeam_SelectedIndexChanged);
-            // 
-            // lstTeam
-            // 
-            this.lstTeam.FormattingEnabled = true;
-            this.lstTeam.Location = new System.Drawing.Point(6, 6);
-            this.lstTeam.Name = "lstTeam";
-            this.lstTeam.Size = new System.Drawing.Size(260, 264);
-            this.lstTeam.TabIndex = 3;
-            this.lstTeam.SelectedIndexChanged += new System.EventHandler(this.lstTeam_SelectedIndexChanged);
-            // 
-            // nudMinutes
-            // 
-            this.nudMinutes.Location = new System.Drawing.Point(85, 101);
-            this.nudMinutes.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.nudMinutes.Name = "nudMinutes";
-            this.nudMinutes.Size = new System.Drawing.Size(51, 20);
-            this.nudMinutes.TabIndex = 28;
-            this.nudMinutes.ValueChanged += new System.EventHandler(this.nudMinutes_ValueChanged);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 103);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(44, 13);
-            this.label24.TabIndex = 29;
-            this.label24.Text = "Minutes";
-            // 
-            // nudCreationDate
-            // 
-            this.nudCreationDate.Location = new System.Drawing.Point(85, 23);
-            this.nudCreationDate.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudCreationDate.Name = "nudCreationDate";
-            this.nudCreationDate.Size = new System.Drawing.Size(120, 20);
-            this.nudCreationDate.TabIndex = 30;
-            this.nudCreationDate.ValueChanged += new System.EventHandler(this.nudCreationDate_ValueChanged);
-            // 
             // toolTip1
             // 
             this.toolTip1.Tag = "";
             this.toolTip1.ToolTipTitle = "Format";
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup_1);
-            // 
-            // nudCreationTime
-            // 
-            this.nudCreationTime.Location = new System.Drawing.Point(85, 49);
-            this.nudCreationTime.Maximum = new decimal(new int[] {
-            -1,
-            0,
-            0,
-            0});
-            this.nudCreationTime.Name = "nudCreationTime";
-            this.nudCreationTime.Size = new System.Drawing.Size(120, 20);
-            this.nudCreationTime.TabIndex = 31;
-            this.nudCreationTime.ValueChanged += new System.EventHandler(this.nudCreationTime_ValueChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 51);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(72, 13);
-            this.label25.TabIndex = 32;
-            this.label25.Text = "Creation Time";
             // 
             // toolTip2
             // 
@@ -857,6 +864,7 @@
             this.Name = "SaveEditor";
             this.Text = "SaveEditor";
             this.Load += new System.EventHandler(this.SaveEditor_Load);
+            tabPage5.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -880,12 +888,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudProfile)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCreationTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCreationDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCreationDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCreationTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
