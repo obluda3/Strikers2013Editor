@@ -17,6 +17,8 @@ namespace Strikers2013Editor.Forms
         public MoveEditor()
         {
             InitializeComponent();
+            toolTip1.SetToolTip(chkUsers, "10 possible users");
+            toolTip2.SetToolTip(chkUsers, "10 possible partners");
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -254,7 +256,7 @@ namespace Strikers2013Editor.Forms
         }
         private void chkUsers_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (chkCoop.CheckedIndices.Count > 10)
+            if (chkUsers.CheckedIndices.Count >= 10)
             {
                 e.NewValue = CheckState.Unchecked;
             }
@@ -265,7 +267,7 @@ namespace Strikers2013Editor.Forms
         }
         private void chkCoop_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (chkCoop.CheckedIndices.Count > 10)
+            if (chkCoop.CheckedIndices.Count >= 10)
             {
                 e.NewValue = CheckState.Unchecked;
             }
@@ -308,6 +310,11 @@ namespace Strikers2013Editor.Forms
                     }
                 }
             }
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
 }

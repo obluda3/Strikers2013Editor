@@ -36,11 +36,10 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dumpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btnApply = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnMax = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.nudTP = new System.Windows.Forms.NumericUpDown();
             this.label19 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.nudBody = new System.Windows.Forms.NumericUpDown();
             this.nudKick = new System.Windows.Forms.NumericUpDown();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnApply = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -170,8 +170,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.dumpToolStripMenuItem});
+            this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -179,7 +178,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -187,17 +186,9 @@
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // dumpToolStripMenuItem
-            // 
-            this.dumpToolStripMenuItem.Enabled = false;
-            this.dumpToolStripMenuItem.Name = "dumpToolStripMenuItem";
-            this.dumpToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.dumpToolStripMenuItem.Text = "Dump";
-            this.dumpToolStripMenuItem.Click += new System.EventHandler(this.dumpToolStripMenuItem_Click);
             // 
             // tabPage3
             // 
@@ -211,16 +202,6 @@
             this.tabPage3.Text = "Players";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btnApply
-            // 
-            this.btnApply.Location = new System.Drawing.Point(387, 316);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 3;
-            this.btnApply.Text = "Apply";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage2);
@@ -233,6 +214,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnMax);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.nudTP);
             this.tabPage2.Controls.Add(this.label19);
@@ -254,6 +236,16 @@
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "Stats";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnMax
+            // 
+            this.btnMax.Location = new System.Drawing.Point(113, 232);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(107, 40);
+            this.btnMax.TabIndex = 14;
+            this.btnMax.Text = "Max Stats \n(Game Default)";
+            this.btnMax.UseVisualStyleBackColor = true;
+            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
             // 
             // label20
             // 
@@ -437,6 +429,16 @@
             this.tabPage4.Text = "Moves";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btnApply
+            // 
+            this.btnApply.Location = new System.Drawing.Point(387, 316);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 3;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -520,42 +522,42 @@
             // 
             // txtSP
             // 
-            this.txtSP.Location = new System.Drawing.Point(94, 214);
+            this.txtSP.Location = new System.Drawing.Point(94, 84);
             this.txtSP.Name = "txtSP";
             this.txtSP.Size = new System.Drawing.Size(56, 20);
             this.txtSP.TabIndex = 15;
             // 
             // txtCatch3
             // 
-            this.txtCatch3.Location = new System.Drawing.Point(94, 188);
+            this.txtCatch3.Location = new System.Drawing.Point(94, 214);
             this.txtCatch3.Name = "txtCatch3";
             this.txtCatch3.Size = new System.Drawing.Size(56, 20);
             this.txtCatch3.TabIndex = 14;
             // 
             // txtCatch2
             // 
-            this.txtCatch2.Location = new System.Drawing.Point(94, 162);
+            this.txtCatch2.Location = new System.Drawing.Point(94, 188);
             this.txtCatch2.Name = "txtCatch2";
             this.txtCatch2.Size = new System.Drawing.Size(56, 20);
             this.txtCatch2.TabIndex = 13;
             // 
             // txtCatch1
             // 
-            this.txtCatch1.Location = new System.Drawing.Point(94, 136);
+            this.txtCatch1.Location = new System.Drawing.Point(94, 162);
             this.txtCatch1.Name = "txtCatch1";
             this.txtCatch1.Size = new System.Drawing.Size(56, 20);
             this.txtCatch1.TabIndex = 12;
             // 
             // txtDefense
             // 
-            this.txtDefense.Location = new System.Drawing.Point(94, 110);
+            this.txtDefense.Location = new System.Drawing.Point(94, 136);
             this.txtDefense.Name = "txtDefense";
             this.txtDefense.Size = new System.Drawing.Size(56, 20);
             this.txtDefense.TabIndex = 11;
             // 
             // txtDribble
             // 
-            this.txtDribble.Location = new System.Drawing.Point(94, 84);
+            this.txtDribble.Location = new System.Drawing.Point(94, 110);
             this.txtDribble.Name = "txtDribble";
             this.txtDribble.Size = new System.Drawing.Size(56, 20);
             this.txtDribble.TabIndex = 10;
@@ -586,7 +588,7 @@
             this.lstPlayers.FormattingEnabled = true;
             this.lstPlayers.Location = new System.Drawing.Point(6, 6);
             this.lstPlayers.Name = "lstPlayers";
-            this.lstPlayers.Size = new System.Drawing.Size(220, 420);
+            this.lstPlayers.Size = new System.Drawing.Size(220, 394);
             this.lstPlayers.TabIndex = 1;
             this.lstPlayers.SelectedIndexChanged += new System.EventHandler(this.lstPlayers_SelectedIndexChanged);
             // 
@@ -942,7 +944,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ToolStripMenuItem dumpToolStripMenuItem;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.NumericUpDown nudTP;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -969,5 +970,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.NumericUpDown nudCreationTime;
         private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.Button btnMax;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Strikers2013Editor.IO
 {
@@ -28,6 +29,13 @@ namespace Strikers2013Editor.IO
         {
             byte[] b = ReadBytes(4);
             return (uint)(b[3] + (b[2] << 8) + (b[1] << 16) + (b[0] << 24));
+        }
+        public List<short> ReadMultipleShort(int count) 
+        {
+            var list = new List<short>();
+            for (var i = 0; i < count; i++)
+                list.Add(this.ReadInt16());
+            return list;
         }
 
     }

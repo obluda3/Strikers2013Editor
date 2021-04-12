@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,6 +58,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.nudCoop = new System.Windows.Forms.NumericUpDown();
             this.btnApply = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -294,7 +297,6 @@
             // 
             // chkCoop
             // 
-            this.chkCoop.Enabled = false;
             this.chkCoop.FormattingEnabled = true;
             this.chkCoop.Location = new System.Drawing.Point(98, 250);
             this.chkCoop.Name = "chkCoop";
@@ -305,7 +307,6 @@
             // 
             // chkUsers
             // 
-            this.chkUsers.Enabled = false;
             this.chkUsers.FormattingEnabled = true;
             this.chkUsers.Location = new System.Drawing.Point(98, 60);
             this.chkUsers.Name = "chkUsers";
@@ -362,6 +363,10 @@
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // MoveEditor
             // 
@@ -424,5 +429,7 @@
         private System.Windows.Forms.CheckedListBox chkCoop;
         private System.Windows.Forms.CheckedListBox chkUsers;
         private System.Windows.Forms.ToolStripMenuItem importToDatbinToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
     }
 }
