@@ -124,9 +124,11 @@ namespace Strikers2013Editor.Forms
 
             chkUsers.SelectedIndex = -1;
             chkCoop.SelectedIndex = -1;
+
             for (var i = 0; i < playerNames.Length; i++)
             {
                 chkUsers.SetItemChecked(i, false);
+                chkCoop.SetItemChecked(i, false);
             }
 
             // waza_info[13] through waza_info[22] are for the users of the moves
