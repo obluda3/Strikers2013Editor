@@ -13,6 +13,7 @@ Length: 0x148, start of file: 0xE5C
 | 0x38 | Description | int | Index into an entry of the text file |
 | 0x3c | Bodytype | int | 0 = Man 1 = Large 2 = Chibi 3 = Muscle 4 = Girl1 5 = Girl2 |
 | 0x40 | Height | int | Player height specification |
+| 0x44 | Shadow Size | int | |
 | 0x48 | Tactical Action | int | 0x14 = Feint 0x15 = Roll 0x16 = Short 0x17 = Jump 0x18 = White Sprint 0x19 = Red Sprint 0x1A = Girl 
 | 0x4C | Course Animation | int | 1 for males to have Kappa's animation | 
 | 0x50 | Team | int | Player's team |
