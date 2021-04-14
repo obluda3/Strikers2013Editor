@@ -9,6 +9,7 @@ Length: 0x148, start of file: 0xE5C
 | 0x10 | Full Name ID | int | Index into an entry of the text file |
 | 0x14 | Player Name | string |  |
 | 0x2c | Gender | int | 0 = Male 1 = Female 2 = Other |
+| 0x30 | Idle Animation | int | Used in caravan and minigame selection |
 | 0x38 | Description | int | Index into an entry of the text file |
 | 0x3c | Bodytype | int | 0 = Man 1 = Large 2 = Chibi 3 = Muscle 4 = Girl1 5 = Girl2 |
 | 0x40 | Height | int | Player height specification |
@@ -18,8 +19,9 @@ Length: 0x148, start of file: 0xE5C
 | 0x54 | Team | int | Player's team |
 | 0x58 | Team Portrait ID | int | Portrait in the team list |
 | 0x5C | Position | int | GK = 0 DF = 0x23 MF = 0x24 FW = 0x25 |
-| 0x64 | Face Model | int | Player's 3D Model ID |
-| 0x68 | Face Model | int | Player's 3D Model ID |
+| 0x60 | Face Model | int | Player's 3D Model (in match) |
+| 0x64 | Face Model | int | Player's 3D Model |
+| 0x68 | Face Model | int | Player's 3D Model |
 | 0x78 | Portrait | int | Player's 2D Portrait |
 | 0x80 | Left Match Portrait | int | 2D Portrait in Match, left side |
 | 0x84 | Right Match Portrait | int | 2D Portrait in Match, right side |
@@ -33,6 +35,6 @@ Length: 0x148, start of file: 0xE5C
 Other values are unknown
 
 Help from : 
-- AS (position, element, tactical action)
-- Coconutz (course animation)
+- AS
+- Coconutz
 - Alpha
