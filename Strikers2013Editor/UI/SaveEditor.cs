@@ -198,12 +198,12 @@ namespace Strikers2013Editor.Forms
             player.waza[0] = Convert.ToInt16(txtLV1.Text, 16);
             player.waza[1] = Convert.ToInt16(txtLV2.Text, 16);
             player.waza[2] = Convert.ToInt16(txtLV3.Text, 16);
-            player.waza[13] = Convert.ToInt16(txtCatch1.Text, 16);
-            player.waza[14] = Convert.ToInt16(txtCatch2.Text, 16);
-            player.waza[16] = Convert.ToInt16(txtCatch3.Text, 16);
-            player.waza[8] = Convert.ToInt16(txtDribble.Text, 16);
-            player.waza[12] = Convert.ToInt16(txtDefense.Text, 16);
-            player.waza[4] = Convert.ToInt16(txtSP.Text, 16);
+            player.waza[12] = Convert.ToInt16(txtCatch1.Text, 16);
+            player.waza[13] = Convert.ToInt16(txtCatch2.Text, 16);
+            player.waza[14] = Convert.ToInt16(txtCatch3.Text, 16);
+            player.waza[4] = Convert.ToInt16(txtDribble.Text, 16);
+            player.waza[8] = Convert.ToInt16(txtDefense.Text, 16);
+            player.waza[16] = Convert.ToInt16(txtSP.Text, 16);
 
             save.players[lstPlayers.SelectedIndex] = player;
 
@@ -240,12 +240,12 @@ namespace Strikers2013Editor.Forms
             txtLV1.Text = Convert.ToString(player.waza[0], 16);
             txtLV2.Text = Convert.ToString(player.waza[1], 16);
             txtLV3.Text = Convert.ToString(player.waza[2], 16);
-            txtSP.Text = Convert.ToString(player.waza[4], 16);
-            txtDefense.Text = Convert.ToString(player.waza[12], 16);
+            txtSP.Text = Convert.ToString(player.waza[16], 16);
+            txtDefense.Text = Convert.ToString(player.waza[4], 16);
             txtDribble.Text = Convert.ToString(player.waza[8], 16);
-            txtCatch1.Text = Convert.ToString(player.waza[13], 16);
-            txtCatch2.Text = Convert.ToString(player.waza[14], 16);
-            txtCatch3.Text = Convert.ToString(player.waza[16], 16);
+            txtCatch1.Text = Convert.ToString(player.waza[12], 16);
+            txtCatch2.Text = Convert.ToString(player.waza[13], 16);
+            txtCatch3.Text = Convert.ToString(player.waza[14], 16);
 
 
         }
