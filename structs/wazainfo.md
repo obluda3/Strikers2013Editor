@@ -15,4 +15,5 @@ Length: 0x8c, start of file: 0x1e
 
 Other values are unknown
 
-All of these values were found by GalacticPirate
+Credits :
+- GalacticPirate
