@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Strikers2013Editor.Base
 {
-    class Player
+    struct Player
     {
         public byte[] stats;
         // 0  -> TP

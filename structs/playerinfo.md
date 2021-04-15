@@ -17,7 +17,7 @@ Length: 0x148, start of file: 0xE5C
 | 0x48 | Tactical Action | int | 0x14 = Feint 0x15 = Roll 0x16 = Short 0x17 = Jump 0x18 = White Sprint 0x19 = Red Sprint 0x1A = Girl 
 | 0x4C | Course Animation | int | 1 for males to have Kappa's animation | 
 | 0x50 | Team | int | Player's team |
-| 0x54 | Team | int | Player's team |
+| 0x54 | Emblem | int | Player's emblem |
 | 0x58 | Team Portrait ID | int | Portrait in the team list |
 | 0x5C | Position | int | GK = 0 DF = 0x23 MF = 0x24 FW = 0x25 |
 | 0x60 | Face Model | int | Player's 3D Model (in match) |
