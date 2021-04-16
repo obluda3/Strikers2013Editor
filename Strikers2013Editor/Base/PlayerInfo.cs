@@ -5,13 +5,13 @@ namespace Strikers2013Editor.Base
     {
         public int ID;
         public int padding;
-        public int shortName2; // 14.bin line minus 4
+        public int hiddenName; // 14.bin line minus 4
         public int shortName; // 14.bin line minus 4
         public int fullName; // 14.bin line minus 4
         public string name;
         public int gender;
         public int idleAnimation;
-        public int unk2;
+        public int unk1;
         public int description; // 14.bin line minus 2
         public int bodytype;
         public int height;
