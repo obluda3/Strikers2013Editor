@@ -112,54 +112,45 @@ namespace Strikers2013Editor.Forms
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var player = Players[listBox1.SelectedIndex];
-
-            // General Tab
+            
             cmbPosition.SelectedIndex = player.position > 0 ? player.position - 0x22 : player.position;
             cmbTA.SelectedIndex = player.tacticalAction - 0x14;
             cmbSex.SelectedIndex = player.gender;
             cmbElement.SelectedIndex = player.element;
             cmbBodytype.SelectedIndex = player.bodytype;
-            nudPrice.Value = player.price;
-
-            // 3D tab
+            nudPrice.Value = player.price;    
             nudIdle.Value = player.idleAnimation;
             nudCourse.Value = player.courseAnimation;
             nudFace.Value = player.facemodel;
             nudFace2.Value = player.facemodel2;
             nudFace3.Value = player.matchFaceModel;
+            nudDescription.Value = player.description;
             nudHeight.Value = player.height;
             nudShadow.Value = player.shadowSize;
-
-            // Info tab
+            nudVoice.Value = player.voice;
             nudShortName1.Value = player.shortName;
             nudShortName2.Value = player.hiddenName;
             nudFullName.Value = player.fullName;
             nudPortrait.Value = player.portrait;
             nudLeftPortrait.Value = player.leftPortrait;
             nudRightPortrait.Value = player.rightPortrait;
-
-            // Team
             nudTeam.Value = player.team;
             nudEmblem.Value = player.emblem;
             nudListPosition.Value = player.listPosition;
             nudListPosition2.Value = player.teamListPosition;
             nudTeamlistPortrait.Value = player.teamPortrait;
-
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
             var player = Players[listBox1.SelectedIndex];
 
-            // General Tab
             player.position = cmbPosition.SelectedIndex > 0 ? cmbPosition.SelectedIndex + 0x22 : 0;
             player.tacticalAction = cmbTA.SelectedIndex + 0x14;
             player.gender = cmbSex.SelectedIndex;
             player.element = cmbElement.SelectedIndex;
             player.bodytype = cmbBodytype.SelectedIndex;
             player.price = (short)nudPrice.Value;
-
-            // 3D Tab
             player.idleAnimation = (int)nudIdle.Value;
             player.courseAnimation = (int)nudCourse.Value;
             player.facemodel = (int)nudFace.Value;
@@ -167,24 +158,19 @@ namespace Strikers2013Editor.Forms
             player.matchFaceModel = (int)nudFace3.Value;
             player.height = (int)nudHeight.Value;
             player.shadowSize = (int)nudShadow.Value;
-
-            // Info tab
+            player.voice = (int)nudVoice.Value;
             player.shortName = (int)nudShortName1.Value;
             player.hiddenName = (int)nudShortName2.Value;
             player.fullName = (int)nudFullName.Value;
             player.portrait = (int)nudPortrait.Value;
             player.leftPortrait = (int)nudLeftPortrait.Value;
             player.rightPortrait = (int)nudRightPortrait.Value;
-
-            // Team
             player.team = (int)nudTeam.Value;
             player.emblem = (int)nudEmblem.Value;
             player.listPosition = (short)nudListPosition.Value;
+            player.description = (int)nudDescription.Value;
             player.teamListPosition = (int)nudListPosition2.Value;
             player.teamPortrait = (int)nudTeamlistPortrait.Value;
-
-
-
 
             Players[listBox1.SelectedIndex] = player;
         }

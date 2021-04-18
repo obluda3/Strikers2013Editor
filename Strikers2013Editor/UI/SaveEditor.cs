@@ -73,6 +73,10 @@ namespace Strikers2013Editor.Forms
                     lstPlayers.Items.AddRange(playerNames);
                     cmbTeam.Items.AddRange(playerNames);
 
+                    foreach (var player in save.team)
+                    {
+                        lstTeam.Items.Add(playerNames[player]);
+                    }
                     txtProfileName.Text = save.profileName;
                     txtOnlineName.Text = save.onlineName;
                     nudProfile.Value = save.profile;
