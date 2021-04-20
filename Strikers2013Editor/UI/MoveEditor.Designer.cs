@@ -178,6 +178,7 @@
             this.cmbElement.Name = "cmbElement";
             this.cmbElement.Size = new System.Drawing.Size(121, 21);
             this.cmbElement.TabIndex = 8;
+            this.cmbElement.SelectedIndexChanged += new System.EventHandler(this.cmbElement_SelectedIndexChanged);
             // 
             // label4
             // 

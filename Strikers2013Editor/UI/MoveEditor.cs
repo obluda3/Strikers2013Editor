@@ -237,10 +237,7 @@ namespace Strikers2013Editor.Forms
                         bw.BaseStream.Position = 28;
                         foreach (var waza in moves)
                         {
-                            foreach (var value in waza.wazaInfo)
-                            {
-                                bw.Write(value);
-                            }
+                            bw.Write(waza.wazaInfo);
                         }
                     }
 
@@ -315,6 +312,11 @@ namespace Strikers2013Editor.Forms
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void cmbElement_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
