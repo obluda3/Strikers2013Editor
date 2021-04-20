@@ -112,7 +112,8 @@ namespace Strikers2013Editor.Base
 
                     // WAZA
                     bw.BaseStream.Position = baseOffset + WAZA_OFFSET + i * 0x22;
-                    bw.Write(player.waza);
+                    foreach (var waza in player.waza)
+                        bw.Write(waza);
 
                 }
                 for (var i = 0; i < 16; i++)

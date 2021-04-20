@@ -33,16 +33,7 @@ namespace Strikers2013Editor.IO
             Array.Reverse(buffer);
             base.Write(buffer);
         }
-        public void Write(short[] value)
-        {
-            foreach (var element in value)
-                Write(element);
-        }
-        public void Write(ushort[] value)
-        {
-            foreach (var element in value)
-                Write(element);
-        }
+
 
     }
 }

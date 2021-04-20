@@ -237,7 +237,8 @@ namespace Strikers2013Editor.Forms
                         bw.BaseStream.Position = 28;
                         foreach (var waza in moves)
                         {
-                            bw.Write(waza.wazaInfo);
+                            foreach (var info in waza.wazaInfo)
+                                bw.Write(info);
                         }
                     }
 
