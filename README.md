@@ -8,10 +8,9 @@ A save editor is also included.
 
 # Usage
 
-First, download the latest version of the tool.
+You will need the following :
 
-In addition to that, you will need a few other things :
-
+- The latest version of the tool
 - An extracted ISO image of the Inazuma Eleven GO Strikers 2013 (you can use [Wiimms ISO Tools](https://wit.wiimm.de/) to extract Wii ISOs)
 - To browse the game's files [Kuriimu2](https://github.com/FanTranslatorsInternational/Kuriimu2)
 
