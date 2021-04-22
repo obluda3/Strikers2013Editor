@@ -1,3 +1,4 @@
+
 Earthquake
 Iron Wall
 Ice Ground
