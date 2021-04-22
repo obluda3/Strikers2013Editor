@@ -1,5 +1,5 @@
 # wazainfo layout
-Length: 0x8c, start of file: 0x1e
+Length: 0x8c, start of file: 0x1c
 
 | Offset | Name | DataType | Notes |
 | --- | --- | --- | --- |
