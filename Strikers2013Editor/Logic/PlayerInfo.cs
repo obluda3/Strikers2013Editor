@@ -1,5 +1,5 @@
 ﻿
-namespace Strikers2013Editor.Base
+namespace Strikers2013Editor.Logic
 {
     struct PlayerInfo
     {

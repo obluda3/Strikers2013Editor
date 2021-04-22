@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("Strikers2013Editor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Modding tool for Inazuma Eleven GO Strikers 2013")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Strikers2013Editor")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("2abb6e19-9f30-44b6-a78c-b7183beb11df")]
+[assembly: Guid("90B30C3A-9F25-4CD0-A2DC-F85FC9F9CE93")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //

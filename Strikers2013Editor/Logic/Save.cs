@@ -7,7 +7,7 @@ using System.Reflection;
 using Strikers2013Editor.IO;
 using System.IO;
 
-namespace Strikers2013Editor.Base
+namespace Strikers2013Editor.Logic
 {
     class Save
     {
@@ -43,13 +43,10 @@ namespace Strikers2013Editor.Base
                 onlineProfile = br.ReadUInt32();
 
                 br.BaseStream.Position = baseOffset;
-
                 creationDate = br.ReadUInt32();
                 creationTime = br.ReadUInt32();
                 hoursPlayed = br.ReadUInt32();
                 minutesPlayed = br.ReadUInt32();
-
-
 
                 br.BaseStream.Position = baseOffset + 0x1d4;
                 inazumaPoints = br.ReadUInt32();

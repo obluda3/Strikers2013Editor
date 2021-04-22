@@ -850,7 +850,6 @@
             // 
             this.toolTip1.Tag = "";
             this.toolTip1.ToolTipTitle = "Format";
-            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup_1);
             // 
             // toolTip2
             // 

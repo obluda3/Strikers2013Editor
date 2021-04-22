@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using Strikers2013Editor.IO;
-using Strikers2013Editor.Base;
+using Strikers2013Editor.Logic;
 
 namespace Strikers2013Editor.Forms
 {
@@ -32,7 +32,6 @@ namespace Strikers2013Editor.Forms
                     tabControl1.Enabled = true;
                     btnApply.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
-                    dumpToolStripMenuItem.Enabled = true;
 
                     ParsePlayerFile(moveStream);
                     cmbElement.Items.AddRange(new string[] { "Wind", "Wood", "Fire", "Earth", "Void", "???", "???", "???" });
@@ -250,200 +249,7 @@ namespace Strikers2013Editor.Forms
 
         }
 
-        private void dumpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var sfd = new SaveFileDialog())
-            {
-                sfd.Filter = "Text file (*.txt) | *.txt | All files(*.*) | *.* ";
-                sfd.DefaultExt = ".txt";
-                sfd.FileName = "players.txt";
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    using (var sw = new StreamWriter(File.Open(sfd.FileName, FileMode.Create)))
-                    {
-                        /// BEHOLD THE UGLIEST CODE EVER
-                        /// 
-                        var plinfo = new PlayerInfo();
-                        sw.Write(nameof(plinfo.ID));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.padding));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.hiddenName)); // 14.bin line minus 4
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.shortName)); // 14.bin line minus 4
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.fullName)); // 14.bin line minus 4
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.name));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.gender));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.idleAnimation));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk1));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.description)); // 14.bin line minus 2
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.bodytype));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.height));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.shadowSize));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.tacticalAction));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.courseAnimation));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.team));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.emblem));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.teamPortrait));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.position));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.matchFaceModel));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.facemodel));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.facemodel2));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk9));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk10));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk11));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.portrait));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk12));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.leftPortrait));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.rightPortrait));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk13));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk14));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk15));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.element));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk16));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk17));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk18));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.voice));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.armedAttribution));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk21));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.price));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.listPosition));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.teamListPosition));
-                        sw.Write(",");
-                        sw.Write(nameof(plinfo.unk25));
-                        sw.Write("\n");
-                        foreach (var player in Players)
-                        {
-                            sw.Write(player.ID);
-                            sw.Write(",");
-                            sw.Write(player.padding);
-                            sw.Write(",");
-                            sw.Write(player.hiddenName); // 14.bin line minus 4
-                            sw.Write(",");
-                            sw.Write(player.shortName); // 14.bin line minus 4
-                            sw.Write(",");
-                            sw.Write(player.fullName); // 14.bin line minus 4
-                            sw.Write(",");
-                            sw.Write(player.name.Replace("\0",""));
-                            sw.Write(",");
-                            sw.Write(player.gender);
-                            sw.Write(",");
-                            sw.Write(player.idleAnimation);
-                            sw.Write(",");
-                            sw.Write(player.unk1);
-                            sw.Write(",");
-                            sw.Write(player.description); // 14.bin line minus 2
-                            sw.Write(",");
-                            sw.Write(player.bodytype);
-                            sw.Write(",");
-                            sw.Write(player.height);
-                            sw.Write(",");
-                            sw.Write(player.shadowSize);
-                            sw.Write(",");
-                            sw.Write(player.tacticalAction);
-                            sw.Write(",");
-                            sw.Write(player.courseAnimation);
-                            sw.Write(",");
-                            sw.Write(player.team);
-                            sw.Write(",");
-                            sw.Write(player.emblem);
-                            sw.Write(",");
-                            sw.Write(player.teamPortrait);
-                            sw.Write(",");
-                            sw.Write(player.position);
-                            sw.Write(",");
-                            sw.Write(player.matchFaceModel);
-                            sw.Write(",");
-                            sw.Write(player.facemodel);
-                            sw.Write(",");
-                            sw.Write(player.facemodel2);
-                            sw.Write(",");
-                            sw.Write(player.unk9);
-                            sw.Write(",");
-                            sw.Write(player.unk10);
-                            sw.Write(",");
-                            sw.Write(player.unk11);
-                            sw.Write(",");
-                            sw.Write(player.portrait);
-                            sw.Write(",");
-                            sw.Write(player.unk12);
-                            sw.Write(",");
-                            sw.Write(player.leftPortrait);
-                            sw.Write(",");
-                            sw.Write(player.rightPortrait);
-                            sw.Write(",");
-                            sw.Write(player.unk13);
-                            sw.Write(",");
-                            sw.Write(player.unk14);
-                            sw.Write(",");
-                            sw.Write(player.unk15);
-                            sw.Write(",");
-                            sw.Write(player.element);
-                            sw.Write(",");
-                            sw.Write(player.unk16);
-                            sw.Write(",");
-                            sw.Write(player.unk17);
-                            sw.Write(",");
-                            sw.Write(player.unk18);
-                            sw.Write(",");
-                            sw.Write(player.voice);
-                            sw.Write(",");
-                            sw.Write(player.armedAttribution);
-                            sw.Write(",");
-                            sw.Write(player.unk21);
-                            sw.Write(",");
-                            sw.Write(player.price);
-                            sw.Write(",");
-                            sw.Write(player.listPosition);
-                            sw.Write(",");
-                            sw.Write(player.teamListPosition);
-                            sw.Write(",");
-                            sw.Write(player.unk25);
-                            sw.Write("\n");
-                        }
-                    }
-                }
-            } 
-        }
+        
 
         private void nudPrice_Changed(object sender, EventArgs e)
         {

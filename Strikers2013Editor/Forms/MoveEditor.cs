@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using Strikers2013Editor.IO;
-using Strikers2013Editor.Base;
+using Strikers2013Editor.Logic;
 
 namespace Strikers2013Editor.Forms
 {
@@ -49,7 +49,6 @@ namespace Strikers2013Editor.Forms
                 }
             }
         }
-
         private void ParseMoveFile(Stream move)
         {
             var assembly = Assembly.GetExecutingAssembly();
@@ -84,7 +83,6 @@ namespace Strikers2013Editor.Forms
                     playerNames = playerNamesList.ToArray();
                 }
             }
-
 
             // Parse the moves
             using (var br = new BeBinaryReader(move))
@@ -183,7 +181,6 @@ namespace Strikers2013Editor.Forms
                 wazainfo[i] = 0;
             }
 
-
             moves[listBox1.SelectedIndex].wazaInfo = wazainfo;
         }
 
@@ -250,10 +247,8 @@ namespace Strikers2013Editor.Forms
 
         }
 
-        private void chkUsers_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        // Limited CheckedListBox because there are only 10 users/partners per hissatsu
 
-        }
         private void chkUsers_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (chkUsers.CheckedIndices.Count >= 10)
@@ -261,20 +256,13 @@ namespace Strikers2013Editor.Forms
                 e.NewValue = CheckState.Unchecked;
             }
         }
-        private void chkCoop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+
         private void chkCoop_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             if (chkCoop.CheckedIndices.Count >= 10)
             {
                 e.NewValue = CheckState.Unchecked;
             }
-        }
-        public void LimitCheckedListBoxMaxSelection(int maxCount, EventArgs e, object list)
-        {
-            
         }
 
         private void importToDatbinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -310,16 +298,6 @@ namespace Strikers2013Editor.Forms
                     }
                 }
             }
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
-        private void cmbElement_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -178,7 +178,6 @@
             this.cmbElement.Name = "cmbElement";
             this.cmbElement.Size = new System.Drawing.Size(121, 21);
             this.cmbElement.TabIndex = 8;
-            this.cmbElement.SelectedIndexChanged += new System.EventHandler(this.cmbElement_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -304,7 +303,6 @@
             this.chkCoop.Size = new System.Drawing.Size(229, 184);
             this.chkCoop.TabIndex = 15;
             this.chkCoop.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkCoop_ItemCheck);
-            this.chkCoop.SelectedIndexChanged += new System.EventHandler(this.chkCoop_SelectedIndexChanged);
             // 
             // chkUsers
             // 
@@ -314,7 +312,6 @@
             this.chkUsers.Size = new System.Drawing.Size(229, 184);
             this.chkUsers.TabIndex = 14;
             this.chkUsers.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkUsers_ItemCheck);
-            this.chkUsers.SelectedIndexChanged += new System.EventHandler(this.chkUsers_SelectedIndexChanged);
             // 
             // cmbStatus
             // 
@@ -364,10 +361,6 @@
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // MoveEditor
             // 

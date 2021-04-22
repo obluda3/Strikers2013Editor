@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using Strikers2013Editor.IO;
-using Strikers2013Editor.Base;
+using Strikers2013Editor.Logic;
 
 namespace Strikers2013Editor.Forms
 {
@@ -49,11 +49,7 @@ namespace Strikers2013Editor.Forms
                     lstPlayers.Items.Clear();
                     lstTeam.Items.Clear();
 
-
-
                     save.ParseSaveFile();
-
-                    
 
                     var assembly = Assembly.GetExecutingAssembly();
                     using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Database.playernames.txt"))
@@ -91,15 +87,9 @@ namespace Strikers2013Editor.Forms
                     tabControl1.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
                     nudProfile.Enabled = true;
-                    
-
-
                 }
             }
         }
-
-     
-
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -115,17 +105,9 @@ namespace Strikers2013Editor.Forms
                     var file = File.Open(filename, FileMode.Create);
                     save.ApplyEdits(file);
                     MessageBox.Show("Succesfully saved.", "Done");
-
-
                 }
-
-                
             }
-
-            
         }
-
-
 
         private void txtOnlineName_TextChanged(object sender, EventArgs e)
         {
@@ -142,11 +124,6 @@ namespace Strikers2013Editor.Forms
             save.onlineProfile = (uint)nudProfileOnline.Value;
         }
 
-        private void toolTip1_Popup_1(object sender, PopupEventArgs e)
-        {
-
-        }
-
         private void nudCreationTime_ValueChanged(object sender, EventArgs e)
         {
             save.creationTime = (uint)nudCreationTime.Value;
@@ -155,11 +132,6 @@ namespace Strikers2013Editor.Forms
         private void nudCreationDate_ValueChanged(object sender, EventArgs e)
         {
             save.creationDate = (uint)nudCreationDate.Value;
-        }
-
-        private void dtpCreation_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void nudMinutes_ValueChanged(object sender, EventArgs e)
@@ -176,12 +148,6 @@ namespace Strikers2013Editor.Forms
         {
             save.profileName = txtProfileName.Text;
         }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
-
         private void lstTeam_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lstTeam.SelectedIndex != -1)
