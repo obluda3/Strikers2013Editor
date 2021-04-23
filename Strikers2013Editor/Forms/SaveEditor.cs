@@ -102,8 +102,7 @@ namespace Strikers2013Editor.Forms
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
                     var filename = sfd.FileName;
-                    var file = File.Open(filename, FileMode.Create);
-                    save.ApplyEdits(file);
+                    save.ApplyEdits(sfd.FileName);
                     MessageBox.Show("Succesfully saved.", "Done");
                 }
             }

@@ -36,6 +36,7 @@ namespace Strikers2013Editor.Logic
 
         public void ParseSaveFile()
         {
+            var file = File.OpenRead(filename);
             using (var br = new BeBinaryReader(File.OpenRead(filename)))
             {
                 br.BaseStream.Position = ONLINE_PROFILE;
@@ -77,11 +78,12 @@ namespace Strikers2013Editor.Logic
             }
         }
 
-        public void ApplyEdits(Stream output)
+        public void ApplyEdits(string filePath)
         {
             var saveData = File.ReadAllBytes(filename);
+            var file = File.Open(filename, FileMode.Create);
 
-            using (var bw = new BeBinaryWriter(output))
+            using (var bw = new BeBinaryWriter(file))
             {
                 bw.Write(saveData);
                 bw.BaseStream.Position = 0x1d8;
