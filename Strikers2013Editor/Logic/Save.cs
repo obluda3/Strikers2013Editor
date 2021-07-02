@@ -81,7 +81,7 @@ namespace Strikers2013Editor.Logic
         public void ApplyEdits(string filePath)
         {
             var saveData = File.ReadAllBytes(filename);
-            var file = File.Open(filename, FileMode.Create);
+            var file = File.Open(filePath, FileMode.Create);
 
             using (var bw = new BeBinaryWriter(file))
             {

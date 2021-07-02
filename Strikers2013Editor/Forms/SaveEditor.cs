@@ -97,7 +97,6 @@ namespace Strikers2013Editor.Forms
             {
                 sfd.Filter = "Save file(inazuma2.sav) (*.sav) | *.sav | All files(*.*) | *.* ";
                 sfd.DefaultExt = ".sav";
-                sfd.FileName = "inazuma2.sav";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -173,6 +172,7 @@ namespace Strikers2013Editor.Forms
             player.waza[4] = Convert.ToInt16(txtDribble.Text, 16);
             player.waza[8] = Convert.ToInt16(txtDefense.Text, 16);
             player.waza[16] = Convert.ToInt16(txtSP.Text, 16);
+            player.stats[0] = (byte)nudTP.Value;
 
             save.players[lstPlayers.SelectedIndex] = player;
 
@@ -192,6 +192,11 @@ namespace Strikers2013Editor.Forms
             nudCatch.Value = stats[4];
             nudSpeed.Value = stats[12];
             nudTP.Value = stats[0];
+        }
+
+        private void nudTP_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void lstPlayers_SelectedIndexChanged(object sender, EventArgs e)

@@ -37,6 +37,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnApply = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnMax = new System.Windows.Forms.Button();
@@ -55,7 +56,6 @@
             this.nudBody = new System.Windows.Forms.NumericUpDown();
             this.nudKick = new System.Windows.Forms.NumericUpDown();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btnApply = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -202,6 +202,16 @@
             this.tabPage3.Text = "Players";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // btnApply
+            // 
+            this.btnApply.Location = new System.Drawing.Point(387, 316);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 3;
+            this.btnApply.Text = "Apply";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage2);
@@ -258,7 +268,6 @@
             // 
             // nudTP
             // 
-            this.nudTP.Enabled = false;
             this.nudTP.Location = new System.Drawing.Point(94, 162);
             this.nudTP.Maximum = new decimal(new int[] {
             250,
@@ -268,6 +277,7 @@
             this.nudTP.Name = "nudTP";
             this.nudTP.Size = new System.Drawing.Size(56, 20);
             this.nudTP.TabIndex = 12;
+            this.nudTP.ValueChanged += new System.EventHandler(this.nudTP_ValueChanged);
             // 
             // label19
             // 
@@ -428,16 +438,6 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Moves";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // btnApply
-            // 
-            this.btnApply.Location = new System.Drawing.Point(387, 316);
-            this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
-            this.btnApply.TabIndex = 3;
-            this.btnApply.Text = "Apply";
-            this.btnApply.UseVisualStyleBackColor = true;
-            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // label14
             // 
