@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\Enums.cs" />
     <Compile Include="Logic\Save.cs" />
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>

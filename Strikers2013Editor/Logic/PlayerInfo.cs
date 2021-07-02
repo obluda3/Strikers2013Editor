@@ -1,4 +1,5 @@
-﻿
+﻿using System.Drawing;
+
 namespace Strikers2013Editor.Logic
 {
     struct PlayerInfo
@@ -9,14 +10,14 @@ namespace Strikers2013Editor.Logic
         public int shortName;
         public int fullName;
         public string name;
-        public int gender;
+        public Gender gender;
         public int idleAnimation;
         public int unk1;
         public int description;
-        public int bodytype;
+        public Bodytype bodytype;
         public int height;
         public int shadowSize;
-        public int tacticalAction;
+        public TacticalAction tacticalAction;
         public int courseAnimation;
         public int team;
         public int emblem;
@@ -33,11 +34,11 @@ namespace Strikers2013Editor.Logic
         public int leftPortrait;
         public int rightPortrait;
         public string[] equip;
-        public int unk13;
-        public int unk14;
+        public Color skinColor1;
+        public Color skinColor2;
         public int unk15;
-        public int element;
-        public int unk16;
+        public Element element;
+        public int chargeTimeProfile;
         public int unk17;
         public int unk18;
         public int voice;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 using System.IO;
 using Strikers2013Editor.IO;
 using Strikers2013Editor.Logic;
@@ -34,11 +35,11 @@ namespace Strikers2013Editor.Forms
                     saveToolStripMenuItem.Enabled = true;
 
                     ParsePlayerFile(moveStream);
-                    cmbElement.Items.AddRange(new string[] { "Wind", "Wood", "Fire", "Earth", "Void", "???", "???", "???" });
-                    cmbPosition.Items.AddRange(new string[] { "GK", "DF", "MF", "FW", });
-                    cmbTA.Items.AddRange(new string[] { "Feint", "Roll", "Short", "Jump", "White Sprint", "Red Sprint", "Girl" });
-                    cmbSex.Items.AddRange(new string[] { "Male", "Female", "Other" });
-                    cmbBodytype.Items.AddRange(new string[] { "Man", "Large", "Chibi", "Muscle", "Girl1", "Girl2" });
+                    cmbElement.Items.AddRange(Enum.GetNames(typeof(Element)));
+                    cmbPosition.Items.AddRange(Enum.GetNames(typeof(Position)));
+                    cmbTA.Items.AddRange(Enum.GetNames(typeof(TacticalAction)));
+                    cmbSex.Items.AddRange(Enum.GetNames(typeof(Gender)));
+                    cmbBodytype.Items.AddRange(Enum.GetNames(typeof(Bodytype)));
                 }
             }
         }
@@ -59,14 +60,14 @@ namespace Strikers2013Editor.Forms
                     player1.shortName = br.ReadInt32(); // 14.bin line minus 4
                     player1.fullName = br.ReadInt32(); // 14.bin line minus 4
                     player1.name = Encoding.ASCII.GetString(br.ReadBytes(24));
-                    player1.gender = br.ReadInt32();
+                    player1.gender = (Gender)br.ReadInt32();
                     player1.idleAnimation = br.ReadInt32();
                     player1.unk1 = br.ReadInt32();
                     player1.description = br.ReadInt32(); // 14.bin line minus 2
-                    player1.bodytype = br.ReadInt32();
+                    player1.bodytype = (Bodytype)br.ReadInt32();
                     player1.height = br.ReadInt32();
                     player1.shadowSize = br.ReadInt32();
-                    player1.tacticalAction = br.ReadInt32();
+                    player1.tacticalAction = (TacticalAction)br.ReadInt32();
                     player1.courseAnimation = br.ReadInt32();
                     player1.team = br.ReadInt32();
                     player1.emblem = br.ReadInt32();
@@ -83,11 +84,11 @@ namespace Strikers2013Editor.Forms
                     player1.leftPortrait = br.ReadInt32();
                     player1.rightPortrait = br.ReadInt32();
                     br.BaseStream.Position += 12 * 8;
-                    player1.unk13 = br.ReadInt32();
-                    player1.unk14 = br.ReadInt32();
+                    player1.skinColor1 = Color.FromArgb(br.ReadInt32());
+                    player1.skinColor2 = Color.FromArgb(br.ReadInt32());
                     player1.unk15 = br.ReadInt32();
-                    player1.element = br.ReadInt32();
-                    player1.unk16 = br.ReadInt32();
+                    player1.element = (Element)br.ReadInt32();
+                    player1.chargeTimeProfile = br.ReadInt32();
                     player1.unk17 = br.ReadInt32();
                     player1.unk18 = br.ReadInt32();
                     player1.voice = br.ReadInt32();
@@ -113,10 +114,10 @@ namespace Strikers2013Editor.Forms
             var player = Players[listBox1.SelectedIndex];
             
             cmbPosition.SelectedIndex = player.position > 0 ? player.position - 0x22 : player.position;
-            cmbTA.SelectedIndex = player.tacticalAction - 0x14;
-            cmbSex.SelectedIndex = player.gender;
-            cmbElement.SelectedIndex = player.element;
-            cmbBodytype.SelectedIndex = player.bodytype;
+            cmbTA.SelectedIndex = (int)player.tacticalAction - 0x14;
+            cmbSex.SelectedIndex = (int)player.gender;
+            cmbElement.SelectedIndex = (int)player.element;
+            cmbBodytype.SelectedIndex = (int)player.bodytype;
             nudPrice.Value = player.price;    
             nudIdle.Value = player.idleAnimation;
             nudCourse.Value = player.courseAnimation;
@@ -145,10 +146,10 @@ namespace Strikers2013Editor.Forms
             var player = Players[listBox1.SelectedIndex];
 
             player.position = cmbPosition.SelectedIndex > 0 ? cmbPosition.SelectedIndex + 0x22 : 0;
-            player.tacticalAction = cmbTA.SelectedIndex + 0x14;
-            player.gender = cmbSex.SelectedIndex;
-            player.element = cmbElement.SelectedIndex;
-            player.bodytype = cmbBodytype.SelectedIndex;
+            player.tacticalAction = (TacticalAction)cmbTA.SelectedIndex + 0x14;
+            player.gender = (Gender)cmbSex.SelectedIndex;
+            player.element = (Element)cmbElement.SelectedIndex;
+            player.bodytype = (Bodytype)cmbBodytype.SelectedIndex;
             player.price = (short)nudPrice.Value;
             player.idleAnimation = (int)nudIdle.Value;
             player.courseAnimation = (int)nudCourse.Value;
@@ -199,14 +200,14 @@ namespace Strikers2013Editor.Forms
                             bw.Write(player.shortName); // 14.bin line minus 4
                             bw.Write(player.fullName); // 14.bin line minus 4
                             bw.Write(Encoding.ASCII.GetBytes(player.name));
-                            bw.Write(player.gender);
+                            bw.Write((int)player.gender);
                             bw.Write(player.idleAnimation);
                             bw.Write(player.unk1);
                             bw.Write(player.description); // 14.bin line minus 2
-                            bw.Write(player.bodytype);
+                            bw.Write((int)player.bodytype);
                             bw.Write(player.height);
                             bw.Write(player.shadowSize);
-                            bw.Write(player.tacticalAction);
+                            bw.Write((int)player.tacticalAction);
                             bw.Write(player.courseAnimation);
                             bw.Write(player.team);
                             bw.Write(player.emblem);
@@ -223,11 +224,13 @@ namespace Strikers2013Editor.Forms
                             bw.Write(player.leftPortrait);
                             bw.Write(player.rightPortrait);
                             bw.BaseStream.Position += 12 * 8;
-                            bw.Write(player.unk13);
-                            bw.Write(player.unk14);
+                            var color1 = Color.FromArgb(0, player.skinColor1.R, player.skinColor1.G, player.skinColor1.B);
+                            var color2 = Color.FromArgb(0,player.skinColor2.R, player.skinColor2.G, player.skinColor2.B);
+                            bw.Write(color1.ToArgb());
+                            bw.Write(color2.ToArgb());
                             bw.Write(player.unk15);
-                            bw.Write(player.element);
-                            bw.Write(player.unk16);
+                            bw.Write((int)player.element);
+                            bw.Write(player.chargeTimeProfile);
                             bw.Write(player.unk17);
                             bw.Write(player.unk18);
                             bw.Write(player.voice);
@@ -252,6 +255,11 @@ namespace Strikers2013Editor.Forms
         
 
         private void nudPrice_Changed(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbElement_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
