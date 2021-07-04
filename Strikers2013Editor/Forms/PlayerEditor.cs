@@ -55,54 +55,54 @@ namespace Strikers2013Editor.Forms
                         break;
                     var player1 = new PlayerInfo();
                     player1.ID = br.ReadInt32();
-                    player1.padding = br.ReadInt32();
-                    player1.hiddenName = br.ReadInt32(); // 14.bin line minus 4
-                    player1.shortName = br.ReadInt32(); // 14.bin line minus 4
-                    player1.fullName = br.ReadInt32(); // 14.bin line minus 4
-                    player1.name = Encoding.ASCII.GetString(br.ReadBytes(24));
-                    player1.gender = (Gender)br.ReadInt32();
-                    player1.idleAnimation = br.ReadInt32();
-                    player1.unk1 = br.ReadInt32();
-                    player1.description = br.ReadInt32(); // 14.bin line minus 2
-                    player1.bodytype = (Bodytype)br.ReadInt32();
-                    player1.height = br.ReadInt32();
-                    player1.shadowSize = br.ReadInt32();
-                    player1.tacticalAction = (TacticalAction)br.ReadInt32();
-                    player1.courseAnimation = br.ReadInt32();
-                    player1.team = br.ReadInt32();
-                    player1.emblem = br.ReadInt32();
-                    player1.teamPortrait = br.ReadInt32();
-                    player1.position = br.ReadInt32();
-                    player1.matchFaceModel = br.ReadInt32();
-                    player1.facemodel = br.ReadInt32(); // I'm assuming both of them are the face models but i'm not sure
-                    player1.facemodel2 = br.ReadInt32();
-                    player1.unk9 = br.ReadInt32();
-                    player1.unk10 = br.ReadInt32();
-                    player1.unk11 = br.ReadInt32();
-                    player1.portrait = br.ReadInt32();
-                    player1.unk12 = br.ReadInt32();
-                    player1.leftPortrait = br.ReadInt32();
-                    player1.rightPortrait = br.ReadInt32();
+                    player1.Padding = br.ReadInt32();
+                    player1.HiddenName = br.ReadInt32(); // 14.bin line minus 4
+                    player1.ShortName = br.ReadInt32(); // 14.bin line minus 4
+                    player1.FullName = br.ReadInt32(); // 14.bin line minus 4
+                    player1.Name = Encoding.ASCII.GetString(br.ReadBytes(24));
+                    player1.Gender = (Gender)br.ReadInt32();
+                    player1.IdleAnimation = br.ReadInt32();
+                    player1.Unk1 = br.ReadInt32();
+                    player1.Description = br.ReadInt32(); // 14.bin line minus 2
+                    player1.Bodytype = (Bodytype)br.ReadInt32();
+                    player1.Scale = br.ReadInt32();
+                    player1.ShadowSize = br.ReadInt32();
+                    player1.TacticalAction = (TacticalAction)br.ReadInt32();
+                    player1.CourseAnimation = br.ReadInt32();
+                    player1.Team = br.ReadInt32();
+                    player1.Emblem = br.ReadInt32();
+                    player1.TeamPortrait = br.ReadInt32();
+                    player1.Position = br.ReadInt32();
+                    player1.MatchFaceModel = br.ReadInt32();
+                    player1.Facemodel = br.ReadInt32(); // I'm assuming both of them are the face models but i'm not sure
+                    player1.Facemodel2 = br.ReadInt32();
+                    player1.Unk9 = br.ReadInt32();
+                    player1.Unk10 = br.ReadInt32();
+                    player1.Unk11 = br.ReadInt32();
+                    player1.Portrait = br.ReadInt32();
+                    player1.Unk12 = br.ReadInt32();
+                    player1.LeftPortrait = br.ReadInt32();
+                    player1.RightPortrait = br.ReadInt32();
                     br.BaseStream.Position += 12 * 8;
-                    player1.skinColor1 = Color.FromArgb(br.ReadInt32());
-                    player1.skinColor2 = Color.FromArgb(br.ReadInt32());
-                    player1.unk15 = br.ReadInt32();
-                    player1.element = (Element)br.ReadInt32();
-                    player1.chargeTimeProfile = br.ReadInt32();
-                    player1.unk17 = br.ReadInt32();
-                    player1.unk18 = br.ReadInt32();
-                    player1.voice = br.ReadInt32();
-                    player1.armedAttribution = br.ReadInt32();
-                    player1.unk21 = br.ReadInt32();
-                    player1.price = br.ReadInt16();
-                    player1.listPosition = br.ReadInt16();
-                    player1.teamListPosition = br.ReadInt32();
-                    player1.unk25 = br.ReadInt32();
-                    player1.pad2 = br.ReadBytes(44);
+                    player1.SkinColor1 = Color.FromArgb(br.ReadInt32());
+                    player1.SkinColor2 = Color.FromArgb(br.ReadInt32());
+                    player1.Unk15 = br.ReadInt32();
+                    player1.Element = (Element)br.ReadInt32();
+                    player1.ChargeTimeProfile = br.ReadInt32();
+                    player1.Unk17 = br.ReadInt32();
+                    player1.Unk18 = br.ReadInt32();
+                    player1.Voice = br.ReadInt32();
+                    player1.ArmedAttribution = br.ReadInt32();
+                    player1.Unk21 = br.ReadInt32();
+                    player1.Price = br.ReadInt16();
+                    player1.ListPosition = br.ReadInt16();
+                    player1.TeamListPosition = br.ReadInt32();
+                    player1.Unk25 = br.ReadInt32();
+                    player1.Pad2 = br.ReadBytes(44);
 
                     playerList.Add(player1);
 
-                    listBox1.Items.Add(player1.name);
+                    listBox1.Items.Add(player1.Name);
                 }
 
                 Players = playerList.ToArray();
@@ -113,64 +113,64 @@ namespace Strikers2013Editor.Forms
         {
             var player = Players[listBox1.SelectedIndex];
             
-            cmbPosition.SelectedIndex = player.position > 0 ? player.position - 0x22 : player.position;
-            cmbTA.SelectedIndex = (int)player.tacticalAction - 0x14;
-            cmbSex.SelectedIndex = (int)player.gender;
-            cmbElement.SelectedIndex = (int)player.element;
-            cmbBodytype.SelectedIndex = (int)player.bodytype;
-            nudPrice.Value = player.price;    
-            nudIdle.Value = player.idleAnimation;
-            nudCourse.Value = player.courseAnimation;
-            nudFace.Value = player.facemodel;
-            nudFace2.Value = player.facemodel2;
-            nudFace3.Value = player.matchFaceModel;
-            nudDescription.Value = player.description;
-            nudHeight.Value = player.height;
-            nudShadow.Value = player.shadowSize;
-            nudVoice.Value = player.voice;
-            nudShortName1.Value = player.shortName;
-            nudShortName2.Value = player.hiddenName;
-            nudFullName.Value = player.fullName;
-            nudPortrait.Value = player.portrait;
-            nudLeftPortrait.Value = player.leftPortrait;
-            nudRightPortrait.Value = player.rightPortrait;
-            nudTeam.Value = player.team;
-            nudEmblem.Value = player.emblem;
-            nudListPosition.Value = player.listPosition;
-            nudListPosition2.Value = player.teamListPosition;
-            nudTeamlistPortrait.Value = player.teamPortrait;
+            cmbPosition.SelectedIndex = player.Position > 0 ? player.Position - 0x22 : player.Position;
+            cmbTA.SelectedIndex = (int)player.TacticalAction - 0x14;
+            cmbSex.SelectedIndex = (int)player.Gender;
+            cmbElement.SelectedIndex = (int)player.Element;
+            cmbBodytype.SelectedIndex = (int)player.Bodytype;
+            nudPrice.Value = player.Price;    
+            nudIdle.Value = player.IdleAnimation;
+            nudCourse.Value = player.CourseAnimation;
+            nudFace.Value = player.Facemodel;
+            nudFace2.Value = player.Facemodel2;
+            nudFace3.Value = player.MatchFaceModel;
+            nudDescription.Value = player.Description;
+            nudHeight.Value = player.Scale;
+            nudShadow.Value = player.ShadowSize;
+            nudVoice.Value = player.Voice;
+            nudShortName1.Value = player.ShortName;
+            nudShortName2.Value = player.HiddenName;
+            nudFullName.Value = player.FullName;
+            nudPortrait.Value = player.Portrait;
+            nudLeftPortrait.Value = player.LeftPortrait;
+            nudRightPortrait.Value = player.RightPortrait;
+            nudTeam.Value = player.Team;
+            nudEmblem.Value = player.Emblem;
+            nudListPosition.Value = player.ListPosition;
+            nudListPosition2.Value = player.TeamListPosition;
+            nudTeamlistPortrait.Value = player.TeamPortrait;
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
             var player = Players[listBox1.SelectedIndex];
 
-            player.position = cmbPosition.SelectedIndex > 0 ? cmbPosition.SelectedIndex + 0x22 : 0;
-            player.tacticalAction = (TacticalAction)cmbTA.SelectedIndex + 0x14;
-            player.gender = (Gender)cmbSex.SelectedIndex;
-            player.element = (Element)cmbElement.SelectedIndex;
-            player.bodytype = (Bodytype)cmbBodytype.SelectedIndex;
-            player.price = (short)nudPrice.Value;
-            player.idleAnimation = (int)nudIdle.Value;
-            player.courseAnimation = (int)nudCourse.Value;
-            player.facemodel = (int)nudFace.Value;
-            player.facemodel2 = (int)nudFace2.Value;
-            player.matchFaceModel = (int)nudFace3.Value;
-            player.height = (int)nudHeight.Value;
-            player.shadowSize = (int)nudShadow.Value;
-            player.voice = (int)nudVoice.Value;
-            player.shortName = (int)nudShortName1.Value;
-            player.hiddenName = (int)nudShortName2.Value;
-            player.fullName = (int)nudFullName.Value;
-            player.portrait = (int)nudPortrait.Value;
-            player.leftPortrait = (int)nudLeftPortrait.Value;
-            player.rightPortrait = (int)nudRightPortrait.Value;
-            player.team = (int)nudTeam.Value;
-            player.emblem = (int)nudEmblem.Value;
-            player.listPosition = (short)nudListPosition.Value;
-            player.description = (int)nudDescription.Value;
-            player.teamListPosition = (int)nudListPosition2.Value;
-            player.teamPortrait = (int)nudTeamlistPortrait.Value;
+            player.Position = cmbPosition.SelectedIndex > 0 ? cmbPosition.SelectedIndex + 0x22 : 0;
+            player.TacticalAction = (TacticalAction)cmbTA.SelectedIndex + 0x14;
+            player.Gender = (Gender)cmbSex.SelectedIndex;
+            player.Element = (Element)cmbElement.SelectedIndex;
+            player.Bodytype = (Bodytype)cmbBodytype.SelectedIndex;
+            player.Price = (short)nudPrice.Value;
+            player.IdleAnimation = (int)nudIdle.Value;
+            player.CourseAnimation = (int)nudCourse.Value;
+            player.Facemodel = (int)nudFace.Value;
+            player.Facemodel2 = (int)nudFace2.Value;
+            player.MatchFaceModel = (int)nudFace3.Value;
+            player.Scale = (int)nudHeight.Value;
+            player.ShadowSize = (int)nudShadow.Value;
+            player.Voice = (int)nudVoice.Value;
+            player.ShortName = (int)nudShortName1.Value;
+            player.HiddenName = (int)nudShortName2.Value;
+            player.FullName = (int)nudFullName.Value;
+            player.Portrait = (int)nudPortrait.Value;
+            player.LeftPortrait = (int)nudLeftPortrait.Value;
+            player.RightPortrait = (int)nudRightPortrait.Value;
+            player.Team = (int)nudTeam.Value;
+            player.Emblem = (int)nudEmblem.Value;
+            player.ListPosition = (short)nudListPosition.Value;
+            player.Description = (int)nudDescription.Value;
+            player.TeamListPosition = (int)nudListPosition2.Value;
+            player.TeamPortrait = (int)nudTeamlistPortrait.Value;
 
             Players[listBox1.SelectedIndex] = player;
         }
@@ -195,52 +195,52 @@ namespace Strikers2013Editor.Forms
                         foreach (var player in Players)
                         {
                             bw.Write(player.ID);
-                            bw.Write(player.padding);
-                            bw.Write(player.hiddenName); // 14.bin line minus 4
-                            bw.Write(player.shortName); // 14.bin line minus 4
-                            bw.Write(player.fullName); // 14.bin line minus 4
-                            bw.Write(Encoding.ASCII.GetBytes(player.name));
-                            bw.Write((int)player.gender);
-                            bw.Write(player.idleAnimation);
-                            bw.Write(player.unk1);
-                            bw.Write(player.description); // 14.bin line minus 2
-                            bw.Write((int)player.bodytype);
-                            bw.Write(player.height);
-                            bw.Write(player.shadowSize);
-                            bw.Write((int)player.tacticalAction);
-                            bw.Write(player.courseAnimation);
-                            bw.Write(player.team);
-                            bw.Write(player.emblem);
-                            bw.Write(player.teamPortrait);
-                            bw.Write(player.position);
-                            bw.Write(player.matchFaceModel);
-                            bw.Write(player.facemodel);
-                            bw.Write(player.facemodel2);
-                            bw.Write(player.unk9);
-                            bw.Write(player.unk10);
-                            bw.Write(player.unk11);
-                            bw.Write(player.portrait);
-                            bw.Write(player.unk12);
-                            bw.Write(player.leftPortrait);
-                            bw.Write(player.rightPortrait);
+                            bw.Write(player.Padding);
+                            bw.Write(player.HiddenName); // 14.bin line minus 4
+                            bw.Write(player.ShortName); // 14.bin line minus 4
+                            bw.Write(player.FullName); // 14.bin line minus 4
+                            bw.Write(Encoding.ASCII.GetBytes(player.Name));
+                            bw.Write((int)player.Gender);
+                            bw.Write(player.IdleAnimation);
+                            bw.Write(player.Unk1);
+                            bw.Write(player.Description); // 14.bin line minus 2
+                            bw.Write((int)player.Bodytype);
+                            bw.Write(player.Scale);
+                            bw.Write(player.ShadowSize);
+                            bw.Write((int)player.TacticalAction);
+                            bw.Write(player.CourseAnimation);
+                            bw.Write(player.Team);
+                            bw.Write(player.Emblem);
+                            bw.Write(player.TeamPortrait);
+                            bw.Write(player.Position);
+                            bw.Write(player.MatchFaceModel);
+                            bw.Write(player.Facemodel);
+                            bw.Write(player.Facemodel2);
+                            bw.Write(player.Unk9);
+                            bw.Write(player.Unk10);
+                            bw.Write(player.Unk11);
+                            bw.Write(player.Portrait);
+                            bw.Write(player.Unk12);
+                            bw.Write(player.LeftPortrait);
+                            bw.Write(player.RightPortrait);
                             bw.BaseStream.Position += 12 * 8;
-                            var color1 = Color.FromArgb(0, player.skinColor1.R, player.skinColor1.G, player.skinColor1.B);
-                            var color2 = Color.FromArgb(0,player.skinColor2.R, player.skinColor2.G, player.skinColor2.B);
+                            var color1 = Color.FromArgb(0, player.SkinColor1.R, player.SkinColor1.G, player.SkinColor1.B);
+                            var color2 = Color.FromArgb(0,player.SkinColor2.R, player.SkinColor2.G, player.SkinColor2.B);
                             bw.Write(color1.ToArgb());
                             bw.Write(color2.ToArgb());
-                            bw.Write(player.unk15);
-                            bw.Write((int)player.element);
-                            bw.Write(player.chargeTimeProfile);
-                            bw.Write(player.unk17);
-                            bw.Write(player.unk18);
-                            bw.Write(player.voice);
-                            bw.Write(player.armedAttribution);
-                            bw.Write(player.unk21);
-                            bw.Write(player.price);
-                            bw.Write(player.listPosition);
-                            bw.Write(player.teamListPosition);
-                            bw.Write(player.unk25);
-                            bw.Write(player.pad2);
+                            bw.Write(player.Unk15);
+                            bw.Write((int)player.Element);
+                            bw.Write(player.ChargeTimeProfile);
+                            bw.Write(player.Unk17);
+                            bw.Write(player.Unk18);
+                            bw.Write(player.Voice);
+                            bw.Write(player.ArmedAttribution);
+                            bw.Write(player.Unk21);
+                            bw.Write(player.Price);
+                            bw.Write(player.ListPosition);
+                            bw.Write(player.TeamListPosition);
+                            bw.Write(player.Unk25);
+                            bw.Write(player.Pad2);
                         }
                     }
 

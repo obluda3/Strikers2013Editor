@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Strikers2013Editor.IO;
 
 namespace Strikers2013Editor.Logic
 {
@@ -11,60 +12,64 @@ namespace Strikers2013Editor.Logic
         public string name;
         public ushort[] wazaInfo = new ushort[70];
 
-        public Tier tier;
-        public ushort basePower;
-        public ushort maxPower;
-        public ushort tp;
-        public Element element;
-        public Status status;
-        public ushort unk1;
-        public ushort unk2;
-        public ushort unk3;
-        public ushort unk4;
-        public ushort coopPartnersCount;
-        public ushort unka;
-        public ushort unkb;
-        public ushort[] users = new ushort[10];
-        public ushort[] partners = new ushort[10];
-        public ushort unk5;
-        public ushort unk6;
-        public ushort unk7;
-        public ushort unk8;
-        public ushort unk9;
-        public ushort unk10;
-        public ushort textDescription;
-        public ushort unk12;
-        public ushort unk13;
-        public ushort unk14;
-        public ushort textUser;
-        public ushort unk16;
-        public ushort unk17;
-        public ushort unk18;
-        public ushort unk19;
-        public ushort unk20;
-        public ushort unk21;
-        public ushort unk22;
-        public ushort unk23;
-        public ushort unk24;
-        public ushort unk25;
-        public ushort unk26;
-        public ushort unk27;
-        public ushort unk28;
-        public ushort unk29;
-        public ushort unk30;
-        public ushort unk31;
-        public ushort unk32;
-        public ushort unk33;
-        public ushort unk34;
-        public ushort unk35;
-        public ushort unk36;
-        public ushort unk37;
-        public ushort unk38;
-        public ushort powerupIndicator;
-        public ushort invocationAnimationTimer;
-        public ushort unk39;
+        public Tier Tier;
+        public ushort BasePower;
+        public ushort MaxPower;
+        public ushort Tp;
+        public Element Element;
+        public Status Status;
+        public ushort Unk1;
+        public ushort Unk2;
+        public ushort Unk3;
+        public ushort Unk4;
+        public ushort CoopPartnersCount;
+        public ushort Unka;
+        public ushort Unkb;
+        public ushort[] Users = new ushort[10];
+        public ushort[] Partners = new ushort[10];
+        public ushort Unk5;
+        public ushort Unk6;
+        public ushort Unk7;
+        public ushort Unk8;
+        public ushort Unk9;
+        public ushort Unk10;
+        public ushort TextDescription;
+        public ushort Unk12;
+        public ushort Unk13;
+        public ushort Unk14;
+        public ushort TextUser;
+        public ushort Unk16;
+        public ushort Unk17;
+        public ushort Unk18;
+        public ushort Unk19;
+        public ushort Unk20;
+        public ushort Unk21;
+        public ushort Unk22;
+        public ushort Unk23;
+        public ushort Unk24;
+        public ushort Unk25;
+        public ushort Unk26;
+        public ushort Unk27;
+        public ushort Unk28;
+        public ushort Unk29;
+        public ushort Unk30;
+        public ushort Unk31;
+        public ushort Unk32;
+        public ushort Unk33;
+        public ushort Unk34;
+        public ushort Unk35;
+        public ushort Unk36;
+        public ushort Unk37;
+        public ushort Unk38;
+        public ushort PowerUpIndicator;
+        public ushort InvocationAnimationTimer;
+        public ushort Unk39;
 
+        public Move() { }
+        public Move(BeBinaryReader br)
+        {
 
+        }
 
 
     }
