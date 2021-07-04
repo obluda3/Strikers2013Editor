@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Strikers2013Editor.Logic
+namespace Strikers2013Editor.Common
 {
     public enum Element
     {

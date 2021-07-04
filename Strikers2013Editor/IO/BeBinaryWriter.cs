@@ -34,6 +34,11 @@ namespace Strikers2013Editor.IO
             base.Write(buffer);
         }
 
+        public void Write(ushort[] value)
+        {
+            foreach (var num in value)
+                Write(num);
+        }
 
     }
 }

@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using Strikers2013Editor.IO;
 using Strikers2013Editor.Logic;
+using Strikers2013Editor.Common;
 
 namespace Strikers2013Editor.Forms
 {
@@ -14,6 +15,7 @@ namespace Strikers2013Editor.Forms
         byte[] moveFile;
         Move[] moves;
         string[] playerNames;
+        string[] moveNames;
         public MoveEditor()
         {
             InitializeComponent();
@@ -39,9 +41,9 @@ namespace Strikers2013Editor.Forms
                     saveToolStripMenuItem.Enabled = true;
 
                     ParseMoveFile(moveStream);
-                    cmbTier.Items.AddRange(new string[] { "Lv.1", "Lv.2", "Lv.3", "SP" });
-                    cmbElement.Items.AddRange(new string[] { "Wind", "Wood", "Fire", "Earth", "Void", "???", "???", "???" });
-                    cmbStatus.Items.AddRange(new string[] { "Normal", "Long", "Block", "Chain", "Punch 1", "Punch 2", });
+                    cmbTier.Items.AddRange(Enum.GetNames(typeof(Tier)));
+                    cmbElement.Items.AddRange(Enum.GetNames(typeof(Element)));
+                    cmbStatus.Items.AddRange(Enum.GetNames(typeof(Status)));
                     chkCoop.Items.AddRange(playerNames);
                     chkUsers.Items.AddRange(playerNames);
 
@@ -52,10 +54,9 @@ namespace Strikers2013Editor.Forms
         private void ParseMoveFile(Stream move)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            string[] moveNames;
 
             // Gets the names of the moves
-            using (var movenamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Database.wazaNames.txt"))
+            using (var movenamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Common.wazaNames.txt"))
             {
                 using (StreamReader sr = new StreamReader(movenamesfile))
                 {
@@ -69,7 +70,7 @@ namespace Strikers2013Editor.Forms
                     moveNames = moveNamesList.ToArray();
                 }
             }
-            using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Database.playernames.txt"))
+            using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Common.playernames.txt"))
             {
                 using (StreamReader sr = new StreamReader(playernamesfile))
                 {
@@ -92,15 +93,8 @@ namespace Strikers2013Editor.Forms
                 moves = new Move[moveCount];
                 for (var i = 0; i < moveCount; i++)
                 {
-                    moves[i] = new Move();
-                    moves[i].name = moveNames[i];
-                    var wazaInfo = new ushort[70];
-                    for (var _i = 0; _i < 70; _i++)
-                    {
-                        wazaInfo[_i] = br.ReadUInt16();
-                    }
-                    moves[i].wazaInfo = wazaInfo;
-                    listBox1.Items.Add(moves[i].name);
+                    moves[i] = new Move(br);
+                    listBox1.Items.Add(moveNames[i]);
                 }
             }
 
@@ -109,15 +103,15 @@ namespace Strikers2013Editor.Forms
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var wazainfo = moves[listBox1.SelectedIndex].wazaInfo;
+            var move = moves[listBox1.SelectedIndex];
 
-            cmbTier.SelectedIndex = wazainfo[0];
-            nudPower.Value = wazainfo[1];
-            nudPowerMax.Value = wazainfo[2];
-            nudTP.Value = wazainfo[3];
-            cmbElement.SelectedIndex = wazainfo[4];
-            cmbStatus.SelectedIndex = wazainfo[5];
-            nudCoop.Value = wazainfo[10];
+            cmbTier.SelectedIndex = (int)move.Tier;
+            nudPower.Value = move.BasePower;
+            nudPowerMax.Value = move.MaxPower;
+            nudTP.Value = move.Tp;
+            cmbElement.SelectedIndex = (int)move.Element;
+            cmbStatus.SelectedIndex = (int)move.Status;
+            nudCoop.Value = move.CoopPartnersCount;
 
 
             chkUsers.SelectedIndex = -1;
@@ -130,16 +124,16 @@ namespace Strikers2013Editor.Forms
             }
 
             // waza_info[13] through waza_info[22] are for the users of the moves
-            for (var i = 13; i < 23; i++)
+            foreach (var user in move.Users)
             {
-                if (wazainfo[i] != 0)
-                    chkUsers.SetItemChecked(wazainfo[i], true);
+                if (user != 0)
+                    chkUsers.SetItemChecked(user, true);
             }
             // waza_info[23] through waza_info[32] are for the co-op users of the moves
-            for (var i = 23; i < 33; i++)
+            foreach (var partner in move.Partners)
             {
-                if (wazainfo[i] != 0)
-                    chkCoop.SetItemChecked(wazainfo[i], true);
+                if (partner != 0)
+                    chkCoop.SetItemChecked(partner, true);
             }
 
 
@@ -147,41 +141,41 @@ namespace Strikers2013Editor.Forms
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            var wazainfo = moves[listBox1.SelectedIndex].wazaInfo;
+            var move = moves[listBox1.SelectedIndex];
 
-            wazainfo[0] = (ushort)cmbTier.SelectedIndex;
-            wazainfo[1] = (ushort)nudPower.Value;
-            wazainfo[2] = (ushort)nudPowerMax.Value;
-            wazainfo[3] = (ushort)nudTP.Value;
-            wazainfo[4] = (ushort)cmbElement.SelectedIndex;
-            wazainfo[5] = (ushort)cmbStatus.SelectedIndex;
-            wazainfo[10] = (ushort)nudCoop.Value;
+            move.Tier = (Tier)cmbTier.SelectedIndex;
+            move.BasePower = (ushort)nudPower.Value;
+            move.MaxPower = (ushort)nudPowerMax.Value;
+            move.Tp = (ushort)nudTP.Value;
+            move.Element = (Element)cmbElement.SelectedIndex;
+            move.Status = (Status)cmbStatus.SelectedIndex;
+            move.CoopPartnersCount = (ushort)nudCoop.Value;
 
             // Sets the users of the hissatsu
-            var index = 13;
+            var index = 0;
             for(var i = 0; i < chkUsers.CheckedIndices.Count; i++)
             {
-                wazainfo[index] = (ushort)chkUsers.CheckedIndices[i];
+                move.Users[index] = (ushort)chkUsers.CheckedIndices[i];
                 index++;
             }
-            for(var i = index; i < 23; i++)
+            for(var i = index; i < 10; i++)
             {
-                wazainfo[i] = 0;
+                move.Users[i] = 0;
             }
 
             // Sets the coop users of the hissatsu
-            index = 23;
+            index = 0;
             for (var i = 0; i < chkCoop.CheckedIndices.Count; i++)
             {
-                wazainfo[index] = (ushort)chkCoop.CheckedIndices[i];
+                move.Partners[index] = (ushort)chkCoop.CheckedIndices[i];
                 index++;
             }
-            for (var i = index; i < 33; i++)
+            for (var i = index; i < 10; i++)
             {
-                wazainfo[i] = 0;
+                move.Partners[i] = 0;
             }
 
-            moves[listBox1.SelectedIndex].wazaInfo = wazainfo;
+            moves[listBox1.SelectedIndex] = move;
         }
 
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,7 +194,7 @@ namespace Strikers2013Editor.Forms
                         for (var i = 0; i < listBox1.Items.Count; i++)
                         {
                             var waza = moves[i];
-                            sw.Write(waza.name);
+                            sw.Write(moveNames[i]);
                             sw.Write(",");
                             foreach (var value in waza.wazaInfo)
                             {
@@ -234,8 +228,7 @@ namespace Strikers2013Editor.Forms
                         bw.BaseStream.Position = 28;
                         foreach (var waza in moves)
                         {
-                            foreach (var info in waza.wazaInfo)
-                                bw.Write(info);
+                            waza.Write(bw);
                         }
                     }
 

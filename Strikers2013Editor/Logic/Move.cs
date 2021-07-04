@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Strikers2013Editor.IO;
+using Strikers2013Editor.Common;
 
 namespace Strikers2013Editor.Logic
 {
@@ -68,9 +69,114 @@ namespace Strikers2013Editor.Logic
         public Move() { }
         public Move(BeBinaryReader br)
         {
-
+            Tier = (Tier)br.ReadUInt16();
+            BasePower = br.ReadUInt16();
+            MaxPower = br.ReadUInt16();
+            Tp = br.ReadUInt16();
+            Element = (Element)br.ReadUInt16();
+            Status = (Status)br.ReadUInt16();
+            Unk1 = br.ReadUInt16();
+            Unk2 = br.ReadUInt16();
+            Unk3 = br.ReadUInt16();
+            Unk4 = br.ReadUInt16();
+            CoopPartnersCount = br.ReadUInt16();
+            Unka = br.ReadUInt16();
+            Unkb = br.ReadUInt16();
+            Users = br.ReadMultipleUShort(10).ToArray();
+            Partners = br.ReadMultipleUShort(10).ToArray();
+            Unk5 = br.ReadUInt16();
+            Unk6 = br.ReadUInt16();
+            Unk7 = br.ReadUInt16();
+            Unk8 = br.ReadUInt16();
+            Unk9 = br.ReadUInt16();
+            Unk10 = br.ReadUInt16();
+            TextDescription = br.ReadUInt16();
+            Unk12 = br.ReadUInt16();
+            Unk13 = br.ReadUInt16();
+            Unk14 = br.ReadUInt16();
+            TextUser = br.ReadUInt16();
+            Unk16 = br.ReadUInt16();
+            Unk17 = br.ReadUInt16();
+            Unk18 = br.ReadUInt16();
+            Unk19 = br.ReadUInt16();
+            Unk20 = br.ReadUInt16();
+            Unk21 = br.ReadUInt16();
+            Unk22 = br.ReadUInt16();
+            Unk23 = br.ReadUInt16();
+            Unk24 = br.ReadUInt16();
+            Unk25 = br.ReadUInt16();
+            Unk26 = br.ReadUInt16();
+            Unk27 = br.ReadUInt16();
+            Unk28 = br.ReadUInt16();
+            Unk29 = br.ReadUInt16();
+            Unk30 = br.ReadUInt16();
+            Unk31 = br.ReadUInt16();
+            Unk32 = br.ReadUInt16();
+            Unk33 = br.ReadUInt16();
+            Unk34 = br.ReadUInt16();
+            Unk35 = br.ReadUInt16();
+            Unk36 = br.ReadUInt16();
+            Unk37 = br.ReadUInt16();
+            Unk38 = br.ReadUInt16();
+            PowerUpIndicator = br.ReadUInt16();
+            InvocationAnimationTimer = br.ReadUInt16();
+            Unk39 = br.ReadUInt16();
         }
 
-
+        public void Write(BeBinaryWriter bw)
+        {
+            bw.Write((ushort)Tier);
+            bw.Write(BasePower);
+            bw.Write(MaxPower);
+            bw.Write(Tp);
+            bw.Write((ushort)Element);
+            bw.Write((ushort)Status);
+            bw.Write(Unk1);
+            bw.Write(Unk2);
+            bw.Write(Unk3);
+            bw.Write(Unk4);
+            bw.Write(CoopPartnersCount);
+            bw.Write(Unka);
+            bw.Write(Unkb);
+            bw.Write(Users);
+            bw.Write(Partners);
+            bw.Write(Unk5);
+            bw.Write(Unk6);
+            bw.Write(Unk7);
+            bw.Write(Unk8);
+            bw.Write(Unk9);
+            bw.Write(Unk10);
+            bw.Write(TextDescription);
+            bw.Write(Unk12);
+            bw.Write(Unk13);
+            bw.Write(Unk14);
+            bw.Write(TextUser);
+            bw.Write(Unk16);
+            bw.Write(Unk17);
+            bw.Write(Unk18);
+            bw.Write(Unk19);
+            bw.Write(Unk20);
+            bw.Write(Unk21);
+            bw.Write(Unk22);
+            bw.Write(Unk23);
+            bw.Write(Unk24);
+            bw.Write(Unk25);
+            bw.Write(Unk26);
+            bw.Write(Unk27);
+            bw.Write(Unk28);
+            bw.Write(Unk29);
+            bw.Write(Unk30);
+            bw.Write(Unk31);
+            bw.Write(Unk32);
+            bw.Write(Unk33);
+            bw.Write(Unk34);
+            bw.Write(Unk35);
+            bw.Write(Unk36);
+            bw.Write(Unk37);
+            bw.Write(Unk38);
+            bw.Write(PowerUpIndicator);
+            bw.Write(InvocationAnimationTimer);
+            bw.Write(Unk39);
+        }
     }
 }
