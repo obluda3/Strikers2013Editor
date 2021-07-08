@@ -23,7 +23,7 @@ namespace Strikers2013Editor.Forms
         {
             using (var ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Move file (0/104.bin) (*.bin)|*.bin|All files (*.*)|*.*";
+                ofd.Filter = "Player file (0/104.bin) (*.bin)|*.bin|All files (*.*)|*.*";
                 ofd.RestoreDirectory = true;
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
@@ -136,7 +136,7 @@ namespace Strikers2013Editor.Forms
 
             using (var sfd = new SaveFileDialog())
             {
-                sfd.Filter = "Move file(0 / 104.bin) (*.bin) | *.bin | All files(*.*) | *.* ";
+                sfd.Filter = "Player file(0 / 104.bin) (*.bin) | *.bin | All files(*.*) | *.* ";
                 sfd.DefaultExt = ".bin";
                 sfd.FileName = "players.bin";
 

@@ -75,7 +75,7 @@ namespace Strikers2013Editor.Logic
             TeamPortrait = br.ReadInt32();
             Position = br.ReadInt32();
             MatchFaceModel = br.ReadInt32();
-            Facemodel = br.ReadInt32(); // I'm assuming both of them are the face models but i'm not sure
+            Facemodel = br.ReadInt32();
             Facemodel2 = br.ReadInt32();
             Unk9 = br.ReadInt32();
             Unk10 = br.ReadInt32();
@@ -106,14 +106,14 @@ namespace Strikers2013Editor.Logic
         {
             bw.Write(ID);
             bw.Write(Padding);
-            bw.Write(HiddenName); // 14.bin line minus 4
-            bw.Write(ShortName); // 14.bin line minus 4
-            bw.Write(FullName); // 14.bin line minus 4
+            bw.Write(HiddenName);
+            bw.Write(ShortName);
+            bw.Write(FullName);
             bw.Write(Encoding.ASCII.GetBytes(Name));
             bw.Write((int)Gender);
             bw.Write(IdleAnimation);
             bw.Write(Unk1);
-            bw.Write(Description); // 14.bin line minus 2
+            bw.Write(Description);
             bw.Write((int)Bodytype);
             bw.Write(Scale);
             bw.Write(ShadowSize);
