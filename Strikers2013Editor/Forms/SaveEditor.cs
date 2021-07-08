@@ -52,7 +52,7 @@ namespace Strikers2013Editor.Forms
                     save.ParseSaveFile();
 
                     var assembly = Assembly.GetExecutingAssembly();
-                    using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Database.playernames.txt"))
+                    using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Common.playernames.txt"))
                     {
                         using (StreamReader sr = new StreamReader(playernamesfile))
                         {
@@ -100,7 +100,6 @@ namespace Strikers2013Editor.Forms
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    var filename = sfd.FileName;
                     save.ApplyEdits(sfd.FileName);
                     MessageBox.Show("Succesfully saved.", "Done");
                 }
@@ -163,38 +162,51 @@ namespace Strikers2013Editor.Forms
             var player = save.players[lstPlayers.SelectedIndex];
 
 
-            player.waza[0] = Convert.ToInt16(txtLV1.Text, 16);
-            player.waza[1] = Convert.ToInt16(txtLV2.Text, 16);
-            player.waza[2] = Convert.ToInt16(txtLV3.Text, 16);
-            player.waza[12] = Convert.ToInt16(txtCatch1.Text, 16);
-            player.waza[13] = Convert.ToInt16(txtCatch2.Text, 16);
-            player.waza[14] = Convert.ToInt16(txtCatch3.Text, 16);
-            player.waza[4] = Convert.ToInt16(txtDribble.Text, 16);
-            player.waza[8] = Convert.ToInt16(txtDefense.Text, 16);
-            player.waza[16] = Convert.ToInt16(txtSP.Text, 16);
-            player.stats[0] = (byte)nudTP.Value;
+            player.MoveList.Lv1 = Convert.ToInt16(txtLV1.Text, 16);
+            player.MoveList.Lv2 = Convert.ToInt16(txtLV2.Text, 16);
+            player.MoveList.Lv3 = Convert.ToInt16(txtLV3.Text, 16);
+            player.MoveList.Catch1 = Convert.ToInt16(txtCatch1.Text, 16);
+            player.MoveList.Catch2 = Convert.ToInt16(txtCatch2.Text, 16);
+            player.MoveList.Catch3 = Convert.ToInt16(txtCatch3.Text, 16);
+            player.MoveList.Dribble = Convert.ToInt16(txtDribble.Text, 16);
+            player.MoveList.Defense = Convert.ToInt16(txtDefense.Text, 16);
+            player.MoveList.SP = Convert.ToInt16(txtSP.Text, 16);
 
             save.players[lstPlayers.SelectedIndex] = player;
-
         }
 
         private void btnMax_Click(object sender, EventArgs e)
         {
-            var stats = save.players[lstPlayers.SelectedIndex].stats;
-            for (var i = 0; i < 13; i += 2)
-                stats[i] = stats[i + 1];
-            save.players[lstPlayers.SelectedIndex].stats = stats;
+            var player = save.players[lstPlayers.SelectedIndex];
+            var stats = player.Stats;
 
-            nudKick.Value = stats[2];
-            nudBody.Value = stats[6];
-            nudControl.Value = stats[10];
-            nudGuard.Value = stats[8];
-            nudCatch.Value = stats[4];
-            nudSpeed.Value = stats[12];
-            nudTP.Value = stats[0];
+            stats.Kick = stats.MaxKick;
+            stats.TP = stats.MaxTP;
+            stats.Body = stats.MaxBody;
+            stats.Control = stats.MaxControl;
+            stats.Guard = stats.MaxGuard;
+            stats.Speed = stats.MaxSpeed;
+            stats.Catch = stats.MaxCatch;
+
+            player.Stats = stats;
+
+            save.players[lstPlayers.SelectedIndex] = player;
+
+            nudKick.Value = player.Stats.Kick;
+            nudBody.Value = player.Stats.Body;
+            nudControl.Value = player.Stats.Control;
+            nudGuard.Value = player.Stats.Guard;
+            nudCatch.Value = player.Stats.Catch;
+            nudSpeed.Value = player.Stats.Speed;
+            nudTP.Value = player.Stats.TP;
         }
 
         private void nudTP_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudKick_ValueChanged(object sender, EventArgs e)
         {
 
         }
@@ -203,23 +215,23 @@ namespace Strikers2013Editor.Forms
         {
             var player = save.players[lstPlayers.SelectedIndex];
 
-            nudKick.Value = player.stats[2];
-            nudBody.Value = player.stats[6];
-            nudControl.Value = player.stats[10];
-            nudGuard.Value = player.stats[8];
-            nudCatch.Value = player.stats[4];
-            nudSpeed.Value = player.stats[12];
-            nudTP.Value = player.stats[0];
+            nudKick.Value = player.Stats.Kick;
+            nudBody.Value = player.Stats.Body;
+            nudControl.Value = player.Stats.Control;
+            nudGuard.Value = player.Stats.Guard;
+            nudCatch.Value = player.Stats.Catch;
+            nudSpeed.Value = player.Stats.Speed;
+            nudTP.Value = player.Stats.TP;
 
-            txtLV1.Text = Convert.ToString(player.waza[0], 16);
-            txtLV2.Text = Convert.ToString(player.waza[1], 16);
-            txtLV3.Text = Convert.ToString(player.waza[2], 16);
-            txtSP.Text = Convert.ToString(player.waza[16], 16);
-            txtDefense.Text = Convert.ToString(player.waza[8], 16);
-            txtDribble.Text = Convert.ToString(player.waza[4], 16);
-            txtCatch1.Text = Convert.ToString(player.waza[12], 16);
-            txtCatch2.Text = Convert.ToString(player.waza[13], 16);
-            txtCatch3.Text = Convert.ToString(player.waza[14], 16);
+            txtLV1.Text = Convert.ToString(player.MoveList.Lv1, 16);
+            txtLV2.Text = Convert.ToString(player.MoveList.Lv2, 16);
+            txtLV3.Text = Convert.ToString(player.MoveList.Lv3, 16);
+            txtSP.Text = Convert.ToString(player.MoveList.SP, 16);
+            txtDefense.Text = Convert.ToString(player.MoveList.Defense, 16);
+            txtDribble.Text = Convert.ToString(player.MoveList.Dribble, 16);
+            txtCatch1.Text = Convert.ToString(player.MoveList.Catch1, 16);
+            txtCatch2.Text = Convert.ToString(player.MoveList.Catch2, 16);
+            txtCatch3.Text = Convert.ToString(player.MoveList.Catch3, 16);
 
 
         }

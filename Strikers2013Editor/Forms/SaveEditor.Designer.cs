@@ -268,6 +268,7 @@
             // 
             // nudTP
             // 
+            this.nudTP.Enabled = false;
             this.nudTP.Location = new System.Drawing.Point(94, 162);
             this.nudTP.Maximum = new decimal(new int[] {
             250,
@@ -410,6 +411,7 @@
             this.nudKick.Name = "nudKick";
             this.nudKick.Size = new System.Drawing.Size(56, 20);
             this.nudKick.TabIndex = 0;
+            this.nudKick.ValueChanged += new System.EventHandler(this.nudKick_ValueChanged);
             // 
             // tabPage4
             // 

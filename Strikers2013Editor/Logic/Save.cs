@@ -22,7 +22,7 @@ namespace Strikers2013Editor.Logic
         public uint profile, onlineProfile, baseOffset, minutesPlayed, hoursPlayed, inazumaPoints, creationDate, creationTime;
         public int slot;
 
-        private const int STATS_OFFSET = 0xad74;
+        private const int STATS_OFFSET = 0xad6c;
         private const int WAZA_OFFSET = 0x640a4;
         private const int TEAM_OFFSET = 0x63f66;
         private const int PROFILE_OFFSET = 0x6775a;
@@ -57,14 +57,14 @@ namespace Strikers2013Editor.Logic
 
                 for (var i = 0; i < 412; i++)
                 {
-                    // STATS
+                    // Stats
                     var player = new Player();
                     br.BaseStream.Position = baseOffset + STATS_OFFSET + i * 0x3c;
-                    player.stats = br.ReadBytes(0x3c);
+                    player.Stats = new Stats(br);
 
-                    // WAZA
+                    // Moves
                     br.BaseStream.Position = baseOffset + WAZA_OFFSET + i * 0x22;
-                    player.waza = br.ReadMultipleShort(17).ToArray();
+                    player.MoveList = new MoveList(br);
 
                     players[i] = player;
                 }
@@ -107,13 +107,11 @@ namespace Strikers2013Editor.Logic
                     var player = players[i];
                     // STATS
                     bw.BaseStream.Position = baseOffset + STATS_OFFSET + i * 0x3c;
-                    bw.Write(player.stats);
+                    player.Stats.Write(bw);
 
                     // WAZA
                     bw.BaseStream.Position = baseOffset + WAZA_OFFSET + i * 0x22;
-                    foreach (var waza in player.waza)
-                        bw.Write(waza);
-
+                    player.MoveList.Write(bw);
                 }
                 for (var i = 0; i < 16; i++)
                 {
