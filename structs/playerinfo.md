@@ -39,7 +39,7 @@ Length: 0x148, start of file: 0xE5C
 Other values are unknown
 
 Help from : 
-- AS
+- AS (Element, Tactical Action, Bodytype)
 - Coconutz
-- Alpha
-- 43044
+- Alpha (Price)
+- 43044 (Charge Profile)
