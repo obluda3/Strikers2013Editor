@@ -11,7 +11,7 @@ Length: 0x60, start: 0x1C - All ints
 | 0xC | Normal Shoot |
 | 0x10 | Normal Catch |
 | 0x14 | Goal |
-| 0x18 | Goal received |
+| 0x18 | Received goal |
 | 0x1C | Tackle |
 | 0x24 | Tackle (on an opponent) |
 | 0x28 | Tackle (on an opponent) |
