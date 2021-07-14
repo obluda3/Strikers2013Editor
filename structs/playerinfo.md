@@ -1,5 +1,30 @@
 # playerinfo layout
-Length: 0x148, start of file: 0xE5C
+
+# ChargeData
+Length: 0x60, start: 0x1C - All ints
+
+| Offset | Name |
+| --- | --- |
+| 0x0 | Idle |
+| 0x4 | Holding the ball |
+| 0x8 | Pass |
+| 0xC | Normal Shoot |
+| 0x10 | Normal Catch |
+| 0x14 | Goal |
+| 0x18 | Goal received |
+| 0x1C | Tackle |
+| 0x24 | Tackle (on an opponent) |
+| 0x28 | Tackle (on an opponent) |
+| 0x40 | Tactical Action (on an opponent) |
+| 0x44 | Tactical Action |
+| 0x48 | Tactical Action (on an opponent?) |
+| 0x4C | Through pass |
+| 0x50 | Direct shot |
+| 0x54 | Cross |
+| 0x58 | Volley |
+
+# PlayerDef
+Length: 0x148, start: 0xE5C
 
 | Offset | Name | DataType | Notes |
 | --- | --- | --- | --- |
@@ -29,7 +54,7 @@ Length: 0x148, start of file: 0xE5C
 | 0x88 | Neck and legs skin color | int | xRGB |
 | 0x8C | Arms and knees color | int | xRGB |
 | 0xF4 | Element | int | 0 = Wind 1 = Wood 2 = Fire 3 = Earth 4 = Void |
-| 0xF8 | Charge time | int | Player's charge time "profile" |
+| 0xF8 | Charge profile | int | Player's charge profile (see above) |
 | 0x104 | Voice | int |  |
 | 0x110 | Price | short | A value above 0 enables the player, a value of -1 makes the player unlocked by default |
 | 0x112 | list position | short | |
