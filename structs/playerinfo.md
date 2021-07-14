@@ -23,6 +23,8 @@ Length: 0x60, start: 0x1C - All ints
 | 0x54 | Cross |
 | 0x58 | Volley |
 
+The gauge gets filled when it reaches 200.
+
 # PlayerDef
 Length: 0x148, start: 0xE5C
 
