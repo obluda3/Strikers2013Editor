@@ -1,0 +1,412 @@
+ 
+Mark Evans (Raimon 1)
+Mark Evans (Raimon 2)
+Mark Evans (Inazuma Japon)
+Nathan Swift (Raimon 1)
+Nathan Swift (Inazuma Japon)
+Nathan Swift (Empereurs Noirs)
+Jack Wallside (Raimon 1)
+Jack Wallside (Raimon 2)
+Jack Wallside (Inazuma Japon)
+Jim Wraith (Raimon 1)
+Jim Wraith (Empereurs Noirs)
+Tod Ironside (Raimon 1)
+Tod Ironside (Inazuma Japon)
+Tod Ironside (Empereurs Noirs)
+Steve Grim (Raimon 1)
+Steve Grim (Empereurs Noirs)
+Tim Saunders (Raimon 1)
+Tim Saunders (Empereurs Noirs)
+Sam Kincaid (Raimon 1)
+Sam Kincaid (Empereurs Noirs)
+Maxwell Carson (Raimon 1)
+Maxwell Carson (Empereurs Noirs)
+Axel Blaze (Raimon 1)
+Axel Blaze (Raimon 2)
+Axel Blaze (Inazuma Japon)
+Kevin Dragonfly (Raimon 1)
+Kevin Dragonfly (Inazuma Japon)
+Kevin Dragonfly (Empereurs Noirs)
+Willy Glass (Raimon 1)
+Willy Glass (Raimon 2)
+Bobby Shearer (Raimon 1)
+Bobby Shearer (Raimon 2)
+Bobby Shearer (Mondial Selection)
+Jude Sharp (Raimon 1)
+Jude Sharp (Raimon 2)
+Jude Sharp (Inazuma Japon)
+Jude Sharp (Royal Academy)
+Erik Eagle (Raimon 1)
+Erik Eagle (Raimon 2)
+Erik Eagle (Mondial Selection)
+Darren LaChance (Raimon 2)
+Darren LaChance (Inazuma Japon)
+Hurley Kane (Raimon 2)
+Hurley Kane (Inazuma Japon)
+Scott Banyan (Raimon 2)
+Scott Banyan (Inazuma Japon)
+Victoria Vanguard 
+Shawn Froste (Inazuma Japon)
+Shawn Froste (Shawn - Raimon 2)
+Shawn Froste (Aiden - Raimon 2)
+Suzette Hartland 
+Archer Hawkins 
+Caleb Stonewall (Inazuma Japon)
+Caleb Stonewall (Nouv. Royal Academy)
+Austin Hobbes 
+Xavier Foster 
+Xene 
+Thor Stoutberg 
+David Samford (Inazuma Japon)
+David Samford (Royal Academy)
+David Samford (Nouv. Royal Academy)
+Jordan Greenway (Inazuma Japon)
+Janus 
+Joseph King (Royal Academy)
+Joseph King (Neo Japon)
+Joseph King (Nouv. Royal Academy)
+Peter Drent 
+Ben Simmons 
+Alan Master (Royal Academy)
+Alan Master (Neo Japon)
+Gus Martin (Royal Academy)
+Herman Waldon 
+John Bloom 
+Derek Swing 
+Daniel Hatch (Royal Academy)
+Daniel Hatch (Neo Japon)
+Paul Siddon 
+Apollo Light 
+Jeff Iron 
+Lane War 
+Danny Wood 
+Artie Mishman 
+Arion Matlock 
+Wesley Knox 
+Jonas Demetrius (Zeus)
+Jonas Demetrius (Neo Japon)
+Byron Love (Zeus)
+Byron Love (Sélection Mondiale)
+Henry House (Zeus)
+Henry House (Neo Japon)
+Dave Quagmire (Neo Japon)
+Dvalin 
+Arkew 
+Ganymede 
+Icer 
+Bellatrix 
+Metron 
+Krypto 
+Mercury 
+Diam 
+Nero 
+Kiburn 
+Kiwill 
+Pandora 
+Rihm 
+Grent 
+Gocker 
+Baller 
+Clear 
+Bomber 
+Heat 
+Ethan Whitering 
+Neppten 
+Rhine 
+Droll 
+Torch 
+Gazelle 
+Feldt (Cybertech)
+Feldt (Empereurs Noirs)
+Night (Kirkwood)
+Night (Empereurs Noirs)
+Shadow (Raimon)
+Shadow (Empereurs Noirs)
+Argie Bargie 
+Zack Cummings 
+John Tassman 
+Sail Bluesea 
+Neil Turner 
+Zeke Valanche 
+Wilbur Watkins 
+Mark Hillvalley 
+Tyler Murdock 
+Hector Helio 
+Bilal Kalil 
+Thiago Torres 
+Mark Krueger 
+Changsu Choi 
+Mac Robingo 
+Edgar Partinus 
+Paolo Bianchi 
+Gigi Blasi 
+Walter Mountain 
+Carlos Lagarto 
+Dolphin Hensen 
+Dylan Keats 
+Astaroth 
+Nenel 
+Lephiel 
+Behemoth 
+Bael 
+Wenel 
+Malphas 
+Gaeiel 
+Thanatos 
+Sael 
+Destra 
+Silvia 
+Joaquine Downtown 
+Hellen Hearth 
+Camellia Travis 
+Esther Greenland 
+Sue Sparrow 
+Bela Bluebells 
+Celia Hills 
+Marge Fielding 
+Nelly Raimon 
+Maddie Moonlight 
+Daisy Fields 
+Alexia Sand 
+Dora Delight 
+Kerry Bootgaiter 
+Lily Willow 
+Lars Luceafar 
+Lump Trungus 
+Bump Trungus 
+Jynx Jenkins 
+Radd Ischer 
+Drachen Gunther 
+Oni Triumvir 
+Ichabod Stark 
+Mystral Callous 
+Escavan Malice 
+Bash Lancer 
+Canon Evans 
+Syon Blaze 
+Miles Ryan 
+Paul Peabody 
+Cadence Soundtown 
+Karl Kappa 
+Phil A. Minion 
+Julio Acuto 
+Arion Sherwind 
+Victor Blade 
+Riccardo Di Rigo 
+Nelly Raimon (Manager)
+Celia Hills (Manager)
+Camellia Travis (Manager)
+Silvia Woods (Manager)
+Aurelia Dingle (Manager)
+David Evans (Coach)
+Seymour Hillman (Coach)
+Percival Travis (Coach)
+Lina Schiller (Coach)
+Chester Horse Jr. (Commentateur)
+Chester Horse (Commentateur)
+Claude Beacons 
+Bryce Whitingale 
+Gabriel Garcia 
+Jean-Pierre Lapin 
+Tutorial Mark 
+Samguk Han 
+Subaru Honda 
+Wanli Changcheng 
+Adé Kébé 
+Eugène Peabody 
+Michael Balzack 
+Doug McArthur 
+Aitor Cazador 
+Ryoma Nishiki 
+Lucien Dark 
+Skie Blue 
+Rodie Redd 
+Jade Greene 
+Zephyr Vitesse 
+Jimi Gaines 
+Ian Ferrum 
+Quint Hampton 
+Yasir Haddad 
+Kito Ryand 
+Maximino 
+Gareth Flare 
+Drago Hill 
+Keeanan DiFortune 
+Jareel Mangrove 
+Maygar Neysan 
+Li Leug 
+Jazzy Hedgeers 
+Vento Galliano 
+Ottorino Nobili 
+Anton Grazioso 
+Marco Maseratti 
+Angelo Gabrini 
+Gianluca Zanardi 
+Giorgio Giannini 
+Dante Diavolo 
+Raffaele Generani 
+Daniele Sanctis 
+Enrico Oliver 
+Alessandro Rossa 
+Giuseppe Cannavaro 
+Davy Jones 
+Njord Snio 
+Sol Daystar 
+Albion Lumina 
+Candido Glow 
+Dwight Whittaker 
+Beamer Daye 
+Dawntavius Spectrum 
+Bailong 
+Blake Obscura 
+Shady Shwartz 
+Tynan Crowe 
+Tezcat 
+Yang 
+Scott Banyan (Adult)
+Pinkus Mountbatten 
+Flint Charcoal (Inutilisé)
+Glaucous Gull (Inutilisé)
+Ashley Silverwood (Inutilisé)
+Gus Martin (ZERO)
+Cinereous Slate (Inutilisé)
+Mark Evans (ILJ)
+Nathan Swift (ILJ)
+Jack Wallside (ILJ)
+Jude Sharp (ILJ)
+Shawn Froste (ILJ)
+Caleb Stonewall (ILJ)
+Skie Blue (Manager)
+Rosie Redd (Manager)
+Jade Greene (Manager)
+Mark Evans (Coach)
+Jude Sharp (Coach)
+Arion Sherwind  (Tutorial)
+Arion Sherwind  (Armure)
+Victor Blade  (Armure)
+Riccardo DiRigo  (Armure)
+Jean-Pierre Lapin  (Armure)
+Ryoma Nishiki  (Armure)
+Gabriel Garcia  (Armure)
+Sol Daystar x Zhuge Liang  (Armure)
+Goldie Lemmon  (Armure)
+Vladimir Blade  (Armure)
+Bailong  (Armure)
+Alpha  (Armure)
+Beta  (Armure)
+Gamma  (Armure)
+Zanark  (Armure)
+Flora  (Armure)
+Fei Rune  (Armure)
+Sol Daystar  (Armure)
+Fei Rune 
+Goldie Lemmon 
+Vladimir Blade 
+Sor 
+Tasuke 
+Inaba 
+Siméon Ayp 
+Ar Ecks 
+Arion Sherwind (Sherwinds)
+Balèze 
+Chétif 
+Barrette 
+Futé 
+Trapu 
+Béate 
+Foret 
+Minus 
+Zarbi 
+Alpha 
+Beta 
+Gamma 
+Mike 
+Juliet 
+Hotel 
+Lima 
+Golf 
+Oscar 
+India 
+November 
+Kilo 
+Foxtrot 
+Cronus Fourseasons 
+Alessandro il Grande 
+Harrold Houdini 
+Bay Laurel 
+Iggie Loo 
+Langford Ash 
+Preston Princeton 
+Bob Sled 
+Bradford Ash 
+Dracon Yale 
+Octavus Kraken 
+Zaphod Riker 
+Dakkar Nemo 
+Maxim Millennium 
+Infinity Beyond 
+Rex Remington 
+Jimmy Kyrk 
+Aum Nirvana (Inutilisé)
+Zanark Avalonic 
+Catvari 
+Eka 
+Dasan 
+Dva 
+Navan 
+Sapta 
+Panca 
+Tyrah 
+Asta 
+Sas 
+Zanark Avalonic (Inutilisé)
+Flora 
+Aster 
+Sterne 
+Aloes 
+Gentiane 
+Tulipe 
+Pissenlit 
+Fuchsia 
+Orchidée 
+Camomille 
+Lotus 
+Magnolia 
+Lilas 
+Quentin Cinquedea 
+Aimé Quintet 
+Fey x Tyrano 
+Arion x Tezcat 
+Vladimir x Victor 
+Riccardo x Nobunaga 
+Gabi x Jeanne 
+Sol x Zhuge 
+J.P. x Bei 
+Sor x Papa 
+Fei x Big 
+Ryoma x Sakamoto 
+Victor x Okita 
+Goldie x Dragon 
+Arion x Arthur 
+Zanark x Cao Cao 
+Super Zanark 
+Simeon x Gene S (Inutilisé)
+Cyril Fox 
+Avinash Chowhury 
+Shunsuke Aoyama 
+Hugues Baudet 
+Byron Love (Adulte - Inutilisé)
+Alex Zabel (Inutilisé)
+Axel Blaze (ILJ)
+Xavier Foster (ILJ)
+Hurley Kane (ILJ)
+Kevin Dragonfly (ILJ)
+David Samford (ILJ)
+Clark von Wunderbar (Unused)
+Sterne (Inutilisé)
+Byron Love  (Inutilisé)
+Alex Zabel (Coach)
+Clark von Wunderbar (Coach)
+Mark Evans (Adulte)
+Beta (Inutilisé)
+Flora Miximax (Inutilisé)

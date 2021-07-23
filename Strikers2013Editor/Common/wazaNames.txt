@@ -83,9 +83,9 @@ Mochi Mochi Kinako Mochi (Armed)
 La Flamme
 Wonder Trap
 Wonder Trap (Armed)
-XX6
-XX7
-Ikari no Tetsui
+Normal catch
+Normal catch
+Ikari no Tettsui
 Ijigen The Hand
 Electric Trap
 Omega The Hand
@@ -154,7 +154,7 @@ Buttobi Punch (Armed)
 Great The Hand
 Great The Hand
 Taikoku Ouka (Transformation)
-XX2
+Normal dribble (dodge)
 Normal dribble (Jump)
 Normal dribble (Charge)
 Normal dribble (dodge)
@@ -270,7 +270,7 @@ Koutei Penguin X
 God Canon
 God Knows
 God Break
-The Thyphoon
+The Typhoon
 The Birth
 The Hurricane
 The Phoenix
@@ -284,7 +284,7 @@ Shadow Ray
 Shadow Ray
 Joker Rains
 Suisei Shoot
-Super Nova
+Supernova
 Strike Samba
 Spiral Shot
 Spinning Shoot
@@ -386,7 +386,7 @@ Omega Attack (Armed)
 Omega Attack (Armed)
 Omega Attack (Armed)
 Gauss Shot
-Chaos Meteor
+Chaos Meteor (Unused)
 Chaos Meteor (Armed)
 Gunshot
 Gamma Strike

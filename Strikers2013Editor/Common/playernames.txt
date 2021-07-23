@@ -1,412 +1,412 @@
-
-Mark Evans (Raimon 1)
-Mark Evans (Raimon 2)
-Mark Evans (Inazuma Japan)
-Nathan Swift (Raimon 1)
-Nathan Swift (Inazuma Japan)
-Nathan Swift (Dark Emperors)
-Jack Wallside (Raimon 1)
-Jack Wallside (Raimon 2)
-Jack Wallside (Inazuma Japan)
-Jim Wraith (Raimon 1)
-Jim Wraith (Dark Emperors)
-Tod Ironside (Raimon 1)
-Tod Ironside (Inazuma Japan)
-Tod Ironside (Dark Emperors)
-Steve Grim (Raimon 1)
-Steve Grim (Dark Emperors)
-Tim Saunders (Raimon 1)
-Tim Saunders (Dark Emperors)
-Sam Kincaid (Raimon 1)
-Sam Kincaid (Dark Emperors)
-Maxwell Carson (Raimon 1)
-Maxwell Carson (Dark Emperors)
-Axel Blaze (Raimon 1)
-Axel Blaze (Raimon 2)
-Axel Blaze (Inazuma Japan)
-Kevin Dragonfly (Raimon 1)
-Kevin Dragonfly (Inazuma Japan)
-Kevin Dragonfly (Dark Emperors)
-Willy Glass (Raimon 1)
-Willy Glass (Raimon 2)
-Bobby Shearer (Raimon 1)
-Bobby Shearer (Raimon 2)
-Bobby Shearer (Mondial Selection)
-Jude Sharp (Raimon 1)
-Jude Sharp (Raimon 2)
-Jude Sharp (Inazuma Japan)
-Jude Sharp (Royal Academy)
-Erik Eagle (Raimon 1)
-Erik Eagle (Raimon 2)
-Erik Eagle (Mondial Selection)
-Darren LaChance (Raimon 2)
-Darren LaChance (Inazuma Japan)
-Hurley Kane (Raimon 2)
-Hurley Kane (Inazuma Japan)
-Scott Banyan (Raimon 2)
-Scott Banyan (Inazuma Japan)
-Victoria Vanguard
-Shawn Froste (Inazuma Japan)
-Shawn Froste (Raimon 2) [SHAWN]
-Shawn Froste (Raimon 2) [AIDEN]
-Suzette Hartland
-Archer Hawkins
-Caleb Stonewall (Inazuma Japan)
-Caleb Stonewall (New Royal Academy)
-Austin Hobbes
-Xavier Foster
-Xene
-Thor Stoutberg
-David Samford (Inazuma Japan)
-David Samford (Royal Academy)
-David Samford (New Royal Academy)
-Jordan Greenway (Inazuma Japan)
-Janus
-Joseph King (Royal Academy)
-Joseph King (Neo Japan)
-Joseph King (New Royal Academy)
-Peter Drent
-Ben Simmons
-Alan Master (Royal Academy)
-Alan Master (Neo Japan)
-Gus Martin (Royal Academy)
-Herman Waldon
-John Bloom
-Derek Swing
-Daniel Hatch (Royal Academy)
-Daniel Hatch (Neo Japan)
-Paul Siddon
-Apollo Light
-Jeff Iron
-Lane War
-Danny Wood
-Artie Mishman
-Arion Matlock
-Wesley Knox
-Jonas Demetrius (Zeus)
-Jonas Demetrius (Neo Japan)
-Byron Love (Zeus)
-Byron Love (Mondial Selection)
-Henry House (Zeus)
-Henry House (Neo Japan)
-Dave Quagmire (Neo Japan)
-Dvalin
-Arkew
-Ganymede
-Icer
-Bellatrix
-Metron
-Krypto
-Mercury
-Diam
-Nero
-Kiburn
-Kiwill
-Pandora
-Rihm
-Grent
-Gocker
-Baller
-Clear
-Bomber
-Heat
-Ethan Whitering
-Neppten
-Rhine
-Droll
-Torch
-Gazelle
-Feldt (Mikage Sennou)
-Feldt (Dark Emperors)
-Night (Kirkwood)
-Night (Dark Emperors)
-Shadow (Raimon)
-Shadow (Dark Emperors)
-Argie Bargie
-Zack Cummings
-John Tassman
-Sail Bluesea
-Neil Turner
-Zeke Valanche
-Wilbur Watkins
-Mark Hillvalley
-Tyler Murdock
-Hector Helio
-Bilal Kalil
-Thiago Torres
-Mark Krueger
-Changsu Choi
-Mac Robingo
-Edgar Partinus
-Paolo Bianchi
-Gigi Blasi
-Walter Mountain
-Carlos Lagarto
-Dolphin Hensen
-Dylan Keats
-Astaroth
-Nenel
-Lephiel
-Behemoth
-Bael
-Wenel
-Malphas
-Gaeiel
-Thanatos
-Sael
-Destra
-Silvia
-Joaquine Downtown
-Hellen Hearth
-Camellia Travis
-Esther Greenland
-Sue Sparrow
-Bela Bluebells
-Celia Hills
-Marge Fielding
-Nelly Raimon
-Maddie Moonlight
-Daisy Fields
-Alexia Sand
-Dora Delight
-Kerry Bootgaiter
-Lily Willow
-Lars Luceafar
-Lump Trungus
-Bump Trungus
-Jynx Jenkins
-Radd Ischer
-Drachen Gunther
-Oni Triumvir
-Ichabod Stark
-Mystral Callous
-Escavan Malice
-Bash Lancer
-Canon Evans
-Syon Blaze
-Miles Ryan
-Paul Peabody
-Cadence Soundtown
-Karl Kappa
-Phil A. Minion
-Julio Acuto
-Arion Sherwind (Raimon)
-Victor Blade
-Riccardo Di Rigo
-Nelly Raimon (MANAGER)
-Celia Hills (MANAGER)
-Camellia Travis (MANAGER)
-Silvia Woods (MANAGER)
-Aurelia Dingle (MANAGER)
-David Evans (TRAINER)
-Seymour Hillman (TRAINER)
-Percival Travis (TRAINER)
-Lina Schiller (TRAINER)
-Chester Horse Jr. (COMMENTATOR)
-Chester Horse (COMMENTATOR)
-Claude Beacons
-Bryce Whitingale
-Gabriel Garcia
-Jean-Pierre Lapin
-Tutorial Mark
-Samguk Han
-Subaru Honda
-Wanli Changcheng
-Adé Kébé
-Eugène Peabody
-Michael Balzack
-Doug McArthur
-Aitor Cazador
-Ryoma Nishiki
-Lucien Dark
-Skie Blue
-Rodie Redd
-Jade Greene
-Zephyr Vitesse
-Jimi Gaines
-Ian Ferrum
-Quint Hampton
-Yasir Haddad
-Kito Ryand
-Maximino
-Gareth Flare
-Drago Hill
-Keeanan DiFortune
-Jareel Mangrove
-Maygar Neysan
-Li Leug
-Jazzy Hedgeers
-Vento Galliano
-Ottorino Nobili
-Anton Grazioso
-Marco Maseratti
-Angelo Gabrini
-Gianluca Zanardi
-Giorgio Giannini
-Dante Diavolo
-Raffaele Generani
-Daniele Sanctis
-Enrico Oliver
-Alessandro Rossa
-Giuseppe Cannavaro
-Davy Jones
-Njord Snio
-Sol Daystar
-Albion Lumina
-Candido Glow
-Dwight Whittaker
-Beamer Daye
-Dawntavius Spectrum
-Bailong
-Blake Obscura
-Shady Shwartz
-Tynan Crowe
-Tezcat
-Yang
-Scott Banyan (Adult)
-Pinkus Mountbatten
-Flint Charcoal (UNUSED)
-Glaucous Gull (UNUSED)
-Ashley Silverwood (UNUSED)
-Gus Martin (ZERO)
-Cinereous Slate (UNUSED)
-Mark Evans (ILJ)
-Nathan Swift (ILJ)
-Jack Wallside (ILJ)
-Jude Sharp (ILJ)
-Shawn Froste (ILJ)
-Caleb Stonewall (ILJ)
-Skie Blue (MANAGER)
-Rosie Redd (MANAGER)
-Jade Greene (MANAGER)
-Mark Evans (TRAINER)
-Jude Sharp (TRAINER)
-Arion Sherwind Tutorial
-Arion Sherwind Armed (UNUSED)
-Victor Blade Armed (UNUSED)
-Riccardo DiRigo Armed (UNUSED)
-Jean-Pierre Lapin Armed (UNUSED)
-Ryoma Nishiki Armed (UNUSED)
-Gabriel Garcia Armed (UNUSED)
-Sol Daystar x Zhuge Liang Armed (UNUSED)
-Goldie Lemmon Armed (UNUSED)
-Vladimir Blade Armed (UNUSED)
-Bailong Armed (UNUSED)
-Alpha Armed (UNUSED)
-Beta Armed (UNUSED)
-Gamma Armed (UNUSED)
-Zanark Armed (UNUSED)
-Flora Armed (UNUSED)
-Fey Armed (UNUSED)
-Sol Daystar Armed (UNUSED)
-Fey Rune
-Goldie Lemmon
-Vladimir Blade
-Sor
-Tasuke
-Inaba
-Simeon
-Ar
-Arion Sherwind (Sherwinds)
-Biggsy
-Skinny
-Hairy
-Smarty
-Chunky
-Smiley
-Spikey
-Tiny
-Creepy
-Alpha
-Beta
-Gamma
-Mike
-Juliet
-Hotel
-Lima
-Golf
-Oscar
-India
-November
-Kilo
-Foxtrot
-Cronus Fourseasons
-Alessandro il Grande
-Harrold Houdini
-Bay Laurel
-Iggie Loo
-Langford Ash
-Preston Princeton
-Bob Sled
-Bradford Ash
-Dracon Yale
-Octavus Kraken
-Zaphod Riker
-Dakkar Nemo
-Maxim Millennium
-Infinity Beyond
-Rex Remington
-Jimmy Kyrk
-Aum Nirvana (UNUSED)
-Zanark Avalonic
-Catvari
-Eka
-Dasan
-Dva
-Navan
-Sapta
-Panca
-Tyrah
-Asta
-Sas
-Zanark Avalonic (UNUSED)
-Flora
-Aster
-Sterne
-Aloes
-Gentiane
-Chuuri
-Pissenlit
-Fushia
-Orchidée
-Camomille
-Lotus
-Magnolia
-Lilas
-Quentin Cinquedea
-Aime Quintet
-Fey x Tyrano
-Arion x Tezcat
-Vladimir x Victor
-Riccardo x Nobunaga
-Gabi x Jeanne
-Sol x Zhuge
-J.P. x Bei
-Sor x Papa
-Fey x Big
-Ryoma x Sakamoto
-Victor x Okita
-Goldie x Dragon
-Arion x Arthur
-Zanark x Cao Cao
-Zanark x Super Zanark
-SARU Miximax (UNUSED)
-Cyril Fox
-Avinash Chowhury
-Shunsuke Aoyama
-Hugues Baudet
-Byron Love Adult (UNUSED)
-Alex Zabel Adult (UNUSED)
-Axel Blaze (ILJ)
-Xavier Foster (ILJ)
-Hurley Kane (ILJ)
-Kevin Dragonfly (ILJ)
-David Samford (IJ)
-Wunderbar (UNUSED)
-Sterne (UNUSED)
-Byron Love Coach (UNUSED)
-Alex Zabel Coach (UNUSED)
-Wunderbar Coach (UNUSED)
-Mark Evans Coach Player (UNUSED)
-Beta (UNUSED)
-Flora Miximax (UNUSED)
+ 
+Endou Mamoru (Raimon 1)
+Endou Mamoru (Raimon 2)
+Endou Mamoru (Inazuma Japan)
+Kazemaru Ichirouta (Raimon 1)
+Kazemaru Ichirouta (Inazuma Japan)
+Kazemaru Ichirouta (Dark Emperors)
+Kabeyama Heigorou (Raimon 1)
+Kabeyama Heigorou (Raimon 2)
+Kabeyama Heigorou (Inazuma Japan)
+Kageno Jin (Raimon 1)
+Kageno Jin (Dark Emperors)
+Kurimatsu Teppei (Raimon 1)
+Kurimatsu Teppei (Inazuma Japan)
+Kurimatsu Teppei (Dark Emperors)
+Handa Shinichi (Raimon 1)
+Handa Shinichi (Dark Emperors)
+Shourinji Ayumu (Raimon 1)
+Shourinji Ayumu (Dark Emperors)
+Shishido Sakichi (Raimon 1)
+Shishido Sakichi (Dark Emperors)
+Matsuno Kuusuke (Raimon 1)
+Matsuno Kuusuke (Dark Emperors)
+Gouenji Shuuya (Raimon 1)
+Gouenji Shuuya (Raimon 2)
+Gouenji Shuuya (Inazuma Japan)
+Someoka Ryuugo (Raimon 1)
+Someoka Ryuugo (Inazuma Japan)
+Someoka Ryuugo (Dark Emperors)
+Megane Kakeru (Raimon 1)
+Megane Kakeru (Raimon 2)
+Domon Asuka (Raimon 1)
+Domon Asuka (Raimon 2)
+Domon Asuka (Mondial Selection)
+Kidou Yuuto (Raimon 1)
+Kidou Yuuto (Raimon 2)
+Kidou Yuuto (Inazuma Japan)
+Kidou Yuuto (Royal Academy)
+Ichinose Kazuya (Raimon 1)
+Ichinose Kazuya (Raimon 2)
+Ichinose Kazuya (Mondial Selection)
+Tachimukai Yuuki (Raimon 2)
+Tachimukai Yuuki (Inazuma Japan)
+Tsunami Jousuke (Raimon 2)
+Tsunami Jousuke (Inazuma Japan)
+Kogure Yuuya (Raimon 2)
+Kogure Yuuya (Inazuma Japan)
+Zaizen Touko 
+Fubuki Shirou (Inazuma Japan)
+Fubuki Shirou (Shirou - Raimon 2)
+Fubuki Shirou (Atsuya - Raimon 2)
+Urabe Rika 
+Tobitaka Seiya 
+Fudou Akio (Inazuma Japan)
+Fudou Akio (New Royal Academy)
+Utsunomiya Toramaru 
+Kiyama Hiroto 
+Kiyama Hiroto 
+Hijikata Raiden 
+Sakuma Jirou (Inazuma Japan)
+Sakuma Jirou (Royal Academy)
+Sakuma Jirou (New Royal Academy)
+Midorikawa Ryuuji (Inazuma Japan)
+Midorikawa Ryuuji 
+Genda Koujirou (Royal Academy)
+Genda Koujirou (Neo Japan)
+Genda Koujirou (New Royal Academy)
+Oono Densuke 
+Banjou Kazumichi 
+Narukami Kenya (Royal Academy)
+Narukami Kenya (Neo Japan)
+Gojou Masaru (Royal Academy)
+Henmi Wataru 
+Sakiyama Shuuji 
+Doumen Shuuichirou 
+Jimon Daiki (Royal Academy)
+Jimon Daiki (Neo Japan)
+Posei Donichi 
+Aporo Hikaru 
+Hepai En 
+Aresu Ran 
+Deio Geki 
+Arute Saneki 
+Herume Matsuaki 
+Atena Tomo 
+Demete Yutaka (Zeus)
+Demete Yutaka (Neo Japan)
+Afuro Terumi (Zeus)
+Afuro Terumi (Mondial Selection)
+Hera Tadashi (Zeus)
+Hera Tadashi (Neo Japan)
+Saginuma Osamu (Neo Japan)
+Saginuma Osamu 
+Touchi Shuuji 
+Kanime Iderou 
+Touchi Ai 
+Yagami Reina 
+Mutou Satoshi 
+Kuri Fuuko 
+Sumeragi Maki 
+Miura Hiromu 
+Nemuro Kimiyuki 
+Kii Fumiko 
+Kui Ruru 
+Kinki Nozomi 
+Nanakaze Rimu 
+Ooiwa Kurando 
+Gokukawa Kantarou 
+Barazono Hana 
+Kurakake Clara 
+Honba Geki 
+Atsuishi Shigeto 
+Atsuishi Shigeto 
+Netsuha Natsuhiko 
+Kurione Yuki 
+Kadomichi Tooru 
+Nagumo Haruya 
+Suzuno Fuusuke 
+Sugimori Takeshi (Mikage Sennou)
+Sugimori Takeshi (Dark Emperors)
+Nishigaki Mamoru (Kirkwood)
+Nishigaki Mamoru (Dark Emperors)
+Yamino Kageto (Raimon)
+Yamino Kageto (Dark Emperors)
+Gouin Takeshi 
+Ishidaira Hanzou 
+Yuukoku Hiroyuki 
+Kirigakure Saiji 
+Shimozuru Arata 
+Segata Ryuuichirou 
+Izuno Yuu 
+Makiya Hiroshi 
+Mukata Tsutomu 
+Rococo Urupa 
+Bjorn Kyle 
+Teres Tolue 
+Mark Kruger 
+Choi Chang Soo 
+Mac Roniejo 
+Edgar Valtinas 
+Fideo Ardena 
+Gigi Blasi 
+Walter Mountain 
+Lagarto Carlos 
+Nice Dolphin 
+Dylan Keith 
+Astaroth 
+Nenel 
+Elfel 
+Hebimoth 
+Belzebu 
+Winel 
+Mephisto 
+Guel 
+Satanathos 
+Sein 
+Desuta 
+Kino Aki 
+Matoro Juka 
+Hori Michiko 
+Kudou Fuyuka 
+Kushida Katsuyo 
+Takanashi Shinobu 
+Yorozu Hiromi 
+Otonashi Haruna 
+Tateno Mai 
+Raimon Natsumi 
+Kisaragi Mako 
+Dosu Koi 
+Torahama Kouko 
+Kyan Rinka 
+Araya Konko 
+Midou Reika 
+Zagomel Zande 
+Gebo Torangas 
+Bubo Torangas 
+Ginis Jinkins 
+Daikko Buuka 
+Drache Gyunter 
+Sandayuu Mishima 
+Ikka Stacks 
+Mistrene Callous 
+Eska Bamel 
+Baddap Sleed 
+Endou Kanon 
+Gouenji Masato 
+Miyasaka Ryou 
+Tamano Gorou 
+Otomura Gakuya 
+Kamezaki Kappa 
+Lubbock Henktacker 
+Demonio Strada 
+Matsukaze Tenma 
+Tsurugi Kyousuke 
+Shindou Takuto 
+Raimon Natsumi (Manager)
+Otonashi Haruna (Manager)
+Kudou Fuyuka (Manager)
+Kino Aki (Manager)
+Ootani Tsukushi (Manager)
+Endou Daisuke (Trainer)
+Hibiki Seigou (Trainer)
+Kudou Michiya (Trainer)
+Kira Hitomiko (Trainer)
+Kakuma Keita (Commentator)
+Kakuma Oushou (Commentator)
+Nagumo Haruya 
+Suzuno Fuusuke 
+Kirino Ranmaru 
+Nishizono Shinsuke 
+Endou Mamoru 
+Sangoku Taichi 
+Kurumada Gouichi 
+Amagi Daichi 
+Hamano Kaiji 
+Hayami Tsurumasa 
+Kurama Norihito 
+Minamisawa Atsushi 
+Kariya Masaki 
+Nishiki Ryouma 
+Kageyama Hikaru 
+Sorano Aoi 
+Yamana Akane 
+Seto Midori 
+Windy Faster 
+Gini Geino 
+Marron Ian 
+Shinti Hanpa 
+Yumu Rinji 
+Kito Ryand 
+Maxi Kuu 
+Goushu Flare 
+Drago Hill 
+Cain Saito 
+McCall Kisara 
+Maygar Nathan 
+Ryuu Skell 
+Skid Wu 
+Vento Gagliano 
+Ottorino Nobili 
+Anton Gattuso 
+Marco Maseratti 
+Angelo Gabrini 
+Gianluca Zanardi 
+Giorgio Giannini 
+Dante Diavolo 
+Raffaele Generani 
+Daniele Sanctis 
+Enrico Olivier 
+Alessandro Rossa 
+Giuseppe Cannavaro 
+Namikawa Rensuke 
+Yukimura Hyouga 
+Amemiya Taiyou 
+Hebino Makito 
+Saki Yukio 
+Ejima Kazuya 
+Onizuka Heita 
+Seidou Dan 
+Hakuryuu 
+Kiya Kouji 
+Rinne Makoto 
+Yuuki Jou 
+Gouenji Shuuya 
+Kai 
+Kogure Yuuya (Adult)
+Kibayama Douzan 
+Hikita Goushirou (Unused)
+Ookazeya Giichi (Unused)
+Rinno Tenki (Unused)
+Gojou Masaru (ZERO)
+Mutou Satoshi (Unused)
+Endou Mamoru (ILJ)
+Kazemaru Ichirouta (ILJ)
+Kabeyama Heigorou (ILJ)
+Kidou Yuuto (ILJ)
+Fubuki Shirou (ILJ)
+Fudou Akio (ILJ)
+Sorano Aoi (Manager)
+Yamana Akane (Manager)
+Seto Midori (Manager)
+Endou Mamoru (Trainer)
+Kidou Yuuto (Trainer)
+Matsukaze Tenma (Tutorial)
+Matsukaze Tenma  (Armed)
+Tsurugi Kyousuke  (Armed)
+Shindou Takuto  (Armed)
+Nishizono Shinsuke  (Armed)
+Nishiki Ryouma  (Armed)
+Kirino Ranmaru  (Armed)
+Amemiya Taiyou x Koumei  (Armed)
+Nanobana Kinako  (Armed)
+Tsurugi Yuuichi  (Armed)
+Hakuryuu  (Armed)
+Alpha  (Armed)
+Beta  (Armed)
+Gamma  (Armed)
+Zanark Avalonic  (Armed)
+Fran  (Armed)
+Fei Rune  (Armed)
+Amemiya Taiyou  (Armed)
+Fei Rune 
+Nanobana Kinako 
+Tsurugi Yuuichi 
+Torb 
+Tasuke 
+Inaba Taian 
+Saryuu Evan 
+Rei Rukh 
+Matsukaze Tenma (Tenmas)
+Matchos 
+Straw 
+Manto 
+Wally 
+Deboon 
+Smile 
+Drill Smasher 
+Chibitto 
+Kimoro 
+Alpha 
+Beta 
+Gamma 
+Einamu 
+Reiza 
+Zanou 
+Kuosu 
+Gaura 
+Medam 
+Neira 
+Orca 
+Ward 
+Dorimu 
+Kurosaki Makoto 
+Hyoudou Tsukasa 
+Mahoro Tadashi 
+Kishibe Taiga 
+Makari Ginjirou 
+Taki Sousuke 
+Miyabino Reiichi 
+Kitaki Tsuneo 
+Taki Yoshihiko 
+Ryuuzaki Ouji 
+Ide Norikazu 
+Hayabusa Hideki 
+Wanda Naoto 
+Mitsuyoshi Yozakura 
+Isozaki Kenma 
+Mikado Haruma 
+Kita Ichiban 
+Shinoyama Mitsuru (Unused)
+Zanark Avalonic 
+Oogu 
+Shuten 
+Rasetsu 
+Gouzu 
+Shura 
+Shinjami 
+Engiru 
+Yasha 
+Goburis 
+Meizu 
+Zanark Avalonic (Unused)
+Fran 
+Asta 
+San 
+Maagaru 
+Genius 
+Chuuri 
+Dande 
+Viola 
+Okiddo 
+Kamomi 
+Lotus 
+Mokuren 
+Laven 
+Senguuji Yamato 
+Gomaki Tetsurou 
+Fei x Tyrano 
+Tenma x Shuu 
+Yuuichi x Kyousuke 
+Shindou x Nobunaga 
+Kirino x Jeanne 
+Taiyou x Koumei 
+Shinsuke x Bei 
+Torb x Tochan 
+Fei x Big 
+Nishiki x Sakamoto 
+Tsurugi x Okita 
+Kinako x Dragon 
+Tenma x Arthur 
+Zanark x Sousou 
+Super Zanark 
+Saryuu Evan MM (Unused)
+Fox 
+Coyote 
+Aoyama Shunsuke 
+Ichino Nanasuke 
+Afuro Terumi (Adult - Unused)
+Ishido Shuuji (Unused)
+Gouenji Shuuya (ILJ)
+Kiyama Hiroto (ILJ)
+Tsunami Jousuke (ILJ)
+Someoka Ryuugo (ILJ)
+Sakuma Jirou (ILJ)
+Clark Wonderbot (Unused)
+San (Unused)
+Afuro Terumi (Unused)
+Ishido Shuuji (Coach)
+Clark Wonderbot (Coach)
+Endou Mamoru (Adult)
+Beta (Unused)
+Fran MM (Unused)

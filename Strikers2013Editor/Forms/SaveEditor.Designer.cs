@@ -99,6 +99,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             tabPage5 = new System.Windows.Forms.TabPage();
             tabPage5.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -128,6 +130,8 @@
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(this.label27);
+            tabPage5.Controls.Add(this.label26);
             tabPage5.Controls.Add(this.cmbTeam);
             tabPage5.Controls.Add(this.lstTeam);
             tabPage5.Location = new System.Drawing.Point(4, 22);
@@ -141,7 +145,7 @@
             // cmbTeam
             // 
             this.cmbTeam.FormattingEnabled = true;
-            this.cmbTeam.Location = new System.Drawing.Point(6, 276);
+            this.cmbTeam.Location = new System.Drawing.Point(134, 289);
             this.cmbTeam.Name = "cmbTeam";
             this.cmbTeam.Size = new System.Drawing.Size(132, 21);
             this.cmbTeam.TabIndex = 4;
@@ -150,7 +154,7 @@
             // lstTeam
             // 
             this.lstTeam.FormattingEnabled = true;
-            this.lstTeam.Location = new System.Drawing.Point(6, 6);
+            this.lstTeam.Location = new System.Drawing.Point(6, 19);
             this.lstTeam.Name = "lstTeam";
             this.lstTeam.Size = new System.Drawing.Size(260, 264);
             this.lstTeam.TabIndex = 3;
@@ -746,7 +750,7 @@
             this.groupBox1.Size = new System.Drawing.Size(456, 232);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Creation Date and Playcount";
+            this.groupBox1.Text = "Date and Playcount";
             // 
             // label25
             // 
@@ -857,6 +861,24 @@
             // 
             this.toolTip2.ToolTipTitle = "Format";
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 3);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(55, 13);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Player List";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 292);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(80, 13);
+            this.label27.TabIndex = 6;
+            this.label27.Text = "Selected player";
+            // 
             // SaveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -868,6 +890,7 @@
             this.Text = "SaveEditor";
             this.Load += new System.EventHandler(this.SaveEditor_Load);
             tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -972,5 +995,7 @@
         private System.Windows.Forms.NumericUpDown nudCreationTime;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.Button btnMax;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
     }
 }
