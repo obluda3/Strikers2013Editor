@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using Strikers2013Editor.IO;
 using Strikers2013Editor.Logic;
+using Strikers2013Editor.Common;
 
 namespace Strikers2013Editor.Forms
 {
@@ -13,7 +14,7 @@ namespace Strikers2013Editor.Forms
     {
         Encoding sjis = Encoding.GetEncoding("sjis");
         Save save;
-        string[] wazaNames, playerNames;
+        string[] wazaNames, playerNames, emblemNames;
 
         public SaveEditor()
         {
@@ -43,45 +44,43 @@ namespace Strikers2013Editor.Forms
 
                     save = new Save(ofd.FileName);
 
-                    save.baseOffset = (uint)(0x2598 + slot * 0x68548);
+                    save.BaseOffset = (uint)(0x2598 + slot * 0x68548);
 
-                    cmbTeam.Items.Clear();
+                    cmbCurPlayer.Items.Clear();
                     lstPlayers.Items.Clear();
                     lstTeam.Items.Clear();
 
                     save.ParseSaveFile();
 
-                    var assembly = Assembly.GetExecutingAssembly();
-                    using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Common.playernames.txt"))
-                    {
-                        using (StreamReader sr = new StreamReader(playernamesfile))
-                        {
-                            var playerNamesList = new List<string>();
-                            string line;
-                            while ((line = sr.ReadLine()) != null)
-                            {
-                                playerNamesList.Add(line);
-                            }
+                    playerNames = Names.GetTextFile("Strikers2013Editor.Common.playerNames.txt");
+                    emblemNames = Names.GetTextFile("Strikers2013Editor.Common.emblemNames.txt");
 
-                            playerNames = playerNamesList.ToArray();
-                        }
-                    }
                     lstPlayers.Items.AddRange(playerNames);
-                    cmbTeam.Items.AddRange(playerNames);
+                    cmbCurPlayer.Items.AddRange(playerNames);
+                    cmbTeamEmblem.Items.AddRange(emblemNames);
+                    cmbTeamKit.Items.AddRange(emblemNames);
+                    cmbPlayerKit.Items.AddRange(emblemNames);
+                    cmbCoach.Items.AddRange(playerNames);
 
-                    foreach (var player in save.team)
+                    foreach (var player in save.Team.Players)
                     {
-                        lstTeam.Items.Add(playerNames[player]);
+                        lstTeam.Items.Add(playerNames[player.Id]);
                     }
-                    txtProfileName.Text = save.profileName;
-                    txtOnlineName.Text = save.onlineName;
-                    nudProfile.Value = save.profile;
-                    nudProfileOnline.Value = save.onlineProfile;
-                    nudInazumaPoints.Value = save.inazumaPoints;
-                    nudHours.Value = save.hoursPlayed;
-                    nudMinutes.Value = save.minutesPlayed / 0x1c200;
-                    nudCreationTime.Value = save.creationTime;
-                    nudCreationDate.Value = save.creationDate;
+                    txtProfileName.Text = save.ProfileName;
+                    txtOnlineName.Text = save.OnlineName;
+                    nudProfile.Value = save.Profile;
+                    nudProfileOnline.Value = save.OnlineProfile;
+                    nudInazumaPoints.Value = save.InazumaPoints;
+                    nudHours.Value = save.HoursPlayed;
+                    nudMinutes.Value = save.MinutesPlayed / 0x1c200;
+                    nudCreationTime.Value = save.CreationTime;
+                    nudCreationDate.Value = save.CreationDate;
+
+                    txtTeamInfo.Text = save.Team.Name;
+                    cmbTeamEmblem.SelectedIndex = save.Team.Emblem;
+                    cmbTeamKit.SelectedIndex = save.Team.Kit;
+                    cmbCoach.SelectedIndex = save.Team.Coach;
+                    
 
 
                     tabControl1.Enabled = true;
@@ -108,58 +107,65 @@ namespace Strikers2013Editor.Forms
 
         private void txtOnlineName_TextChanged(object sender, EventArgs e)
         {
-            save.onlineName = txtOnlineName.Text;
+            save.OnlineName = txtOnlineName.Text;
         }
 
         private void nudProfile_ValueChanged(object sender, EventArgs e)
         {
-            save.profile = (uint)nudProfile.Value;
+            save.Profile = (uint)nudProfile.Value;
         }
 
         private void nudProfileOnline_ValueChanged(object sender, EventArgs e)
         {
-            save.onlineProfile = (uint)nudProfileOnline.Value;
+            save.OnlineProfile = (uint)nudProfileOnline.Value;
         }
 
         private void nudCreationTime_ValueChanged(object sender, EventArgs e)
         {
-            save.creationTime = (uint)nudCreationTime.Value;
+            save.CreationTime = (uint)nudCreationTime.Value;
         }
 
         private void nudCreationDate_ValueChanged(object sender, EventArgs e)
         {
-            save.creationDate = (uint)nudCreationDate.Value;
+            save.CreationDate = (uint)nudCreationDate.Value;
         }
 
         private void nudMinutes_ValueChanged(object sender, EventArgs e)
         {
-            save.minutesPlayed = (uint)nudMinutes.Value * 0x1c200;
+            save.MinutesPlayed = (uint)nudMinutes.Value * 0x1c200;
         }
 
         private void nudHours_ValueChanged(object sender, EventArgs e)
         {
-            save.hoursPlayed = (uint)nudHours.Value;
+            save.HoursPlayed = (uint)nudHours.Value;
         }
 
         private void txtProfileName_TextChanged(object sender, EventArgs e)
         {
-            save.profileName = txtProfileName.Text;
+            save.ProfileName = txtProfileName.Text;
         }
         private void lstTeam_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var player = save.Team.Players[lstTeam.SelectedIndex];
             if (lstTeam.SelectedIndex != -1)
-                cmbTeam.SelectedIndex = save.team[lstTeam.SelectedIndex];
+            {
+                cmbCurPlayer.SelectedIndex = player.Id;
+                cmbPlayerKit.SelectedIndex = player.ClubroomKit;
+                nudSquadNumber.Value = player.KitNumber;
+                chkKey.Checked = (player.Flag & 0x2000) == 0x2000;
+            }
         }
 
         private void cmbTeam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            save.team[lstTeam.SelectedIndex] = (short)cmbTeam.SelectedIndex;
-            lstTeam.Items[lstTeam.SelectedIndex] = playerNames[cmbTeam.SelectedIndex];
+            save.Team.Players[lstTeam.SelectedIndex].Id = cmbCurPlayer.SelectedIndex;
+            lstTeam.Items[lstTeam.SelectedIndex] = playerNames[cmbCurPlayer.SelectedIndex];
+
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            var player = save.players[lstPlayers.SelectedIndex];
+            var player = save.Players[lstPlayers.SelectedIndex];
 
 
             player.MoveList.Lv1 = Convert.ToInt16(txtLV1.Text, 16);
@@ -172,12 +178,12 @@ namespace Strikers2013Editor.Forms
             player.MoveList.Defense = Convert.ToInt16(txtDefense.Text, 16);
             player.MoveList.SP = Convert.ToInt16(txtSP.Text, 16);
 
-            save.players[lstPlayers.SelectedIndex] = player;
+            save.Players[lstPlayers.SelectedIndex] = player;
         }
 
         private void btnMax_Click(object sender, EventArgs e)
         {
-            var player = save.players[lstPlayers.SelectedIndex];
+            var player = save.Players[lstPlayers.SelectedIndex];
             var stats = player.Stats;
 
             stats.Kick = stats.MaxKick;
@@ -190,7 +196,7 @@ namespace Strikers2013Editor.Forms
 
             player.Stats = stats;
 
-            save.players[lstPlayers.SelectedIndex] = player;
+            save.Players[lstPlayers.SelectedIndex] = player;
 
             nudKick.Value = player.Stats.Kick;
             nudBody.Value = player.Stats.Body;
@@ -211,9 +217,49 @@ namespace Strikers2013Editor.Forms
 
         }
 
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTeamInfo_TextChanged(object sender, EventArgs e)
+        {
+            save.Team.Name = txtTeamInfo.Text;
+        }
+
+        private void cmbTeamKit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            save.Team.Kit = cmbTeamKit.SelectedIndex;
+        }
+
+        private void cmbTeamEmblem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            save.Team.Emblem = cmbTeamEmblem.SelectedIndex;
+        }
+
+        private void cmbCoach_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            save.Team.Coach = cmbCoach.SelectedIndex;
+        }
+
+        private void nudSquadNumber_ValueChanged(object sender, EventArgs e)
+        {
+            save.Team.Players[lstTeam.SelectedIndex].KitNumber = (int)nudSquadNumber.Value;
+        }
+
+        private void chkKey_CheckedChanged(object sender, EventArgs e)
+        {
+            save.Team.Players[lstTeam.SelectedIndex].Flag ^= 0x2000; 
+        }
+
+        private void cmbPlayerKit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            save.Team.Players[lstTeam.SelectedIndex].ClubroomKit = cmbPlayerKit.SelectedIndex;
+        }
+
         private void lstPlayers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var player = save.players[lstPlayers.SelectedIndex];
+            var player = save.Players[lstPlayers.SelectedIndex];
 
             nudKick.Value = player.Stats.Kick;
             nudBody.Value = player.Stats.Body;

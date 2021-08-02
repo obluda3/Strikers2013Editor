@@ -14,17 +14,17 @@ namespace Strikers2013Editor.Logic
         Encoding sjis = Encoding.GetEncoding("sjis");
         public string filename;
 
-        public short[] team = new short[16];
-        public Player[] players = new Player[412];
+        public Team Team = new Team();
+        public Player[] Players = new Player[412];
 
-        public string profileName, onlineName;
+        public string ProfileName, OnlineName;
         public string[] playerNames, wazaNames;
-        public uint profile, onlineProfile, baseOffset, minutesPlayed, hoursPlayed, inazumaPoints, creationDate, creationTime;
+        public uint Profile, OnlineProfile, BaseOffset, MinutesPlayed, HoursPlayed, InazumaPoints, CreationDate, CreationTime;
         public int slot;
 
         private const int STATS_OFFSET = 0xad6c;
         private const int WAZA_OFFSET = 0x640a4;
-        private const int TEAM_OFFSET = 0x63f66;
+        private const int TEAM_OFFSET = 0x63F54;
         private const int PROFILE_OFFSET = 0x6775a;
         private const int ONLINE_PROFILE = 0x1d8;
         private const int PROFILENAME_OFFSET = 0x1f8;
@@ -40,41 +40,43 @@ namespace Strikers2013Editor.Logic
             using (var br = new BeBinaryReader(File.OpenRead(filename)))
             {
                 br.BaseStream.Position = ONLINE_PROFILE;
-                onlineName = sjis.GetString(br.ReadBytes(16));
-                onlineProfile = br.ReadUInt32();
+                OnlineName = sjis.GetString(br.ReadBytes(16));
+                OnlineProfile = br.ReadUInt32();
 
-                br.BaseStream.Position = baseOffset;
-                creationDate = br.ReadUInt32();
-                creationTime = br.ReadUInt32();
-                hoursPlayed = br.ReadUInt32();
-                minutesPlayed = br.ReadUInt32();
+                br.BaseStream.Position = BaseOffset;
+                CreationDate = br.ReadUInt32();
+                CreationTime = br.ReadUInt32();
+                HoursPlayed = br.ReadUInt32();
+                MinutesPlayed = br.ReadUInt32();
 
-                br.BaseStream.Position = baseOffset + 0x1d4;
-                inazumaPoints = br.ReadUInt32();
+                br.BaseStream.Position = BaseOffset + 0x1d4;
+                InazumaPoints = br.ReadUInt32();
 
-                br.BaseStream.Position = baseOffset + PROFILENAME_OFFSET;
-                profileName = sjis.GetString(br.ReadBytes(16));
+                br.BaseStream.Position = BaseOffset + PROFILENAME_OFFSET;
+                ProfileName = sjis.GetString(br.ReadBytes(16));
+
 
                 for (var i = 0; i < 412; i++)
                 {
                     // Stats
                     var player = new Player();
-                    br.BaseStream.Position = baseOffset + STATS_OFFSET + i * 0x3c;
+                    br.BaseStream.Position = BaseOffset + STATS_OFFSET + i * 0x3c;
                     player.Stats = new Stats(br);
 
                     // Moves
-                    br.BaseStream.Position = baseOffset + WAZA_OFFSET + i * 0x22;
+                    br.BaseStream.Position = BaseOffset + WAZA_OFFSET + i * 0x22;
                     player.MoveList = new MoveList(br);
 
-                    players[i] = player;
+                    Players[i] = player;
                 }
-                for (var i = 0; i < 16; i++)
-                {
-                    br.BaseStream.Position = baseOffset + TEAM_OFFSET + 0x14 * i;
-                    team[i] = br.ReadInt16();
-                }
-                br.BaseStream.Position = baseOffset + PROFILE_OFFSET;
-                profile = br.ReadUInt32();
+                br.BaseStream.Position = BaseOffset + TEAM_OFFSET;
+                Team = new Team(br);
+
+                br.BaseStream.Position = BaseOffset + PROFILENAME_OFFSET + 18;
+                Team.Name = sjis.GetString(br.ReadBytes(16));
+
+                br.BaseStream.Position = BaseOffset + PROFILE_OFFSET;
+                Profile = br.ReadUInt32();
             }
         }
 
@@ -87,39 +89,40 @@ namespace Strikers2013Editor.Logic
             {
                 bw.Write(saveData);
                 bw.BaseStream.Position = 0x1d8;
-                bw.Write(StringTo16LongArray(onlineName));
-                bw.Write(onlineProfile);
+                bw.Write(StringTo16LongArray(OnlineName));
+                bw.Write(OnlineProfile);
 
-                bw.BaseStream.Position = baseOffset;
-                bw.Write(creationDate);
-                bw.Write(creationTime);
-                bw.Write(hoursPlayed);
-                bw.Write(minutesPlayed);
+                bw.BaseStream.Position = BaseOffset;
+                bw.Write(CreationDate);
+                bw.Write(CreationTime);
+                bw.Write(HoursPlayed);
+                bw.Write(MinutesPlayed);
 
-                bw.BaseStream.Position = baseOffset + 0x1d4;
-                bw.Write(inazumaPoints);
+                bw.BaseStream.Position = BaseOffset + 0x1d4;
+                bw.Write(InazumaPoints);
 
-                bw.BaseStream.Position = baseOffset + PROFILENAME_OFFSET;
-                bw.Write(StringTo16LongArray(profileName));
+                bw.BaseStream.Position = BaseOffset + PROFILENAME_OFFSET;
+                bw.Write(StringTo16LongArray(ProfileName));
 
                 for (var i = 0; i < 412; i++)
                 {
-                    var player = players[i];
+                    var player = Players[i];
                     // STATS
-                    bw.BaseStream.Position = baseOffset + STATS_OFFSET + i * 0x3c;
+                    bw.BaseStream.Position = BaseOffset + STATS_OFFSET + i * 0x3c;
                     player.Stats.Write(bw);
 
                     // WAZA
-                    bw.BaseStream.Position = baseOffset + WAZA_OFFSET + i * 0x22;
+                    bw.BaseStream.Position = BaseOffset + WAZA_OFFSET + i * 0x22;
                     player.MoveList.Write(bw);
                 }
-                for (var i = 0; i < 16; i++)
-                {
-                    bw.BaseStream.Position = baseOffset + TEAM_OFFSET + 0x14 * i;
-                    bw.Write(team[i]);
-                }
-                bw.BaseStream.Position = baseOffset + PROFILE_OFFSET;
-                bw.Write(profile);
+                bw.BaseStream.Position = BaseOffset + TEAM_OFFSET;
+                Team.Write(bw);
+
+                bw.BaseStream.Position = BaseOffset + PROFILENAME_OFFSET + 18;
+                bw.Write(StringTo16LongArray(Team.Name));
+
+                bw.BaseStream.Position = BaseOffset + PROFILE_OFFSET;
+                bw.Write(Profile);
 
             }
 

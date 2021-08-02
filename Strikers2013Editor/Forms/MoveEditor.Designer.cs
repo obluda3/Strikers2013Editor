@@ -258,6 +258,7 @@
             this.cmbTier.Name = "cmbTier";
             this.cmbTier.Size = new System.Drawing.Size(121, 21);
             this.cmbTier.TabIndex = 0;
+            this.cmbTier.SelectedIndexChanged += new System.EventHandler(this.cmbTier_SelectedIndexChanged);
             // 
             // tabPage2
             // 

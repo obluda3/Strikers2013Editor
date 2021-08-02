@@ -178,4 +178,69 @@ namespace Strikers2013Editor.Logic
             bw.Write(Unk);
         }
     }
+
+    struct Team 
+    {
+        public int Kit;
+        public int Emblem;
+        public int Manager;
+        public int Coach;
+        public string Name;
+
+        public TeamPlayer[] Players;
+
+        public Team(BeBinaryReader br) 
+        {
+            Kit = br.ReadInt32();
+            Emblem = br.ReadInt32();
+            Manager = br.ReadInt32();
+            Coach = br.ReadInt32();
+            Players = new TeamPlayer[16];
+            Name = "";
+
+            for (var i = 0; i < 16; i++)
+                Players[i] = new TeamPlayer(br);
+        }
+
+        public void Write(BeBinaryWriter bw) 
+        {
+            bw.Write(Kit);
+            bw.Write(Emblem);
+            bw.Write(Manager);
+            bw.Write(Coach);
+            foreach (var player in Players)
+                player.Write(bw);
+        }
+    }
+    struct TeamPlayer 
+    {
+        
+        public int Id;
+        public int KitNumber;
+        public int FormationIndex;
+        public int ClubroomKit;
+        public int Flag; // & 0x2000 => key player
+        /*public TeamPlayer(BeBinaryReader br)
+        {
+
+        }*/
+
+        public TeamPlayer(BeBinaryReader br) 
+        {
+            Id = br.ReadInt32();
+            KitNumber = br.ReadInt32();
+            FormationIndex = br.ReadInt32();
+            ClubroomKit = br.ReadInt32();
+            Flag = br.ReadInt32();
+        }
+
+        public void Write(BeBinaryWriter bw) 
+        {
+            bw.Write(Id);
+            bw.Write(KitNumber);
+            bw.Write(FormationIndex);
+            bw.Write(ClubroomKit);
+            bw.Write(Flag);
+        }
+    }
 }

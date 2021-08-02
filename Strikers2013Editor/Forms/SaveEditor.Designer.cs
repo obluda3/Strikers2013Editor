@@ -30,7 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tabPage5;
-            this.cmbTeam = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.chkKey = new System.Windows.Forms.CheckBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.cmbPlayerKit = new System.Windows.Forms.ComboBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.nudSquadNumber = new System.Windows.Forms.NumericUpDown();
+            this.label27 = new System.Windows.Forms.Label();
+            this.cmbCurPlayer = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.cmbCoach = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.cmbTeamEmblem = new System.Windows.Forms.ComboBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.cmbTeamKit = new System.Windows.Forms.ComboBox();
+            this.txtTeamInfo = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.lstTeam = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +90,6 @@
             this.txtDribble = new System.Windows.Forms.TextBox();
             this.txtLV3 = new System.Windows.Forms.TextBox();
             this.txtLV2 = new System.Windows.Forms.TextBox();
-            this.txtLV1 = new System.Windows.Forms.TextBox();
             this.lstPlayers = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -99,10 +115,12 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.txtLV1 = new System.Windows.Forms.TextBox();
             tabPage5 = new System.Windows.Forms.TabPage();
             tabPage5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSquadNumber)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -130,9 +148,9 @@
             // 
             // tabPage5
             // 
-            tabPage5.Controls.Add(this.label27);
+            tabPage5.Controls.Add(this.groupBox4);
+            tabPage5.Controls.Add(this.groupBox3);
             tabPage5.Controls.Add(this.label26);
-            tabPage5.Controls.Add(this.cmbTeam);
             tabPage5.Controls.Add(this.lstTeam);
             tabPage5.Location = new System.Drawing.Point(4, 22);
             tabPage5.Name = "tabPage5";
@@ -141,22 +159,191 @@
             tabPage5.TabIndex = 3;
             tabPage5.Text = "Team";
             tabPage5.UseVisualStyleBackColor = true;
+            tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
-            // cmbTeam
+            // groupBox4
             // 
-            this.cmbTeam.FormattingEnabled = true;
-            this.cmbTeam.Location = new System.Drawing.Point(134, 289);
-            this.cmbTeam.Name = "cmbTeam";
-            this.cmbTeam.Size = new System.Drawing.Size(132, 21);
-            this.cmbTeam.TabIndex = 4;
-            this.cmbTeam.SelectedIndexChanged += new System.EventHandler(this.cmbTeam_SelectedIndexChanged);
+            this.groupBox4.Controls.Add(this.chkKey);
+            this.groupBox4.Controls.Add(this.label33);
+            this.groupBox4.Controls.Add(this.cmbPlayerKit);
+            this.groupBox4.Controls.Add(this.label32);
+            this.groupBox4.Controls.Add(this.nudSquadNumber);
+            this.groupBox4.Controls.Add(this.label27);
+            this.groupBox4.Controls.Add(this.cmbCurPlayer);
+            this.groupBox4.Location = new System.Drawing.Point(9, 290);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(229, 143);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Selected player";
+            // 
+            // chkKey
+            // 
+            this.chkKey.AutoSize = true;
+            this.chkKey.Location = new System.Drawing.Point(9, 102);
+            this.chkKey.Name = "chkKey";
+            this.chkKey.Size = new System.Drawing.Size(84, 17);
+            this.chkKey.TabIndex = 11;
+            this.chkKey.Text = "Key player ?";
+            this.chkKey.UseVisualStyleBackColor = true;
+            this.chkKey.CheckedChanged += new System.EventHandler(this.chkKey_CheckedChanged);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(6, 49);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(65, 13);
+            this.label33.TabIndex = 9;
+            this.label33.Text = "Clubroom kit";
+            // 
+            // cmbPlayerKit
+            // 
+            this.cmbPlayerKit.FormattingEnabled = true;
+            this.cmbPlayerKit.Location = new System.Drawing.Point(85, 46);
+            this.cmbPlayerKit.Name = "cmbPlayerKit";
+            this.cmbPlayerKit.Size = new System.Drawing.Size(121, 21);
+            this.cmbPlayerKit.TabIndex = 8;
+            this.cmbPlayerKit.SelectedIndexChanged += new System.EventHandler(this.cmbPlayerKit_SelectedIndexChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(6, 75);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(76, 13);
+            this.label32.TabIndex = 7;
+            this.label32.Text = "Squad number";
+            // 
+            // nudSquadNumber
+            // 
+            this.nudSquadNumber.Location = new System.Drawing.Point(150, 73);
+            this.nudSquadNumber.Name = "nudSquadNumber";
+            this.nudSquadNumber.Size = new System.Drawing.Size(56, 20);
+            this.nudSquadNumber.TabIndex = 6;
+            this.nudSquadNumber.ValueChanged += new System.EventHandler(this.nudSquadNumber_ValueChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 22);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(35, 13);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "Name";
+            // 
+            // cmbCurPlayer
+            // 
+            this.cmbCurPlayer.FormattingEnabled = true;
+            this.cmbCurPlayer.Location = new System.Drawing.Point(70, 19);
+            this.cmbCurPlayer.Name = "cmbCurPlayer";
+            this.cmbCurPlayer.Size = new System.Drawing.Size(136, 21);
+            this.cmbCurPlayer.TabIndex = 4;
+            this.cmbCurPlayer.SelectedIndexChanged += new System.EventHandler(this.cmbTeam_SelectedIndexChanged);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label31);
+            this.groupBox3.Controls.Add(this.cmbCoach);
+            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.cmbTeamEmblem);
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.cmbTeamKit);
+            this.groupBox3.Controls.Add(this.txtTeamInfo);
+            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Location = new System.Drawing.Point(212, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(251, 264);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Info";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(7, 103);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(38, 13);
+            this.label31.TabIndex = 7;
+            this.label31.Text = "Coach";
+            // 
+            // cmbCoach
+            // 
+            this.cmbCoach.FormattingEnabled = true;
+            this.cmbCoach.Location = new System.Drawing.Point(109, 100);
+            this.cmbCoach.Name = "cmbCoach";
+            this.cmbCoach.Size = new System.Drawing.Size(136, 21);
+            this.cmbCoach.TabIndex = 6;
+            this.cmbCoach.SelectedIndexChanged += new System.EventHandler(this.cmbCoach_SelectedIndexChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(7, 75);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(44, 13);
+            this.label30.TabIndex = 5;
+            this.label30.Text = "Emblem";
+            // 
+            // cmbTeamEmblem
+            // 
+            this.cmbTeamEmblem.FormattingEnabled = true;
+            this.cmbTeamEmblem.Location = new System.Drawing.Point(109, 72);
+            this.cmbTeamEmblem.Name = "cmbTeamEmblem";
+            this.cmbTeamEmblem.Size = new System.Drawing.Size(136, 21);
+            this.cmbTeamEmblem.TabIndex = 4;
+            this.cmbTeamEmblem.SelectedIndexChanged += new System.EventHandler(this.cmbTeamEmblem_SelectedIndexChanged);
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(7, 47);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(19, 13);
+            this.label29.TabIndex = 3;
+            this.label29.Text = "Kit";
+            // 
+            // cmbTeamKit
+            // 
+            this.cmbTeamKit.FormattingEnabled = true;
+            this.cmbTeamKit.Location = new System.Drawing.Point(109, 44);
+            this.cmbTeamKit.Name = "cmbTeamKit";
+            this.cmbTeamKit.Size = new System.Drawing.Size(136, 21);
+            this.cmbTeamKit.TabIndex = 2;
+            this.cmbTeamKit.SelectedIndexChanged += new System.EventHandler(this.cmbTeamKit_SelectedIndexChanged);
+            // 
+            // txtTeamInfo
+            // 
+            this.txtTeamInfo.Location = new System.Drawing.Point(109, 17);
+            this.txtTeamInfo.Name = "txtTeamInfo";
+            this.txtTeamInfo.Size = new System.Drawing.Size(136, 20);
+            this.txtTeamInfo.TabIndex = 1;
+            this.txtTeamInfo.TextChanged += new System.EventHandler(this.txtTeamInfo_TextChanged);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(7, 24);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(35, 13);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Name";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 3);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(55, 13);
+            this.label26.TabIndex = 5;
+            this.label26.Text = "Player List";
             // 
             // lstTeam
             // 
             this.lstTeam.FormattingEnabled = true;
             this.lstTeam.Location = new System.Drawing.Point(6, 19);
             this.lstTeam.Name = "lstTeam";
-            this.lstTeam.Size = new System.Drawing.Size(260, 264);
+            this.lstTeam.Size = new System.Drawing.Size(200, 264);
             this.lstTeam.TabIndex = 3;
             this.lstTeam.SelectedIndexChanged += new System.EventHandler(this.lstTeam_SelectedIndexChanged);
             // 
@@ -208,6 +395,8 @@
             // 
             // btnApply
             // 
+            this.btnApply.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnApply.Location = new System.Drawing.Point(387, 316);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
@@ -218,6 +407,8 @@
             // 
             // tabControl2
             // 
+            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Location = new System.Drawing.Point(232, 6);
@@ -253,6 +444,7 @@
             // 
             // btnMax
             // 
+            this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMax.Location = new System.Drawing.Point(113, 232);
             this.btnMax.Name = "btnMax";
             this.btnMax.Size = new System.Drawing.Size(107, 40);
@@ -272,6 +464,7 @@
             // 
             // nudTP
             // 
+            this.nudTP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudTP.Enabled = false;
             this.nudTP.Location = new System.Drawing.Point(94, 162);
             this.nudTP.Maximum = new decimal(new int[] {
@@ -340,6 +533,7 @@
             // 
             // nudSpeed
             // 
+            this.nudSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudSpeed.Enabled = false;
             this.nudSpeed.Location = new System.Drawing.Point(94, 110);
             this.nudSpeed.Maximum = new decimal(new int[] {
@@ -353,6 +547,7 @@
             // 
             // nudCatch
             // 
+            this.nudCatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudCatch.Enabled = false;
             this.nudCatch.Location = new System.Drawing.Point(94, 136);
             this.nudCatch.Maximum = new decimal(new int[] {
@@ -366,6 +561,7 @@
             // 
             // nudGuard
             // 
+            this.nudGuard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudGuard.Enabled = false;
             this.nudGuard.Location = new System.Drawing.Point(94, 84);
             this.nudGuard.Maximum = new decimal(new int[] {
@@ -379,6 +575,7 @@
             // 
             // nudControl
             // 
+            this.nudControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudControl.Enabled = false;
             this.nudControl.Location = new System.Drawing.Point(94, 58);
             this.nudControl.Maximum = new decimal(new int[] {
@@ -392,6 +589,7 @@
             // 
             // nudBody
             // 
+            this.nudBody.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudBody.Enabled = false;
             this.nudBody.Location = new System.Drawing.Point(94, 32);
             this.nudBody.Maximum = new decimal(new int[] {
@@ -405,6 +603,7 @@
             // 
             // nudKick
             // 
+            this.nudKick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudKick.Enabled = false;
             this.nudKick.Location = new System.Drawing.Point(94, 6);
             this.nudKick.Maximum = new decimal(new int[] {
@@ -581,13 +780,6 @@
             this.txtLV2.Name = "txtLV2";
             this.txtLV2.Size = new System.Drawing.Size(56, 20);
             this.txtLV2.TabIndex = 8;
-            // 
-            // txtLV1
-            // 
-            this.txtLV1.Location = new System.Drawing.Point(94, 6);
-            this.txtLV1.Name = "txtLV1";
-            this.txtLV1.Size = new System.Drawing.Size(56, 20);
-            this.txtLV1.TabIndex = 7;
             // 
             // lstPlayers
             // 
@@ -842,6 +1034,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(tabPage5);
@@ -861,23 +1056,12 @@
             // 
             this.toolTip2.ToolTipTitle = "Format";
             // 
-            // label26
+            // txtLV1
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 3);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(55, 13);
-            this.label26.TabIndex = 5;
-            this.label26.Text = "Player List";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 292);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(80, 13);
-            this.label27.TabIndex = 6;
-            this.label27.Text = "Selected player";
+            this.txtLV1.Location = new System.Drawing.Point(94, 6);
+            this.txtLV1.Name = "txtLV1";
+            this.txtLV1.Size = new System.Drawing.Size(56, 20);
+            this.txtLV1.TabIndex = 7;
             // 
             // SaveEditor
             // 
@@ -887,10 +1071,16 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "SaveEditor";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "SaveEditor";
             this.Load += new System.EventHandler(this.SaveEditor_Load);
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSquadNumber)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -961,7 +1151,6 @@
         private System.Windows.Forms.TextBox txtDribble;
         private System.Windows.Forms.TextBox txtLV3;
         private System.Windows.Forms.TextBox txtLV2;
-        private System.Windows.Forms.TextBox txtLV1;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -985,7 +1174,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.NumericUpDown nudHours;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.ComboBox cmbTeam;
+        private System.Windows.Forms.ComboBox cmbCurPlayer;
         private System.Windows.Forms.ListBox lstTeam;
         private System.Windows.Forms.NumericUpDown nudCreationDate;
         private System.Windows.Forms.Label label24;
@@ -995,7 +1184,23 @@
         private System.Windows.Forms.NumericUpDown nudCreationTime;
         private System.Windows.Forms.ToolTip toolTip2;
         private System.Windows.Forms.Button btnMax;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtTeamInfo;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ComboBox cmbTeamEmblem;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox cmbTeamKit;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox cmbCoach;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.NumericUpDown nudSquadNumber;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.ComboBox cmbPlayerKit;
+        private System.Windows.Forms.CheckBox chkKey;
+        private System.Windows.Forms.TextBox txtLV1;
     }
 }

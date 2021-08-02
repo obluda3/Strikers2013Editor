@@ -53,37 +53,9 @@ namespace Strikers2013Editor.Forms
         }
         private void ParseMoveFile(Stream move)
         {
-            var assembly = Assembly.GetExecutingAssembly();
-
             // Gets the names of the moves
-            using (var movenamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Common.wazaNames.txt"))
-            {
-                using (StreamReader sr = new StreamReader(movenamesfile))
-                {
-                    var moveNamesList = new List<string>();
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        moveNamesList.Add(line);
-                    }
-
-                    moveNames = moveNamesList.ToArray();
-                }
-            }
-            using (var playernamesfile = assembly.GetManifestResourceStream("Strikers2013Editor.Common.playernames.txt"))
-            {
-                using (StreamReader sr = new StreamReader(playernamesfile))
-                {
-                    var playerNamesList = new List<string>();
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        playerNamesList.Add(line);
-                    }
-
-                    playerNames = playerNamesList.ToArray();
-                }
-            }
+            moveNames = Names.GetTextFile("Strikers2013Editor.Common.wazaNames.txt");
+            playerNames = Names.GetTextFile("Strikers2013Editor.Common.playernames.txt");
 
             // Parse the moves
             using (var br = new BeBinaryReader(move))
@@ -291,6 +263,11 @@ namespace Strikers2013Editor.Forms
                     }
                 }
             }
+        }
+
+        private void cmbTier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

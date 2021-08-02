@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Names.cs" />
     <Compile Include="Common\Enums.cs" />
     <Compile Include="Logic\Save.cs" />
     <Compile Include="Forms\Main.cs">
@@ -94,7 +95,7 @@
     <EmbeddedResource Include="Forms\PlayerEditor.resx">
       <DependentUpon>PlayerEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common\playernames.txt" />
+    <EmbeddedResource Include="Common\playerNames.txt" />
     <EmbeddedResource Include="Forms\SaveEditor.resx">
       <DependentUpon>SaveEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Common\wazaNames.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\emblemNames.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
