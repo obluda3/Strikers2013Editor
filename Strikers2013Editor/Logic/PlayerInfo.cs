@@ -41,7 +41,7 @@ namespace Strikers2013Editor.Logic
         public Color SkinColor2;
         public int Unk15;
         public Element Element;
-        public int ChargeTimeProfile;
+        public int ChargeProfile;
         public int Unk17;
         public int Unk18;
         public int Voice;
@@ -89,7 +89,7 @@ namespace Strikers2013Editor.Logic
             SkinColor2 = Color.FromArgb(br.ReadInt32());
             Unk15 = br.ReadInt32();
             Element = (Element)br.ReadInt32();
-            ChargeTimeProfile = br.ReadInt32();
+            ChargeProfile = br.ReadInt32();
             Unk17 = br.ReadInt32();
             Unk18 = br.ReadInt32();
             Voice = br.ReadInt32();
@@ -138,7 +138,7 @@ namespace Strikers2013Editor.Logic
             bw.Write(SkinColor2.ToArgb());
             bw.Write(Unk15);
             bw.Write((int)Element);
-            bw.Write(ChargeTimeProfile);
+            bw.Write(ChargeProfile);
             bw.Write(Unk17);
             bw.Write(Unk18);
             bw.Write(Voice);

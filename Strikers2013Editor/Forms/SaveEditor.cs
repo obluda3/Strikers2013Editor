@@ -14,7 +14,7 @@ namespace Strikers2013Editor.Forms
     {
         Encoding sjis = Encoding.GetEncoding("sjis");
         Save save;
-        string[] wazaNames, playerNames, emblemNames;
+        string[] moveNames, playerNames, emblemNames;
 
         public SaveEditor()
         {
@@ -54,6 +54,7 @@ namespace Strikers2013Editor.Forms
 
                     playerNames = Names.GetTextFile("Strikers2013Editor.Common.playerNames.txt");
                     emblemNames = Names.GetTextFile("Strikers2013Editor.Common.emblemNames.txt");
+                    moveNames = Names.GetTextFile("Strikers2013Editor.Common.wazaNames.txt");
 
                     lstPlayers.Items.AddRange(playerNames);
                     cmbCurPlayer.Items.AddRange(playerNames);
@@ -80,7 +81,17 @@ namespace Strikers2013Editor.Forms
                     cmbTeamEmblem.SelectedIndex = save.Team.Emblem;
                     cmbTeamKit.SelectedIndex = save.Team.Kit;
                     cmbCoach.SelectedIndex = save.Team.Coach;
-                    
+
+                    cmbLv1.Items.AddRange(moveNames);
+                    cmbLv2.Items.AddRange(moveNames);
+                    cmbLv3.Items.AddRange(moveNames);
+                    cmbSP.Items.AddRange(moveNames);
+                    cmbCatch1.Items.AddRange(moveNames);
+                    cmbCatch2.Items.AddRange(moveNames);
+                    cmbCatch3.Items.AddRange(moveNames);
+                    cmbDribble.Items.AddRange(moveNames);
+                    cmbDefense.Items.AddRange(moveNames);
+
 
 
                     tabControl1.Enabled = true;
@@ -146,9 +157,9 @@ namespace Strikers2013Editor.Forms
         }
         private void lstTeam_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var player = save.Team.Players[lstTeam.SelectedIndex];
             if (lstTeam.SelectedIndex != -1)
             {
+                var player = save.Team.Players[lstTeam.SelectedIndex];
                 cmbCurPlayer.SelectedIndex = player.Id;
                 cmbPlayerKit.SelectedIndex = player.ClubroomKit;
                 nudSquadNumber.Value = player.KitNumber;
@@ -167,16 +178,18 @@ namespace Strikers2013Editor.Forms
         {
             var player = save.Players[lstPlayers.SelectedIndex];
 
+            player.Stats.Flag |= chkMixi1.Checked ? 0x10 : 0;
+            player.Stats.Flag |= chkMixi2.Checked ? 0x20 : 0;
 
-            player.MoveList.Lv1 = Convert.ToInt16(txtLV1.Text, 16);
-            player.MoveList.Lv2 = Convert.ToInt16(txtLV2.Text, 16);
-            player.MoveList.Lv3 = Convert.ToInt16(txtLV3.Text, 16);
-            player.MoveList.Catch1 = Convert.ToInt16(txtCatch1.Text, 16);
-            player.MoveList.Catch2 = Convert.ToInt16(txtCatch2.Text, 16);
-            player.MoveList.Catch3 = Convert.ToInt16(txtCatch3.Text, 16);
-            player.MoveList.Dribble = Convert.ToInt16(txtDribble.Text, 16);
-            player.MoveList.Defense = Convert.ToInt16(txtDefense.Text, 16);
-            player.MoveList.SP = Convert.ToInt16(txtSP.Text, 16);
+            player.MoveList.Lv1 = (short)cmbLv1.SelectedIndex;
+            player.MoveList.Lv2 = (short)cmbLv2.SelectedIndex;
+            player.MoveList.Lv3 = (short)cmbLv3.SelectedIndex;
+            player.MoveList.Catch1 = (short)cmbCatch1.SelectedIndex;
+            player.MoveList.Catch2 = (short)cmbCatch2.SelectedIndex;
+            player.MoveList.Catch3 = (short)cmbCatch3.SelectedIndex;
+            player.MoveList.Dribble = (short)cmbDribble.SelectedIndex;
+            player.MoveList.Defense = (short)cmbDefense.SelectedIndex;
+            player.MoveList.SP = (short)cmbSP.SelectedIndex;
 
             save.Players[lstPlayers.SelectedIndex] = player;
         }
@@ -193,6 +206,7 @@ namespace Strikers2013Editor.Forms
             stats.Guard = stats.MaxGuard;
             stats.Speed = stats.MaxSpeed;
             stats.Catch = stats.MaxCatch;
+
 
             player.Stats = stats;
 
@@ -252,6 +266,31 @@ namespace Strikers2013Editor.Forms
             save.Team.Players[lstTeam.SelectedIndex].Flag ^= 0x2000; 
         }
 
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkMixi2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCatch2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCatch3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbManager_SeletedIndexChanged(object sender, EventArgs e)
+        {
+            save.Team.Manager = cmbManager.SelectedIndex;
+        }
+
         private void cmbPlayerKit_SelectedIndexChanged(object sender, EventArgs e)
         {
             save.Team.Players[lstTeam.SelectedIndex].ClubroomKit = cmbPlayerKit.SelectedIndex;
@@ -268,16 +307,18 @@ namespace Strikers2013Editor.Forms
             nudCatch.Value = player.Stats.Catch;
             nudSpeed.Value = player.Stats.Speed;
             nudTP.Value = player.Stats.TP;
+            chkMixi1.Checked = (player.Stats.Flag & 0x10) == 0x10;
+            chkMixi2.Checked = (player.Stats.Flag & 0x20) == 0x20;
 
-            txtLV1.Text = Convert.ToString(player.MoveList.Lv1, 16);
-            txtLV2.Text = Convert.ToString(player.MoveList.Lv2, 16);
-            txtLV3.Text = Convert.ToString(player.MoveList.Lv3, 16);
-            txtSP.Text = Convert.ToString(player.MoveList.SP, 16);
-            txtDefense.Text = Convert.ToString(player.MoveList.Defense, 16);
-            txtDribble.Text = Convert.ToString(player.MoveList.Dribble, 16);
-            txtCatch1.Text = Convert.ToString(player.MoveList.Catch1, 16);
-            txtCatch2.Text = Convert.ToString(player.MoveList.Catch2, 16);
-            txtCatch3.Text = Convert.ToString(player.MoveList.Catch3, 16);
+            cmbLv1.SelectedIndex = player.MoveList.Lv1;
+            cmbLv2.SelectedIndex = player.MoveList.Lv2;
+            cmbLv3.SelectedIndex = player.MoveList.Lv3;
+            cmbCatch1.SelectedIndex = player.MoveList.Catch1;
+            cmbCatch2.SelectedIndex = player.MoveList.Catch2;
+            cmbCatch3.SelectedIndex = player.MoveList.Catch3;
+            cmbDribble.SelectedIndex = player.MoveList.Dribble;
+            cmbDefense.SelectedIndex = player.MoveList.Defense;
+            cmbSP.SelectedIndex = player.MoveList.SP;
 
 
         }

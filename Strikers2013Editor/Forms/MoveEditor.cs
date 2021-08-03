@@ -45,6 +45,7 @@ namespace Strikers2013Editor.Forms
                     cmbElement.Items.AddRange(Enum.GetNames(typeof(Element)));
                     cmbStatus.Items.AddRange(Enum.GetNames(typeof(Status)));
                     chkCoop.Items.AddRange(playerNames);
+                    chkCoop.Items[0] = "Anyone";
                     chkUsers.Items.AddRange(playerNames);
 
 
@@ -55,7 +56,7 @@ namespace Strikers2013Editor.Forms
         {
             // Gets the names of the moves
             moveNames = Names.GetTextFile("Strikers2013Editor.Common.wazaNames.txt");
-            playerNames = Names.GetTextFile("Strikers2013Editor.Common.playernames.txt");
+            playerNames = Names.GetTextFile("Strikers2013Editor.Common.playerNames.txt");
 
             // Parse the moves
             using (var br = new BeBinaryReader(move))
@@ -98,13 +99,14 @@ namespace Strikers2013Editor.Forms
             // waza_info[13] through waza_info[22] are for the users of the moves
             foreach (var user in move.Users)
             {
-                if (user != 0)
-                    chkUsers.SetItemChecked(user, true);
+                if(user != 0)
+                chkUsers.SetItemChecked(user, true);
             }
             // waza_info[23] through waza_info[32] are for the co-op users of the moves
-            foreach (var partner in move.Partners)
+            for (var i = 0; i < move.Partners.Length; i++)
             {
-                if (partner != 0)
+                var partner = move.Partners[i];
+                if(partner != 0 || ((partner == 0) && (i == 0)))
                     chkCoop.SetItemChecked(partner, true);
             }
 

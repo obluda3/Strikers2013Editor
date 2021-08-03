@@ -41,6 +41,7 @@ namespace Strikers2013Editor.Forms
                     cmbTA.Items.AddRange(Enum.GetNames(typeof(TacticalAction)));
                     cmbSex.Items.AddRange(Enum.GetNames(typeof(Gender)));
                     cmbBodytype.Items.AddRange(Enum.GetNames(typeof(Bodytype)));
+                    cmbCharge.Items.AddRange(Names.ChargeProfilesNames);
                 }
             }
         }
@@ -50,7 +51,7 @@ namespace Strikers2013Editor.Forms
             {
                 br.BaseStream.Position = 0xFA4;
                 var playerList = new List<PlayerInfo>();
-                for (var i = 0; i < 0x198; i++)
+                for (var i = 0; i < 0x19B; i++)
                 {
                     if (br.BaseStream.Position > br.BaseStream.Length - 0x148)
                         break;
@@ -95,6 +96,12 @@ namespace Strikers2013Editor.Forms
             nudListPosition.Value = player.ListPosition;
             nudListPosition2.Value = player.TeamListPosition;
             nudTeamlistPortrait.Value = player.TeamPortrait;
+            cmbCharge.SelectedIndex = player.ChargeProfile;
+
+            var color1 = Color.FromArgb(player.SkinColor1.R, player.SkinColor1.G, player.SkinColor1.B);
+            var color2 = Color.FromArgb(player.SkinColor2.R, player.SkinColor2.G, player.SkinColor2.B);
+            picCol1.BackColor = color1;
+            picCol2.BackColor = color2;
         }
 
         private void btnApply_Click(object sender, EventArgs e)
@@ -127,6 +134,13 @@ namespace Strikers2013Editor.Forms
             player.Description = (int)nudDescription.Value;
             player.TeamListPosition = (int)nudListPosition2.Value;
             player.TeamPortrait = (int)nudTeamlistPortrait.Value;
+            player.ChargeProfile = cmbCharge.SelectedIndex;
+
+            var color1 = Color.FromArgb(0, picCol1.BackColor.R, picCol1.BackColor.G, picCol1.BackColor.B);
+            var color2 = Color.FromArgb(0, picCol2.BackColor.R, picCol2.BackColor.G, picCol2.BackColor.B);
+
+            player.SkinColor1 = color1;
+            player.SkinColor2 = color2;
 
             Players[listBox1.SelectedIndex] = player;
         }
@@ -172,6 +186,31 @@ namespace Strikers2013Editor.Forms
         private void cmbElement_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void picCol1_Click(object sender, EventArgs e)
+        {
+            picCol1.BackColor = GetColor(picCol1.BackColor);
+        }
+
+        private void picCol2_Click(object sender, EventArgs e)
+        {
+            picCol2.BackColor = GetColor(picCol2.BackColor);
+        }
+
+        private Color GetColor(Color original)
+        {
+            var output = original;
+            using (var cd = new ColorDialog())
+            {
+                cd.ShowHelp = true;
+                cd.Color = original;
+                cd.FullOpen = true;
+
+                if (cd.ShowDialog() == DialogResult.OK)
+                    output = cd.Color;
+            }
+            return output;
         }
     }
 }

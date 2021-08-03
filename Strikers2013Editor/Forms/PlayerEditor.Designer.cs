@@ -100,6 +100,12 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmbCharge = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.picCol1 = new System.Windows.Forms.PictureBox();
+            this.picCol2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -136,6 +142,8 @@
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudShortName2)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCol1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCol2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnApply
@@ -175,6 +183,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.picCol2);
+            this.groupBox2.Controls.Add(this.picCol1);
+            this.groupBox2.Controls.Add(this.label29);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.nudEmblem);
             this.groupBox2.Controls.Add(this.label20);
@@ -596,6 +608,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label2);
+            this.groupBox5.Controls.Add(this.cmbCharge);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.nudCourse);
             this.groupBox5.Controls.Add(this.cmbTA);
@@ -609,7 +623,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 48);
+            this.label13.Location = new System.Drawing.Point(9, 75);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(88, 13);
             this.label13.TabIndex = 57;
@@ -617,7 +631,7 @@
             // 
             // nudCourse
             // 
-            this.nudCourse.Location = new System.Drawing.Point(111, 46);
+            this.nudCourse.Location = new System.Drawing.Point(137, 73);
             this.nudCourse.Maximum = new decimal(new int[] {
             2,
             0,
@@ -630,7 +644,7 @@
             // cmbTA
             // 
             this.cmbTA.FormattingEnabled = true;
-            this.cmbTA.Location = new System.Drawing.Point(78, 19);
+            this.cmbTA.Location = new System.Drawing.Point(104, 19);
             this.cmbTA.Name = "cmbTA";
             this.cmbTA.Size = new System.Drawing.Size(121, 21);
             this.cmbTA.TabIndex = 53;
@@ -999,6 +1013,61 @@
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
+            // cmbCharge
+            // 
+            this.cmbCharge.FormattingEnabled = true;
+            this.cmbCharge.Location = new System.Drawing.Point(104, 46);
+            this.cmbCharge.Name = "cmbCharge";
+            this.cmbCharge.Size = new System.Drawing.Size(121, 21);
+            this.cmbCharge.TabIndex = 58;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 59;
+            this.label2.Text = "Charge profile";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(10, 127);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "Color 1";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(121, 127);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(40, 13);
+            this.label29.TabIndex = 71;
+            this.label29.Text = "Color 2";
+            // 
+            // picCol1
+            // 
+            this.picCol1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picCol1.Location = new System.Drawing.Point(60, 125);
+            this.picCol1.Name = "picCol1";
+            this.picCol1.Size = new System.Drawing.Size(20, 20);
+            this.picCol1.TabIndex = 73;
+            this.picCol1.TabStop = false;
+            this.picCol1.Click += new System.EventHandler(this.picCol1_Click);
+            // 
+            // picCol2
+            // 
+            this.picCol2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picCol2.Location = new System.Drawing.Point(171, 125);
+            this.picCol2.Name = "picCol2";
+            this.picCol2.Size = new System.Drawing.Size(20, 20);
+            this.picCol2.TabIndex = 74;
+            this.picCol2.TabStop = false;
+            this.picCol2.Click += new System.EventHandler(this.picCol2_Click);
+            // 
             // PlayerEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1056,6 +1125,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudShortName2)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCol1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCol2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1135,5 +1206,11 @@
         private System.Windows.Forms.ComboBox cmbSex;
         private System.Windows.Forms.NumericUpDown nudShortName2;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbCharge;
+        private System.Windows.Forms.PictureBox picCol2;
+        private System.Windows.Forms.PictureBox picCol1;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label8;
     }
 }

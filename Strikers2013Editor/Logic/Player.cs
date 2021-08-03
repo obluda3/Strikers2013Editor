@@ -73,19 +73,19 @@ namespace Strikers2013Editor.Logic
             Lv2 = br.ReadInt16();
             Lv3 = br.ReadInt16();
             unk1 = br.ReadInt16();
-            SP = br.ReadInt16();
+            Dribble = br.ReadInt16();
             unk2 = br.ReadInt16();
             unk3 = br.ReadInt16();
             unk4 = br.ReadInt16();
-            Dribble = br.ReadInt16();
+            Defense = br.ReadInt16();
             unk5 = br.ReadInt16();
             unk6 = br.ReadInt16();
             unk7 = br.ReadInt16();
-            Defense = br.ReadInt16();
             Catch1 = br.ReadInt16();
             Catch2 = br.ReadInt16();
-            unk8 = br.ReadInt16();
             Catch3 = br.ReadInt16();
+            unk8 = br.ReadInt16();
+            SP = br.ReadInt16();
         }
         
         public void Write(BeBinaryWriter bw)
@@ -94,19 +94,19 @@ namespace Strikers2013Editor.Logic
             bw.Write(Lv2);
             bw.Write(Lv3);
             bw.Write(unk1);
-            bw.Write(SP);
+            bw.Write(Dribble);
             bw.Write(unk2);
             bw.Write(unk3);
             bw.Write(unk4);
-            bw.Write(Dribble);
+            bw.Write(Defense);
             bw.Write(unk5);
             bw.Write(unk6);
             bw.Write(unk7);
-            bw.Write(Defense);
             bw.Write(Catch1);
             bw.Write(Catch2);
-            bw.Write(unk8);
             bw.Write(Catch3);
+            bw.Write(unk8);
+            bw.Write(SP);
         }
     }
     struct Stats

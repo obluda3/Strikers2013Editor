@@ -39,6 +39,8 @@
             this.label27 = new System.Windows.Forms.Label();
             this.cmbCurPlayer = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.cmbManager = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.cmbCoach = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -57,6 +59,8 @@
             this.btnApply = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.chkMixi1 = new System.Windows.Forms.CheckBox();
+            this.chkMixi2 = new System.Windows.Forms.CheckBox();
             this.btnMax = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.nudTP = new System.Windows.Forms.NumericUpDown();
@@ -73,6 +77,15 @@
             this.nudBody = new System.Windows.Forms.NumericUpDown();
             this.nudKick = new System.Windows.Forms.NumericUpDown();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.cmbCatch3 = new System.Windows.Forms.ComboBox();
+            this.cmbCatch2 = new System.Windows.Forms.ComboBox();
+            this.cmbCatch1 = new System.Windows.Forms.ComboBox();
+            this.cmbDefense = new System.Windows.Forms.ComboBox();
+            this.cmbDribble = new System.Windows.Forms.ComboBox();
+            this.cmbSP = new System.Windows.Forms.ComboBox();
+            this.cmbLv3 = new System.Windows.Forms.ComboBox();
+            this.cmbLv2 = new System.Windows.Forms.ComboBox();
+            this.cmbLv1 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -82,14 +95,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSP = new System.Windows.Forms.TextBox();
-            this.txtCatch3 = new System.Windows.Forms.TextBox();
-            this.txtCatch2 = new System.Windows.Forms.TextBox();
-            this.txtCatch1 = new System.Windows.Forms.TextBox();
-            this.txtDefense = new System.Windows.Forms.TextBox();
-            this.txtDribble = new System.Windows.Forms.TextBox();
-            this.txtLV3 = new System.Windows.Forms.TextBox();
-            this.txtLV2 = new System.Windows.Forms.TextBox();
             this.lstPlayers = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -115,7 +120,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.txtLV1 = new System.Windows.Forms.TextBox();
             tabPage5 = new System.Windows.Forms.TabPage();
             tabPage5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -243,6 +247,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label34);
+            this.groupBox3.Controls.Add(this.cmbManager);
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.cmbCoach);
             this.groupBox3.Controls.Add(this.label30);
@@ -258,6 +264,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Info";
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(7, 130);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(49, 13);
+            this.label34.TabIndex = 9;
+            this.label34.Text = "Manager";
+            // 
+            // cmbManager
+            // 
+            this.cmbManager.FormattingEnabled = true;
+            this.cmbManager.Location = new System.Drawing.Point(63, 127);
+            this.cmbManager.Name = "cmbManager";
+            this.cmbManager.Size = new System.Drawing.Size(182, 21);
+            this.cmbManager.TabIndex = 8;
+            this.cmbManager.SelectedIndexChanged += new System.EventHandler(this.cmbManager_SeletedIndexChanged);
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -270,9 +294,9 @@
             // cmbCoach
             // 
             this.cmbCoach.FormattingEnabled = true;
-            this.cmbCoach.Location = new System.Drawing.Point(109, 100);
+            this.cmbCoach.Location = new System.Drawing.Point(63, 100);
             this.cmbCoach.Name = "cmbCoach";
-            this.cmbCoach.Size = new System.Drawing.Size(136, 21);
+            this.cmbCoach.Size = new System.Drawing.Size(182, 21);
             this.cmbCoach.TabIndex = 6;
             this.cmbCoach.SelectedIndexChanged += new System.EventHandler(this.cmbCoach_SelectedIndexChanged);
             // 
@@ -288,9 +312,9 @@
             // cmbTeamEmblem
             // 
             this.cmbTeamEmblem.FormattingEnabled = true;
-            this.cmbTeamEmblem.Location = new System.Drawing.Point(109, 72);
+            this.cmbTeamEmblem.Location = new System.Drawing.Point(63, 72);
             this.cmbTeamEmblem.Name = "cmbTeamEmblem";
-            this.cmbTeamEmblem.Size = new System.Drawing.Size(136, 21);
+            this.cmbTeamEmblem.Size = new System.Drawing.Size(182, 21);
             this.cmbTeamEmblem.TabIndex = 4;
             this.cmbTeamEmblem.SelectedIndexChanged += new System.EventHandler(this.cmbTeamEmblem_SelectedIndexChanged);
             // 
@@ -306,17 +330,17 @@
             // cmbTeamKit
             // 
             this.cmbTeamKit.FormattingEnabled = true;
-            this.cmbTeamKit.Location = new System.Drawing.Point(109, 44);
+            this.cmbTeamKit.Location = new System.Drawing.Point(63, 44);
             this.cmbTeamKit.Name = "cmbTeamKit";
-            this.cmbTeamKit.Size = new System.Drawing.Size(136, 21);
+            this.cmbTeamKit.Size = new System.Drawing.Size(182, 21);
             this.cmbTeamKit.TabIndex = 2;
             this.cmbTeamKit.SelectedIndexChanged += new System.EventHandler(this.cmbTeamKit_SelectedIndexChanged);
             // 
             // txtTeamInfo
             // 
-            this.txtTeamInfo.Location = new System.Drawing.Point(109, 17);
+            this.txtTeamInfo.Location = new System.Drawing.Point(63, 17);
             this.txtTeamInfo.Name = "txtTeamInfo";
-            this.txtTeamInfo.Size = new System.Drawing.Size(136, 20);
+            this.txtTeamInfo.Size = new System.Drawing.Size(182, 20);
             this.txtTeamInfo.TabIndex = 1;
             this.txtTeamInfo.TextChanged += new System.EventHandler(this.txtTeamInfo_TextChanged);
             // 
@@ -419,6 +443,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.chkMixi1);
+            this.tabPage2.Controls.Add(this.chkMixi2);
             this.tabPage2.Controls.Add(this.btnMax);
             this.tabPage2.Controls.Add(this.label20);
             this.tabPage2.Controls.Add(this.nudTP);
@@ -441,6 +467,28 @@
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "Stats";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // chkMixi1
+            // 
+            this.chkMixi1.AutoSize = true;
+            this.chkMixi1.Location = new System.Drawing.Point(9, 188);
+            this.chkMixi1.Name = "chkMixi1";
+            this.chkMixi1.Size = new System.Drawing.Size(72, 17);
+            this.chkMixi1.TabIndex = 16;
+            this.chkMixi1.Text = "Miximax 1";
+            this.chkMixi1.UseVisualStyleBackColor = true;
+            this.chkMixi1.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // chkMixi2
+            // 
+            this.chkMixi2.AutoSize = true;
+            this.chkMixi2.Location = new System.Drawing.Point(143, 188);
+            this.chkMixi2.Name = "chkMixi2";
+            this.chkMixi2.Size = new System.Drawing.Size(72, 17);
+            this.chkMixi2.TabIndex = 15;
+            this.chkMixi2.Text = "Miximax 2";
+            this.chkMixi2.UseVisualStyleBackColor = true;
+            this.chkMixi2.CheckedChanged += new System.EventHandler(this.chkMixi2_CheckedChanged);
             // 
             // btnMax
             // 
@@ -618,6 +666,15 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.cmbCatch3);
+            this.tabPage4.Controls.Add(this.cmbCatch2);
+            this.tabPage4.Controls.Add(this.cmbCatch1);
+            this.tabPage4.Controls.Add(this.cmbDefense);
+            this.tabPage4.Controls.Add(this.cmbDribble);
+            this.tabPage4.Controls.Add(this.cmbSP);
+            this.tabPage4.Controls.Add(this.cmbLv3);
+            this.tabPage4.Controls.Add(this.cmbLv2);
+            this.tabPage4.Controls.Add(this.cmbLv1);
             this.tabPage4.Controls.Add(this.label14);
             this.tabPage4.Controls.Add(this.label13);
             this.tabPage4.Controls.Add(this.label12);
@@ -627,15 +684,6 @@
             this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Controls.Add(this.label7);
             this.tabPage4.Controls.Add(this.label6);
-            this.tabPage4.Controls.Add(this.txtSP);
-            this.tabPage4.Controls.Add(this.txtCatch3);
-            this.tabPage4.Controls.Add(this.txtCatch2);
-            this.tabPage4.Controls.Add(this.txtCatch1);
-            this.tabPage4.Controls.Add(this.txtDefense);
-            this.tabPage4.Controls.Add(this.txtDribble);
-            this.tabPage4.Controls.Add(this.txtLV3);
-            this.tabPage4.Controls.Add(this.txtLV2);
-            this.tabPage4.Controls.Add(this.txtLV1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -643,6 +691,80 @@
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Moves";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // cmbCatch3
+            // 
+            this.cmbCatch3.FormattingEnabled = true;
+            this.cmbCatch3.Location = new System.Drawing.Point(55, 214);
+            this.cmbCatch3.Name = "cmbCatch3";
+            this.cmbCatch3.Size = new System.Drawing.Size(165, 21);
+            this.cmbCatch3.TabIndex = 33;
+            this.cmbCatch3.SelectedIndexChanged += new System.EventHandler(this.cmbCatch3_SelectedIndexChanged);
+            // 
+            // cmbCatch2
+            // 
+            this.cmbCatch2.FormattingEnabled = true;
+            this.cmbCatch2.Location = new System.Drawing.Point(55, 188);
+            this.cmbCatch2.Name = "cmbCatch2";
+            this.cmbCatch2.Size = new System.Drawing.Size(165, 21);
+            this.cmbCatch2.TabIndex = 32;
+            this.cmbCatch2.SelectedIndexChanged += new System.EventHandler(this.cmbCatch2_SelectedIndexChanged);
+            // 
+            // cmbCatch1
+            // 
+            this.cmbCatch1.FormattingEnabled = true;
+            this.cmbCatch1.Location = new System.Drawing.Point(55, 162);
+            this.cmbCatch1.Name = "cmbCatch1";
+            this.cmbCatch1.Size = new System.Drawing.Size(165, 21);
+            this.cmbCatch1.TabIndex = 31;
+            // 
+            // cmbDefense
+            // 
+            this.cmbDefense.FormattingEnabled = true;
+            this.cmbDefense.Location = new System.Drawing.Point(55, 136);
+            this.cmbDefense.Name = "cmbDefense";
+            this.cmbDefense.Size = new System.Drawing.Size(165, 21);
+            this.cmbDefense.TabIndex = 30;
+            // 
+            // cmbDribble
+            // 
+            this.cmbDribble.FormattingEnabled = true;
+            this.cmbDribble.Location = new System.Drawing.Point(55, 110);
+            this.cmbDribble.Name = "cmbDribble";
+            this.cmbDribble.Size = new System.Drawing.Size(165, 21);
+            this.cmbDribble.TabIndex = 29;
+            // 
+            // cmbSP
+            // 
+            this.cmbSP.FormattingEnabled = true;
+            this.cmbSP.Location = new System.Drawing.Point(55, 84);
+            this.cmbSP.Name = "cmbSP";
+            this.cmbSP.Size = new System.Drawing.Size(165, 21);
+            this.cmbSP.TabIndex = 28;
+            // 
+            // cmbLv3
+            // 
+            this.cmbLv3.FormattingEnabled = true;
+            this.cmbLv3.Location = new System.Drawing.Point(55, 58);
+            this.cmbLv3.Name = "cmbLv3";
+            this.cmbLv3.Size = new System.Drawing.Size(165, 21);
+            this.cmbLv3.TabIndex = 27;
+            // 
+            // cmbLv2
+            // 
+            this.cmbLv2.FormattingEnabled = true;
+            this.cmbLv2.Location = new System.Drawing.Point(55, 32);
+            this.cmbLv2.Name = "cmbLv2";
+            this.cmbLv2.Size = new System.Drawing.Size(165, 21);
+            this.cmbLv2.TabIndex = 26;
+            // 
+            // cmbLv1
+            // 
+            this.cmbLv1.FormattingEnabled = true;
+            this.cmbLv1.Location = new System.Drawing.Point(55, 6);
+            this.cmbLv1.Name = "cmbLv1";
+            this.cmbLv1.Size = new System.Drawing.Size(165, 21);
+            this.cmbLv1.TabIndex = 25;
             // 
             // label14
             // 
@@ -724,62 +846,6 @@
             this.label6.Size = new System.Drawing.Size(31, 13);
             this.label6.TabIndex = 16;
             this.label6.Text = "Lv. 1";
-            // 
-            // txtSP
-            // 
-            this.txtSP.Location = new System.Drawing.Point(94, 84);
-            this.txtSP.Name = "txtSP";
-            this.txtSP.Size = new System.Drawing.Size(56, 20);
-            this.txtSP.TabIndex = 15;
-            // 
-            // txtCatch3
-            // 
-            this.txtCatch3.Location = new System.Drawing.Point(94, 214);
-            this.txtCatch3.Name = "txtCatch3";
-            this.txtCatch3.Size = new System.Drawing.Size(56, 20);
-            this.txtCatch3.TabIndex = 14;
-            // 
-            // txtCatch2
-            // 
-            this.txtCatch2.Location = new System.Drawing.Point(94, 188);
-            this.txtCatch2.Name = "txtCatch2";
-            this.txtCatch2.Size = new System.Drawing.Size(56, 20);
-            this.txtCatch2.TabIndex = 13;
-            // 
-            // txtCatch1
-            // 
-            this.txtCatch1.Location = new System.Drawing.Point(94, 162);
-            this.txtCatch1.Name = "txtCatch1";
-            this.txtCatch1.Size = new System.Drawing.Size(56, 20);
-            this.txtCatch1.TabIndex = 12;
-            // 
-            // txtDefense
-            // 
-            this.txtDefense.Location = new System.Drawing.Point(94, 136);
-            this.txtDefense.Name = "txtDefense";
-            this.txtDefense.Size = new System.Drawing.Size(56, 20);
-            this.txtDefense.TabIndex = 11;
-            // 
-            // txtDribble
-            // 
-            this.txtDribble.Location = new System.Drawing.Point(94, 110);
-            this.txtDribble.Name = "txtDribble";
-            this.txtDribble.Size = new System.Drawing.Size(56, 20);
-            this.txtDribble.TabIndex = 10;
-            // 
-            // txtLV3
-            // 
-            this.txtLV3.Location = new System.Drawing.Point(94, 58);
-            this.txtLV3.Name = "txtLV3";
-            this.txtLV3.Size = new System.Drawing.Size(56, 20);
-            this.txtLV3.TabIndex = 9;
-            // 
-            // txtLV2
-            // 
-            this.txtLV2.Location = new System.Drawing.Point(94, 32);
-            this.txtLV2.Name = "txtLV2";
-            this.txtLV2.Size = new System.Drawing.Size(56, 20);
-            this.txtLV2.TabIndex = 8;
             // 
             // lstPlayers
             // 
@@ -1056,13 +1122,6 @@
             // 
             this.toolTip2.ToolTipTitle = "Format";
             // 
-            // txtLV1
-            // 
-            this.txtLV1.Location = new System.Drawing.Point(94, 6);
-            this.txtLV1.Name = "txtLV1";
-            this.txtLV1.Size = new System.Drawing.Size(56, 20);
-            this.txtLV1.TabIndex = 7;
-            // 
             // SaveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1143,14 +1202,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtSP;
-        private System.Windows.Forms.TextBox txtCatch3;
-        private System.Windows.Forms.TextBox txtCatch2;
-        private System.Windows.Forms.TextBox txtCatch1;
-        private System.Windows.Forms.TextBox txtDefense;
-        private System.Windows.Forms.TextBox txtDribble;
-        private System.Windows.Forms.TextBox txtLV3;
-        private System.Windows.Forms.TextBox txtLV2;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
@@ -1201,6 +1252,18 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.ComboBox cmbPlayerKit;
         private System.Windows.Forms.CheckBox chkKey;
-        private System.Windows.Forms.TextBox txtLV1;
+        private System.Windows.Forms.CheckBox chkMixi1;
+        private System.Windows.Forms.CheckBox chkMixi2;
+        private System.Windows.Forms.ComboBox cmbCatch3;
+        private System.Windows.Forms.ComboBox cmbCatch2;
+        private System.Windows.Forms.ComboBox cmbCatch1;
+        private System.Windows.Forms.ComboBox cmbDefense;
+        private System.Windows.Forms.ComboBox cmbDribble;
+        private System.Windows.Forms.ComboBox cmbSP;
+        private System.Windows.Forms.ComboBox cmbLv3;
+        private System.Windows.Forms.ComboBox cmbLv2;
+        private System.Windows.Forms.ComboBox cmbLv1;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox cmbManager;
     }
 }
