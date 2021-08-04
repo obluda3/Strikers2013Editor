@@ -35,7 +35,7 @@ Domon Asuka (Mondial Selection)
 Kidou Yuuto (Raimon 1)
 Kidou Yuuto (Raimon 2)
 Kidou Yuuto (Inazuma Japan)
-Kidou Yuuto (Royal Academy)
+Kidou Yuuto (Teikoku)
 Ichinose Kazuya (Raimon 1)
 Ichinose Kazuya (Raimon 2)
 Ichinose Kazuya (Mondial Selection)
@@ -52,28 +52,28 @@ Fubuki Shirou (Atsuya - Raimon 2)
 Urabe Rika 
 Tobitaka Seiya 
 Fudou Akio (Inazuma Japan)
-Fudou Akio (New Royal Academy)
+Fudou Akio (Shin Teikoku)
 Utsunomiya Toramaru 
 Kiyama Hiroto 
 Kiyama Hiroto 
 Hijikata Raiden 
 Sakuma Jirou (Inazuma Japan)
-Sakuma Jirou (Royal Academy)
-Sakuma Jirou (New Royal Academy)
+Sakuma Jirou (Teikoku)
+Sakuma Jirou (Shin Teikoku)
 Midorikawa Ryuuji (Inazuma Japan)
 Midorikawa Ryuuji 
-Genda Koujirou (Royal Academy)
+Genda Koujirou (Teikoku)
 Genda Koujirou (Neo Japan)
-Genda Koujirou (New Royal Academy)
+Genda Koujirou (Shin Teikoku)
 Oono Densuke 
 Banjou Kazumichi 
-Narukami Kenya (Royal Academy)
+Narukami Kenya (Teikoku)
 Narukami Kenya (Neo Japan)
-Gojou Masaru (Royal Academy)
+Gojou Masaru (Teikoku)
 Henmi Wataru 
 Sakiyama Shuuji 
 Doumen Shuuichirou 
-Jimon Daiki (Royal Academy)
+Jimon Daiki (Teikoku)
 Jimon Daiki (Neo Japan)
 Posei Donichi 
 Aporo Hikaru 
@@ -182,7 +182,7 @@ Ikka Stacks
 Mistrene Callous 
 Eska Bamel 
 Baddap Sleed 
-Endou Kanon 
+Endou Canon/Kanon
 Gouenji Masato 
 Miyasaka Ryou 
 Tamano Gorou 
@@ -261,7 +261,7 @@ Hakuryuu
 Kiya Kouji 
 Rinne Makoto 
 Yuuki Jou 
-Gouenji Shuuya 
+Shuu
 Kai 
 Kogure Yuuya (Adult)
 Kibayama Douzan 

@@ -57,11 +57,13 @@ namespace Strikers2013Editor.Forms
                     moveNames = Names.GetTextFile("Strikers2013Editor.Common.wazaNames.txt");
 
                     lstPlayers.Items.AddRange(playerNames);
+                    cmbManager.Items.AddRange(playerNames);
                     cmbCurPlayer.Items.AddRange(playerNames);
+                    cmbCoach.Items.AddRange(playerNames);
+
                     cmbTeamEmblem.Items.AddRange(emblemNames);
                     cmbTeamKit.Items.AddRange(emblemNames);
                     cmbPlayerKit.Items.AddRange(emblemNames);
-                    cmbCoach.Items.AddRange(playerNames);
 
                     foreach (var player in save.Team.Players)
                     {
@@ -91,8 +93,6 @@ namespace Strikers2013Editor.Forms
                     cmbCatch3.Items.AddRange(moveNames);
                     cmbDribble.Items.AddRange(moveNames);
                     cmbDefense.Items.AddRange(moveNames);
-
-
 
                     tabControl1.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
