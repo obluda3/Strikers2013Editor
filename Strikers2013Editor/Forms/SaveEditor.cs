@@ -105,8 +105,8 @@ namespace Strikers2013Editor.Forms
         {
             using (var sfd = new SaveFileDialog())
             {
-                sfd.Filter = "Save file(inazuma2.sav) (*.sav) | *.sav | All files(*.*) | *.* ";
-                sfd.DefaultExt = ".sav";
+                sfd.Filter = "Save file (*.sav) | *.sav | All files(*.*) | *.* ";
+                sfd.DefaultExt = "sav";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
