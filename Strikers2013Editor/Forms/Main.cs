@@ -33,5 +33,10 @@ namespace Strikers2013Editor.Forms
             SaveEditor saveEditor = new SaveEditor();
             saveEditor.ShowDialog();
         }
+
+        private void Strikers2013Editor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

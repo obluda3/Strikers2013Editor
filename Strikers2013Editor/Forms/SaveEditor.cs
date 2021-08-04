@@ -83,6 +83,7 @@ namespace Strikers2013Editor.Forms
                     cmbTeamEmblem.SelectedIndex = save.Team.Emblem;
                     cmbTeamKit.SelectedIndex = save.Team.Kit;
                     cmbCoach.SelectedIndex = save.Team.Coach;
+                    cmbManager.SelectedIndex = save.Team.Manager;
 
                     cmbLv1.Items.AddRange(moveNames);
                     cmbLv2.Items.AddRange(moveNames);
@@ -105,8 +106,7 @@ namespace Strikers2013Editor.Forms
         {
             using (var sfd = new SaveFileDialog())
             {
-                sfd.Filter = "Save file (*.sav) | *.sav | All files(*.*) | *.* ";
-                sfd.DefaultExt = "sav";
+                sfd.Filter = "Save file (*.sav)|*.sav|All files (*.*)|*.*";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {

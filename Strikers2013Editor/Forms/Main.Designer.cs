@@ -84,6 +84,7 @@
             this.Name = "Strikers2013Editor";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Strikers2013Editor";
+            this.Load += new System.EventHandler(this.Strikers2013Editor_Load);
             this.ResumeLayout(false);
 
         }

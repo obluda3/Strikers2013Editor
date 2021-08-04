@@ -191,7 +191,8 @@ namespace Strikers2013Editor.Logic
 
         public Team(BeBinaryReader br) 
         {
-            Kit = br.ReadInt32();
+            br.BaseStream.Position += 2;
+            Kit = br.ReadInt16();
             Emblem = br.ReadInt32();
             Manager = br.ReadInt32();
             Coach = br.ReadInt32();
@@ -204,7 +205,8 @@ namespace Strikers2013Editor.Logic
 
         public void Write(BeBinaryWriter bw) 
         {
-            bw.Write(Kit);
+            bw.BaseStream.Position += 2;
+            bw.Write((short)Kit);
             bw.Write(Emblem);
             bw.Write(Manager);
             bw.Write(Coach);
