@@ -10,7 +10,6 @@ namespace Strikers2013Editor.Logic
 {
     class Move
     {
-        public string name;
         public ushort[] wazaInfo = new ushort[70];
 
         public Tier Tier;

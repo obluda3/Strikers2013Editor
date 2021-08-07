@@ -128,5 +128,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Common\emblemNames.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\formationNames.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -18,9 +18,7 @@ namespace Strikers2013Editor.Logic
         public Player[] Players = new Player[412];
 
         public string ProfileName, OnlineName;
-        public string[] playerNames, wazaNames;
         public uint Profile, OnlineProfile, BaseOffset, MinutesPlayed, HoursPlayed, InazumaPoints, CreationDate, CreationTime;
-        public int slot;
 
         private const int STATS_OFFSET = 0xad6c;
         private const int WAZA_OFFSET = 0x640a4;
@@ -28,6 +26,7 @@ namespace Strikers2013Editor.Logic
         private const int PROFILE_OFFSET = 0x6775a;
         private const int ONLINE_PROFILE = 0x1d8;
         private const int PROFILENAME_OFFSET = 0x1f8;
+        private const int TEAM_EMBLEM_OFFSET = 0x67760;
 
         public Save(string name)
         {
@@ -75,6 +74,9 @@ namespace Strikers2013Editor.Logic
                 br.BaseStream.Position = BaseOffset + PROFILENAME_OFFSET + 18;
                 Team.Name = sjis.GetString(br.ReadBytes(16));
 
+                br.BaseStream.Position = BaseOffset + TEAM_EMBLEM_OFFSET;
+                Team.Emblem = br.ReadInt16();
+
                 br.BaseStream.Position = BaseOffset + PROFILE_OFFSET;
                 Profile = br.ReadUInt32();
             }
@@ -120,6 +122,9 @@ namespace Strikers2013Editor.Logic
 
                 bw.BaseStream.Position = BaseOffset + PROFILENAME_OFFSET + 18;
                 bw.Write(StringTo16LongArray(Team.Name));
+
+                bw.BaseStream.Position = BaseOffset + TEAM_EMBLEM_OFFSET;
+                bw.Write(Team.Emblem);
 
                 bw.BaseStream.Position = BaseOffset + PROFILE_OFFSET;
                 bw.Write(Profile);

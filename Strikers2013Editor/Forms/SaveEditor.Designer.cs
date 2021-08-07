@@ -39,12 +39,13 @@
             this.label27 = new System.Windows.Forms.Label();
             this.cmbCurPlayer = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmbEmblem = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.cmbManager = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.cmbCoach = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.cmbTeamEmblem = new System.Windows.Forms.ComboBox();
+            this.cmbFormation = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.cmbTeamKit = new System.Windows.Forms.ComboBox();
             this.txtTeamInfo = new System.Windows.Forms.TextBox();
@@ -120,6 +121,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.label35 = new System.Windows.Forms.Label();
             tabPage5 = new System.Windows.Forms.TabPage();
             tabPage5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -247,12 +249,14 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label35);
+            this.groupBox3.Controls.Add(this.cmbEmblem);
             this.groupBox3.Controls.Add(this.label34);
             this.groupBox3.Controls.Add(this.cmbManager);
             this.groupBox3.Controls.Add(this.label31);
             this.groupBox3.Controls.Add(this.cmbCoach);
             this.groupBox3.Controls.Add(this.label30);
-            this.groupBox3.Controls.Add(this.cmbTeamEmblem);
+            this.groupBox3.Controls.Add(this.cmbFormation);
             this.groupBox3.Controls.Add(this.label29);
             this.groupBox3.Controls.Add(this.cmbTeamKit);
             this.groupBox3.Controls.Add(this.txtTeamInfo);
@@ -263,6 +267,15 @@
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Info";
+            // 
+            // cmbEmblem
+            // 
+            this.cmbEmblem.FormattingEnabled = true;
+            this.cmbEmblem.Location = new System.Drawing.Point(63, 72);
+            this.cmbEmblem.Name = "cmbEmblem";
+            this.cmbEmblem.Size = new System.Drawing.Size(182, 21);
+            this.cmbEmblem.TabIndex = 10;
+            this.cmbEmblem.SelectedIndexChanged += new System.EventHandler(this.cmbEmblem_SelectedIndexChanged);
             // 
             // label34
             // 
@@ -303,20 +316,20 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(7, 75);
+            this.label30.Location = new System.Drawing.Point(7, 157);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(44, 13);
+            this.label30.Size = new System.Drawing.Size(53, 13);
             this.label30.TabIndex = 5;
-            this.label30.Text = "Emblem";
+            this.label30.Text = "Formation";
             // 
-            // cmbTeamEmblem
+            // cmbFormation
             // 
-            this.cmbTeamEmblem.FormattingEnabled = true;
-            this.cmbTeamEmblem.Location = new System.Drawing.Point(63, 72);
-            this.cmbTeamEmblem.Name = "cmbTeamEmblem";
-            this.cmbTeamEmblem.Size = new System.Drawing.Size(182, 21);
-            this.cmbTeamEmblem.TabIndex = 4;
-            this.cmbTeamEmblem.SelectedIndexChanged += new System.EventHandler(this.cmbTeamEmblem_SelectedIndexChanged);
+            this.cmbFormation.FormattingEnabled = true;
+            this.cmbFormation.Location = new System.Drawing.Point(63, 154);
+            this.cmbFormation.Name = "cmbFormation";
+            this.cmbFormation.Size = new System.Drawing.Size(182, 21);
+            this.cmbFormation.TabIndex = 4;
+            this.cmbFormation.SelectedIndexChanged += new System.EventHandler(this.cmbFormation_SelectedIndexChanged);
             // 
             // label29
             // 
@@ -1122,6 +1135,15 @@
             // 
             this.toolTip2.ToolTipTitle = "Format";
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(7, 75);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(44, 13);
+            this.label35.TabIndex = 11;
+            this.label35.Text = "Emblem";
+            // 
             // SaveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1240,7 +1262,7 @@
         private System.Windows.Forms.TextBox txtTeamInfo;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.ComboBox cmbTeamEmblem;
+        private System.Windows.Forms.ComboBox cmbFormation;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.ComboBox cmbTeamKit;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -1265,5 +1287,7 @@
         private System.Windows.Forms.ComboBox cmbLv1;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.ComboBox cmbManager;
+        private System.Windows.Forms.ComboBox cmbEmblem;
+        private System.Windows.Forms.Label label35;
     }
 }

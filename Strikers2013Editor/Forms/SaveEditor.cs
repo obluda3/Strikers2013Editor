@@ -14,7 +14,7 @@ namespace Strikers2013Editor.Forms
     {
         Encoding sjis = Encoding.GetEncoding("sjis");
         Save save;
-        string[] moveNames, playerNames, emblemNames;
+        string[] moveNames, playerNames, emblemNames, formationNames;
 
         public SaveEditor()
         {
@@ -55,15 +55,16 @@ namespace Strikers2013Editor.Forms
                     playerNames = Names.GetTextFile("Strikers2013Editor.Common.playerNames.txt");
                     emblemNames = Names.GetTextFile("Strikers2013Editor.Common.emblemNames.txt");
                     moveNames = Names.GetTextFile("Strikers2013Editor.Common.wazaNames.txt");
+                    formationNames = Names.GetTextFile("Strikers2013Editor.Common.formationNames.txt");
 
                     lstPlayers.Items.AddRange(playerNames);
                     cmbManager.Items.AddRange(playerNames);
                     cmbCurPlayer.Items.AddRange(playerNames);
                     cmbCoach.Items.AddRange(playerNames);
-
-                    cmbTeamEmblem.Items.AddRange(emblemNames);
+                    cmbFormation.Items.AddRange(formationNames);
                     cmbTeamKit.Items.AddRange(emblemNames);
                     cmbPlayerKit.Items.AddRange(emblemNames);
+                    cmbEmblem.Items.AddRange(emblemNames);
 
                     foreach (var player in save.Team.Players)
                     {
@@ -80,10 +81,13 @@ namespace Strikers2013Editor.Forms
                     nudCreationDate.Value = save.CreationDate;
 
                     txtTeamInfo.Text = save.Team.Name;
-                    cmbTeamEmblem.SelectedIndex = save.Team.Emblem;
+                    // In an older version, emblems and formations were mistaken for eachother
+                    // this should fix some saves
+                    cmbFormation.SelectedIndex = save.Team.Formation >= cmbFormation.Items.Count ? 0 : save.Team.Formation;
                     cmbTeamKit.SelectedIndex = save.Team.Kit;
                     cmbCoach.SelectedIndex = save.Team.Coach;
                     cmbManager.SelectedIndex = save.Team.Manager;
+                    cmbEmblem.SelectedIndex = save.Team.Emblem;
 
                     cmbLv1.Items.AddRange(moveNames);
                     cmbLv2.Items.AddRange(moveNames);
@@ -246,9 +250,9 @@ namespace Strikers2013Editor.Forms
             save.Team.Kit = cmbTeamKit.SelectedIndex;
         }
 
-        private void cmbTeamEmblem_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbFormation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            save.Team.Emblem = cmbTeamEmblem.SelectedIndex;
+            save.Team.Formation = cmbFormation.SelectedIndex;
         }
 
         private void cmbCoach_SelectedIndexChanged(object sender, EventArgs e)
@@ -284,6 +288,11 @@ namespace Strikers2013Editor.Forms
         private void cmbCatch3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbEmblem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            save.Team.Emblem = (short)cmbEmblem.SelectedIndex;
         }
 
         private void cmbManager_SeletedIndexChanged(object sender, EventArgs e)

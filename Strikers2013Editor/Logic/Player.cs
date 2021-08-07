@@ -9,41 +9,6 @@ namespace Strikers2013Editor.Logic
 {
     struct Player
     {
-        public byte[] stats;
-        // 0  -> TP
-        // 1  -> Max TP
-        // 2  -> Kick
-        // 3  -> Max Kick
-        // 4  -> Catch
-        // 5  -> Max Catch
-        // 6  -> Body
-        // 7  -> Max Body
-        // 8  -> Guard
-        // 9  -> Max Guard
-        // 10 -> Control
-        // 11 -> Max Control
-        // 12 -> Speed
-        // 13 -> Max Speed
-
-        public short[] waza;
-        // 0  -> LV1
-        // 1  -> LV2
-        // 2  -> LV3
-        // 3  -> undef
-        // 4  -> SP
-        // 5  -> undef
-        // 6  -> undef
-        // 7  -> undef
-        // 8  -> Dribble
-        // 9  -> undef
-        // 10 -> undef
-        // 11 -> undef
-        // 12 -> Defense
-        // 13 -> Catch 1
-        // 14 -> Catch 2
-        // 15 -> undef
-        // 16 -> Catch 3
-
         public Stats Stats;
         public MoveList MoveList;
     }
@@ -182,8 +147,9 @@ namespace Strikers2013Editor.Logic
     struct Team 
     {
         public int Kit;
-        public int Emblem;
+        public int Formation;
         public int Manager;
+        public short Emblem;
         public int Coach;
         public string Name;
 
@@ -193,9 +159,10 @@ namespace Strikers2013Editor.Logic
         {
             br.BaseStream.Position += 2;
             Kit = br.ReadInt16();
-            Emblem = br.ReadInt32();
+            Formation = br.ReadInt32();
             Manager = br.ReadInt32();
             Coach = br.ReadInt32();
+            Emblem = 0; //Placeholder
             Players = new TeamPlayer[16];
             Name = "";
 
@@ -207,7 +174,7 @@ namespace Strikers2013Editor.Logic
         {
             bw.BaseStream.Position += 2;
             bw.Write((short)Kit);
-            bw.Write(Emblem);
+            bw.Write(Formation);
             bw.Write(Manager);
             bw.Write(Coach);
             foreach (var player in Players)

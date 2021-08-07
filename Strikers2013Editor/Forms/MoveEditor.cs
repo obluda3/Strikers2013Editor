@@ -162,6 +162,7 @@ namespace Strikers2013Editor.Forms
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
+                    /*
                     var filename = sfd.FileName;
                     using (var sw = new StreamWriter(File.Open(filename, FileMode.Create)))
                     {
@@ -178,7 +179,7 @@ namespace Strikers2013Editor.Forms
                             sw.WriteLine();
                         }
 
-                    }
+                    }*/
                 }
             }
         }
