@@ -50,6 +50,8 @@ Length: 0x148, start: 0xE5C
 | 0x60 | Face Model | int | Player's 3D Model (in match) |
 | 0x64 | Face Model | int | Player's 3D Model (index into grp.bin minus 800) |
 | 0x68 | Face Model | int | Player's 3D Model (index into grp.bin minus 800) |
+| 0x6C | Body Model | int | Player's Body Model (reserved - replaced in game) |
+| 0x70 | Body Model | int | Player's Body Model (reserved - replaced in game) |
 | 0x78 | Portrait | int | Player's 2D Portrait |
 | 0x80 | Left Match Portrait | int | 2D Portrait in Match, left side |
 | 0x84 | Right Match Portrait | int | 2D Portrait in Match, right side |
