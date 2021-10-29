@@ -39,7 +39,6 @@ namespace Strikers2013Editor.Forms
                     gbAdvanced.Enabled = true;
                     gbUsers.Enabled = true;
                     btnApply.Enabled = true;
-                    exportToolStripMenuItem.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
 
                     ParseMoveFile(moveStream);
@@ -200,40 +199,6 @@ namespace Strikers2013Editor.Forms
             }
         }
 
-        private void importToDatbinToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var ofd = new OpenFileDialog())
-            {
-                ofd.Filter = "dat.bin (*.bin)|*.bin|All files (*.*)|*.*";
-                ofd.RestoreDirectory = true;
-                ofd.FileName = "dat.bin";
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    using (var ofd1 = new OpenFileDialog())
-                    {
-                        ofd1.Filter = "mcb1.bln (*.bln)|*.bln|All files (*.*)|*.*";
-                        ofd1.RestoreDirectory = true;
-                        ofd1.FileName = "mcb1.bln";
-                        if (ofd1.ShowDialog() == DialogResult.OK)
-                        {
-                            using (var br = new BinaryReader(File.OpenRead(ofd1.FileName)))
-                            {
-                                br.BaseStream.Position = 0xAC8F4;
-                                var offset = br.ReadInt32();
-                                var size = br.ReadInt32();
-                                var data = br.ReadBytes(size);
-                                using (var bw = new BinaryWriter(File.OpenWrite(ofd.FileName)))
-                                {
-                                    bw.BaseStream.Position = offset;
-                                    bw.Write(data);
-                                }
-                            }
-                            MessageBox.Show("Succesfully imported.", "Done");
-                        }
-                    }
-                }
-            }
-        }
         private void cmbMove_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbMove.SelectedIndex = cmbMove.SelectedIndex != 0 ? cmbMove.SelectedIndex : 1;
