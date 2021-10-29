@@ -182,8 +182,13 @@ namespace Strikers2013Editor.Forms
         {
             var player = save.Players[lstPlayers.SelectedIndex];
 
-            player.Stats.Flag |= chkMixi1.Checked ? 0x10 : 0;
-            player.Stats.Flag |= chkMixi2.Checked ? 0x20 : 0;
+            var flag = player.Stats.Flag;
+            // Reset bits
+            flag &= ~0x10;
+            flag &= ~0x20;
+            flag |= chkMixi1.Checked ? 0x10 : 0;
+            flag |= chkMixi2.Checked ? 0x20 : 0;
+            player.Stats.Flag = flag;
 
             player.MoveList.Lv1 = (short)cmbLv1.SelectedIndex;
             player.MoveList.Lv2 = (short)cmbLv2.SelectedIndex;
