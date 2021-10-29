@@ -65,4 +65,13 @@ namespace Strikers2013Editor.Common
         Punch1,
         Punch2
     }
+
+    public enum PowerUpIndicator
+    {
+        Normal,
+        Keshin,
+        Armed,
+        Unused,
+        Miximax
+    }
 }

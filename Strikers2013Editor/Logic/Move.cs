@@ -18,7 +18,7 @@ namespace Strikers2013Editor.Logic
         public ushort Tp;
         public Element Element;
         public Status Status;
-        public ushort Unk1;
+        public ushort Range;
         public ushort Unk2;
         public ushort Unk3;
         public ushort Unk4;
@@ -61,7 +61,7 @@ namespace Strikers2013Editor.Logic
         public ushort Unk36;
         public ushort Unk37;
         public ushort Unk38;
-        public ushort PowerUpIndicator;
+        public PowerUpIndicator PowerUpIndicator;
         public ushort InvocationAnimationTimer;
         public ushort Unk39;
 
@@ -74,7 +74,7 @@ namespace Strikers2013Editor.Logic
             Tp = br.ReadUInt16();
             Element = (Element)br.ReadUInt16();
             Status = (Status)br.ReadUInt16();
-            Unk1 = br.ReadUInt16();
+            Range = br.ReadUInt16();
             Unk2 = br.ReadUInt16();
             Unk3 = br.ReadUInt16();
             Unk4 = br.ReadUInt16();
@@ -117,7 +117,7 @@ namespace Strikers2013Editor.Logic
             Unk36 = br.ReadUInt16();
             Unk37 = br.ReadUInt16();
             Unk38 = br.ReadUInt16();
-            PowerUpIndicator = br.ReadUInt16();
+            PowerUpIndicator = (PowerUpIndicator) br.ReadUInt16();
             InvocationAnimationTimer = br.ReadUInt16();
             Unk39 = br.ReadUInt16();
         }
@@ -130,7 +130,7 @@ namespace Strikers2013Editor.Logic
             bw.Write(Tp);
             bw.Write((ushort)Element);
             bw.Write((ushort)Status);
-            bw.Write(Unk1);
+            bw.Write(Range);
             bw.Write(Unk2);
             bw.Write(Unk3);
             bw.Write(Unk4);
@@ -173,7 +173,7 @@ namespace Strikers2013Editor.Logic
             bw.Write(Unk36);
             bw.Write(Unk37);
             bw.Write(Unk38);
-            bw.Write(PowerUpIndicator);
+            bw.Write((ushort)PowerUpIndicator);
             bw.Write(InvocationAnimationTimer);
             bw.Write(Unk39);
         }

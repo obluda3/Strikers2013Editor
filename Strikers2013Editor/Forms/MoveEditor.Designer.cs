@@ -35,9 +35,12 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importToDatbinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.gbMain = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbElement = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,26 +51,29 @@
             this.nudPower = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbTier = new System.Windows.Forms.ComboBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.gbUsers = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.chkCoop = new System.Windows.Forms.CheckedListBox();
             this.chkUsers = new System.Windows.Forms.CheckedListBox();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.nudCoop = new System.Windows.Forms.NumericUpDown();
-            this.btnApply = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nudRange = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbPowerup = new System.Windows.Forms.ComboBox();
+            this.cmbMove = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.gbMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPowerMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPower)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.gbUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCoop)).BeginInit();
+            this.gbAdvanced.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRange)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -121,241 +127,10 @@
             this.importToDatbinToolStripMenuItem.Text = "Import to dat.bin";
             this.importToDatbinToolStripMenuItem.Click += new System.EventHandler(this.importToDatbinToolStripMenuItem_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.Enabled = false;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 27);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(230, 524);
-            this.listBox1.TabIndex = 3;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Enabled = false;
-            this.tabControl1.Location = new System.Drawing.Point(249, 28);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(341, 495);
-            this.tabControl1.TabIndex = 4;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.cmbElement);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.nudTP);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.nudPowerMax);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.nudPower);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.cmbTier);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(333, 469);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Main";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 117);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Element";
-            // 
-            // cmbElement
-            // 
-            this.cmbElement.FormattingEnabled = true;
-            this.cmbElement.Location = new System.Drawing.Point(75, 114);
-            this.cmbElement.Name = "cmbElement";
-            this.cmbElement.Size = new System.Drawing.Size(121, 21);
-            this.cmbElement.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "TP";
-            // 
-            // nudTP
-            // 
-            this.nudTP.Location = new System.Drawing.Point(75, 87);
-            this.nudTP.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudTP.Name = "nudTP";
-            this.nudTP.Size = new System.Drawing.Size(50, 20);
-            this.nudTP.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Max Power";
-            // 
-            // nudPowerMax
-            // 
-            this.nudPowerMax.Location = new System.Drawing.Point(75, 60);
-            this.nudPowerMax.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudPowerMax.Name = "nudPowerMax";
-            this.nudPowerMax.Size = new System.Drawing.Size(50, 20);
-            this.nudPowerMax.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Power";
-            // 
-            // nudPower
-            // 
-            this.nudPower.Location = new System.Drawing.Point(75, 33);
-            this.nudPower.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.nudPower.Name = "nudPower";
-            this.nudPower.Size = new System.Drawing.Size(50, 20);
-            this.nudPower.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tier";
-            // 
-            // cmbTier
-            // 
-            this.cmbTier.FormattingEnabled = true;
-            this.cmbTier.Location = new System.Drawing.Point(75, 6);
-            this.cmbTier.Name = "cmbTier";
-            this.cmbTier.Size = new System.Drawing.Size(121, 21);
-            this.cmbTier.TabIndex = 0;
-            this.cmbTier.SelectedIndexChanged += new System.EventHandler(this.cmbTier_SelectedIndexChanged);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.chkCoop);
-            this.tabPage2.Controls.Add(this.chkUsers);
-            this.tabPage2.Controls.Add(this.cmbStatus);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.nudCoop);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(333, 469);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Advanced";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 250);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Co-Op Users";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 60);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Users";
-            // 
-            // chkCoop
-            // 
-            this.chkCoop.FormattingEnabled = true;
-            this.chkCoop.Location = new System.Drawing.Point(98, 250);
-            this.chkCoop.Name = "chkCoop";
-            this.chkCoop.Size = new System.Drawing.Size(229, 184);
-            this.chkCoop.TabIndex = 15;
-            this.chkCoop.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkCoop_ItemCheck);
-            // 
-            // chkUsers
-            // 
-            this.chkUsers.FormattingEnabled = true;
-            this.chkUsers.Location = new System.Drawing.Point(98, 60);
-            this.chkUsers.Name = "chkUsers";
-            this.chkUsers.Size = new System.Drawing.Size(229, 184);
-            this.chkUsers.TabIndex = 14;
-            this.chkUsers.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkUsers_ItemCheck);
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(98, 32);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(79, 21);
-            this.cmbStatus.TabIndex = 13;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Status";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 9);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Co-Op Players";
-            // 
-            // nudCoop
-            // 
-            this.nudCoop.Location = new System.Drawing.Point(98, 7);
-            this.nudCoop.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.nudCoop.Name = "nudCoop";
-            this.nudCoop.Size = new System.Drawing.Size(79, 20);
-            this.nudCoop.TabIndex = 0;
-            // 
             // btnApply
             // 
             this.btnApply.Enabled = false;
-            this.btnApply.Location = new System.Drawing.Point(253, 529);
+            this.btnApply.Location = new System.Drawing.Point(515, 529);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 5;
@@ -363,14 +138,291 @@
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
+            // gbMain
+            // 
+            this.gbMain.Controls.Add(this.label6);
+            this.gbMain.Controls.Add(this.cmbStatus);
+            this.gbMain.Controls.Add(this.label5);
+            this.gbMain.Controls.Add(this.cmbElement);
+            this.gbMain.Controls.Add(this.label4);
+            this.gbMain.Controls.Add(this.nudTP);
+            this.gbMain.Controls.Add(this.label3);
+            this.gbMain.Controls.Add(this.nudPowerMax);
+            this.gbMain.Controls.Add(this.label2);
+            this.gbMain.Controls.Add(this.nudPower);
+            this.gbMain.Controls.Add(this.label1);
+            this.gbMain.Controls.Add(this.cmbTier);
+            this.gbMain.Enabled = false;
+            this.gbMain.Location = new System.Drawing.Point(12, 65);
+            this.gbMain.Name = "gbMain";
+            this.gbMain.Size = new System.Drawing.Size(230, 247);
+            this.gbMain.TabIndex = 6;
+            this.gbMain.TabStop = false;
+            this.gbMain.Text = "Main";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 157);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Status";
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(81, 154);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(121, 21);
+            this.cmbStatus.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Element";
+            // 
+            // cmbElement
+            // 
+            this.cmbElement.FormattingEnabled = true;
+            this.cmbElement.Location = new System.Drawing.Point(81, 127);
+            this.cmbElement.Name = "cmbElement";
+            this.cmbElement.Size = new System.Drawing.Size(121, 21);
+            this.cmbElement.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(21, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "TP";
+            // 
+            // nudTP
+            // 
+            this.nudTP.Location = new System.Drawing.Point(81, 100);
+            this.nudTP.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudTP.Name = "nudTP";
+            this.nudTP.Size = new System.Drawing.Size(50, 20);
+            this.nudTP.TabIndex = 20;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Max Power";
+            // 
+            // nudPowerMax
+            // 
+            this.nudPowerMax.Location = new System.Drawing.Point(81, 73);
+            this.nudPowerMax.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudPowerMax.Name = "nudPowerMax";
+            this.nudPowerMax.Size = new System.Drawing.Size(50, 20);
+            this.nudPowerMax.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Power";
+            // 
+            // nudPower
+            // 
+            this.nudPower.Location = new System.Drawing.Point(81, 46);
+            this.nudPower.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.nudPower.Name = "nudPower";
+            this.nudPower.Size = new System.Drawing.Size(50, 20);
+            this.nudPower.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Tier";
+            // 
+            // cmbTier
+            // 
+            this.cmbTier.FormattingEnabled = true;
+            this.cmbTier.Location = new System.Drawing.Point(81, 19);
+            this.cmbTier.Name = "cmbTier";
+            this.cmbTier.Size = new System.Drawing.Size(121, 21);
+            this.cmbTier.TabIndex = 14;
+            // 
+            // gbUsers
+            // 
+            this.gbUsers.Controls.Add(this.label9);
+            this.gbUsers.Controls.Add(this.label8);
+            this.gbUsers.Controls.Add(this.chkCoop);
+            this.gbUsers.Controls.Add(this.chkUsers);
+            this.gbUsers.Controls.Add(this.label7);
+            this.gbUsers.Controls.Add(this.nudCoop);
+            this.gbUsers.Enabled = false;
+            this.gbUsers.Location = new System.Drawing.Point(248, 65);
+            this.gbUsers.Name = "gbUsers";
+            this.gbUsers.Size = new System.Drawing.Size(342, 458);
+            this.gbUsers.TabIndex = 7;
+            this.gbUsers.TabStop = false;
+            this.gbUsers.Text = "Users and Partners";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 243);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(46, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Partners";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Users";
+            // 
+            // chkCoop
+            // 
+            this.chkCoop.FormattingEnabled = true;
+            this.chkCoop.Location = new System.Drawing.Point(100, 236);
+            this.chkCoop.Name = "chkCoop";
+            this.chkCoop.Size = new System.Drawing.Size(229, 184);
+            this.chkCoop.TabIndex = 23;
+            // 
+            // chkUsers
+            // 
+            this.chkUsers.FormattingEnabled = true;
+            this.chkUsers.Location = new System.Drawing.Point(100, 46);
+            this.chkUsers.Name = "chkUsers";
+            this.chkUsers.Size = new System.Drawing.Size(229, 184);
+            this.chkUsers.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Partners count";
+            // 
+            // nudCoop
+            // 
+            this.nudCoop.Location = new System.Drawing.Point(100, 20);
+            this.nudCoop.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.nudCoop.Name = "nudCoop";
+            this.nudCoop.Size = new System.Drawing.Size(79, 20);
+            this.nudCoop.TabIndex = 18;
+            // 
+            // gbAdvanced
+            // 
+            this.gbAdvanced.Controls.Add(this.label11);
+            this.gbAdvanced.Controls.Add(this.nudRange);
+            this.gbAdvanced.Controls.Add(this.label10);
+            this.gbAdvanced.Controls.Add(this.cmbPowerup);
+            this.gbAdvanced.Enabled = false;
+            this.gbAdvanced.Location = new System.Drawing.Point(12, 318);
+            this.gbAdvanced.Name = "gbAdvanced";
+            this.gbAdvanced.Size = new System.Drawing.Size(230, 234);
+            this.gbAdvanced.TabIndex = 8;
+            this.gbAdvanced.TabStop = false;
+            this.gbAdvanced.Text = "Advanced";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 48);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 13);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Range";
+            // 
+            // nudRange
+            // 
+            this.nudRange.Location = new System.Drawing.Point(81, 46);
+            this.nudRange.Name = "nudRange";
+            this.nudRange.Size = new System.Drawing.Size(50, 20);
+            this.nudRange.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 22);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(52, 13);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Power-up";
+            // 
+            // cmbPowerup
+            // 
+            this.cmbPowerup.FormattingEnabled = true;
+            this.cmbPowerup.Location = new System.Drawing.Point(81, 19);
+            this.cmbPowerup.Name = "cmbPowerup";
+            this.cmbPowerup.Size = new System.Drawing.Size(121, 21);
+            this.cmbPowerup.TabIndex = 26;
+            this.cmbPowerup.SelectedIndexChanged += new System.EventHandler(this.cmbPowerup_SelectedIndexChanged);
+            // 
+            // cmbMove
+            // 
+            this.cmbMove.Enabled = false;
+            this.cmbMove.FormattingEnabled = true;
+            this.cmbMove.Location = new System.Drawing.Point(163, 32);
+            this.cmbMove.Name = "cmbMove";
+            this.cmbMove.Size = new System.Drawing.Size(264, 21);
+            this.cmbMove.TabIndex = 9;
+            this.cmbMove.SelectedIndexChanged += new System.EventHandler(this.cmbMove_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(123, 35);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Move";
+            // 
             // MoveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 564);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.cmbMove);
+            this.Controls.Add(this.gbAdvanced);
+            this.Controls.Add(this.gbUsers);
+            this.Controls.Add(this.gbMain);
             this.Controls.Add(this.btnApply);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -379,15 +431,17 @@
             this.Text = "MoveEditor";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.gbMain.ResumeLayout(false);
+            this.gbMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPowerMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPower)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.gbUsers.ResumeLayout(false);
+            this.gbUsers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCoop)).EndInit();
+            this.gbAdvanced.ResumeLayout(false);
+            this.gbAdvanced.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRange)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,32 +453,37 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown nudPower;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbTier;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importToDatbinToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.GroupBox gbMain;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbElement;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nudTP;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown nudPowerMax;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbElement;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown nudCoop;
-        private System.Windows.Forms.Button btnApply;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown nudPower;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbTier;
+        private System.Windows.Forms.GroupBox gbUsers;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckedListBox chkCoop;
         private System.Windows.Forms.CheckedListBox chkUsers;
-        private System.Windows.Forms.ToolStripMenuItem importToDatbinToolStripMenuItem;
-        private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown nudCoop;
+        private System.Windows.Forms.GroupBox gbAdvanced;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown nudRange;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbPowerup;
+        private System.Windows.Forms.ComboBox cmbMove;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -34,8 +34,10 @@ namespace Strikers2013Editor.Forms
                     moveFile = File.ReadAllBytes(ofd.FileName);
                     var moveStream = new MemoryStream(moveFile);
 
-                    listBox1.Enabled = true;
-                    tabControl1.Enabled = true;
+                    cmbMove.Enabled = true;
+                    gbMain.Enabled = true;
+                    gbAdvanced.Enabled = true;
+                    gbUsers.Enabled = true;
                     btnApply.Enabled = true;
                     exportToolStripMenuItem.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
@@ -44,9 +46,11 @@ namespace Strikers2013Editor.Forms
                     cmbTier.Items.AddRange(Enum.GetNames(typeof(Tier)));
                     cmbElement.Items.AddRange(Enum.GetNames(typeof(Element)));
                     cmbStatus.Items.AddRange(Enum.GetNames(typeof(Status)));
+                    cmbPowerup.Items.AddRange(Enum.GetNames(typeof(PowerUpIndicator)));
                     chkCoop.Items.AddRange(playerNames);
                     chkCoop.Items[0] = "Anyone";
                     chkUsers.Items.AddRange(playerNames);
+                    cmbMove.SelectedIndex = 0;
 
 
                 }
@@ -67,47 +71,8 @@ namespace Strikers2013Editor.Forms
                 for (var i = 0; i < moveCount; i++)
                 {
                     moves[i] = new Move(br);
-                    listBox1.Items.Add(moveNames[i]);
+                    cmbMove.Items.Add(moveNames[i]);
                 }
-            }
-
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var move = moves[listBox1.SelectedIndex];
-
-            cmbTier.SelectedIndex = (int)move.Tier;
-            nudPower.Value = move.BasePower;
-            nudPowerMax.Value = move.MaxPower;
-            nudTP.Value = move.Tp;
-            cmbElement.SelectedIndex = (int)move.Element;
-            cmbStatus.SelectedIndex = (int)move.Status;
-            nudCoop.Value = move.CoopPartnersCount;
-
-
-            chkUsers.SelectedIndex = -1;
-            chkCoop.SelectedIndex = -1;
-
-            for (var i = 0; i < playerNames.Length; i++)
-            {
-                chkUsers.SetItemChecked(i, false);
-                chkCoop.SetItemChecked(i, false);
-            }
-
-            // waza_info[13] through waza_info[22] are for the users of the moves
-            foreach (var user in move.Users)
-            {
-                if(user != 0)
-                chkUsers.SetItemChecked(user, true);
-            }
-            // waza_info[23] through waza_info[32] are for the co-op users of the moves
-            for (var i = 0; i < move.Partners.Length; i++)
-            {
-                var partner = move.Partners[i];
-                if(partner != 0 || ((partner == 0) && (i == 0)))
-                    chkCoop.SetItemChecked(partner, true);
             }
 
 
@@ -115,7 +80,7 @@ namespace Strikers2013Editor.Forms
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            var move = moves[listBox1.SelectedIndex];
+            var move = moves[cmbMove.SelectedIndex];
 
             move.Tier = (Tier)cmbTier.SelectedIndex;
             move.BasePower = (ushort)nudPower.Value;
@@ -123,6 +88,8 @@ namespace Strikers2013Editor.Forms
             move.Tp = (ushort)nudTP.Value;
             move.Element = (Element)cmbElement.SelectedIndex;
             move.Status = (Status)cmbStatus.SelectedIndex;
+            move.PowerUpIndicator = (PowerUpIndicator)cmbPowerup.SelectedIndex;
+            move.Range = (ushort)nudRange.Value;
             move.CoopPartnersCount = (ushort)nudCoop.Value;
 
             // Sets the users of the hissatsu
@@ -149,7 +116,7 @@ namespace Strikers2013Editor.Forms
                 move.Partners[i] = 0;
             }
 
-            moves[listBox1.SelectedIndex] = move;
+            moves[cmbMove.SelectedIndex] = move;
         }
 
         private void exportToolStripMenuItem_Click(object sender, EventArgs e)
@@ -267,8 +234,49 @@ namespace Strikers2013Editor.Forms
                 }
             }
         }
+        private void cmbMove_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbMove.SelectedIndex = cmbMove.SelectedIndex != 0 ? cmbMove.SelectedIndex : 1;
+            var move = moves[cmbMove.SelectedIndex];
 
-        private void cmbTier_SelectedIndexChanged(object sender, EventArgs e)
+            cmbTier.SelectedIndex = (int)move.Tier;
+            nudPower.Value = move.BasePower;
+            nudPowerMax.Value = move.MaxPower;
+            nudTP.Value = move.Tp;
+            cmbElement.SelectedIndex = (int)move.Element;
+            cmbStatus.SelectedIndex = (int)move.Status;
+            cmbPowerup.SelectedIndex = (int)move.PowerUpIndicator;
+            nudCoop.Value = move.CoopPartnersCount;
+            nudRange.Value = move.Range;
+
+
+            chkUsers.SelectedIndex = -1;
+            chkCoop.SelectedIndex = -1;
+
+            for (var i = 0; i < playerNames.Length; i++)
+            {
+                chkUsers.SetItemChecked(i, false);
+                chkCoop.SetItemChecked(i, false);
+            }
+
+            // waza_info[13] through waza_info[22] are for the users of the moves
+            foreach (var user in move.Users)
+            {
+                if (user != 0)
+                    chkUsers.SetItemChecked(user, true);
+            }
+            // waza_info[23] through waza_info[32] are for the co-op users of the moves
+            for (var i = 0; i < move.Partners.Length; i++)
+            {
+                var partner = move.Partners[i];
+                if (partner != 0 || ((partner == 0) && (i == 0)))
+                    chkCoop.SetItemChecked(partner, true);
+            }
+
+
+        }
+
+        private void cmbPowerup_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
