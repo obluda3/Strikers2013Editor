@@ -12,10 +12,10 @@ namespace Strikers2013Editor.Forms
 {
     public partial class MoveEditor : Form
     {
-        byte[] moveFile;
-        Move[] moves;
-        string[] playerNames;
-        string[] moveNames;
+        private byte[] data;
+        private Move[] moves;
+        private string[] playerNames;
+        private string[] moveNames;
         public MoveEditor()
         {
             InitializeComponent();
@@ -31,8 +31,7 @@ namespace Strikers2013Editor.Forms
                 ofd.RestoreDirectory = true;
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    moveFile = File.ReadAllBytes(ofd.FileName);
-                    var moveStream = new MemoryStream(moveFile);
+                    data = File.ReadAllBytes(ofd.FileName);
 
                     cmbMove.Enabled = true;
                     gbMain.Enabled = true;
@@ -41,7 +40,7 @@ namespace Strikers2013Editor.Forms
                     btnApply.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
 
-                    ParseMoveFile(moveStream);
+                    ParseMoveFile(File.OpenRead(ofd.FileName));
                     cmbTier.Items.AddRange(Enum.GetNames(typeof(Tier)));
                     cmbElement.Items.AddRange(Enum.GetNames(typeof(Element)));
                     cmbStatus.Items.AddRange(Enum.GetNames(typeof(Status)));
@@ -118,38 +117,6 @@ namespace Strikers2013Editor.Forms
             moves[cmbMove.SelectedIndex] = move;
         }
 
-        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var sfd = new SaveFileDialog())
-            {
-                sfd.Filter = "Text file (*.txt)|*.txt|All files (*.*)|*.*";
-                sfd.DefaultExt = ".txt";
-                sfd.FileName = "waza.txt";
-
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    /*
-                    var filename = sfd.FileName;
-                    using (var sw = new StreamWriter(File.Open(filename, FileMode.Create)))
-                    {
-                        for (var i = 0; i < listBox1.Items.Count; i++)
-                        {
-                            var waza = moves[i];
-                            sw.Write(moveNames[i]);
-                            sw.Write(",");
-                            foreach (var value in waza.wazaInfo)
-                            {
-                                sw.Write(value);
-                                sw.Write(",");
-                            }
-                            sw.WriteLine();
-                        }
-
-                    }*/
-                }
-            }
-        }
-
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -165,20 +132,16 @@ namespace Strikers2013Editor.Forms
                     var file = File.Open(filename, FileMode.Create);
                     using (var bw = new BeBinaryWriter(file))
                     {
-                        bw.Write(moveFile);
+                        bw.Write(data);
                         bw.BaseStream.Position = 28;
                         foreach (var waza in moves)
                         {
                             waza.Write(bw);
                         }
                     }
-
                     MessageBox.Show("Succesfully saved.", "Done");
-
-
                 }
             }
-
         }
 
         // Limited CheckedListBox because there are only 10 users/partners per hissatsu
@@ -224,13 +187,11 @@ namespace Strikers2013Editor.Forms
                 chkCoop.SetItemChecked(i, false);
             }
 
-            // waza_info[13] through waza_info[22] are for the users of the moves
             foreach (var user in move.Users)
             {
                 if (user != 0)
                     chkUsers.SetItemChecked(user, true);
             }
-            // waza_info[23] through waza_info[32] are for the co-op users of the moves
             for (var i = 0; i < move.Partners.Length; i++)
             {
                 var partner = move.Partners[i];

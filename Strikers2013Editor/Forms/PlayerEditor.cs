@@ -12,8 +12,8 @@ namespace Strikers2013Editor.Forms
 {
     public partial class PlayerEditor : Form
     {
-        byte[] playerFile;
-        PlayerInfo[] Players;
+        private byte[] filedata;
+        private PlayerInfo[] Players;
         public PlayerEditor()
         {
             InitializeComponent();
@@ -27,8 +27,7 @@ namespace Strikers2013Editor.Forms
                 ofd.RestoreDirectory = true;
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    playerFile = File.ReadAllBytes(ofd.FileName);
-                    var moveStream = new MemoryStream(playerFile);
+                    filedata = File.ReadAllBytes(ofd.FileName);
 
                     cmbPlayers.Enabled = true;
                     gbAdvanced.Enabled = true;
@@ -39,7 +38,7 @@ namespace Strikers2013Editor.Forms
                     btnApply.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
 
-                    ParsePlayerFile(moveStream);
+                    ParsePlayerFile(File.OpenRead(ofd.FileName));
                     cmbElement.Items.AddRange(Enum.GetNames(typeof(Element)));
                     cmbPosition.Items.AddRange(Enum.GetNames(typeof(Position)));
                     cmbTA.Items.AddRange(Enum.GetNames(typeof(TacticalAction)));
@@ -56,19 +55,17 @@ namespace Strikers2013Editor.Forms
             using (var br = new BeBinaryReader(input))
             {
                 br.BaseStream.Position = 0xFA4;
-                var playerList = new List<PlayerInfo>();
-                for (var i = 0; i < 0x19B; i++)
+                Players = new PlayerInfo[0x19C];
+                for (var i = 0; i < 0x19C; i++)
                 {
                     if (br.BaseStream.Position > br.BaseStream.Length - 0x148)
                         break;
                     var player = new PlayerInfo(br);
 
-                    playerList.Add(player);
+                    Players[i] = player;
 
                     cmbPlayers.Items.Add(player.Name);
                 }
-
-                Players = playerList.ToArray();
             }
         }
 
@@ -166,20 +163,16 @@ namespace Strikers2013Editor.Forms
                     var file = File.Open(filename, FileMode.Create);
                     using (var bw = new BeBinaryWriter(file))
                     {
-                        bw.Write(playerFile);
+                        bw.Write(filedata);
                         bw.BaseStream.Position = 0xFA4;
                         foreach (var player in Players)
                         {
                             player.Write(bw);
                         }
                     }
-
                     MessageBox.Show("Succesfully saved.", "Done");
-
-
                 }
             }
-
         }
 
         
