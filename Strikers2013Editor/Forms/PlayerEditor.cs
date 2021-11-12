@@ -30,8 +30,12 @@ namespace Strikers2013Editor.Forms
                     playerFile = File.ReadAllBytes(ofd.FileName);
                     var moveStream = new MemoryStream(playerFile);
 
-                    listBox1.Enabled = true;
-                    tabControl1.Enabled = true;
+                    cmbPlayers.Enabled = true;
+                    gbAdvanced.Enabled = true;
+                    gbClubroom.Enabled = true;
+                    gbInMatch.Enabled = true;
+                    gbMain.Enabled = true;
+                    gbMisc.Enabled = true;
                     btnApply.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
 
@@ -42,6 +46,8 @@ namespace Strikers2013Editor.Forms
                     cmbSex.Items.AddRange(Enum.GetNames(typeof(Gender)));
                     cmbBodytype.Items.AddRange(Enum.GetNames(typeof(Bodytype)));
                     cmbCharge.Items.AddRange(Names.ChargeProfilesNames);
+
+                    cmbPlayers.SelectedIndex = 1;
                 }
             }
         }
@@ -59,16 +65,16 @@ namespace Strikers2013Editor.Forms
 
                     playerList.Add(player);
 
-                    listBox1.Items.Add(player.Name);
+                    cmbPlayers.Items.Add(player.Name);
                 }
 
                 Players = playerList.ToArray();
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbPlayers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var player = Players[listBox1.SelectedIndex];
+            var player = Players[cmbPlayers.SelectedIndex];
             
             cmbPosition.SelectedIndex = player.Position > 0 ? player.Position - 0x22 : player.Position;
             cmbTA.SelectedIndex = (int)player.TacticalAction - 0x14;
@@ -106,7 +112,7 @@ namespace Strikers2013Editor.Forms
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            var player = Players[listBox1.SelectedIndex];
+            var player = Players[cmbPlayers.SelectedIndex];
 
             player.Position = cmbPosition.SelectedIndex > 0 ? cmbPosition.SelectedIndex + 0x22 : 0;
             player.TacticalAction = (TacticalAction)cmbTA.SelectedIndex + 0x14;
@@ -142,7 +148,7 @@ namespace Strikers2013Editor.Forms
             player.SkinColor1 = color1;
             player.SkinColor2 = color2;
 
-            Players[listBox1.SelectedIndex] = player;
+            Players[cmbPlayers.SelectedIndex] = player;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,16 +194,6 @@ namespace Strikers2013Editor.Forms
 
         }
 
-        private void picCol1_Click(object sender, EventArgs e)
-        {
-            picCol1.BackColor = GetColor(picCol1.BackColor);
-        }
-
-        private void picCol2_Click(object sender, EventArgs e)
-        {
-            picCol2.BackColor = GetColor(picCol2.BackColor);
-        }
-
         private Color GetColor(Color original)
         {
             var output = original;
@@ -211,6 +207,16 @@ namespace Strikers2013Editor.Forms
                     output = cd.Color;
             }
             return output;
+        }
+
+        private void picCol1_Click(object sender, EventArgs e)
+        {
+            picCol1.BackColor = GetColor(picCol1.BackColor);
+        }
+
+        private void picCol2_Click(object sender, EventArgs e)
+        {
+            picCol2.BackColor = GetColor(picCol2.BackColor);
         }
     }
 }
