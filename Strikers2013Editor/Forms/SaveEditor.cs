@@ -12,9 +12,8 @@ namespace Strikers2013Editor.Forms
 {
     public partial class SaveEditor : Form
     {
-        Encoding sjis = Encoding.GetEncoding("sjis");
-        Save save;
-        string[] moveNames, playerNames, emblemNames, formationNames;
+        private Save save;
+        private string[] moveNames, playerNames, emblemNames, formationNames;
 
         public SaveEditor()
         {
