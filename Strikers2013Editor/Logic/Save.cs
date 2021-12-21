@@ -20,17 +20,19 @@ namespace Strikers2013Editor.Logic
         public string ProfileName, OnlineName;
         public uint Profile, OnlineProfile, BaseOffset, MinutesPlayed, HoursPlayed, InazumaPoints, CreationDate, CreationTime;
 
-        private const int STATS_OFFSET = 0xad6c;
-        private const int WAZA_OFFSET = 0x640a4;
-        private const int TEAM_OFFSET = 0x63F54;
-        private const int PROFILE_OFFSET = 0x6775a;
+        private const int STATS_OFFSET = 0xad64;
+        private const int WAZA_OFFSET = 0x6409c;
+        private const int TEAM_OFFSET = 0x63F4c;
+        private const int PROFILE_OFFSET = 0x67752;
         private const int ONLINE_PROFILE = 0x1d8;
         private const int PROFILENAME_OFFSET = 0x1f8;
-        private const int TEAM_EMBLEM_OFFSET = 0x67760;
+        private const int TEAM_EMBLEM_OFFSET = 0x67758;
+        private const int INAZUMA_POINT_OFFSET = 0x1d4;
 
-        public Save(string name)
+        public Save(string name, int slot)
         {
             filename = name;
+            BaseOffset = (uint)(0x2590 + slot * 0x68548);
         }
 
         public void ParseSaveFile()
@@ -48,7 +50,7 @@ namespace Strikers2013Editor.Logic
                 HoursPlayed = br.ReadUInt32();
                 MinutesPlayed = br.ReadUInt32();
 
-                br.BaseStream.Position = BaseOffset + 0x1d4;
+                br.BaseStream.Position = BaseOffset + INAZUMA_POINT_OFFSET;
                 InazumaPoints = br.ReadUInt32();
 
                 br.BaseStream.Position = BaseOffset + PROFILENAME_OFFSET;

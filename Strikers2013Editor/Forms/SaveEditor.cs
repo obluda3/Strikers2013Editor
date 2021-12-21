@@ -41,9 +41,7 @@ namespace Strikers2013Editor.Forms
                         slot = slotDialog.SlotIndex; 
                     }
 
-                    save = new Save(ofd.FileName);
-
-                    save.BaseOffset = (uint)(0x2598 + slot * 0x68548);
+                    save = new Save(ofd.FileName, slot);
 
                     cmbCurPlayer.Items.Clear();
                     lstPlayers.Items.Clear();
