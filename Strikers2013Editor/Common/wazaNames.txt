@@ -18,7 +18,7 @@ Coil Turn
 Go To Heaven
 Go To Hell
 The Wall
-The Wall
+The Wall (NEW)
 The Tower
 The Mountain
 The Mist
@@ -33,7 +33,7 @@ Snow Angel
 Spiral Draw
 Spinning Cut
 Senpuujin
-Senpuujin
+Senpuujin (NEW)
 Dark Space
 Dash Train
 Deep Mist
@@ -67,16 +67,16 @@ Thief Eye
 Screwdriver
 Deep Jungle
 Deep Mist (Armed)
-Dragon Storm
-Dragon Storm
+Dragon Storm (Ryuuzaki)
+Dragon Storm (Makari)
 Vanishing Cut
 Hunting Lance
 Big Scissors
 Blade Attack
 Heavy Baby
 Fractal House
-Magnet Draw
-Magnet Draw
+Magnet Draw (Defense Command)
+Magnet Draw 
 Magical Flower
 Mochi Mochi Kinako Mochi
 Mochi Mochi Kinako Mochi (Armed)
@@ -133,10 +133,10 @@ Excellent Brest
 Excellent Brest Kai
 Counter Drive
 Gigantic Bomb
-Gigantic Bomb
+Gigantic Bomb (full)
 Killer Blade
 King Fire
-King Fire
+King Fire (full)
 Gravity Point
 God Hand W
 Sand Cutter
@@ -150,9 +150,9 @@ Power Spike
 Big Spider
 Buttobi Punch
 Buttobi Punch (Armed)
-Buttobi Punch (Armed)
-Majin The Hand
-Majin The Hand
+Buttobi Punch (Armed full)
+Majin The Hand (Keshin)
+Majin The Hand (Keshin full)
 Taikoku Ouka (Transformation)
 Normal dribble (dodge)
 Normal dribble (Jump)
@@ -171,7 +171,7 @@ Zanzou
 The Ikaros
 Scissors Bomb
 Shippuu Dash
-Shippuu Dash
+Shippuu Dash (NEW)
 Judge Through 2
 Judge Through 3
 Super Elastico
@@ -189,7 +189,7 @@ Naraku Otoshi
 Noboriryuu
 Heat Tackle
 Fuujin no Mai
-Fuujin no Mai
+Fuujin no Mai (NEW)
 Fuusen Gum
 Britannia Cross
 Prima Donna
@@ -198,7 +198,7 @@ Presto Turn
 Bunshin Feint
 Pegasus Break
 Heaven's Time
-Machinegun Beat
+Machinegun Beat (Black ver)
 Matador Feint
 Maboroshi Dribble
 Meteor Shower
@@ -227,8 +227,8 @@ Bungee Thust
 Hitori One-Two
 Boomerang Feint
 White Blade
-Machinegun Beat
-Machinegun Beat
+Machinegun Beat (Ide)
+Machinegun Beat (Kitaki)
 Mad Juggler
 Muei Souha
 Round Spark
@@ -246,7 +246,7 @@ Wolf Legend
 Excalibur
 Extend Zone
 Eternal Blizzard
-Eternal Blizzard
+Eternal Blizzard (NEW)
 Evolution
 Odin Sword
 Gaia Break
@@ -258,8 +258,8 @@ Grand Fire
 Grand Fenrir
 Grenade Shoot
 Cross Drive
-Cross Fire
-Cross Fire
+Cross Fire (fire)
+Cross Fire (wind)
 Gungnir
 Koutei Penguin 1gou
 Koutei Penguin 2
@@ -424,7 +424,7 @@ Disaster Break (Armed)
 Dimension Storm
 Checkmate
 Death Drop (Armed)
-Death Drop (Armed)
+Death Drop (Pendragon)
 Dual Strike
 Tenchi Raimei
 Denrai Houtou (Armed)
@@ -433,7 +433,7 @@ Dragon Blaster
 Dragon Blaster (Armed)
 Bouncer Rabbit
 Bouncer Rabbit (Armed)
-Bakunetsu Storm
+Bakunetsu Storm (Keshin)
 Ballista Shot
 Panther Blizzard
 Hinawa Bullet
@@ -473,5 +473,5 @@ Last Death Zone
 Love Arrow
 Ryuusei Blade (Armed)
 Raging Claw
-Red Prison
-Red Prison
+Red Prison (Zanark)
+Red Prison (Asta)
