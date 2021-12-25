@@ -75,7 +75,7 @@
       <DependentUpon>MoveEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Logic\Player.cs" />
-    <Compile Include="Logic\PlayerInfo.cs" />
+    <Compile Include="Logic\PlayerDef.cs" />
     <Compile Include="Forms\PlayerEditor.cs">
       <SubType>Form</SubType>
     </Compile>
