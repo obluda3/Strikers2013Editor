@@ -20,14 +20,14 @@ namespace Strikers2013Editor.Logic
         public string ProfileName, OnlineName;
         public uint Profile, OnlineProfile, BaseOffset, MinutesPlayed, HoursPlayed, InazumaPoints, CreationDate, CreationTime;
 
-        private const int STATS_OFFSET = 0xad64;
-        private const int WAZA_OFFSET = 0x6409c;
-        private const int TEAM_OFFSET = 0x63F4c;
-        private const int PROFILE_OFFSET = 0x67752;
+        private const int STATS_OFFSET = 0xad74;
+        private const int WAZA_OFFSET = 0x640ac;
+        private const int TEAM_OFFSET = 0x63F5c;
+        private const int PROFILE_OFFSET = 0x67762;
         private const int ONLINE_PROFILE = 0x1d8;
-        private const int PROFILENAME_OFFSET = 0x1f8;
-        private const int TEAM_EMBLEM_OFFSET = 0x67758;
-        private const int INAZUMA_POINT_OFFSET = 0x1d4;
+        private const int PROFILENAME_OFFSET = 0x200;
+        private const int TEAM_EMBLEM_OFFSET = 0x67768;
+        private const int INAZUMA_POINT_OFFSET = 0x1DC;
 
         public Save(string name, int slot)
         {
@@ -44,7 +44,7 @@ namespace Strikers2013Editor.Logic
                 OnlineName = sjis.GetString(br.ReadBytes(16));
                 OnlineProfile = br.ReadUInt32();
 
-                br.BaseStream.Position = BaseOffset;
+                br.BaseStream.Position = BaseOffset + 8;
                 CreationDate = br.ReadUInt32();
                 CreationTime = br.ReadUInt32();
                 HoursPlayed = br.ReadUInt32();
@@ -92,17 +92,17 @@ namespace Strikers2013Editor.Logic
             using (var bw = new BeBinaryWriter(file))
             {
                 bw.Write(saveData);
-                bw.BaseStream.Position = 0x1d8;
+                bw.BaseStream.Position = ONLINE_PROFILE;
                 bw.Write(StringTo16LongArray(OnlineName));
                 bw.Write(OnlineProfile);
 
-                bw.BaseStream.Position = BaseOffset;
+                bw.BaseStream.Position = BaseOffset + 8;
                 bw.Write(CreationDate);
                 bw.Write(CreationTime);
                 bw.Write(HoursPlayed);
                 bw.Write(MinutesPlayed);
 
-                bw.BaseStream.Position = BaseOffset + 0x1d4;
+                bw.BaseStream.Position = BaseOffset + INAZUMA_POINT_OFFSET;
                 bw.Write(InazumaPoints);
 
                 bw.BaseStream.Position = BaseOffset + PROFILENAME_OFFSET;
