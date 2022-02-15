@@ -11,9 +11,9 @@ Quick Draw
 Good Smell
 Gravitation
 Ground Quake
-Crazy Sunlight
-Crazy Sunlight
-Crazy Sunlight
+Crazy Sunlight (A)
+Crazy Sunlight (B)
+Crazy Sunlight (C)
 Coil Turn
 Go To Heaven
 Go To Hell
@@ -83,8 +83,8 @@ Mochi Mochi Kinako Mochi (Armed)
 La Flamme
 Wonder Trap
 Wonder Trap (Armed)
-Normal catch
-Normal catch
+Normal catch (left)
+Normal catch (right)
 Ikari no Tettsui
 Ijigen The Hand
 Electric Trap
@@ -157,7 +157,7 @@ Taikoku Ouka (Transformation)
 Normal dribble (dodge)
 Normal dribble (Jump)
 Normal dribble (Charge)
-Normal dribble (dodge)
+Normal dribble (dodge 2)
 Aikido
 Acrobat Keep
 Illusion Ball
@@ -252,7 +252,7 @@ Odin Sword
 Gaia Break
 Chaos Break
 Ganimede Proton
-Gallop Buster
+Gallop Buster (full)
 Gladius Arch
 Grand Fire
 Grand Fenrir
@@ -263,7 +263,7 @@ Cross Fire (wind)
 Gungnir
 Koutei Penguin 1gou
 Koutei Penguin 2
-Koutei Penguin 2
+Koutei Penguin 2 (bis)
 Koutei Penguin 3
 Koutei Penguin 7
 Koutei Penguin X
@@ -280,8 +280,8 @@ Thunder Beast
 The Earth
 Jet Stream
 Justice Wing
-Shadow Ray
-Shadow Ray
+Shadow Ray (Desta)
+Shadow Ray (Sein)
 Joker Rains
 Suisei Shoot
 Supernova
@@ -299,7 +299,7 @@ Dark Tornado Kai
 Dark Phoenix
 Dark Matter
 Tiger Storm
-Tiger drive
+Tiger Drive
 Tatsumaki Otoshi
 Double Grenade
 Twin Boost
@@ -311,7 +311,7 @@ Death Sword
 Death Zone
 Death Zone 2
 Death Drop
-Death Drop
+Death Drop (mixi)
 Death Break
 Death Rain
 Devil Burst
@@ -337,8 +337,8 @@ Big Bang
 Hyakuretsu Shoot
 Fire Tornado
 Fire Tornado Kai
-Fire Blizzard
-Fire Blizzard
+Fire Blizzard (Fire)
+Fire Blizzard (Wind)
 Phantom Shoot
 Fuurinkazan Destroyer
 Fortissimo
@@ -360,8 +360,8 @@ Mach Wind
 Maboroshi Shot
 Mirage Shot
 Megaton Head
-Megane Crash
-Megane Crash
+Megane Crash (Megane)
+Megane Crash (shooter)
 Megalodon
 Unicorn Boost
 Universe Blast
@@ -377,14 +377,14 @@ Wyvern Blizzard
 Icicle Road
 Athena Assault
 Extreme Rabbit
-Extreme Rabbit (Armed)
-Extreme Rabbit (Armed)
+Extreme Rabbit (Armed Tenma)
+Extreme Rabbit (Armed Fei)
 Ouja No Kiba
 Ogre blade
 Omega Attack
-Omega Attack (Armed)
-Omega Attack (Armed)
-Omega Attack (Armed)
+Omega Attack (Armed Alpha)
+Omega Attack (Armed Beta)
+Omega Attack (Armed Gamma)
 Gauss Shot
 Chaos Meteor (Unused)
 Chaos Meteor (Armed)
@@ -398,10 +398,10 @@ Kurukuru Head
 Great Max Na Ore
 Great Blaster
 Great Blaster (Armed)
-Great Blaster (Armed)
-Great Blaster (Armed)
-Great Blaster (Armed)
-Great Blaster (Armed)
+Great Blaster (Armed A)
+Great Blaster (Armed B)
+Great Blaster (Armed C)
+Great Blaster (Armed D)
 Kodai no Kiba
 God Wind
 God Wind (Armed)
@@ -409,8 +409,8 @@ Saikyou Eleven Hadou
 Thousand Arrow
 Sunshine Force
 Shellbit Burst
-Joker Rains (Armed)
-Joker Rains (Armed)
+Joker Rains (Armed Shindou)
+Joker Rains (Armed Tsurugi)
 Sparkle Wave
 Spinning Transam
 Spinning Transam (Armed)
@@ -439,30 +439,30 @@ Panther Blizzard
 Hinawa Bullet
 Fire Tornado DD
 Fire tornado TC
-Fire tornado TC
-Fire tornado TC
-Fire tornado TC
+Fire tornado TC A
+Fire tornado TC B
+Fire tornado TC C
 Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
-Fire Tornado TC (Armed)
+Fire Tornado TC (Armed A)
+Fire Tornado TC (Armed B)
+Fire Tornado TC (Armed C)
+Fire Tornado TC (Armed D)
+Fire Tornado TC (Armed E)
+Fire Tornado TC (Armed F)
+Fire Tornado TC (Armed G)
+Fire Tornado TC (Armed H)
+Fire Tornado TC (Armed I)
+Fire Tornado TC (Armed J)
+Fire Tornado TC (Armed K)
+Fire Tornado TC (Armed L)
+Fire Tornado TC (Armed M)
+Fire Tornado TC (Armed N)
+Fire Tornado TC (Armed O)
+Fire Tornado TC (Armed P)
 Falco Wing
 Flying Fish
 Plasma Ball
-Plasma Ball
+Plasma Ball (San)
 Floral Despair
 Heavy Aqua Lance
 Magician's Box
