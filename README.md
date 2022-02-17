@@ -15,5 +15,3 @@ You will need the following :
 - [Kuriimu2](https://github.com/FanTranslatorsInternational/Kuriimu2) to browse the game's files
 
 Open **mcb1.bln** using Kuriimu2, in "00000000.bin" extract "00000020.bin" for the Move Editor and "00000104.bin" for the Player Editor.
-
-After making your edits and replacing the files in the mcb1.bln, open the Move Editor and use the "Replace in dat.bin" option (otherwise it won't work correctly).
