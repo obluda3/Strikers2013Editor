@@ -98,6 +98,16 @@ namespace Strikers2013Editor.Logic
         public byte Speed;
         public byte MaxSpeed;
         public byte[] Unk;
+        public int Kakusei;
+        public int XP;
+        public short MoveUnk;
+        public short MoveKakusei2;
+        public short MoveKakusei2_2;
+        public short MoveKakusei2_3;
+        public short MoveKakusei3;
+        public short MoveKakusei3_2;
+        public short MoveKakusei3_3;
+        public short Unk2;
 
         public Stats(BeBinaryReader br)
         {
@@ -118,8 +128,17 @@ namespace Strikers2013Editor.Logic
             MaxControl = br.ReadByte();
             Speed = br.ReadByte();
             MaxSpeed = br.ReadByte();
-            var length = 0x3c - (br.BaseStream.Position - pos);
-            Unk = br.ReadBytes((int)length);
+            Unk = br.ReadBytes(0xE);
+            Kakusei = br.ReadInt32();
+            XP = br.ReadInt32();
+            MoveUnk = br.ReadInt16();
+            MoveKakusei2 = br.ReadInt16();
+            MoveKakusei2_2 = br.ReadInt16();
+            MoveKakusei2_3 = br.ReadInt16();
+            MoveKakusei3 = br.ReadInt16();
+            MoveKakusei3_2 = br.ReadInt16();
+            MoveKakusei3_3 = br.ReadInt16();
+            Unk2 = br.ReadInt16();
         }
 
         public void Write(BeBinaryWriter bw)
@@ -141,6 +160,16 @@ namespace Strikers2013Editor.Logic
             bw.Write(Speed);
             bw.Write(MaxSpeed);
             bw.Write(Unk);
+            bw.Write(Kakusei);
+            bw.Write(XP);
+            bw.Write(MoveUnk);
+            bw.Write(MoveKakusei2);
+            bw.Write(MoveKakusei2_2);
+            bw.Write(MoveKakusei2_3);
+            bw.Write(MoveKakusei3);
+            bw.Write(MoveKakusei3_2);
+            bw.Write(MoveKakusei3_3);
+            bw.Write(Unk2);
         }
     }
 
@@ -189,10 +218,6 @@ namespace Strikers2013Editor.Logic
         public int FormationIndex;
         public int ClubroomKit;
         public int Flag; // & 0x2000 => key player
-        /*public TeamPlayer(BeBinaryReader br)
-        {
-
-        }*/
 
         public TeamPlayer(BeBinaryReader br) 
         {

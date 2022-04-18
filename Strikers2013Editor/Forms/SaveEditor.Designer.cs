@@ -39,6 +39,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.cmbCurPlayer = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.cmbEmblem = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.cmbManager = new System.Windows.Forms.ComboBox();
@@ -121,7 +122,17 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.label35 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.cmbUnkMove1 = new System.Windows.Forms.ComboBox();
+            this.cmbKakusei2 = new System.Windows.Forms.ComboBox();
+            this.cmbUnkMove2 = new System.Windows.Forms.ComboBox();
+            this.cmbUnkMove3 = new System.Windows.Forms.ComboBox();
+            this.cmbKakusei3 = new System.Windows.Forms.ComboBox();
+            this.cmbUnkMove5 = new System.Windows.Forms.ComboBox();
+            this.cmbUnkMove4 = new System.Windows.Forms.ComboBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
             tabPage5 = new System.Windows.Forms.TabPage();
             tabPage5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -150,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage5
@@ -267,6 +279,15 @@
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Info";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(7, 75);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(44, 13);
+            this.label35.TabIndex = 11;
+            this.label35.Text = "Emblem";
             // 
             // cmbEmblem
             // 
@@ -448,6 +469,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl2.Controls.Add(this.tabPage2);
             this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Location = new System.Drawing.Point(232, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
@@ -526,7 +548,6 @@
             // nudTP
             // 
             this.nudTP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTP.Enabled = false;
             this.nudTP.Location = new System.Drawing.Point(94, 162);
             this.nudTP.Maximum = new decimal(new int[] {
             250,
@@ -595,7 +616,6 @@
             // nudSpeed
             // 
             this.nudSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudSpeed.Enabled = false;
             this.nudSpeed.Location = new System.Drawing.Point(94, 110);
             this.nudSpeed.Maximum = new decimal(new int[] {
             120,
@@ -609,7 +629,6 @@
             // nudCatch
             // 
             this.nudCatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudCatch.Enabled = false;
             this.nudCatch.Location = new System.Drawing.Point(94, 136);
             this.nudCatch.Maximum = new decimal(new int[] {
             120,
@@ -623,7 +642,6 @@
             // nudGuard
             // 
             this.nudGuard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudGuard.Enabled = false;
             this.nudGuard.Location = new System.Drawing.Point(94, 84);
             this.nudGuard.Maximum = new decimal(new int[] {
             120,
@@ -637,7 +655,6 @@
             // nudControl
             // 
             this.nudControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudControl.Enabled = false;
             this.nudControl.Location = new System.Drawing.Point(94, 58);
             this.nudControl.Maximum = new decimal(new int[] {
             120,
@@ -651,7 +668,6 @@
             // nudBody
             // 
             this.nudBody.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudBody.Enabled = false;
             this.nudBody.Location = new System.Drawing.Point(94, 32);
             this.nudBody.Maximum = new decimal(new int[] {
             120,
@@ -665,7 +681,6 @@
             // nudKick
             // 
             this.nudKick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudKick.Enabled = false;
             this.nudKick.Location = new System.Drawing.Point(94, 6);
             this.nudKick.Maximum = new decimal(new int[] {
             120,
@@ -1135,14 +1150,108 @@
             // 
             this.toolTip2.ToolTipTitle = "Format";
             // 
-            // label35
+            // tabPage6
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(7, 75);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(44, 13);
-            this.label35.TabIndex = 11;
-            this.label35.Text = "Emblem";
+            this.tabPage6.Controls.Add(this.label39);
+            this.tabPage6.Controls.Add(this.label37);
+            this.tabPage6.Controls.Add(this.label36);
+            this.tabPage6.Controls.Add(this.cmbUnkMove5);
+            this.tabPage6.Controls.Add(this.cmbUnkMove4);
+            this.tabPage6.Controls.Add(this.cmbKakusei3);
+            this.tabPage6.Controls.Add(this.cmbUnkMove3);
+            this.tabPage6.Controls.Add(this.cmbUnkMove2);
+            this.tabPage6.Controls.Add(this.cmbKakusei2);
+            this.tabPage6.Controls.Add(this.cmbUnkMove1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(226, 278);
+            this.tabPage6.TabIndex = 2;
+            this.tabPage6.Text = "Unlockables";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // cmbUnkMove1
+            // 
+            this.cmbUnkMove1.FormattingEnabled = true;
+            this.cmbUnkMove1.Location = new System.Drawing.Point(71, 6);
+            this.cmbUnkMove1.Name = "cmbUnkMove1";
+            this.cmbUnkMove1.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove1.TabIndex = 26;
+            // 
+            // cmbKakusei2
+            // 
+            this.cmbKakusei2.FormattingEnabled = true;
+            this.cmbKakusei2.Location = new System.Drawing.Point(71, 33);
+            this.cmbKakusei2.Name = "cmbKakusei2";
+            this.cmbKakusei2.Size = new System.Drawing.Size(149, 21);
+            this.cmbKakusei2.TabIndex = 27;
+            // 
+            // cmbUnkMove2
+            // 
+            this.cmbUnkMove2.FormattingEnabled = true;
+            this.cmbUnkMove2.Location = new System.Drawing.Point(71, 60);
+            this.cmbUnkMove2.Name = "cmbUnkMove2";
+            this.cmbUnkMove2.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove2.TabIndex = 28;
+            // 
+            // cmbUnkMove3
+            // 
+            this.cmbUnkMove3.FormattingEnabled = true;
+            this.cmbUnkMove3.Location = new System.Drawing.Point(71, 87);
+            this.cmbUnkMove3.Name = "cmbUnkMove3";
+            this.cmbUnkMove3.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove3.TabIndex = 29;
+            // 
+            // cmbKakusei3
+            // 
+            this.cmbKakusei3.FormattingEnabled = true;
+            this.cmbKakusei3.Location = new System.Drawing.Point(71, 114);
+            this.cmbKakusei3.Name = "cmbKakusei3";
+            this.cmbKakusei3.Size = new System.Drawing.Size(149, 21);
+            this.cmbKakusei3.TabIndex = 30;
+            // 
+            // cmbUnkMove5
+            // 
+            this.cmbUnkMove5.FormattingEnabled = true;
+            this.cmbUnkMove5.Location = new System.Drawing.Point(71, 168);
+            this.cmbUnkMove5.Name = "cmbUnkMove5";
+            this.cmbUnkMove5.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove5.TabIndex = 32;
+            // 
+            // cmbUnkMove4
+            // 
+            this.cmbUnkMove4.FormattingEnabled = true;
+            this.cmbUnkMove4.Location = new System.Drawing.Point(71, 141);
+            this.cmbUnkMove4.Name = "cmbUnkMove4";
+            this.cmbUnkMove4.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove4.TabIndex = 31;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 9);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(53, 13);
+            this.label36.TabIndex = 33;
+            this.label36.Text = "Recruited";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(6, 36);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(54, 13);
+            this.label37.TabIndex = 34;
+            this.label37.Text = "Kakusei 2";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 117);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(54, 13);
+            this.label39.TabIndex = 36;
+            this.label39.Text = "Kakusei 3";
             // 
             // SaveEditor
             // 
@@ -1190,6 +1299,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1289,5 +1400,16 @@
         private System.Windows.Forms.ComboBox cmbManager;
         private System.Windows.Forms.ComboBox cmbEmblem;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.ComboBox cmbUnkMove5;
+        private System.Windows.Forms.ComboBox cmbUnkMove4;
+        private System.Windows.Forms.ComboBox cmbKakusei3;
+        private System.Windows.Forms.ComboBox cmbUnkMove3;
+        private System.Windows.Forms.ComboBox cmbUnkMove2;
+        private System.Windows.Forms.ComboBox cmbKakusei2;
+        private System.Windows.Forms.ComboBox cmbUnkMove1;
     }
 }

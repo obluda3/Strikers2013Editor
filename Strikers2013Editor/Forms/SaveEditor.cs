@@ -95,6 +95,14 @@ namespace Strikers2013Editor.Forms
                     cmbCatch3.Items.AddRange(moveNames);
                     cmbDribble.Items.AddRange(moveNames);
                     cmbDefense.Items.AddRange(moveNames);
+                    cmbUnkMove1.Items.AddRange(moveNames);
+                    cmbUnkMove2.Items.AddRange(moveNames);
+                    cmbUnkMove3.Items.AddRange(moveNames);
+                    cmbUnkMove4.Items.AddRange(moveNames);
+                    cmbUnkMove5.Items.AddRange(moveNames);
+                    cmbKakusei2.Items.AddRange(moveNames);
+                    cmbKakusei3.Items.AddRange(moveNames);
+
 
                     tabControl1.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
@@ -196,6 +204,13 @@ namespace Strikers2013Editor.Forms
             player.MoveList.Dribble = (short)cmbDribble.SelectedIndex;
             player.MoveList.Defense = (short)cmbDefense.SelectedIndex;
             player.MoveList.SP = (short)cmbSP.SelectedIndex;
+            player.Stats.MoveUnk = (short)cmbUnkMove1.SelectedIndex;
+            player.Stats.MoveKakusei2_2 = (short)cmbUnkMove2.SelectedIndex;
+            player.Stats.MoveKakusei2_3 = (short)cmbUnkMove3.SelectedIndex;
+            player.Stats.MoveKakusei3_2 = (short)cmbUnkMove3.SelectedIndex;
+            player.Stats.MoveKakusei3_3 = (short)cmbUnkMove3.SelectedIndex;
+            player.Stats.MoveKakusei2 = (short)cmbKakusei2.SelectedIndex;
+            player.Stats.MoveKakusei3 = (short)cmbKakusei3.SelectedIndex;
 
             save.Players[lstPlayers.SelectedIndex] = player;
         }
@@ -330,7 +345,13 @@ namespace Strikers2013Editor.Forms
             cmbDribble.SelectedIndex = player.MoveList.Dribble;
             cmbDefense.SelectedIndex = player.MoveList.Defense;
             cmbSP.SelectedIndex = player.MoveList.SP;
-
+            cmbUnkMove1.SelectedIndex = player.Stats.MoveUnk;
+            cmbUnkMove2.SelectedIndex = player.Stats.MoveKakusei2_2;
+            cmbUnkMove3.SelectedIndex = player.Stats.MoveKakusei2_3;
+            cmbUnkMove4.SelectedIndex = player.Stats.MoveKakusei3_2;
+            cmbUnkMove5.SelectedIndex = player.Stats.MoveKakusei3_3;
+            cmbKakusei2.SelectedIndex = player.Stats.MoveKakusei2;
+            cmbKakusei3.SelectedIndex = player.Stats.MoveKakusei3;
 
         }
     }
