@@ -87,7 +87,9 @@ namespace Strikers2013Editor.Forms
             move.Element = (Element)cmbElement.SelectedIndex;
             move.Status = (Status)cmbStatus.SelectedIndex;
             move.PowerUpIndicator = (PowerUpIndicator)cmbPowerup.SelectedIndex;
-            move.Range = (ushort)nudRange.Value;
+            move.OutputRange = (ushort)nudOutRange.Value;
+            move.OutputRangeAssist = (ushort)nudRangeAssist.Value;
+            move.EffectRange = (ushort)nudEffectRange.Value;
             move.CoopPartnersCount = (ushort)nudCoop.Value;
 
             // Sets the users of the hissatsu
@@ -175,7 +177,9 @@ namespace Strikers2013Editor.Forms
             cmbStatus.SelectedIndex = (int)move.Status;
             cmbPowerup.SelectedIndex = (int)move.PowerUpIndicator;
             nudCoop.Value = move.CoopPartnersCount;
-            nudRange.Value = move.Range;
+            nudOutRange.Value = move.OutputRange;
+            nudEffectRange.Value = move.EffectRange;
+            nudRangeAssist.Value = move.OutputRangeAssist;
 
 
             chkUsers.SelectedIndex = -1;

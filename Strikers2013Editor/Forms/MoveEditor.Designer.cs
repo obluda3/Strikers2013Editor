@@ -58,11 +58,15 @@
             this.nudCoop = new System.Windows.Forms.NumericUpDown();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.nudRange = new System.Windows.Forms.NumericUpDown();
+            this.nudOutRange = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbPowerup = new System.Windows.Forms.ComboBox();
             this.cmbMove = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.nudEffectRange = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.nudRangeAssist = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.gbMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTP)).BeginInit();
@@ -71,7 +75,9 @@
             this.gbUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCoop)).BeginInit();
             this.gbAdvanced.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOutRange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEffectRange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRangeAssist)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -96,7 +102,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -104,7 +110,7 @@
             // 
             this.saveToolStripMenuItem.Enabled = false;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -328,8 +334,12 @@
             // 
             // gbAdvanced
             // 
+            this.gbAdvanced.Controls.Add(this.label14);
+            this.gbAdvanced.Controls.Add(this.nudRangeAssist);
+            this.gbAdvanced.Controls.Add(this.label13);
+            this.gbAdvanced.Controls.Add(this.nudEffectRange);
             this.gbAdvanced.Controls.Add(this.label11);
-            this.gbAdvanced.Controls.Add(this.nudRange);
+            this.gbAdvanced.Controls.Add(this.nudOutRange);
             this.gbAdvanced.Controls.Add(this.label10);
             this.gbAdvanced.Controls.Add(this.cmbPowerup);
             this.gbAdvanced.Enabled = false;
@@ -349,12 +359,12 @@
             this.label11.TabIndex = 29;
             this.label11.Text = "Range";
             // 
-            // nudRange
+            // nudOutRange
             // 
-            this.nudRange.Location = new System.Drawing.Point(81, 46);
-            this.nudRange.Name = "nudRange";
-            this.nudRange.Size = new System.Drawing.Size(50, 20);
-            this.nudRange.TabIndex = 28;
+            this.nudOutRange.Location = new System.Drawing.Point(152, 46);
+            this.nudOutRange.Name = "nudOutRange";
+            this.nudOutRange.Size = new System.Drawing.Size(50, 20);
+            this.nudOutRange.TabIndex = 28;
             // 
             // label10
             // 
@@ -393,6 +403,40 @@
             this.label12.TabIndex = 10;
             this.label12.Text = "Move";
             // 
+            // nudEffectRange
+            // 
+            this.nudEffectRange.Enabled = false;
+            this.nudEffectRange.Location = new System.Drawing.Point(151, 72);
+            this.nudEffectRange.Name = "nudEffectRange";
+            this.nudEffectRange.Size = new System.Drawing.Size(50, 20);
+            this.nudEffectRange.TabIndex = 30;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 74);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 13);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Effect range";
+            // 
+            // nudRangeAssist
+            // 
+            this.nudRangeAssist.Enabled = false;
+            this.nudRangeAssist.Location = new System.Drawing.Point(151, 98);
+            this.nudRangeAssist.Name = "nudRangeAssist";
+            this.nudRangeAssist.Size = new System.Drawing.Size(50, 20);
+            this.nudRangeAssist.TabIndex = 32;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 100);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 13);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Range assist";
+            // 
             // MoveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,7 +466,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCoop)).EndInit();
             this.gbAdvanced.ResumeLayout(false);
             this.gbAdvanced.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudRange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOutRange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEffectRange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRangeAssist)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -459,10 +505,14 @@
         private System.Windows.Forms.NumericUpDown nudCoop;
         private System.Windows.Forms.GroupBox gbAdvanced;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.NumericUpDown nudRange;
+        private System.Windows.Forms.NumericUpDown nudOutRange;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbPowerup;
         private System.Windows.Forms.ComboBox cmbMove;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown nudRangeAssist;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.NumericUpDown nudEffectRange;
     }
 }

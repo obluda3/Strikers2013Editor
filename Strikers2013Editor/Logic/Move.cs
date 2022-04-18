@@ -18,9 +18,9 @@ namespace Strikers2013Editor.Logic
         public ushort Tp;
         public Element Element;
         public Status Status;
-        public ushort Range;
-        public ushort Unk2;
-        public ushort Unk3;
+        public ushort OutputRange;
+        public ushort OutputRangeAssist;
+        public ushort EffectRange;
         public ushort Unk4;
         public ushort CoopPartnersCount;
         public ushort Unka;
@@ -74,9 +74,9 @@ namespace Strikers2013Editor.Logic
             Tp = br.ReadUInt16();
             Element = (Element)br.ReadUInt16();
             Status = (Status)br.ReadUInt16();
-            Range = br.ReadUInt16();
-            Unk2 = br.ReadUInt16();
-            Unk3 = br.ReadUInt16();
+            OutputRange = br.ReadUInt16();
+            OutputRangeAssist = br.ReadUInt16();
+            EffectRange = br.ReadUInt16();
             Unk4 = br.ReadUInt16();
             CoopPartnersCount = br.ReadUInt16();
             Unka = br.ReadUInt16();
@@ -130,9 +130,9 @@ namespace Strikers2013Editor.Logic
             bw.Write(Tp);
             bw.Write((ushort)Element);
             bw.Write((ushort)Status);
-            bw.Write(Range);
-            bw.Write(Unk2);
-            bw.Write(Unk3);
+            bw.Write(OutputRange);
+            bw.Write(OutputRangeAssist);
+            bw.Write(EffectRange);
             bw.Write(Unk4);
             bw.Write(CoopPartnersCount);
             bw.Write(Unka);
