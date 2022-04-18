@@ -69,6 +69,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.nudHeight = new System.Windows.Forms.NumericUpDown();
             this.gbMisc = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtPlyName = new System.Windows.Forms.TextBox();
             this.picCol2 = new System.Windows.Forms.PictureBox();
             this.picCol1 = new System.Windows.Forms.PictureBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -97,6 +99,13 @@
             this.cmbTA = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.cmbPlayers = new System.Windows.Forms.ComboBox();
+            this.gbEquip = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtSpClothes2 = new System.Windows.Forms.TextBox();
+            this.txtSpClothes1 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudEmblem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTeam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFace2)).BeginInit();
@@ -126,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudRightPortrait)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLeftPortrait)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFace3)).BeginInit();
+            this.gbEquip.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnApply
@@ -327,7 +337,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(865, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(867, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -382,7 +392,7 @@
             this.gbAdvanced.Enabled = false;
             this.gbAdvanced.Location = new System.Drawing.Point(557, 56);
             this.gbAdvanced.Name = "gbAdvanced";
-            this.gbAdvanced.Size = new System.Drawing.Size(287, 373);
+            this.gbAdvanced.Size = new System.Drawing.Size(287, 427);
             this.gbAdvanced.TabIndex = 10;
             this.gbAdvanced.TabStop = false;
             this.gbAdvanced.Text = "Advanced";
@@ -613,6 +623,8 @@
             // 
             // gbMisc
             // 
+            this.gbMisc.Controls.Add(this.label30);
+            this.gbMisc.Controls.Add(this.txtPlyName);
             this.gbMisc.Controls.Add(this.picCol2);
             this.gbMisc.Controls.Add(this.picCol1);
             this.gbMisc.Controls.Add(this.label29);
@@ -620,17 +632,34 @@
             this.gbMisc.Controls.Add(this.label3);
             this.gbMisc.Controls.Add(this.cmbSex);
             this.gbMisc.Enabled = false;
-            this.gbMisc.Location = new System.Drawing.Point(264, 56);
+            this.gbMisc.Location = new System.Drawing.Point(279, 268);
             this.gbMisc.Name = "gbMisc";
-            this.gbMisc.Size = new System.Drawing.Size(287, 180);
+            this.gbMisc.Size = new System.Drawing.Size(272, 124);
             this.gbMisc.TabIndex = 11;
             this.gbMisc.TabStop = false;
             this.gbMisc.Text = "Miscellaneous";
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 50);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(35, 13);
+            this.label30.TabIndex = 84;
+            this.label30.Text = "Name";
+            // 
+            // txtPlyName
+            // 
+            this.txtPlyName.Location = new System.Drawing.Point(75, 46);
+            this.txtPlyName.MaxLength = 23;
+            this.txtPlyName.Name = "txtPlyName";
+            this.txtPlyName.Size = new System.Drawing.Size(191, 20);
+            this.txtPlyName.TabIndex = 83;
+            // 
             // picCol2
             // 
             this.picCol2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picCol2.Location = new System.Drawing.Point(175, 46);
+            this.picCol2.Location = new System.Drawing.Point(176, 75);
             this.picCol2.Name = "picCol2";
             this.picCol2.Size = new System.Drawing.Size(20, 20);
             this.picCol2.TabIndex = 82;
@@ -640,7 +669,7 @@
             // picCol1
             // 
             this.picCol1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picCol1.Location = new System.Drawing.Point(74, 46);
+            this.picCol1.Location = new System.Drawing.Point(75, 75);
             this.picCol1.Name = "picCol1";
             this.picCol1.Size = new System.Drawing.Size(20, 20);
             this.picCol1.TabIndex = 81;
@@ -650,7 +679,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(119, 48);
+            this.label29.Location = new System.Drawing.Point(120, 77);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(40, 13);
             this.label29.TabIndex = 80;
@@ -659,7 +688,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(8, 48);
+            this.label8.Location = new System.Drawing.Point(9, 77);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 79;
@@ -677,9 +706,9 @@
             // cmbSex
             // 
             this.cmbSex.FormattingEnabled = true;
-            this.cmbSex.Location = new System.Drawing.Point(74, 19);
+            this.cmbSex.Location = new System.Drawing.Point(75, 19);
             this.cmbSex.Name = "cmbSex";
-            this.cmbSex.Size = new System.Drawing.Size(121, 21);
+            this.cmbSex.Size = new System.Drawing.Size(191, 21);
             this.cmbSex.TabIndex = 67;
             // 
             // gbClubroom
@@ -695,9 +724,9 @@
             this.gbClubroom.Controls.Add(this.label22);
             this.gbClubroom.Controls.Add(this.nudListPosition);
             this.gbClubroom.Enabled = false;
-            this.gbClubroom.Location = new System.Drawing.Point(264, 242);
+            this.gbClubroom.Location = new System.Drawing.Point(279, 62);
             this.gbClubroom.Name = "gbClubroom";
-            this.gbClubroom.Size = new System.Drawing.Size(287, 187);
+            this.gbClubroom.Size = new System.Drawing.Size(272, 200);
             this.gbClubroom.TabIndex = 12;
             this.gbClubroom.TabStop = false;
             this.gbClubroom.Text = "Clubroom";
@@ -821,7 +850,7 @@
             this.gbMain.Enabled = false;
             this.gbMain.Location = new System.Drawing.Point(16, 56);
             this.gbMain.Name = "gbMain";
-            this.gbMain.Size = new System.Drawing.Size(242, 173);
+            this.gbMain.Size = new System.Drawing.Size(257, 175);
             this.gbMain.TabIndex = 13;
             this.gbMain.TabStop = false;
             this.gbMain.Text = "Main";
@@ -839,16 +868,16 @@
             this.gbInMatch.Controls.Add(this.cmbTA);
             this.gbInMatch.Controls.Add(this.label23);
             this.gbInMatch.Enabled = false;
-            this.gbInMatch.Location = new System.Drawing.Point(16, 235);
+            this.gbInMatch.Location = new System.Drawing.Point(16, 237);
             this.gbInMatch.Name = "gbInMatch";
-            this.gbInMatch.Size = new System.Drawing.Size(242, 194);
+            this.gbInMatch.Size = new System.Drawing.Size(257, 155);
             this.gbInMatch.TabIndex = 14;
             this.gbInMatch.TabStop = false;
             this.gbInMatch.Text = "In match";
             // 
             // nudRightPortrait
             // 
-            this.nudRightPortrait.Location = new System.Drawing.Point(109, 122);
+            this.nudRightPortrait.Location = new System.Drawing.Point(115, 122);
             this.nudRightPortrait.Maximum = new decimal(new int[] {
             2147483647,
             0,
@@ -865,7 +894,7 @@
             // 
             // nudLeftPortrait
             // 
-            this.nudLeftPortrait.Location = new System.Drawing.Point(109, 96);
+            this.nudLeftPortrait.Location = new System.Drawing.Point(114, 96);
             this.nudLeftPortrait.Maximum = new decimal(new int[] {
             2147483647,
             0,
@@ -882,7 +911,7 @@
             // 
             // nudFace3
             // 
-            this.nudFace3.Location = new System.Drawing.Point(109, 70);
+            this.nudFace3.Location = new System.Drawing.Point(114, 70);
             this.nudFace3.Maximum = new decimal(new int[] {
             2147483647,
             0,
@@ -968,11 +997,80 @@
             this.cmbPlayers.TabIndex = 15;
             this.cmbPlayers.SelectedIndexChanged += new System.EventHandler(this.cmbPlayers_SelectedIndexChanged);
             // 
+            // gbEquip
+            // 
+            this.gbEquip.Controls.Add(this.label34);
+            this.gbEquip.Controls.Add(this.label33);
+            this.gbEquip.Controls.Add(this.txtSpClothes2);
+            this.gbEquip.Controls.Add(this.txtSpClothes1);
+            this.gbEquip.Controls.Add(this.label32);
+            this.gbEquip.Controls.Add(this.label31);
+            this.gbEquip.Enabled = false;
+            this.gbEquip.Location = new System.Drawing.Point(16, 398);
+            this.gbEquip.Name = "gbEquip";
+            this.gbEquip.Size = new System.Drawing.Size(535, 85);
+            this.gbEquip.TabIndex = 16;
+            this.gbEquip.TabStop = false;
+            this.gbEquip.Text = "Special clothing";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 51);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(43, 13);
+            this.label34.TabIndex = 11;
+            this.label34.Text = "Equip 2";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(6, 25);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(43, 13);
+            this.label33.TabIndex = 10;
+            this.label33.Text = "Equip 1";
+            // 
+            // txtSpClothes2
+            // 
+            this.txtSpClothes2.Location = new System.Drawing.Point(75, 48);
+            this.txtSpClothes2.MaxLength = 11;
+            this.txtSpClothes2.Name = "txtSpClothes2";
+            this.txtSpClothes2.Size = new System.Drawing.Size(454, 20);
+            this.txtSpClothes2.TabIndex = 3;
+            this.txtSpClothes2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // txtSpClothes1
+            // 
+            this.txtSpClothes1.Location = new System.Drawing.Point(75, 22);
+            this.txtSpClothes1.MaxLength = 11;
+            this.txtSpClothes1.Name = "txtSpClothes1";
+            this.txtSpClothes1.Size = new System.Drawing.Size(454, 20);
+            this.txtSpClothes1.TabIndex = 2;
+            this.txtSpClothes1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(12, 25);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(0, 13);
+            this.label32.TabIndex = 1;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(6, 25);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(0, 13);
+            this.label31.TabIndex = 0;
+            // 
             // PlayerEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 441);
+            this.ClientSize = new System.Drawing.Size(867, 500);
+            this.Controls.Add(this.gbEquip);
             this.Controls.Add(this.cmbPlayers);
             this.Controls.Add(this.gbInMatch);
             this.Controls.Add(this.gbMain);
@@ -1018,6 +1116,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudRightPortrait)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudLeftPortrait)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudFace3)).EndInit();
+            this.gbEquip.ResumeLayout(false);
+            this.gbEquip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1094,5 +1194,14 @@
         private System.Windows.Forms.ComboBox cmbTA;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox cmbPlayers;
+        private System.Windows.Forms.TextBox txtPlyName;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.GroupBox gbEquip;
+        private System.Windows.Forms.TextBox txtSpClothes2;
+        private System.Windows.Forms.TextBox txtSpClothes1;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
     }
 }
