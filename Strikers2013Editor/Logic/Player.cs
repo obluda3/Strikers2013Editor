@@ -7,12 +7,12 @@ using Strikers2013Editor.IO;
 
 namespace Strikers2013Editor.Logic
 {
-    struct Player
+    class Player
     {
         public Stats Stats;
         public MoveList MoveList;
     }
-    struct MoveList
+    class MoveList
     {
         public short Lv1;
         public short Lv2;
@@ -74,7 +74,7 @@ namespace Strikers2013Editor.Logic
             bw.Write(SP);
         }
     }
-    struct Stats
+    class Stats
     {
         // LSB :
         // AAXY BBBB
@@ -173,7 +173,7 @@ namespace Strikers2013Editor.Logic
         }
     }
 
-    struct Team 
+    class Team 
     {
         public int Kit;
         public int Formation;
@@ -210,7 +210,7 @@ namespace Strikers2013Editor.Logic
                 player.Write(bw);
         }
     }
-    struct TeamPlayer 
+    class TeamPlayer 
     {
         
         public int Id;

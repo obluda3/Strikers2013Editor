@@ -1,9 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Text;
+
 namespace Strikers2013Editor.IO
 {
     class BeBinaryWriter : BinaryWriter
     {
+        Encoding sjis = Encoding.GetEncoding("sjis");
         public BeBinaryWriter(Stream input) : base(input) 
         {
 
@@ -39,6 +42,5 @@ namespace Strikers2013Editor.IO
             foreach (var num in value)
                 Write(num);
         }
-
     }
 }

@@ -97,6 +97,17 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.cmbUnkMove5 = new System.Windows.Forms.ComboBox();
+            this.cmbUnkMove4 = new System.Windows.Forms.ComboBox();
+            this.cmbKakusei3 = new System.Windows.Forms.ComboBox();
+            this.cmbUnkMove3 = new System.Windows.Forms.ComboBox();
+            this.cmbUnkMove2 = new System.Windows.Forms.ComboBox();
+            this.cmbKakusei2 = new System.Windows.Forms.ComboBox();
+            this.cmbUnkMove1 = new System.Windows.Forms.ComboBox();
             this.lstPlayers = new System.Windows.Forms.ListBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -122,17 +133,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.cmbUnkMove1 = new System.Windows.Forms.ComboBox();
-            this.cmbKakusei2 = new System.Windows.Forms.ComboBox();
-            this.cmbUnkMove2 = new System.Windows.Forms.ComboBox();
-            this.cmbUnkMove3 = new System.Windows.Forms.ComboBox();
-            this.cmbKakusei3 = new System.Windows.Forms.ComboBox();
-            this.cmbUnkMove5 = new System.Windows.Forms.ComboBox();
-            this.cmbUnkMove4 = new System.Windows.Forms.ComboBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
+            this.btnTeamSave = new System.Windows.Forms.Button();
+            this.btnTeamLoad = new System.Windows.Forms.Button();
             tabPage5 = new System.Windows.Forms.TabPage();
             tabPage5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -150,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudKick)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudInazumaPoints)).BeginInit();
@@ -161,11 +164,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(this.btnTeamLoad);
+            tabPage5.Controls.Add(this.btnTeamSave);
             tabPage5.Controls.Add(this.groupBox4);
             tabPage5.Controls.Add(this.groupBox3);
             tabPage5.Controls.Add(this.label26);
@@ -875,6 +879,109 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Lv. 1";
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.label39);
+            this.tabPage6.Controls.Add(this.label37);
+            this.tabPage6.Controls.Add(this.label36);
+            this.tabPage6.Controls.Add(this.cmbUnkMove5);
+            this.tabPage6.Controls.Add(this.cmbUnkMove4);
+            this.tabPage6.Controls.Add(this.cmbKakusei3);
+            this.tabPage6.Controls.Add(this.cmbUnkMove3);
+            this.tabPage6.Controls.Add(this.cmbUnkMove2);
+            this.tabPage6.Controls.Add(this.cmbKakusei2);
+            this.tabPage6.Controls.Add(this.cmbUnkMove1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(226, 278);
+            this.tabPage6.TabIndex = 2;
+            this.tabPage6.Text = "Unlockables";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 117);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(54, 13);
+            this.label39.TabIndex = 36;
+            this.label39.Text = "Kakusei 3";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(6, 36);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(54, 13);
+            this.label37.TabIndex = 34;
+            this.label37.Text = "Kakusei 2";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(6, 9);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(53, 13);
+            this.label36.TabIndex = 33;
+            this.label36.Text = "Recruited";
+            // 
+            // cmbUnkMove5
+            // 
+            this.cmbUnkMove5.FormattingEnabled = true;
+            this.cmbUnkMove5.Location = new System.Drawing.Point(71, 168);
+            this.cmbUnkMove5.Name = "cmbUnkMove5";
+            this.cmbUnkMove5.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove5.TabIndex = 32;
+            // 
+            // cmbUnkMove4
+            // 
+            this.cmbUnkMove4.FormattingEnabled = true;
+            this.cmbUnkMove4.Location = new System.Drawing.Point(71, 141);
+            this.cmbUnkMove4.Name = "cmbUnkMove4";
+            this.cmbUnkMove4.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove4.TabIndex = 31;
+            // 
+            // cmbKakusei3
+            // 
+            this.cmbKakusei3.FormattingEnabled = true;
+            this.cmbKakusei3.Location = new System.Drawing.Point(71, 114);
+            this.cmbKakusei3.Name = "cmbKakusei3";
+            this.cmbKakusei3.Size = new System.Drawing.Size(149, 21);
+            this.cmbKakusei3.TabIndex = 30;
+            // 
+            // cmbUnkMove3
+            // 
+            this.cmbUnkMove3.FormattingEnabled = true;
+            this.cmbUnkMove3.Location = new System.Drawing.Point(71, 87);
+            this.cmbUnkMove3.Name = "cmbUnkMove3";
+            this.cmbUnkMove3.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove3.TabIndex = 29;
+            // 
+            // cmbUnkMove2
+            // 
+            this.cmbUnkMove2.FormattingEnabled = true;
+            this.cmbUnkMove2.Location = new System.Drawing.Point(71, 60);
+            this.cmbUnkMove2.Name = "cmbUnkMove2";
+            this.cmbUnkMove2.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove2.TabIndex = 28;
+            // 
+            // cmbKakusei2
+            // 
+            this.cmbKakusei2.FormattingEnabled = true;
+            this.cmbKakusei2.Location = new System.Drawing.Point(71, 33);
+            this.cmbKakusei2.Name = "cmbKakusei2";
+            this.cmbKakusei2.Size = new System.Drawing.Size(149, 21);
+            this.cmbKakusei2.TabIndex = 27;
+            // 
+            // cmbUnkMove1
+            // 
+            this.cmbUnkMove1.FormattingEnabled = true;
+            this.cmbUnkMove1.Location = new System.Drawing.Point(71, 6);
+            this.cmbUnkMove1.Name = "cmbUnkMove1";
+            this.cmbUnkMove1.Size = new System.Drawing.Size(149, 21);
+            this.cmbUnkMove1.TabIndex = 26;
+            // 
             // lstPlayers
             // 
             this.lstPlayers.FormattingEnabled = true;
@@ -1150,108 +1257,25 @@
             // 
             this.toolTip2.ToolTipTitle = "Format";
             // 
-            // tabPage6
+            // btnTeamSave
             // 
-            this.tabPage6.Controls.Add(this.label39);
-            this.tabPage6.Controls.Add(this.label37);
-            this.tabPage6.Controls.Add(this.label36);
-            this.tabPage6.Controls.Add(this.cmbUnkMove5);
-            this.tabPage6.Controls.Add(this.cmbUnkMove4);
-            this.tabPage6.Controls.Add(this.cmbKakusei3);
-            this.tabPage6.Controls.Add(this.cmbUnkMove3);
-            this.tabPage6.Controls.Add(this.cmbUnkMove2);
-            this.tabPage6.Controls.Add(this.cmbKakusei2);
-            this.tabPage6.Controls.Add(this.cmbUnkMove1);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(226, 278);
-            this.tabPage6.TabIndex = 2;
-            this.tabPage6.Text = "Unlockables";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.btnTeamSave.Location = new System.Drawing.Point(244, 329);
+            this.btnTeamSave.Name = "btnTeamSave";
+            this.btnTeamSave.Size = new System.Drawing.Size(89, 23);
+            this.btnTeamSave.TabIndex = 9;
+            this.btnTeamSave.Text = "Save";
+            this.btnTeamSave.UseVisualStyleBackColor = true;
+            this.btnTeamSave.Click += new System.EventHandler(this.btnTeamSave_Click);
             // 
-            // cmbUnkMove1
+            // btnTeamLoad
             // 
-            this.cmbUnkMove1.FormattingEnabled = true;
-            this.cmbUnkMove1.Location = new System.Drawing.Point(71, 6);
-            this.cmbUnkMove1.Name = "cmbUnkMove1";
-            this.cmbUnkMove1.Size = new System.Drawing.Size(149, 21);
-            this.cmbUnkMove1.TabIndex = 26;
-            // 
-            // cmbKakusei2
-            // 
-            this.cmbKakusei2.FormattingEnabled = true;
-            this.cmbKakusei2.Location = new System.Drawing.Point(71, 33);
-            this.cmbKakusei2.Name = "cmbKakusei2";
-            this.cmbKakusei2.Size = new System.Drawing.Size(149, 21);
-            this.cmbKakusei2.TabIndex = 27;
-            // 
-            // cmbUnkMove2
-            // 
-            this.cmbUnkMove2.FormattingEnabled = true;
-            this.cmbUnkMove2.Location = new System.Drawing.Point(71, 60);
-            this.cmbUnkMove2.Name = "cmbUnkMove2";
-            this.cmbUnkMove2.Size = new System.Drawing.Size(149, 21);
-            this.cmbUnkMove2.TabIndex = 28;
-            // 
-            // cmbUnkMove3
-            // 
-            this.cmbUnkMove3.FormattingEnabled = true;
-            this.cmbUnkMove3.Location = new System.Drawing.Point(71, 87);
-            this.cmbUnkMove3.Name = "cmbUnkMove3";
-            this.cmbUnkMove3.Size = new System.Drawing.Size(149, 21);
-            this.cmbUnkMove3.TabIndex = 29;
-            // 
-            // cmbKakusei3
-            // 
-            this.cmbKakusei3.FormattingEnabled = true;
-            this.cmbKakusei3.Location = new System.Drawing.Point(71, 114);
-            this.cmbKakusei3.Name = "cmbKakusei3";
-            this.cmbKakusei3.Size = new System.Drawing.Size(149, 21);
-            this.cmbKakusei3.TabIndex = 30;
-            // 
-            // cmbUnkMove5
-            // 
-            this.cmbUnkMove5.FormattingEnabled = true;
-            this.cmbUnkMove5.Location = new System.Drawing.Point(71, 168);
-            this.cmbUnkMove5.Name = "cmbUnkMove5";
-            this.cmbUnkMove5.Size = new System.Drawing.Size(149, 21);
-            this.cmbUnkMove5.TabIndex = 32;
-            // 
-            // cmbUnkMove4
-            // 
-            this.cmbUnkMove4.FormattingEnabled = true;
-            this.cmbUnkMove4.Location = new System.Drawing.Point(71, 141);
-            this.cmbUnkMove4.Name = "cmbUnkMove4";
-            this.cmbUnkMove4.Size = new System.Drawing.Size(149, 21);
-            this.cmbUnkMove4.TabIndex = 31;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 9);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(53, 13);
-            this.label36.TabIndex = 33;
-            this.label36.Text = "Recruited";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(6, 36);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(54, 13);
-            this.label37.TabIndex = 34;
-            this.label37.Text = "Kakusei 2";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 117);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(54, 13);
-            this.label39.TabIndex = 36;
-            this.label39.Text = "Kakusei 3";
+            this.btnTeamLoad.Location = new System.Drawing.Point(368, 329);
+            this.btnTeamLoad.Name = "btnTeamLoad";
+            this.btnTeamLoad.Size = new System.Drawing.Size(89, 23);
+            this.btnTeamLoad.TabIndex = 10;
+            this.btnTeamLoad.Text = "Load";
+            this.btnTeamLoad.UseVisualStyleBackColor = true;
+            this.btnTeamLoad.Click += new System.EventHandler(this.btnTeamLoad_Click);
             // 
             // SaveEditor
             // 
@@ -1286,6 +1310,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudKick)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1299,8 +1325,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1411,5 +1435,7 @@
         private System.Windows.Forms.ComboBox cmbUnkMove2;
         private System.Windows.Forms.ComboBox cmbKakusei2;
         private System.Windows.Forms.ComboBox cmbUnkMove1;
+        private System.Windows.Forms.Button btnTeamLoad;
+        private System.Windows.Forms.Button btnTeamSave;
     }
 }

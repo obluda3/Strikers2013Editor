@@ -63,10 +63,7 @@ namespace Strikers2013Editor.Forms
                     cmbPlayerKit.Items.AddRange(emblemNames);
                     cmbEmblem.Items.AddRange(emblemNames);
 
-                    foreach (var player in save.Team.Players)
-                    {
-                        lstTeam.Items.Add(playerNames[player.Id]);
-                    }
+                    
                     txtProfileName.Text = save.ProfileName;
                     txtOnlineName.Text = save.OnlineName;
                     nudProfile.Value = save.Profile;
@@ -77,14 +74,7 @@ namespace Strikers2013Editor.Forms
                     nudCreationTime.Value = save.CreationTime;
                     nudCreationDate.Value = save.CreationDate;
 
-                    txtTeamInfo.Text = save.Team.Name;
-                    // In an older version, emblems and formations were mistaken for eachother
-                    // this should fix some saves
-                    cmbFormation.SelectedIndex = save.Team.Formation >= cmbFormation.Items.Count ? 0 : save.Team.Formation;
-                    cmbTeamKit.SelectedIndex = save.Team.Kit;
-                    cmbCoach.SelectedIndex = save.Team.Coach;
-                    cmbManager.SelectedIndex = save.Team.Manager;
-                    cmbEmblem.SelectedIndex = save.Team.Emblem;
+                    InitTeam();
 
                     cmbLv1.Items.AddRange(moveNames);
                     cmbLv2.Items.AddRange(moveNames);
@@ -111,6 +101,22 @@ namespace Strikers2013Editor.Forms
             }
         }
 
+        private void InitTeam()
+        {
+            lstTeam.Items.Clear();
+            foreach (var player in save.Team.Players)
+            {
+                lstTeam.Items.Add(playerNames[player.Id]);
+            }
+            txtTeamInfo.Text = save.Team.Name;
+            // In an older version, emblems and formations were mistaken for eachother
+            // this should fix some saves
+            cmbFormation.SelectedIndex = save.Team.Formation >= cmbFormation.Items.Count ? 0 : save.Team.Formation;
+            cmbTeamKit.SelectedIndex = save.Team.Kit;
+            cmbCoach.SelectedIndex = save.Team.Coach;
+            cmbManager.SelectedIndex = save.Team.Manager;
+            cmbEmblem.SelectedIndex = save.Team.Emblem;
+        }
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var sfd = new SaveFileDialog())
@@ -310,6 +316,48 @@ namespace Strikers2013Editor.Forms
         private void cmbEmblem_SelectedIndexChanged(object sender, EventArgs e)
         {
             save.Team.Emblem = (short)cmbEmblem.SelectedIndex;
+        }
+
+        private void btnTeamSave_Click(object sender, EventArgs e)
+        {
+            using (var sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "STrikers teaM file (*.stm)|*.stm|All files (*.*)|*.*";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    var file = File.OpenWrite(sfd.FileName);
+                    using (var bw = new BeBinaryWriter(file))
+                    {
+                        bw.Write(0x5445414D);
+                        TeamFile.Save(bw, save);
+                        MessageBox.Show("Succesfully saved.", "Done");
+                    }
+                }
+            }
+        }
+
+        private void btnTeamLoad_Click(object sender, EventArgs e)
+        {
+            using (var ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "STrikers teaM file (*.stm)|*.stm|All files (*.*)|*.*";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    var file = File.OpenRead(ofd.FileName);
+                    using (var br = new BeBinaryReader(file))
+                    {
+                        if (br.ReadInt32() != 0x5445414D)
+                        {
+                            MessageBox.Show("Invalid file", "Error");
+                            return;
+                        }
+                        TeamFile.Load(br, save);
+                        InitTeam();
+                    }               
+                }
+            }
         }
 
         private void cmbManager_SeletedIndexChanged(object sender, EventArgs e)

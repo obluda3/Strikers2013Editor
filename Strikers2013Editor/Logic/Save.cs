@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.Text;
 using Strikers2013Editor.IO;
 using System.IO;
 
@@ -14,7 +14,7 @@ namespace Strikers2013Editor.Logic
         Encoding sjis = Encoding.GetEncoding("sjis");
         public string filename;
 
-        public Team Team = new Team();
+        public Team Team;
         public Player[] Players = new Player[412];
 
         public string ProfileName, OnlineName;
@@ -28,6 +28,21 @@ namespace Strikers2013Editor.Logic
         private const int PROFILENAME_OFFSET = 0x200;
         private const int TEAM_EMBLEM_OFFSET = 0x67768;
         private const int INAZUMA_POINT_OFFSET = 0x1DC;
+
+        public byte[] StringTo16LongArray(string text)
+        {
+            byte[] buffer = new byte[16];
+            for (var i = 0; i < 16; i++)
+                buffer[i] = 0;
+            var textBuffer = sjis.GetBytes(text);
+            for (var i = 0; i < 16; i++)
+            {
+                if (i == textBuffer.Length)
+                    break;
+                buffer[i] = textBuffer[i];
+            }
+            return buffer;
+        }
 
         public Save(string name, int slot)
         {
@@ -133,20 +148,6 @@ namespace Strikers2013Editor.Logic
 
             }
 
-        }
-        private byte[] StringTo16LongArray(string text)
-        {
-            byte[] buffer = new byte[16];
-            for (var i = 0; i < 16; i++)
-                buffer[i] = 0;
-            var textBuffer = sjis.GetBytes(text);
-            for (var i = 0; i < 16; i++)
-            {
-                if (i == textBuffer.Length)
-                    break;
-                buffer[i] = textBuffer[i];
-            }
-            return buffer;
         }
     }
 }

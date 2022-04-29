@@ -82,6 +82,7 @@
     <Compile Include="Forms\PlayerEditor.Designer.cs">
       <DependentUpon>PlayerEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\TeamFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IO\BeBinaryReader.cs" />
