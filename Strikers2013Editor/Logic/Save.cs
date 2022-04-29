@@ -48,12 +48,8 @@ namespace Strikers2013Editor.Logic
         {
             filename = name;
             BaseOffset = (uint)(0x2590 + slot * 0x68548);
-        }
-
-        public void ParseSaveFile()
-        {
             var file = File.OpenRead(filename);
-            using (var br = new BeBinaryReader(File.OpenRead(filename)))
+            using (var br = new BeBinaryReader(file))
             {
                 br.BaseStream.Position = ONLINE_PROFILE;
                 OnlineName = sjis.GetString(br.ReadBytes(16));

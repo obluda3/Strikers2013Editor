@@ -47,8 +47,6 @@ namespace Strikers2013Editor.Forms
                     lstPlayers.Items.Clear();
                     lstTeam.Items.Clear();
 
-                    save.ParseSaveFile();
-
                     playerNames = Names.GetTextFile("Strikers2013Editor.Common.playerNames.txt");
                     emblemNames = Names.GetTextFile("Strikers2013Editor.Common.emblemNames.txt");
                     moveNames = Names.GetTextFile("Strikers2013Editor.Common.wazaNames.txt");
