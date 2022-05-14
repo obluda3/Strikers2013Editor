@@ -379,6 +379,14 @@ namespace Strikers2013Editor.Forms
             nudCatch.Value = player.Stats.Catch;
             nudSpeed.Value = player.Stats.Speed;
             nudTP.Value = player.Stats.TP;
+            nudKickMax.Value = player.Stats.MaxKick;
+            nudBodyMax.Value = player.Stats.MaxBody;
+            nudControlMax.Value = player.Stats.MaxControl;
+            nudGuardMax.Value = player.Stats.MaxGuard;
+            nudSpeedMax.Value = player.Stats.MaxSpeed;
+            nudCatchMax.Value = player.Stats.MaxCatch;
+            nudTPMax.Value = player.Stats.MaxTP;
+
             chkMixi1.Checked = (player.Stats.Flag & 0x10) == 0x10;
             chkMixi2.Checked = (player.Stats.Flag & 0x20) == 0x20;
 

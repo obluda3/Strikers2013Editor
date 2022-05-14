@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TabPage tabPage5;
+            this.btnTeamLoad = new System.Windows.Forms.Button();
+            this.btnTeamSave = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chkKey = new System.Windows.Forms.CheckBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -133,8 +135,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.btnTeamSave = new System.Windows.Forms.Button();
-            this.btnTeamLoad = new System.Windows.Forms.Button();
+            this.nudKickMax = new System.Windows.Forms.NumericUpDown();
+            this.nudBodyMax = new System.Windows.Forms.NumericUpDown();
+            this.nudControlMax = new System.Windows.Forms.NumericUpDown();
+            this.nudGuardMax = new System.Windows.Forms.NumericUpDown();
+            this.nudSpeedMax = new System.Windows.Forms.NumericUpDown();
+            this.nudCatchMax = new System.Windows.Forms.NumericUpDown();
+            this.nudTPMax = new System.Windows.Forms.NumericUpDown();
             tabPage5 = new System.Windows.Forms.TabPage();
             tabPage5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -164,6 +171,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
             this.tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKickMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBodyMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudControlMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGuardMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCatchMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTPMax)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage5
@@ -182,6 +196,26 @@
             tabPage5.Text = "Team";
             tabPage5.UseVisualStyleBackColor = true;
             tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
+            // 
+            // btnTeamLoad
+            // 
+            this.btnTeamLoad.Location = new System.Drawing.Point(368, 329);
+            this.btnTeamLoad.Name = "btnTeamLoad";
+            this.btnTeamLoad.Size = new System.Drawing.Size(89, 23);
+            this.btnTeamLoad.TabIndex = 10;
+            this.btnTeamLoad.Text = "Load";
+            this.btnTeamLoad.UseVisualStyleBackColor = true;
+            this.btnTeamLoad.Click += new System.EventHandler(this.btnTeamLoad_Click);
+            // 
+            // btnTeamSave
+            // 
+            this.btnTeamSave.Location = new System.Drawing.Point(244, 329);
+            this.btnTeamSave.Name = "btnTeamSave";
+            this.btnTeamSave.Size = new System.Drawing.Size(89, 23);
+            this.btnTeamSave.TabIndex = 9;
+            this.btnTeamSave.Text = "Save";
+            this.btnTeamSave.UseVisualStyleBackColor = true;
+            this.btnTeamSave.Click += new System.EventHandler(this.btnTeamSave_Click);
             // 
             // groupBox4
             // 
@@ -482,6 +516,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.nudTPMax);
+            this.tabPage2.Controls.Add(this.nudCatchMax);
+            this.tabPage2.Controls.Add(this.nudSpeedMax);
+            this.tabPage2.Controls.Add(this.nudGuardMax);
+            this.tabPage2.Controls.Add(this.nudControlMax);
+            this.tabPage2.Controls.Add(this.nudBodyMax);
+            this.tabPage2.Controls.Add(this.nudKickMax);
             this.tabPage2.Controls.Add(this.chkMixi1);
             this.tabPage2.Controls.Add(this.chkMixi2);
             this.tabPage2.Controls.Add(this.btnMax);
@@ -1257,25 +1298,96 @@
             // 
             this.toolTip2.ToolTipTitle = "Format";
             // 
-            // btnTeamSave
+            // nudKickMax
             // 
-            this.btnTeamSave.Location = new System.Drawing.Point(244, 329);
-            this.btnTeamSave.Name = "btnTeamSave";
-            this.btnTeamSave.Size = new System.Drawing.Size(89, 23);
-            this.btnTeamSave.TabIndex = 9;
-            this.btnTeamSave.Text = "Save";
-            this.btnTeamSave.UseVisualStyleBackColor = true;
-            this.btnTeamSave.Click += new System.EventHandler(this.btnTeamSave_Click);
+            this.nudKickMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudKickMax.Location = new System.Drawing.Point(156, 6);
+            this.nudKickMax.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.nudKickMax.Name = "nudKickMax";
+            this.nudKickMax.Size = new System.Drawing.Size(56, 20);
+            this.nudKickMax.TabIndex = 17;
             // 
-            // btnTeamLoad
+            // nudBodyMax
             // 
-            this.btnTeamLoad.Location = new System.Drawing.Point(368, 329);
-            this.btnTeamLoad.Name = "btnTeamLoad";
-            this.btnTeamLoad.Size = new System.Drawing.Size(89, 23);
-            this.btnTeamLoad.TabIndex = 10;
-            this.btnTeamLoad.Text = "Load";
-            this.btnTeamLoad.UseVisualStyleBackColor = true;
-            this.btnTeamLoad.Click += new System.EventHandler(this.btnTeamLoad_Click);
+            this.nudBodyMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudBodyMax.Location = new System.Drawing.Point(156, 32);
+            this.nudBodyMax.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.nudBodyMax.Name = "nudBodyMax";
+            this.nudBodyMax.Size = new System.Drawing.Size(56, 20);
+            this.nudBodyMax.TabIndex = 18;
+            // 
+            // nudControlMax
+            // 
+            this.nudControlMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudControlMax.Location = new System.Drawing.Point(156, 58);
+            this.nudControlMax.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.nudControlMax.Name = "nudControlMax";
+            this.nudControlMax.Size = new System.Drawing.Size(56, 20);
+            this.nudControlMax.TabIndex = 19;
+            // 
+            // nudGuardMax
+            // 
+            this.nudGuardMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudGuardMax.Location = new System.Drawing.Point(156, 84);
+            this.nudGuardMax.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.nudGuardMax.Name = "nudGuardMax";
+            this.nudGuardMax.Size = new System.Drawing.Size(56, 20);
+            this.nudGuardMax.TabIndex = 20;
+            // 
+            // nudSpeedMax
+            // 
+            this.nudSpeedMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudSpeedMax.Location = new System.Drawing.Point(156, 110);
+            this.nudSpeedMax.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.nudSpeedMax.Name = "nudSpeedMax";
+            this.nudSpeedMax.Size = new System.Drawing.Size(56, 20);
+            this.nudSpeedMax.TabIndex = 21;
+            // 
+            // nudCatchMax
+            // 
+            this.nudCatchMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudCatchMax.Location = new System.Drawing.Point(156, 136);
+            this.nudCatchMax.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.nudCatchMax.Name = "nudCatchMax";
+            this.nudCatchMax.Size = new System.Drawing.Size(56, 20);
+            this.nudCatchMax.TabIndex = 22;
+            // 
+            // nudTPMax
+            // 
+            this.nudTPMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTPMax.Location = new System.Drawing.Point(156, 162);
+            this.nudTPMax.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.nudTPMax.Name = "nudTPMax";
+            this.nudTPMax.Size = new System.Drawing.Size(56, 20);
+            this.nudTPMax.TabIndex = 23;
             // 
             // SaveEditor
             // 
@@ -1325,6 +1437,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudKickMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBodyMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudControlMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGuardMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCatchMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTPMax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1348,7 +1467,6 @@
         private System.Windows.Forms.NumericUpDown nudCatch;
         private System.Windows.Forms.NumericUpDown nudGuard;
         private System.Windows.Forms.NumericUpDown nudControl;
-        private System.Windows.Forms.NumericUpDown nudBody;
         private System.Windows.Forms.NumericUpDown nudKick;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -1437,5 +1555,13 @@
         private System.Windows.Forms.ComboBox cmbUnkMove1;
         private System.Windows.Forms.Button btnTeamLoad;
         private System.Windows.Forms.Button btnTeamSave;
+        private System.Windows.Forms.NumericUpDown nudBody;
+        private System.Windows.Forms.NumericUpDown nudTPMax;
+        private System.Windows.Forms.NumericUpDown nudCatchMax;
+        private System.Windows.Forms.NumericUpDown nudSpeedMax;
+        private System.Windows.Forms.NumericUpDown nudGuardMax;
+        private System.Windows.Forms.NumericUpDown nudControlMax;
+        private System.Windows.Forms.NumericUpDown nudBodyMax;
+        private System.Windows.Forms.NumericUpDown nudKickMax;
     }
 }
