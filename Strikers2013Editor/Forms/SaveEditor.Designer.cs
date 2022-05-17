@@ -864,7 +864,7 @@
             this.cmbCatch3.Name = "cmbCatch3";
             this.cmbCatch3.Size = new System.Drawing.Size(231, 21);
             this.cmbCatch3.TabIndex = 33;
-            this.cmbCatch3.SelectedIndexChanged += new System.EventHandler(this.cmbキャッチ3_SelectedIndexChanged);
+            this.cmbCatch3.SelectedIndexChanged += new System.EventHandler(this.cmbCatch3_SelectedIndexChanged);
             // 
             // cmbCatch2
             // 
@@ -873,7 +873,7 @@
             this.cmbCatch2.Name = "cmbCatch2";
             this.cmbCatch2.Size = new System.Drawing.Size(231, 21);
             this.cmbCatch2.TabIndex = 32;
-            this.cmbCatch2.SelectedIndexChanged += new System.EventHandler(this.cmbキャッチ2_SelectedIndexChanged);
+            this.cmbCatch2.SelectedIndexChanged += new System.EventHandler(this.cmbCatch2_SelectedIndexChanged);
             // 
             // cmbCatch1
             // 
