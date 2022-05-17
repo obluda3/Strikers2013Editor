@@ -1381,7 +1381,7 @@
             this.nudTPMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudTPMax.Location = new System.Drawing.Point(156, 162);
             this.nudTPMax.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
