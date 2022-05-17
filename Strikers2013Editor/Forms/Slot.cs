@@ -26,5 +26,10 @@ namespace Strikers2013Editor.Forms
             this.DialogResult = DialogResult.OK;
 
         }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

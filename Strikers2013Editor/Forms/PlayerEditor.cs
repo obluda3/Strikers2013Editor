@@ -267,5 +267,10 @@ namespace Strikers2013Editor.Forms
         {
 
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
