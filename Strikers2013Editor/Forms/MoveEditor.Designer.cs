@@ -57,16 +57,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.nudCoop = new System.Windows.Forms.NumericUpDown();
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.nudRangeAssist = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.nudEffectRange = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.nudOutRange = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbPowerup = new System.Windows.Forms.ComboBox();
             this.cmbMove = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.nudEffectRange = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.nudRangeAssist = new System.Windows.Forms.NumericUpDown();
-            this.label14 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.gbMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTP)).BeginInit();
@@ -75,9 +75,9 @@
             this.gbUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCoop)).BeginInit();
             this.gbAdvanced.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudOutRange)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEffectRange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRangeAssist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEffectRange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOutRange)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -350,6 +350,38 @@
             this.gbAdvanced.TabStop = false;
             this.gbAdvanced.Text = "Advanced";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 100);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 13);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Range assist";
+            // 
+            // nudRangeAssist
+            // 
+            this.nudRangeAssist.Location = new System.Drawing.Point(151, 98);
+            this.nudRangeAssist.Name = "nudRangeAssist";
+            this.nudRangeAssist.Size = new System.Drawing.Size(50, 20);
+            this.nudRangeAssist.TabIndex = 32;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 74);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 13);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Effect range";
+            // 
+            // nudEffectRange
+            // 
+            this.nudEffectRange.Location = new System.Drawing.Point(151, 72);
+            this.nudEffectRange.Name = "nudEffectRange";
+            this.nudEffectRange.Size = new System.Drawing.Size(50, 20);
+            this.nudEffectRange.TabIndex = 30;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -403,40 +435,6 @@
             this.label12.TabIndex = 10;
             this.label12.Text = "Move";
             // 
-            // nudEffectRange
-            // 
-            this.nudEffectRange.Enabled = false;
-            this.nudEffectRange.Location = new System.Drawing.Point(151, 72);
-            this.nudEffectRange.Name = "nudEffectRange";
-            this.nudEffectRange.Size = new System.Drawing.Size(50, 20);
-            this.nudEffectRange.TabIndex = 30;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 74);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 13);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "Effect range";
-            // 
-            // nudRangeAssist
-            // 
-            this.nudRangeAssist.Enabled = false;
-            this.nudRangeAssist.Location = new System.Drawing.Point(151, 98);
-            this.nudRangeAssist.Name = "nudRangeAssist";
-            this.nudRangeAssist.Size = new System.Drawing.Size(50, 20);
-            this.nudRangeAssist.TabIndex = 32;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 100);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(68, 13);
-            this.label14.TabIndex = 33;
-            this.label14.Text = "Range assist";
-            // 
             // MoveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,9 +464,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCoop)).EndInit();
             this.gbAdvanced.ResumeLayout(false);
             this.gbAdvanced.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudOutRange)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudEffectRange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRangeAssist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudEffectRange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudOutRange)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
