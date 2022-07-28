@@ -9,7 +9,7 @@ namespace Strikers2013Editor.Logic
 {
     class Player
     {
-        public Stats Stats;
+        public SavePlayerParam Stats;
         public MoveList MoveList;
     }
     class MoveList
@@ -74,7 +74,7 @@ namespace Strikers2013Editor.Logic
             bw.Write(SP);
         }
     }
-    class Stats
+    class SavePlayerParam
     {
         // LSB :
         // AAXY BBBB
@@ -109,7 +109,7 @@ namespace Strikers2013Editor.Logic
         public short MoveKakusei3_3;
         public short Unk2;
 
-        public Stats(BeBinaryReader br)
+        public SavePlayerParam(BeBinaryReader br)
         {
             var pos = br.BaseStream.Position;
             Flag = br.ReadInt32();
@@ -182,7 +182,7 @@ namespace Strikers2013Editor.Logic
         public int Coach;
         public string Name;
 
-        public TeamPlayer[] Players;
+        public SaveTeamPlayer[] Players;
 
         public Team(BeBinaryReader br) 
         {
@@ -192,11 +192,11 @@ namespace Strikers2013Editor.Logic
             Manager = br.ReadInt32();
             Coach = br.ReadInt32();
             Emblem = 0; //Placeholder
-            Players = new TeamPlayer[16];
+            Players = new SaveTeamPlayer[16];
             Name = "";
 
             for (var i = 0; i < 16; i++)
-                Players[i] = new TeamPlayer(br);
+                Players[i] = new SaveTeamPlayer(br);
         }
 
         public void Write(BeBinaryWriter bw) 
@@ -210,7 +210,7 @@ namespace Strikers2013Editor.Logic
                 player.Write(bw);
         }
     }
-    class TeamPlayer 
+    class SaveTeamPlayer 
     {
         
         public int Id;
@@ -219,7 +219,7 @@ namespace Strikers2013Editor.Logic
         public int ClubroomKit;
         public int Flag; // & 0x2000 => key player
 
-        public TeamPlayer(BeBinaryReader br) 
+        public SaveTeamPlayer(BeBinaryReader br) 
         {
             Id = br.ReadInt32();
             KitNumber = br.ReadInt32();

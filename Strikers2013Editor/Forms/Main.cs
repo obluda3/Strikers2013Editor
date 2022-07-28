@@ -38,5 +38,11 @@ namespace Strikers2013Editor.Forms
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TeamEditor teamEditor = new TeamEditor();
+            teamEditor.ShowDialog();
+        }
     }
 }

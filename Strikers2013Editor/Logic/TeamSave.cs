@@ -7,7 +7,7 @@ using Strikers2013Editor.IO;
 
 namespace Strikers2013Editor.Logic
 {
-    static class TeamFile
+    static class TeamSave
     {
         public static void Load(BeBinaryReader br, Save save)
         {
@@ -18,7 +18,7 @@ namespace Strikers2013Editor.Logic
             {
                 var player = new Player();
                 player.MoveList = new MoveList(br);
-                player.Stats = new Stats(br);
+                player.Stats = new SavePlayerParam(br);
                 var teamPlayer = save.Team.Players[i];
                 var id = teamPlayer.Id;
                 save.Players[id] = player;

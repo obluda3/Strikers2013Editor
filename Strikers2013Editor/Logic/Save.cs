@@ -73,7 +73,7 @@ namespace Strikers2013Editor.Logic
                     // Stats
                     var player = new Player();
                     br.BaseStream.Position = BaseOffset + STATS_OFFSET + i * 0x3c;
-                    player.Stats = new Stats(br);
+                    player.Stats = new SavePlayerParam(br);
 
                     // Moves
                     br.BaseStream.Position = BaseOffset + WAZA_OFFSET + i * 0x22;

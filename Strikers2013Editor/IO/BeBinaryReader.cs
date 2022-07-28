@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Text;
 using System.IO;
 using System.Collections.Generic;
 
@@ -45,6 +45,16 @@ namespace Strikers2013Editor.IO
             return list;
         }
 
+        public string ReadCString()
+        {
+            var stringbytes = new List<byte>();
+            while (ReadByte() != 0)
+            {
+                BaseStream.Position -= 1;
+                stringbytes.Add(ReadByte());
+            }
+            return Encoding.GetEncoding("sjis").GetString(stringbytes.ToArray());
+        }
 
     }
 }

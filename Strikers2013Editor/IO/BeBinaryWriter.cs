@@ -42,5 +42,11 @@ namespace Strikers2013Editor.IO
             foreach (var num in value)
                 Write(num);
         }
+
+        public void WriteCString(string value)
+        {
+            var array = Encoding.GetEncoding("sjis").GetBytes(value);
+            Write(array);
+        }
     }
 }
