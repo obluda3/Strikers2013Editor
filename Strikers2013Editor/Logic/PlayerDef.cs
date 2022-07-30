@@ -113,7 +113,9 @@ namespace Strikers2013Editor.Logic
             bw.Write(HiddenName);
             bw.Write(ShortName);
             bw.Write(FullName);
-            bw.Write(Encoding.ASCII.GetBytes(Name));
+            var name = Encoding.ASCII.GetBytes(Name);
+            bw.Write(name);
+            bw.PadWith(0, 0x18 - name.Length);
             bw.Write((int)Gender);
             bw.Write(IdleAnimation);
             bw.Write(Unk_34);
@@ -137,8 +139,12 @@ namespace Strikers2013Editor.Logic
             bw.Write(Unk_7C);
             bw.Write(LeftPortrait);
             bw.Write(RightPortrait);
-            bw.Write(Encoding.ASCII.GetBytes(Equip[0]));
-            bw.Write(Encoding.ASCII.GetBytes(Equip[1]));
+            var equip1 = Encoding.ASCII.GetBytes(Equip[0]);
+            bw.Write(equip1);
+            bw.PadWith(0, 0x18 - equip1.Length);
+            var equip2 = Encoding.ASCII.GetBytes(Equip[1]);
+            bw.Write(equip2);
+            bw.PadWith(0, 0x18 - equip2.Length);
             bw.Write(Unk_B8);
             bw.Write(SkinColor1.ToArgb());
             bw.Write(SkinColor2.ToArgb());
