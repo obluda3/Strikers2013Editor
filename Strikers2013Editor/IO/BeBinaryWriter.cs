@@ -47,6 +47,22 @@ namespace Strikers2013Editor.IO
         {
             var array = Encoding.GetEncoding("sjis").GetBytes(value);
             Write(array);
+            Write((short)0);
+        }
+
+        public void PadWith(byte padByte, long count)
+        {
+            for (var i = 0; i < count; i++)
+                Write(padByte);
+        }
+
+        public void WriteAlignment(int alignment, byte padByte = 0)
+        {
+            if (BaseStream.Position % alignment == 0)
+                return;
+
+            var count = (((BaseStream.Position / alignment) + 1) * alignment) - BaseStream.Position;
+            PadWith(padByte, count);
         }
     }
 }
