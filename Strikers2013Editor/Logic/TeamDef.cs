@@ -81,7 +81,11 @@ namespace Strikers2013Editor.Logic
                 pointersFixList.Add(offset + 0x14);
             }
             int teamDefSectOffs = (int)bw.BaseStream.Position;
-            foreach (var offset in teamDefOffsets) bw.Write(offset);
+            foreach (var offset in teamDefOffsets)
+            {
+                pointersFixList.Add((int)bw.BaseStream.Position);
+                bw.Write(offset);
+            }
             bw.Write(0);
             
             var fixListOff = (int)bw.BaseStream.Position;
