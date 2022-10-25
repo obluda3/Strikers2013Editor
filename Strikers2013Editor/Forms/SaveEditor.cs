@@ -91,10 +91,52 @@ namespace Strikers2013Editor.Forms
                     cmbKakusei2.Items.AddRange(moveNames);
                     cmbKakusei3.Items.AddRange(moveNames);
 
-
                     tabControl1.Enabled = true;
                     saveToolStripMenuItem.Enabled = true;
                     nudProfile.Enabled = true;
+                    var fixedPlayers = "";
+                    for (int i = 0; i < save.Players.Length; i++)
+                    {
+                        var cur = save.Players[i];
+                        var stats = cur.Stats;
+                        // This kind of thing needs to be logged
+                        if (stats.MaxKick < stats.Kick)
+                        {
+                            fixedPlayers += $"{playerNames[i]} - Kick {stats.Kick} -> {stats.MaxKick}\n";
+                            stats.Kick = stats.MaxKick;
+                        }
+                        if (stats.MaxBody < stats.Body)
+                        {
+                            fixedPlayers += $"{playerNames[i]} - Body {stats.Body} -> {stats.MaxBody}\n";
+                            stats.Body = stats.MaxBody;
+                        }
+                        if (stats.MaxGuard < stats.Guard)
+                        {
+                            fixedPlayers += $"{playerNames[i]} - Guard {stats.Guard} -> {stats.MaxGuard}\n";
+                            stats.Guard = stats.MaxGuard;
+                        }
+                        if (stats.MaxControl < stats.Control)
+                        {
+                            fixedPlayers += $"{playerNames[i]} - Control {stats.Control} -> {stats.MaxControl}\n";
+                            stats.Control = stats.MaxControl;
+                        }
+                        if (stats.MaxSpeed < stats.Speed)
+                        {
+                            fixedPlayers += $"{playerNames[i]} - Speed {stats.Speed} -> {stats.MaxSpeed}\n";
+                            stats.Speed = stats.MaxSpeed;
+                        }
+                        if (stats.MaxCatch < stats.Catch)
+                        {
+                            fixedPlayers += $"{playerNames[i]} - Catch {stats.Catch} -> {stats.MaxCatch}\n";
+                            stats.Catch = stats.MaxCatch;
+                        }
+                        cur.Stats = stats;
+                        save.Players[i] = cur;
+                    }
+                    if (fixedPlayers != "")
+                    {
+                        Console.WriteLine(fixedPlayers, "Supplement bug");
+                    }
                 }
             }
         }
@@ -216,6 +258,21 @@ namespace Strikers2013Editor.Forms
             player.Stats.MoveKakusei2 = (short)cmbKakusei2.SelectedIndex;
             player.Stats.MoveKakusei3 = (short)cmbKakusei3.SelectedIndex;
 
+            player.Stats.Kick = (byte)nudKick.Value;
+            player.Stats.MaxKick = (byte)nudKickMax.Value;
+            player.Stats.Body = (byte)nudBody.Value;
+            player.Stats.MaxBody = (byte)nudBodyMax.Value;
+            player.Stats.Control = (byte)nudControl.Value;
+            player.Stats.MaxControl = (byte)nudControlMax.Value;
+            player.Stats.Guard = (byte)nudGuard.Value;
+            player.Stats.MaxGuard = (byte)nudGuardMax.Value;
+            player.Stats.Speed = (byte)nudSpeed.Value;
+            player.Stats.MaxSpeed = (byte)nudSpeedMax.Value;
+            player.Stats.Catch = (byte)nudCatch.Value;
+            player.Stats.MaxCatch = (byte)nudCatchMax.Value;
+            player.Stats.TP = (byte)nudTP.Value;
+            player.Stats.MaxTP = (byte)nudTPMax.Value;
+
             save.Players[lstPlayers.SelectedIndex] = player;
         }
 
@@ -328,7 +385,7 @@ namespace Strikers2013Editor.Forms
                     using (var bw = new BeBinaryWriter(file))
                     {
                         bw.Write(0x5445414D);
-                        TeamFile.Save(bw, save);
+                        TeamSave.Save(bw, save);
                         MessageBox.Show("Succesfully saved.", "Done");
                     }
                 }
@@ -351,7 +408,7 @@ namespace Strikers2013Editor.Forms
                             MessageBox.Show("Invalid file", "Error");
                             return;
                         }
-                        TeamFile.Load(br, save);
+                        TeamSave.Load(br, save);
                         InitTeam();
                     }               
                 }

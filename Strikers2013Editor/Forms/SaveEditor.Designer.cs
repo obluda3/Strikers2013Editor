@@ -63,6 +63,13 @@
             this.btnApply = new System.Windows.Forms.Button();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.nudTPMax = new System.Windows.Forms.NumericUpDown();
+            this.nudCatchMax = new System.Windows.Forms.NumericUpDown();
+            this.nudSpeedMax = new System.Windows.Forms.NumericUpDown();
+            this.nudGuardMax = new System.Windows.Forms.NumericUpDown();
+            this.nudControlMax = new System.Windows.Forms.NumericUpDown();
+            this.nudBodyMax = new System.Windows.Forms.NumericUpDown();
+            this.nudKickMax = new System.Windows.Forms.NumericUpDown();
             this.chkMixi1 = new System.Windows.Forms.CheckBox();
             this.chkMixi2 = new System.Windows.Forms.CheckBox();
             this.btnMax = new System.Windows.Forms.Button();
@@ -135,13 +142,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
-            this.nudKickMax = new System.Windows.Forms.NumericUpDown();
-            this.nudBodyMax = new System.Windows.Forms.NumericUpDown();
-            this.nudControlMax = new System.Windows.Forms.NumericUpDown();
-            this.nudGuardMax = new System.Windows.Forms.NumericUpDown();
-            this.nudSpeedMax = new System.Windows.Forms.NumericUpDown();
-            this.nudCatchMax = new System.Windows.Forms.NumericUpDown();
-            this.nudTPMax = new System.Windows.Forms.NumericUpDown();
             tabPage5 = new System.Windows.Forms.TabPage();
             tabPage5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -151,6 +151,13 @@
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTPMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCatchMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGuardMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudControlMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBodyMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKickMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCatch)).BeginInit();
@@ -171,13 +178,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
             this.tabControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudKickMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBodyMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudControlMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGuardMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCatchMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTPMax)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage5
@@ -190,7 +190,7 @@
             tabPage5.Controls.Add(this.lstTeam);
             tabPage5.Location = new System.Drawing.Point(4, 22);
             tabPage5.Name = "tabPage5";
-            tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            tabPage5.Padding = new System.Windows.Forms.Padding(3);
             tabPage5.Size = new System.Drawing.Size(469, 439);
             tabPage5.TabIndex = 3;
             tabPage5.Text = "Team";
@@ -543,7 +543,7 @@
             this.tabPage2.Controls.Add(this.nudKick);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(300, 278);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "Stats";
@@ -552,9 +552,10 @@
             // nudTPMax
             // 
             this.nudTPMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTPMax.Enabled = false;
             this.nudTPMax.Location = new System.Drawing.Point(194, 162);
             this.nudTPMax.Maximum = new decimal(new int[] {
-            250,
+            255,
             0,
             0,
             0});
@@ -565,9 +566,10 @@
             // nudCatchMax
             // 
             this.nudCatchMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudCatchMax.Enabled = false;
             this.nudCatchMax.Location = new System.Drawing.Point(194, 136);
             this.nudCatchMax.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -578,9 +580,10 @@
             // nudSpeedMax
             // 
             this.nudSpeedMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudSpeedMax.Enabled = false;
             this.nudSpeedMax.Location = new System.Drawing.Point(194, 110);
             this.nudSpeedMax.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -591,9 +594,10 @@
             // nudGuardMax
             // 
             this.nudGuardMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudGuardMax.Enabled = false;
             this.nudGuardMax.Location = new System.Drawing.Point(194, 84);
             this.nudGuardMax.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -604,9 +608,10 @@
             // nudControlMax
             // 
             this.nudControlMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudControlMax.Enabled = false;
             this.nudControlMax.Location = new System.Drawing.Point(194, 58);
             this.nudControlMax.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -617,9 +622,10 @@
             // nudBodyMax
             // 
             this.nudBodyMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudBodyMax.Enabled = false;
             this.nudBodyMax.Location = new System.Drawing.Point(194, 32);
             this.nudBodyMax.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -630,9 +636,10 @@
             // nudKickMax
             // 
             this.nudKickMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudKickMax.Enabled = false;
             this.nudKickMax.Location = new System.Drawing.Point(194, 6);
             this.nudKickMax.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -685,9 +692,10 @@
             // nudTP
             // 
             this.nudTP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTP.Enabled = false;
             this.nudTP.Location = new System.Drawing.Point(132, 162);
             this.nudTP.Maximum = new decimal(new int[] {
-            250,
+            255,
             0,
             0,
             0});
@@ -701,7 +709,7 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(6, 138);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(41, 13);
+            this.label19.Size = new System.Drawing.Size(35, 13);
             this.label19.TabIndex = 11;
             this.label19.Text = "Catch";
             // 
@@ -710,7 +718,7 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(6, 112);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(44, 13);
+            this.label18.Size = new System.Drawing.Size(38, 13);
             this.label18.TabIndex = 10;
             this.label18.Text = "Speed";
             // 
@@ -728,7 +736,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(6, 60);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 13);
+            this.label16.Size = new System.Drawing.Size(40, 13);
             this.label16.TabIndex = 8;
             this.label16.Text = "Control";
             // 
@@ -737,7 +745,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(6, 34);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(34, 13);
+            this.label15.Size = new System.Drawing.Size(31, 13);
             this.label15.TabIndex = 7;
             this.label15.Text = "Body";
             // 
@@ -746,16 +754,17 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 8);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(28, 13);
             this.label5.TabIndex = 6;
             this.label5.Text = "Kick";
             // 
             // nudSpeed
             // 
             this.nudSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudSpeed.Enabled = false;
             this.nudSpeed.Location = new System.Drawing.Point(132, 110);
             this.nudSpeed.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -766,9 +775,10 @@
             // nudCatch
             // 
             this.nudCatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudCatch.Enabled = false;
             this.nudCatch.Location = new System.Drawing.Point(132, 136);
             this.nudCatch.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -779,9 +789,10 @@
             // nudGuard
             // 
             this.nudGuard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudGuard.Enabled = false;
             this.nudGuard.Location = new System.Drawing.Point(132, 84);
             this.nudGuard.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -792,9 +803,10 @@
             // nudControl
             // 
             this.nudControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudControl.Enabled = false;
             this.nudControl.Location = new System.Drawing.Point(132, 58);
             this.nudControl.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -805,9 +817,10 @@
             // nudBody
             // 
             this.nudBody.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudBody.Enabled = false;
             this.nudBody.Location = new System.Drawing.Point(132, 32);
             this.nudBody.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -818,9 +831,10 @@
             // nudKick
             // 
             this.nudKick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudKick.Enabled = false;
             this.nudKick.Location = new System.Drawing.Point(132, 6);
             this.nudKick.Maximum = new decimal(new int[] {
-            120,
+            255,
             0,
             0,
             0});
@@ -851,7 +865,7 @@
             this.tabPage4.Controls.Add(this.label6);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(300, 278);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Moves";
@@ -936,7 +950,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(6, 217);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(50, 13);
+            this.label14.Size = new System.Drawing.Size(44, 13);
             this.label14.TabIndex = 24;
             this.label14.Text = "Catch 3";
             // 
@@ -945,7 +959,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(6, 191);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(50, 13);
+            this.label13.Size = new System.Drawing.Size(44, 13);
             this.label13.TabIndex = 23;
             this.label13.Text = "Catch 2";
             // 
@@ -954,7 +968,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(6, 165);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(50, 13);
+            this.label12.Size = new System.Drawing.Size(44, 13);
             this.label12.TabIndex = 22;
             this.label12.Text = "Catch 1";
             // 
@@ -963,7 +977,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(6, 139);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 21;
             this.label11.Text = "Defense";
             // 
@@ -972,7 +986,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 113);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.Size = new System.Drawing.Size(40, 13);
             this.label10.TabIndex = 20;
             this.label10.Text = "Dribble";
             // 
@@ -1026,7 +1040,7 @@
             this.tabPage6.Controls.Add(this.cmbUnkMove1);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(300, 278);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Unlockables";
@@ -1130,7 +1144,7 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(469, 439);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Main";
@@ -1203,7 +1217,7 @@
             // 
             this.nudProfileOnline.Location = new System.Drawing.Point(159, 101);
             this.nudProfileOnline.Maximum = new decimal(new int[] {
-            98,
+            255,
             0,
             0,
             0});
@@ -1216,7 +1230,7 @@
             // 
             this.nudProfile.Location = new System.Drawing.Point(159, 75);
             this.nudProfile.Maximum = new decimal(new int[] {
-            98,
+            255,
             0,
             0,
             0});
@@ -1414,6 +1428,13 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTPMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCatchMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGuardMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudControlMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudBodyMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudKickMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCatch)).EndInit();
@@ -1438,13 +1459,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudKickMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudBodyMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudControlMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudGuardMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSpeedMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCatchMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTPMax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
