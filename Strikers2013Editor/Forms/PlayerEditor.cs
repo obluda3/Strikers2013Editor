@@ -53,6 +53,7 @@ namespace Strikers2013Editor.Forms
                     cmbSex.Items.AddRange(Enum.GetNames(typeof(Gender)));
                     cmbBodytype.Items.AddRange(Enum.GetNames(typeof(Bodytype)));
                     cmbCharge.Items.AddRange(Names.ChargeProfilesNames);
+                    cmbBaseVoice.Items.AddRange(PlayerNames);
                     cmbPlayers.SelectedIndex = 0;
                 }
             }
@@ -113,6 +114,7 @@ namespace Strikers2013Editor.Forms
             nudListPosition2.Value = player.TeamListPosition;
             nudTeamlistPortrait.Value = player.TeamPortrait;
             cmbCharge.SelectedIndex = player.ChargeProfile;
+            cmbBaseVoice.SelectedIndex = player.VoiceAlias;
             txtPlyName.Text = player.Name;
             txtSpClothes1.Text = player.Equip[0];
             txtSpClothes2.Text = player.Equip[1];
@@ -154,6 +156,7 @@ namespace Strikers2013Editor.Forms
             player.TeamListPosition = (int)nudListPosition2.Value;
             player.TeamPortrait = (int)nudTeamlistPortrait.Value;
             player.ChargeProfile = cmbCharge.SelectedIndex;
+            player.VoiceAlias = cmbBaseVoice.SelectedIndex;
             player.Name = txtPlyName.Text;
             player.Equip[0] = txtSpClothes1.Text;
             player.Equip[1] = txtSpClothes2.Text;
@@ -269,6 +272,11 @@ namespace Strikers2013Editor.Forms
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbBaseVoice_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

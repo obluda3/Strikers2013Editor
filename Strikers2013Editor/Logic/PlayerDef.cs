@@ -46,7 +46,7 @@ namespace Strikers2013Editor.Logic
         public int Unk_FC;
         public int Unk_100;
         public int Voice;
-        public int ArmedAttribution;
+        public int VoiceAlias;
         public int Unk_10C;
         public short Price;
         public short ListPosition;
@@ -97,7 +97,7 @@ namespace Strikers2013Editor.Logic
             Unk_FC = br.ReadInt32();
             Unk_100 = br.ReadInt32();
             Voice = br.ReadInt32();
-            ArmedAttribution = br.ReadInt32();
+            VoiceAlias = br.ReadInt32();
             Unk_10C = br.ReadInt32();
             Price = br.ReadInt16();
             ListPosition = br.ReadInt16();
@@ -154,7 +154,7 @@ namespace Strikers2013Editor.Logic
             bw.Write(Unk_FC);
             bw.Write(Unk_100);
             bw.Write(Voice);
-            bw.Write(ArmedAttribution);
+            bw.Write(VoiceAlias);
             bw.Write(Unk_10C);
             bw.Write(Price);
             bw.Write(ListPosition);
