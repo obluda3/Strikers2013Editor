@@ -14,6 +14,7 @@ namespace Strikers2013Editor.Forms
         private string[] PlayerNames;
         private string[] MoveNames;
         private string[] FormationNames;
+        private int curTeam;
         public TeamEditor()
         {
             InitializeComponent();
@@ -55,7 +56,7 @@ namespace Strikers2013Editor.Forms
                     groupBox3.Enabled = true;
                     groupBox1.Enabled = true;
                     cmbTeam.Items.AddRange(new string[] { "Unused", "Main", "Match Mode - Level 2", "Match Mode - Level 3"} );
-                    cmbTeam.SelectedIndex = 1;
+                    cmbTeam.SelectedIndex = curTeam = 1;
                     cmbMember.SelectedIndex = 0;
                     cmbPlayer1.SelectedIndex = 0;
                     cmbPlayer2.SelectedIndex = 0;
@@ -72,8 +73,9 @@ namespace Strikers2013Editor.Forms
             var index = cmbTeam.SelectedIndex;
             if (_team != null)
             {
-                _teamFile.Teams[index] = _team;
+                _teamFile.Teams[curTeam] = _team;
             }
+            curTeam = index;
             _team = _teamFile.Teams[index];
 
             for (var i = 0; i < _team.Players.Count; i++)
@@ -93,6 +95,9 @@ namespace Strikers2013Editor.Forms
             cmbManager.SelectedIndex = _team.Manager;
             cmbCoach.SelectedIndex = _team.Coach;
             nudStrength.Value = _team.Strength;
+            cmbMember.SelectedIndex = 0;
+            cmbPlayer1.SelectedIndex = 0;
+            cmbPlayer2.SelectedIndex = 0;
         }
 
         private void cmbMember_SelectedIndexChanged(object sender, EventArgs e)
@@ -204,6 +209,8 @@ namespace Strikers2013Editor.Forms
             stats.MaxGuard = (byte)nudGuardMax.Value;
             stats.Catch = (byte)nudCatch.Value;
             stats.MaxCatch = (byte)nudCatchMax.Value;
+            stats.Speed = (byte)nudSpeed.Value;
+            stats.MaxSpeed = (byte)nudSpeedMax.Value;
             stats.TP = (byte)nudTP.Value;
             stats.MaxTP = (byte)nudTPMax.Value;
             _teamFile.Stats[player.StatsIndex] = stats;
