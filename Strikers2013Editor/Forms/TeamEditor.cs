@@ -5,6 +5,8 @@ using System.Linq;
 using Strikers2013Editor.IO;
 using Strikers2013Editor.Common;
 using Strikers2013Editor.Logic;
+using System.Windows.Forms.Design;
+
 namespace Strikers2013Editor.Forms
 {
     public partial class TeamEditor : Form
@@ -257,6 +259,14 @@ namespace Strikers2013Editor.Forms
                     MessageBox.Show("Succesfully saved.", "Done");
                 }
             }
+        }
+
+        private void btnMax_Click(object sender, EventArgs e)
+        {
+            // kizuna first
+            for (var i = 0; i < _teamFile.KizunaData.Length; i++) _teamFile.KizunaData[i] = 100;
+
+            for (var i = 0; i < _team.Players.Count; i++) _team.Players[i].Kakusei = Player.Kakusei[_team.Players[i].PlayerId];
         }
     }
 }

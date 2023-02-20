@@ -35,7 +35,7 @@ namespace Strikers2013Editor.Forms
                     gbMain.Enabled = true;
                     gbMisc.Enabled = true;
                     btnApply.Enabled = true;
-                    gbEquip.Enabled = true;
+                    gbEquip.Enabled = true; 
                     saveToolStripMenuItem.Enabled = true;
 
                     cmbElement.Items.Clear();

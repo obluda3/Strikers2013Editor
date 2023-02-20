@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cmbMember = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -113,8 +114,8 @@
             this.cmbFormation = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnMax = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -168,9 +169,17 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Enabled = false;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // cmbMember
             // 
@@ -271,6 +280,11 @@
             // nudKakusei
             // 
             this.nudKakusei.Location = new System.Drawing.Point(138, 139);
+            this.nudKakusei.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
             this.nudKakusei.Name = "nudKakusei";
             this.nudKakusei.Size = new System.Drawing.Size(76, 20);
             this.nudKakusei.TabIndex = 35;
@@ -843,7 +857,7 @@
             // 
             // btnApplyFriend
             // 
-            this.btnApplyFriend.Location = new System.Drawing.Point(214, 71);
+            this.btnApplyFriend.Location = new System.Drawing.Point(157, 71);
             this.btnApplyFriend.Name = "btnApplyFriend";
             this.btnApplyFriend.Size = new System.Drawing.Size(75, 23);
             this.btnApplyFriend.TabIndex = 9;
@@ -1025,6 +1039,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnMax);
             this.groupBox3.Controls.Add(this.btnApply);
             this.groupBox3.Controls.Add(this.tabControl1);
             this.groupBox3.Controls.Add(this.cmbMember);
@@ -1037,6 +1052,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Squad";
             // 
+            // btnMax
+            // 
+            this.btnMax.Location = new System.Drawing.Point(548, 15);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(51, 23);
+            this.btnMax.TabIndex = 12;
+            this.btnMax.Text = "Max";
+            this.btnMax.UseVisualStyleBackColor = true;
+            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
+            // 
             // btnApply
             // 
             this.btnApply.Location = new System.Drawing.Point(463, 15);
@@ -1046,14 +1071,6 @@
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Enabled = false;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // TeamEditor
             // 
@@ -1197,5 +1214,6 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.Button btnMax;
     }
 }

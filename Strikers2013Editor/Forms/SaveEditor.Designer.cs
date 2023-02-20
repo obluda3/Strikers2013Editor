@@ -552,7 +552,6 @@
             // nudTPMax
             // 
             this.nudTPMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTPMax.Enabled = false;
             this.nudTPMax.Location = new System.Drawing.Point(194, 162);
             this.nudTPMax.Maximum = new decimal(new int[] {
             255,
@@ -566,7 +565,6 @@
             // nudCatchMax
             // 
             this.nudCatchMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudCatchMax.Enabled = false;
             this.nudCatchMax.Location = new System.Drawing.Point(194, 136);
             this.nudCatchMax.Maximum = new decimal(new int[] {
             255,
@@ -580,7 +578,6 @@
             // nudSpeedMax
             // 
             this.nudSpeedMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudSpeedMax.Enabled = false;
             this.nudSpeedMax.Location = new System.Drawing.Point(194, 110);
             this.nudSpeedMax.Maximum = new decimal(new int[] {
             255,
@@ -594,7 +591,6 @@
             // nudGuardMax
             // 
             this.nudGuardMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudGuardMax.Enabled = false;
             this.nudGuardMax.Location = new System.Drawing.Point(194, 84);
             this.nudGuardMax.Maximum = new decimal(new int[] {
             255,
@@ -608,7 +604,6 @@
             // nudControlMax
             // 
             this.nudControlMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudControlMax.Enabled = false;
             this.nudControlMax.Location = new System.Drawing.Point(194, 58);
             this.nudControlMax.Maximum = new decimal(new int[] {
             255,
@@ -622,7 +617,6 @@
             // nudBodyMax
             // 
             this.nudBodyMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudBodyMax.Enabled = false;
             this.nudBodyMax.Location = new System.Drawing.Point(194, 32);
             this.nudBodyMax.Maximum = new decimal(new int[] {
             255,
@@ -636,7 +630,6 @@
             // nudKickMax
             // 
             this.nudKickMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudKickMax.Enabled = false;
             this.nudKickMax.Location = new System.Drawing.Point(194, 6);
             this.nudKickMax.Maximum = new decimal(new int[] {
             255,
@@ -692,7 +685,6 @@
             // nudTP
             // 
             this.nudTP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudTP.Enabled = false;
             this.nudTP.Location = new System.Drawing.Point(132, 162);
             this.nudTP.Maximum = new decimal(new int[] {
             255,
@@ -761,7 +753,6 @@
             // nudSpeed
             // 
             this.nudSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudSpeed.Enabled = false;
             this.nudSpeed.Location = new System.Drawing.Point(132, 110);
             this.nudSpeed.Maximum = new decimal(new int[] {
             255,
@@ -775,7 +766,6 @@
             // nudCatch
             // 
             this.nudCatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudCatch.Enabled = false;
             this.nudCatch.Location = new System.Drawing.Point(132, 136);
             this.nudCatch.Maximum = new decimal(new int[] {
             255,
@@ -789,7 +779,6 @@
             // nudGuard
             // 
             this.nudGuard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudGuard.Enabled = false;
             this.nudGuard.Location = new System.Drawing.Point(132, 84);
             this.nudGuard.Maximum = new decimal(new int[] {
             255,
@@ -803,7 +792,6 @@
             // nudControl
             // 
             this.nudControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudControl.Enabled = false;
             this.nudControl.Location = new System.Drawing.Point(132, 58);
             this.nudControl.Maximum = new decimal(new int[] {
             255,
@@ -817,7 +805,6 @@
             // nudBody
             // 
             this.nudBody.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudBody.Enabled = false;
             this.nudBody.Location = new System.Drawing.Point(132, 32);
             this.nudBody.Maximum = new decimal(new int[] {
             255,
@@ -831,7 +818,6 @@
             // nudKick
             // 
             this.nudKick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudKick.Enabled = false;
             this.nudKick.Location = new System.Drawing.Point(132, 6);
             this.nudKick.Maximum = new decimal(new int[] {
             255,
