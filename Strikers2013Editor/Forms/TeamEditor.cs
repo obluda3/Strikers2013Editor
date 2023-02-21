@@ -26,7 +26,7 @@ namespace Strikers2013Editor.Forms
         {
             using (var ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Team file (*.bin)|*.bin|All files (*.*)|*.*";
+                ofd.Filter = "Team file (*.bin,*.out)|*.bin;*.out|All files (*.*)|*.*";
                 ofd.RestoreDirectory = true;
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
@@ -250,7 +250,7 @@ namespace Strikers2013Editor.Forms
         {
             using (var sfd = new SaveFileDialog())
             {
-                sfd.Filter = "Team File (*.bin)|*.bin|All files (*.*)|*.*";
+                sfd.Filter = "Team file (*.bin,*.out)|*.bin;*.out|All files (*.*)|*.*";
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
@@ -266,7 +266,11 @@ namespace Strikers2013Editor.Forms
             // kizuna first
             for (var i = 0; i < _teamFile.KizunaData.Length; i++) _teamFile.KizunaData[i] = 100;
 
-            for (var i = 0; i < _team.Players.Count; i++) _team.Players[i].Kakusei = Player.Kakusei[_team.Players[i].PlayerId];
+            for (var i = 0; i < _team.Players.Count; i++) 
+            {
+                var id = _team.Players[i].PlayerId;
+                if (Player.Kakusei.ContainsKey(id)) _team.Players[i].Kakusei = Player.Kakusei[id];
+            }
         }
     }
 }
