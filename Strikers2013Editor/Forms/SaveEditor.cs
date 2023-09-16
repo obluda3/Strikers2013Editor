@@ -61,7 +61,6 @@ namespace Strikers2013Editor.Forms
                     cmbPlayerKit.Items.AddRange(emblemNames);
                     cmbEmblem.Items.AddRange(emblemNames);
 
-                    
                     txtProfileName.Text = save.ProfileName;
                     txtOnlineName.Text = save.OnlineName;
                     nudProfile.Value = save.Profile;
@@ -258,6 +257,7 @@ namespace Strikers2013Editor.Forms
             player.Stats.MoveKakusei2 = (short)cmbKakusei2.SelectedIndex;
             player.Stats.MoveKakusei3 = (short)cmbKakusei3.SelectedIndex;
 
+            /*
             player.Stats.Kick = (byte)nudKick.Value;
             player.Stats.MaxKick = (byte)nudKickMax.Value;
             player.Stats.Body = (byte)nudBody.Value;
@@ -272,7 +272,7 @@ namespace Strikers2013Editor.Forms
             player.Stats.MaxCatch = (byte)nudCatchMax.Value;
             player.Stats.TP = (byte)nudTP.Value;
             player.Stats.MaxTP = (byte)nudTPMax.Value;
-
+            */
             save.Players[lstPlayers.SelectedIndex] = player;
         }
 
