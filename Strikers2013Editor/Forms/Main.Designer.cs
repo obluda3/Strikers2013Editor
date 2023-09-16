@@ -32,6 +32,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnMove2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -60,8 +61,7 @@
             // 
             // save
             // 
-            this.save.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.save.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.save.Location = new System.Drawing.Point(12, 72);
             this.save.Name = "save";
@@ -81,11 +81,24 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // btnMove2
+            // 
+            this.btnMove2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMove2.Location = new System.Drawing.Point(12, 132);
+            this.btnMove2.Name = "btnMove2";
+            this.btnMove2.Size = new System.Drawing.Size(120, 54);
+            this.btnMove2.TabIndex = 4;
+            this.btnMove2.Text = "Anim Info";
+            this.btnMove2.UseVisualStyleBackColor = true;
+            this.btnMove2.Click += new System.EventHandler(this.btnMove2_Click);
+            // 
             // Strikers2013Editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 138);
+            this.ClientSize = new System.Drawing.Size(272, 195);
+            this.Controls.Add(this.btnMove2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.save);
             this.Controls.Add(this.button2);
@@ -107,6 +120,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnMove2;
     }
 }
 

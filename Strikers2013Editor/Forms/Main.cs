@@ -44,5 +44,11 @@ namespace Strikers2013Editor.Forms
             TeamEditor teamEditor = new TeamEditor();
             teamEditor.ShowDialog();
         }
+
+        private void btnMove2_Click(object sender, EventArgs e)
+        {
+            MoveInfoEditor moveAnimEditor = new MoveInfoEditor();
+            moveAnimEditor.ShowDialog();
+        }
     }
 }

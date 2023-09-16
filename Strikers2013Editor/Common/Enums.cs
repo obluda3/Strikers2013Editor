@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace Strikers2013Editor.Common
 {
+    public enum Movetype
+    {
+        Shoot,
+        Dribbling,
+        Defense,
+        Catch
+    }
     public enum Element
     {
         Wind,
