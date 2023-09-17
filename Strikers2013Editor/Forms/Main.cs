@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Text;
 
 namespace Strikers2013Editor.Forms
 {
@@ -8,6 +9,7 @@ namespace Strikers2013Editor.Forms
         public Strikers2013Editor()
         {
             InitializeComponent();
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
         }
 
         private void movesFileToolStripMenuItem_Click(object sender, EventArgs e)
